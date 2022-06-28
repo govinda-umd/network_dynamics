@@ -1,0 +1,16 @@
+# Table of content
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+# defaults:
+  # numbered: True
+parts:
+  - caption: June 2022
+    chapters:
+      - file: nb/jun22/jun22
+
+      - file: nb/jun22/jun22_updates
+        sections:
+
+          - file: nb/jun22/00-data-max_desc-create-exploratory-data

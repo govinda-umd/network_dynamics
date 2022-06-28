@@ -1,0 +1,2587 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>April 4, 2022: emoprox near_miss_data proximity regressor beta time series &#8212; My Project [Daily Progress]</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My Project [Daily Progress]</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../intro.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  June 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../nb/jun22/jun22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../nb/jun22/jun22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../nb/jun22/00-data-max_desc-create-exploratory-data.html">
+     June 24, 2022: create exploratory dataset from the MAX dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../nb/jun22/01-data-max_desc-isfc_threat_vs_safe.html">
+     June 24,27, 2022: Inter-subject Functional Correlation matrices
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/explainable-ai/nb/apr22/01-Schaefer2018_roi300_net7_beta_timeseries.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/govinda-umd/explainable-ai"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/govinda-umd/explainable-ai/issues/new?title=Issue%20on%20page%20%2Fexplainable-ai/nb/apr22/01-Schaefer2018_roi300_net7_beta_timeseries.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/govinda-umd/explainable-ai/master?urlpath=tree/docs/explainable-ai/nb/apr22/01-Schaefer2018_roi300_net7_beta_timeseries.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extracting-beta-time-series">
+   extracting beta time series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-the-time-series">
+   plotting the time series
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visual-nw">
+     visual nw
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#somato-motor">
+     somato motor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dorsal-attention">
+     dorsal attention
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ventral-attention">
+     ventral attention
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#limbic">
+     limbic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#executive-control">
+     executive control
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#default-nw">
+     default nw
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>April 4, 2022: emoprox near_miss_data proximity regressor beta time series</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extracting-beta-time-series">
+   extracting beta time series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-the-time-series">
+   plotting the time series
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visual-nw">
+     visual nw
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#somato-motor">
+     somato motor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dorsal-attention">
+     dorsal attention
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ventral-attention">
+     ventral attention
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#limbic">
+     limbic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#executive-control">
+     executive control
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#default-nw">
+     default nw
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="april-4-2022-emoprox-near-miss-data-proximity-regressor-beta-time-series">
+<h1>April 4, 2022: emoprox near_miss_data proximity regressor beta time series<a class="headerlink" href="#april-4-2022-emoprox-near-miss-data-proximity-regressor-beta-time-series" title="Permalink to this headline">¶</a></h1>
+<p>Beta time series of unassumed regression analysis of proximity regressor. Data are the near miss segments.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">nilearn.input_data</span> <span class="kn">import</span> <span class="n">NiftiLabelsMasker</span><span class="p">,</span> <span class="n">NiftiMasker</span>
+<span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">load_img</span><span class="p">,</span> <span class="n">new_img_like</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pickle</span> <span class="k">as</span> <span class="nn">pkl</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/govindas/venvs/expln-ai3.9/lib/python3.9/site-packages/nilearn/input_data/__init__.py:27: FutureWarning: The import path &#39;nilearn.input_data&#39; is deprecated in version 0.9. Importing from &#39;nilearn.input_data&#39; will be possible at least until release 0.13.0. Please import from &#39;nilearn.maskers&#39; instead.
+  warnings.warn(message, FutureWarning)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="extracting-beta-time-series">
+<h2>extracting beta time series<a class="headerlink" href="#extracting-beta-time-series" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_dir</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/home/joyneelm/approach-retreat/data/&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;results_ShockCensored/voxelwise&quot;</span><span class="p">)</span>
+<span class="n">mask_file</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/home/joyneelm/ROI_viewing/&quot;</span>
+             <span class="sa">f</span><span class="s2">&quot;Schaefer2018_300Parcels_7Networks_order_FSLMNI152_2mm.nii.gz&quot;</span><span class="p">)</span>
+
+<span class="n">masker_file</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/home/joyneelm/approach-retreat/data&quot;</span>
+               <span class="sa">f</span><span class="s2">&quot;/Schaefer_roi300_roi_names.txt&quot;</span><span class="p">)</span>
+<span class="n">masker_labels</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">masker_file</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;roi_name&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">masker_labels</span><span class="p">))</span>
+
+<span class="n">masker</span> <span class="o">=</span> <span class="n">NiftiLabelsMasker</span><span class="p">(</span><span class="n">labels_img</span><span class="o">=</span><span class="n">mask_file</span><span class="p">,</span> 
+                           <span class="n">standardize</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">masker</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">masker</span><span class="o">.</span><span class="n">generate_report</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>300
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/govindas/venvs/expln-ai3.9/lib/python3.9/site-packages/nilearn/maskers/nifti_labels_masker.py:305: UserWarning: No image provided to fit in NiftiLabelsMasker. Plotting ROIs of label image on the MNI152Template for reporting.
+  warnings.warn(msg)
+/home/govindas/venvs/expln-ai3.9/lib/python3.9/site-packages/nilearn/plotting/img_plotting.py:348: FutureWarning: Default resolution of the MNI template will change from 2mm to 1mm in version 0.10.0
+  anat_img = load_mni152_template()
+</pre></div>
+</div>
+<div class="output text_html"><!-- CSS for the report -->
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+<style type="text/css">
+
+/* Add a gutter to Pure's Columns */
+.pure-g > div {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.pure-g > div {
+  padding: 0 0.5em;
+}
+
+/*!
+Pure-button class copied from pure-min.css,
+in case reports are displayed offline.
+
+Pure v1.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+*/
+
+.pure-button {
+    /* Structure */
+    display: inline-block;
+    zoom: 1;
+    line-height: normal;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    box-sizing: border-box;
+}
+
+.pure-button {
+    /* Button styling */
+    font-family: inherit;
+    font-size: 100%;
+    padding: 0.5em 1em;
+    color: #444; /* rgba not supported (IE 8) */
+    color: rgba(0, 0, 0, 0.80); /* rgba supported */
+    border: 1px solid #999;  /*IE 6/7/8*/
+    border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
+    background-color: #E6E6E6;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+/*!
+End pure-button class definition from pure-min.css
+*/
+
+div.nilearn_report {
+    padding-top: 0px;
+    border: solid rgb(150, 150, 150);
+    border-width: 1pt;
+    border-radius: 6pt;
+    overflow: hidden;  /* Needed to avoid scrolling in jupyter :( */
+    color: black;
+    background-color: white;
+}
+
+.terminal div.nilearn_report {
+    max-width: min(50ex, 100vw); /* Needed in vscode */
+}
+
+/* Isolate us a bit from the styles specified by other stylesheets */
+
+div.nilearn_report h1 {
+    text-align: left;
+    margin-left: 0pt;
+    margin-right: 0pt;
+    padding-top: 5pt;
+    font-size: 1.8em;
+    padding-left: 5pt;
+}
+
+div.nilearn_report h1:first-child {
+    margin-top: 0pt;
+    background-color: #f5f5f5;
+    border-radius: 6pt 6pt 0pt 0pt;
+    padding-left: 5pt;
+}
+
+div.nilearn_report summary::-webkit-details-marker {
+    margin-right: 2px;
+}
+
+div.nilearn_report summary:focus {
+    outline-style: none;
+}
+
+div.nilearn_report table {
+    max-width: 100%;
+    border-collapse: collapse;
+    margin:50px auto;
+    float: right;
+}
+
+div.nilearn_report thead th {
+  text-align: center;
+}
+
+div.nilearn_report tbody tr:nth-child(even) {
+   background-color: #ddd;
+}
+
+div.nilearn_report details {
+    overflow-x: visible;
+}
+
+div.nilearn_report div.raise {
+    z-index: 1;
+
+}
+
+/* Tooltip container */
+div.nilearn_report .withtooltip {
+  position: relative;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+div.nilearn_report .withtooltip .tooltiptext {
+  visibility: hidden;
+  max-width: 35em;
+  width: 90%;
+  background-color: rgba(24,24,24,0.9);
+  color: #fff;
+  text-align: left;
+  font-size: 12pt;
+  font-weight: 200;
+  border-radius: 6px;
+  padding: 5px;css=resource_path.joinpath('css'),
+
+  margin-left: 3pt;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 2;
+
+  width: 99%;
+  left: 2pt;
+  top: 133%;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+div.nilearn_report .withtooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+div.nilearn_report .image {
+  position: relative;
+  height: auto;
+  width: 100%;
+}
+
+div.nilearn_report .image .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: .5s ease;
+  height: auto;
+  width: 100%;
+  -webkit-transition: .5s ease;
+}
+
+div.nilearn_report .image:hover .overlay {
+  opacity: 1;
+}
+
+.elem-warn {
+    color: #FF0000;
+    font-weight: bold;
+}
+
+.note {
+    font-size: 8pt;
+    font-style: italic;
+    text-align: center;
+    padding-left: 5px;
+}
+
+</style>
+<div class="nilearn_report">
+  <h1 class="withtooltip">
+    NiftiLabelsMasker
+    <span class="tooltiptext">Class for masking of Niimg-like objects.
+
+    NiftiLabelsMasker is useful when data from non-overlapping volumes should
+    be extracted (contrarily to :class:`nilearn.maskers.NiftiMapsMasker`).
+    Use case: Summarize brain signals from clusters that were obtained by prior
+    K-means or Ward clustering.
+
+    </span>
+  </h1>
+  <div class="pure-g">
+  <div class="pure-u-1 pure-u-md-2-3">
+      <div class="image">
+      <img class="pure-img" width="100%" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgd2lkdGg9IjQ3NS4ycHQiIGhlaWdodD0iMTg3LjJwdCIgdmlld0JveD0iMCAwIDQ3NS4yIDE4Ny4yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSI+CiA8bWV0YWRhdGE+CiAgPHJkZjpSREYgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICA8Y2M6V29yaz4KICAgIDxkYzp0eXBlIHJkZjpyZXNvdXJjZT0iaHR0cDovL3B1cmwub3JnL2RjL2RjbWl0eXBlL1N0aWxsSW1hZ2UiLz4KICAgIDxkYzpkYXRlPjIwMjItMDQtMDVUMTk6NTM6MjcuNzM1NDg4PC9kYzpkYXRlPgogICAgPGRjOmZvcm1hdD5pbWFnZS9zdmcreG1sPC9kYzpmb3JtYXQ+CiAgICA8ZGM6Y3JlYXRvcj4KICAgICA8Y2M6QWdlbnQ+CiAgICAgIDxkYzp0aXRsZT5NYXRwbG90bGliIHYzLjUuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy88L2RjOnRpdGxlPgogICAgIDwvY2M6QWdlbnQ+CiAgICA8L2RjOmNyZWF0b3I+CiAgIDwvY2M6V29yaz4KICA8L3JkZjpSREY+CiA8L21ldGFkYXRhPgogPGRlZnM+CiAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4qe3N0cm9rZS1saW5lam9pbjogcm91bmQ7IHN0cm9rZS1saW5lY2FwOiBidXR0fTwvc3R5bGU+CiA8L2RlZnM+CiA8ZyBpZD0iZmlndXJlXzEiPgogIDxnIGlkPSJwYXRjaF8xIj4KICAgPHBhdGggZD0iTSAwIDE4Ny4yIApMIDQ3NS4yIDE4Ny4yIApMIDQ3NS4yIDAgCkwgMCAwIAp6CiIgc3R5bGU9ImZpbGw6ICNmZmZmZmYiLz4KICA8L2c+CiAgPGcgaWQ9ImF4ZXNfMSI+CiAgIDxnIGNsaXAtcGF0aD0idXJsKCNwN2UxZmY3NjRjMCkiPgogICAgPGltYWdlIHhsaW5rOmhyZWY9ImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCwKaVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQUpZQUFBQ1FDQVlBQUFEcVdKTC9BQUFsSWtsRVFWUjRuTzE5ZTd3ZVJYMzNkL2EreitWY2NvRWtoQkRRYUtBUXdWcUswQ3BvcmZpeDNCU2tnRkFEQWlxbHlrWGd0YUFmeFNxb0VBdXZXQkpUYmlJcUlDSW9mdW9sMWhha21Bb3FSZ3pRWURCd3dqbkp1VDNYdmN5OGY4ek9iMmVmUEtINE5udE9zUFA5NTltelozWjJabmYyZC8vOUJqQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3K044Rk50c0RlS240NkVjL0tnQmdZR0FBbnVjQkFPSTR4a1VYWGZTeW1jUHZnMnV1dVVhNHJnc0FpS0lJVTFOVEFJQlBmT0lUTDR2NVdyTTlBSU0vVE94MnEvL3l5eThYQU9CNUhoWXNXQUFBR0J3Y2hPLzdBSUE3WDlsR21xWUFnT00yMk9oMnV3QkF2MUVVNGZ6eno5L3Q1dlZpdVA3NjY0V2l3bXFldnU5RFVTelA4OEE1QnlEbk9UazVDUUFZR1JsQkZFVUFnRTkrOHBPNzFaeG5mVERYWEhPTldMSmtDUUNnVXFuUW92bmFmaE93SFJzQVlGazVZUlhjUnJ2ZGtYOHd3TTllaUdxVEpDbmU4S0JrRytlZWUrNnN6Ky9GY09PTk53b0FXTGh3SVh6Zng3eTc5cVVGRkVVUmhKRHR3akFBeStZWDJjREVzVTlSR3dYYnR0RnF0UUFBbXpkdm5uVVJ3YkJDZzFJd2E2djZoaHR1RUFDd2RPbFNmSFhmOGI1dEZNVmlMQjltSEFrNmRsd1g2ck9tczBLZzA1RnM4YXV2ZWZkdVRiSHV1dXN1QVFEN2ZQOWdnQUUyQjVoNkpReVlRa3h0QjVta3pKRU5pR3pPU1pMMDdYZnl1S2Z4ekRQUEFBQSs4SUVQek1vemNHYmpwb0JjVUFEd3RWZE13SFBrUTJPTUllV1NGVnJNSXZhV3BpbXhDQ0VpdUY3ZTNyYmxGTGlRLytlY3cvZmwvNDkvNUV2aW00ZStkN2RjWEd2WHJoVjdmMjhGQUlEWlRNN1ZCaGpMNXN4VE9KYVVzZUlvb3NVRXg0TGp5RGxidGcyUlBSZkx0cW5OOEgzTE1NaGZNWlBUMlFHR0ZScVVnbG41bXUrNDR3N3gzZGZLcjh0elBZUmhJQWZETEkyOEMwU1JaQVZ4RWlQT2poM0hnV1hMN3lFTUFsaVdaSmRSTFB1TG9nZzhVd0RHeDhkaDJmTC94ejV1NGF5enpwcFY2clYyN1ZxaEtPL2lmemtJdzhQREFLVGdyYlJDejVXL0tVOHhHVXNsaGFjcGtteE9vZTFLRVFDQTU3cEFKaVk0R3NWcWR6cUlNOEgrbVRlc3h5bW5uRExqODU3UkcxNTExVlVDQUI0L1poRTlITXZLU1h1bFVzbTF1emhHbzlrRUFQQ1VvOTF1QXdEQ1NnZzdXMHkxV28wMG8wNVhQbmdJUWFhSFNxVktyTFhSZUliT2YrdXdqOHpvdkpYMjkrb0hEME90VmdNQTJKYU5aa3ZPTC9BRGVoT0JMejh5MTNPeHZTMy9uL0tVNWwvelF0alpoMVd0VnNra3dUa25yVEJKRWhJZDRqakdnNis0RndCdzJXV1h6ZGk4RFNzMEtBVXpLcnp2dmZmZUFJQW5YSXZVT0o1eWRGTkpTUVFYR0JnWWtBTnozWUtHcEd1R2lxb3h4dENOTXFGZSswS0RNTXpiWnNKd3ZWNkhuVjEzM01PZkV2Zk9FTlZhdlhxMVdQN1E2d0VBMVhvMW54T0FNQnRucDlNaEZ0aU41TFB3Zkk5WWZzcFRtbjlxQTNaMkxLbVZQRzQwbThUK2RFYmt1aTVldCtIbzdLL0xkdm44ZG9ZWlcxaFhYMzIxdU8vQTdLR2xQcDNuUENVNUtVNWlkRHBTcnJoTUhJTFJxVkVBd0hXMTM5Q0RGVUxRQXhjUVNGUFpQb2t6V2NOeHFHMnRWb1ZsYlFjQVRFMHhWQ29WZVo4NEJxSUxMNWVEdWZhVEpVMFpBQkFFQWFxVktnQzV5TldIay9JVWpVYUR4aHpIbVF3cHNsY2k4ZzlJQ0ZINHNIU2pjQ3Rqa1VrY0UvdmpuQmVNeW5ZbVoxNTk5ZFhpMGtzdm5aRVB5ckJDZzFJd1l4UnI2ZEtsbUVxL0F3QmdIWWJOd1Z2b2Y4cU53eXhHWDY3bFdhalg2d0NBTTU3ZEUydjNlRlkyRmlEaFhkcXg3T3k4L0JBdDJ5WUtZVHNPMUxjek9EU0U3ZHNsOWFwVUtuajdJME5YQXNDM2dWSW8xblhYWFNjQVlObS9IUXJoaW13TWcvUi94M0pvbk5PTmFUcWYrSm1XNnpMWVFzMU53TW9vRm1NTWRpZ3Bmbmh1RTVPZlRiTW1BbWxHc1hTU05QUzJGRUxJWi9DbTlwdDM2UnhmREtVdnJGdHZ2VlVBd0s4UCtCNWN1SFIrdjJRZEFPbmI0NW5taGk0ajQ2WVZIRTZzS3d4RDBpSVpZM0NVUlI0TXRhcDhPV25LQWJqd2ZBOS9zMlV1QUdsdWNCenB5TDd6bFp0UnlXU2FOa0RhMUZWWFhTWFVZcjdpaWl2WTZ0V3JCYkwvcjF5NThrWFp4azAzM1VUWG5uUE9PZXpLSzYra2EvZC82SEFBZ0RmSEkxa3FpaUtNSHJNeG0zZUNQZTUvTlFCZ2FIQUlVUlNoNjREa1FBWnBRZ0FBWmxrMGY5ZDFhZXlXRmFQK0Zxa0pSdDBJSWhOY205OFBNZnkyN0pscXI5aXR1L1ErempqampGSlpvbUdGQnFXZ2RFSHVSei82a1FDQUg4MzlNckV0SldRQ2tnTHBmeXM3ejJuQnBTU3d0bG90Yk4yNkZRQnd5NklSb2dCeEhLTWJ2UUFBT0cveWp3RUFFeE1UQmNGVnNWbkhjU2drWmZYY241UGczR3kxOFBwMUdSdTFMREphdnRUSUNHV2pHaDhmcDNrTUR3L2pqLzdqendBQTlWcWRmSjVwa21MaW5ac0E1QUsxZWg1RFEwTTBWMEJxc2RiWEZnS1FCay9WZDYxYXc1enpwUFluaEFEL2phUlNqZWtHOVdmWkZnVFAxRzZXS3dGcGt1TDUrbk1BZ0NPUFBMTFVkMTlxNTZ0V3JSTGpiM29jQU9BNE52bjFkRmdXbzRsN25vZFQvVXNBNUk1V0lQTWhaZ3NraWlKY1g1ZnM1UG5uZm8yVkl3ZGsvY2crYkR1UDBVclR0TERJbENIV2NSemN2T2dKQUVDMzA4R1JQNUVMVmNVNUFjQWxsMXp5a3A3Tlp6N3pHUnJvNEtDVW9lYlBuNStiVFJ5SHZBbTYwNWh6VG92TDkzMmFuMXBBeldZVGh4eHlDQUNndFhhQUZ1Zmd1ZTBkbmcwQWlJMTVHQTNudlBDeEtxUnBpalNSOTNuZzZlL2dnZ3N1S08zOUcxWm9VQXBLRmQ3bnpKbURpZXliNEp5RE1mbTE2QUtvYmR0RVNkNWxYMGpYTXNib3l4UkNFT1Z4WFJmSGI1QVU1dEZIR2R3VnNoLzF4U2RKUXYweHhzZ0hseVFKdVVVY3g4RzducExCaFMrODhBTGFQRCt2S01CdHQ5MG1Uai85OUJmOW9tKzc3VFl4TmpaR1kxUlVZbXBxQ2tFZ1hUTnhIQk9sQ3NPUXhoWkZFVkdzSkVub3Z1cTViTjY4R1hQblNpVmtEM3NGQnM1cFpmZkpxWlJ1MjJLdkJxci9WYVgrMVBPSTQ1ZzBiWjV5NGxHSHpYMzlpMDN0ZjR4U0Y1WmxXWWhqK1ZDVkpnZElsdWRxdnNJVDJZY0F5QWVpRnBET3duUld5QmdqR1l0elhqaXZmdFVMdG0yYjVLbzRqbW1SVlNvVllodno1OC9IRTA5SXRyaHMyVExNbXpjUEFEQTZPb3ExYTljS0FOaTZkU3MrOGhGcHFmL1VwejRsOXR4elR3QXlzZU1WcjVEaEtXTmpZM2p5eVNjQkFFdVdMS0g3ZXA1SGNwTVFnczZuYVVvZlRqK1prSE5PODZ5ZjNZVGliTHBzcHRxcFg3NlVVMy91a3k0OVU4WCt1T0IwckMvS01tQllvVUVwS0hYWjNuMzMzV0w5UHRLemJ0c1dVYW1CZ1FINlN1TTR3VjlNL2cwQTRGdnVEZlFsblJaY1NuWXMyN1lMWDdLNmRtUmtCTTgvL3p5QTNPOW0yM2FCNmpXekNBbmJ0b2tsVmF0VllnOWpZMk5RTWZkNzdMRkhZZnozM2l2SHJndjFRQzZrSDNmY2NZWHpMN3dnTmRUTm16Y1Q1WE5kbDhiZ09BN05vMXF0RnFpTk9xL1k5Y0tGQ3ltWlJKK3ovaXhhclJiNGs3bTQ0THFTQVhtMkR5Yzc1cHhqYWxMbUFNUkpMTmtoZ0RpTzhOcS9mbTFwNzcrVWpsWFk4Y2dSNittY1pWbjA4c013cEFmWTdYYTFSU09JUGRSU0MyY3N1cEt1MWFOSlZSdGRBL3pkNzM0SFFLcjkwOVBTa3Qxb05JamxiZHUyalY3VTh1WExNVDR1dzZFWEwxNU1KZ1oxTDRWSEgzMFVBUERMWC82U0ZvRmxXVGpvb0lNQWdMUTJPZlpjQ3hzZkg2ZnhEQThQRTZzZEdSa2h1Y256UERLdDFPdDFHc1BpeFlzQkZEVkYzY09nYTN4VGowN1RNV01NTFBNKzZDSkFHSVJvZCtTemJyZmFGR2tMQU90KzkwTUE1WVF2RzFab1VBcEtFZDZWajI4RXVmc2xEQ3VrRVhVNlhhSWtTWkpDeGRCd251WWFEUE9wamUvN3hNWXN5eUoyS1RWTmViemZmdnNCa0VMMzVzMmJBVWhia0dKYnJ1dGkyYkpsQUlEbm5uc08rKzY3TDRDY3JjbHhkWWlTNmtaTFhkTk1rb1RPajQ2T0VvVUx3NUEwd2NIQlFScnZwazJiNkw0QWlMMTNPaDE2VGt1V0xNSDgrZk1CSUo5L1Q0U0M2bzh4Qm10VFRyMFV4WFpkbDZoYW1xU0ltSHgyRnJQZ2U1SjYyWmFOVnJ0RmJkVDl5MEFwQzB2SlVnQzBGeEtqM2M2MW85eklKN0xGQlRqTkNHSG1LMlFXSzZqam4zTXlMUklNRjZjSjNVZkpMK3BYc1JwQWFuenFQbHUyYk1HMmJkc0FBQXNXTEtBWEtiU0kwMmF6V1RCYXFrVjc2S0dIWXYzNjlYU3NYb2puZWZUQ204MG10ZmM4ai9wdnQ5dFFKb201YytkaXI3MzJrdlBUdE51NWMrZGlZbUtpOEx4ODM2ZEYxbTduU2JwN3J2a0J1dTg0a2ZyUTAvQ1YxbXN6bTdTL1Z0b0NzM0pUaHVvL1RWSXN0L2RIV1RDczBLQVVsQ0s4cjFtelJnQlNTUDdCMEMwQXBHQ2VzenllUlNNQVhqdEJXMzVvR0xhQ0FtdjUzWUpQQUpBR1J4VUFhTEU4WU8vU1BKdVFoT1ZhcllacUZ2SFFiRGFKdGUyNzc3N0VXcHZOWnQ5WThTQUk2SXZXcWNURXhFUmZWbWpiTmxHZEpFbG9qSHJzZmh6SE5CN1A4N0JwMHlhYW56NU81YnRVd2pzQXVGZmZDU0RUL2pJaFBRZ0NjaGROdk8zdEJkYXQ3ZzhBRGxNcFlybml3OEFLOXFzZmovd3JBT0Rzczg4MndydkJ5d09seUZqcUM3anp6anRGMDIxbFp3VWxZenFPalJyUHdtNWRGMEVtMTloV1RnR2UzZlBqaURMWnA5UHAwTEhydW1oblgrYlZRWURMTTN1Tkh2T2taLzA4L2ZUVEFLVE1vdG9vVlJ5UVg3cWlISnh6a211RUVOQUxkV3pZc0FFQWNNQUJCeFRjUkJTWWFGblVqKzZDOG4yZjVMK3hzVEU4OTV5TUxqam9vSU1LaFV6VTJCUWxIUjBkUlUyRkhhZTVVZ01BZnFZa2hHRUlaa3RpMDI2MlNYbXdGM3lhQWdQYnY3MllVdWU0NEJSem4vSzBGRXFsVUtwTHA5MXVvMXFWYkt1U2FINHRNRUI1SmpUZmwrZDVDTEljUS82VjFXaU1UOGcyYVlKbVpuY2FPUHVDZ3JGVUNiMjZHMGUzS1NtYmsrTTRkRjczemVtTFFML084enhpbmExV2kyeFJTNWN1TGJBMnBSem8wUXE2d1ZNYUx1Vmk4WDJmeHJPek1hdjV6UG5pZDlIVzV0bktGcWZ2ZVdobWJIUG9ycStEdmV0a09aWUZWOU40aGZCSnlQR1dYVWNCZ0FBb25FYlo4Y3FDWVlVR3BhQlVpclZreVJKc1RmTllLOTJCcXI1MDNhcnN1QTUrYzc4MEYweFBUNU9WZVBKdEoyRXdVL0Z0Mnk1UW0xNG50RzUxZGwyM1FGRjBSN1h1QU5iZEpYckJEUlVqcjFpV09sYm41OCtmWDRpazBMTnE5UG5wZGplOXZUNDJkYXptbzJmcHVJeVJ2VzF5Y2hMREg1UFVadHB6NFUrZEJFQW04aXJLbUdqZUNWMVk1Mm1LS0paVVRZKy9Md09sTGl6Zjl5bTRMd2lEZ25aQzVGbGpoU2xQQzM0dHBTbDFiL2tDQnYvdUkvSmF6WGFURS9qYy9xTXZQRDNJVGsraDB0c3d4cWhObXFaMDNHZzBhTHlWU29WY0xyckdOelUxUlc0WngzRUtvVDE2eUk5K3JJOU55VTI5RVF1cXJacG5ITWZVZDdmYnBlU0xXclVHVWZ0N2VWNWNBVGVVN1N2eHRjaFRNdk5uelRtbmhJdkN3eXNCaGhVYWxJSlNLWmIraGNaeFhJZ0ZVcUcybS81bElXVXJ5em9MV1NxVUFEcFo1VDcvakErZ20ybUNRUkFnemFpS2JoM1gyWm51L3RGWnBlNjgxa3N2cXVNMFRRc3g4b29LZHJ0ZDdMLy8vblJlMXlxSmRhRll0OHJUa2twMWQ0eHFyMXZ0ZFJaTTg3RnQwb1IxNzRELzRTMW90K1YxdFdxTjdsM2puNGVkWk1vRE9KSW9wOEkwYjBzVEkwb21XYVduZi8zbS9qbDBuR1JCZndJNW1YZmRMcjBveGhnOFA2OTlGVmF5VUpnZ29MUjVQWDlPWHA4SHRDbjBXeWk2TEFVVTQ4TlZHNzBPbHg0NTBhdnhKZHJDN2hkYnJ2Y2ZCRUZCeHRMSHBrZE1xTEdSREFZVU5FdGxTc0RxQStEK3JRd28xQU1tbWNWSUp1MTJ1c1JtNHlRbUU0UHFtMjVRSWd3ck5DZ0ZwVktzT0k1endaVUxKSm56Mk9uSjFpR0h0Q2JJZytYblpZR1E3TFJsa2ZIUHNxMkNveG9vUmovbzJseHZUSk5PRFhSMnBxQnJjSHEyajE1MnFUY0NvUi9iMWFtZG5sM1Q3WGJwZkc4NHRicFB2M1E1eDNHUXFINjBZaW1VN2tVVFZqK3MrR3d5aHpSUCtsUGFYWVZTRjliVTFCUkZMSExCcVJvSzgvUDA4VFJOMGNrc3pEcUxFMEtnbTlVU3JkazJGUmp6TkErOS9ZMDFZSDhsbzAvN0pSam9tcFgrY3ZUajNqcWUvWXlsdnU4WExPbjkydXRJa3FSd1g3Mk56cnIxTWZlTzM3WnRZbjlKa2hCcmRSeUhhcXdLSVFvc1R4VlhnYWFKcG1tS1NHbWZqZzByUzdmdlJQbEhWd1lNS3pRb0JhVlNySzFidCtJdmxyMEdBSERYNCtzUWMvbmx0S0t0cUVZeVREZ01Ld1hEWXVUSzJLWHBWZ09SSysxWTdQN1BneDEzRVFCWjZjNyt4aG9BUlkxTC83cHBjcG9iQitndjFQY2FUaFdFRU5TWFRuV2lLTnBCME5hdlViKzZRcUJUTERVR3gzRUtkZHIxZERFMU45MllxdnNLOVhEcmVpMlBEVlBza0hOTzVZMWF6U2FOSzQ0am1tUFV6ZTlkQmtwZFdJV1hiTnRVOENKT2JEUXhBZ0NZYmdyaSswQXVZM2l1QzVaWjJ6dWREc0xzNFhRN1hWZ1pLN0FZd3hlK2V6c0E0UCs4Ni8wQUpQdlZyZXE2Zk5FUGxtVVYydWZWbVRYL21oQVVrcUlNb3IxdGROUEd6dTRGRkJlV2ZyMWVOZ0FBMm1kdWdQaS9TK1UxNzM4S3lQcnV0TnVvY3prRzEzRXhQWnFWazB5bkN1T3lMR1dHY2VEV00xbXVheVAxWlAvck54NE40SnM3SGVmL0ZJWVZHcFNDVWluV29rV0xjUDlUUHdFZzQrQ1ZjTjZOdHlHT3BiMUsxMlVZY3VIV2NSd3lNazZQSmZDL2ZvTnNaRm5nZXEwb3A2Z1ZCa0ZRWUJ1OWlhLzZiKzk1UFdGV1p6OXhIR1BMbGkwMEQzMk1DdnExdlgzM0szT3BYKys2TG8xL0lMME9BTkJKWW9oelpZMEtrZVpaMXAzcExtb1pKYmNFZ3hWbWRTSGlHQm9CVkxvT0hOZEZZR2ZoTkhVTFNsMWN0R2pSRG1QZGxTaDFZYzJiTncvVzA5a01OVGFqcDdMcjBKMnh1bHdUQkFHRmsrZ3ZGc2psRGNXR3lKRFkwMGZhNDVqVjFmcCtzaFRubk5qZUk0ODhRdTJmZlBKSkhIcm9vUUJRV01ENnRmcjhla3NGNkNZRVBaeEdzVm9lNVpWa2N0a29wcFMyc0I2U3VTWFZucGZqdUFXUlFzR3hiVnBrVW11VTdWK3o4TnM3dE4yVk1LelFvQlNVUXJFKy92R1BDMEJwTnBucnhuT1JaTWRSMmtHc1JSMG9iWWF4dEtCTnFZaFRyODdoT0xrZ3I5QWJwUUJncHk0V1BZSkFMMFNpS3hoNllRL1A4L0RiMy80V0FIRFVVVWZob1ljZUFnQWNmdmpoK1BXdmZ3MEEyR2VmZmZvSys3THFZQjV0MFc4TU9uVE5WTmRjVmZaU3Q5dEJyYWJDaGl3SXRiMUxPNStybmdHdXMxL1hkZUJsNlY5NlJBWG5FYjJuajMzc1k3dmN3VlBLd2xKR3hKc2V1cGVPOVpmcFd3TzBlNFJlamFXM1Nvb2kyM1pTZytQbC9pNjF1UFFIMkt2NkEwVjJvdnZqOU9JYytndXAxV3EwayttV0xWc29hY1AzZlJ4ODhNRjByTTV2MmJLRlpKWGg0V0Y2YVhxYWxlNkkxMzJGdmFLQWFoOXJiZFZ6cWRWcWhiSEg3YnhtcTUrVjhkYWZyK080bEc1dldjWDROZVg5WUd4SFkrK3VoR0dGQnFXZ0ZJcWxTUDdLdzQvRDdldS9DMERhbkJpWFh6b1RWYUlrbDc3alpMb3VUVk9pR0pPVGs1VGFCQUJmL3NuOXNoL0x5aE16YlJzWG4vQmUyYWNTYURXLzM4NUs5VGlPZzlIUlVXcXZOTDdISG51TUJQYUJnUUZLTkoyWW1NRHk1Y3NCU0VIK3FhZmtScFR6NXMyaldQaEdvMEZVYmErOTlxSm5NSC8rL0w1ajBzZVdwaW0xNzRRWEF3RGM5T29kUW9JQVNYV2NRQVVVK3ZEdExQMXMrQkxVMjlmdk1GZkdkTU10U0EwWFl1ZXNlVmVnbElXVmF5b09XSndWM1BCUUNOWFE0NmQwLzVqS0lKNHpadzR0ckZhcmhmT09QcTNRTnlEWmoySkxDcjNzcHAreGRQdjI3Y1Mybm5ubUdmemlGNytnOW1waHExODFEK1hRMWxteHltVlU5LzNwVDM4S1FEcVkxYlo1bzZPamhiS1J1cU82MTdrTTVDbi9MZmR5aE0zUDB2L0pmT0E0YUFmU0MrR0hZYTdkQ29ISWw0c3ltTHFHcmhOck9lM3BDQ0hBdXRuek9NMHFQTXRkRGNNS0RVcEJLUlJMMTdUeXZXTnlqY3V5TENESjByeDZ0RGc5UEVXeEpkMk5BaFExUUQxQ0ZTaEdZL1pTUTBVQnBjWXB6Mi9jdUxGZ0wxTDNPdmpnZzNIQUFiSndydTUrbVQ5L1BsYXNrQnRZYnRpd0FZODk5aGdBeVFvVjFkbTRjU01WSFVtMW5FQmRXTlpkUVBxWWxXMnJYcS9ER3BSN0cvUlNGdlUwZE9WRWY0N042b2RRdWU1YWFxTUNBT1c3eU5uR3puWm8zUlVvTlk1dy9mcjE0cFlmL3pzQXdBMVNVcE5aUElkaXNpdzN3b1h2a0FYTXJybjdtNFhRMll2ZWNUeUFZaWh4YjdVWjNiZ0pZSWZZS3QwUXFsN3d5TWdJSG56d1FRRFNVYTZNcWtjZGRSUmU5YXBYQVpCbURkMmd1ck5qZGUzR2pSdXhidDA2dWxhVmt6emlpQ09vTHBmcnVpOXBuRUF4T1VNM2crZ0xzbGZqMUdXeFlGd3VyT1NmbzZ5OEFXQ3RkTFF3bXdpTC8vaUcwdDYvWVlVR3BhQlVsMDYzMnlWN1ZkUzJrS2JabDhNN1FQYWx1NjdBTlhkL0U0QU1CdFFqSWRYNWk5NTVmRjhYeWM2TW9UcDI1anBTdVlFclZxekFVVWNkQlVCbWJpdkIzTFp0M0c2dEFpQnJlSjNLUDBoekNuOGxoWEhMc3RBNVJMYmZlKys5Y2U2NTV3SUExcTFiUjBiVTNqRysxS0t5T3d2bjBXUGxkK1lUclU1ZmgxaEZRNXdjRTZld0l5M21QdDR4YW5aWG9sUldlTTg5OTRnSG5wQ09WTVlZUkpKWmdHMmJraU84Z0pQUkxvbVRBdC9YRTFrdk9lbWRkRTQzK09ueFM3M245UE02TzQyaWlGaVlFS0p2WXNXWHVwL0tNM21paUdwcm5mL2twd3NaT0lNRFVvc1RyOHZqdER6UG96RjJPcDFDKzk2TkFnREpJbnN0Ny9vNVBiNnIwK2tnblBoSEFFQ2FKaGgxcExrbENBSUt2Um51ZkpHaVJ2V3FPZnBIK1o5Yi9oSW5uSENDWVlVR0x5K1V5Z3JIeHNid3JqK1JlOXpjL2JQSHdCUUZjaHdTM29Yb1VyNWhuT1R1SGQ0WnlOMDE0VFQrNFNacGFMM3NqTGZrS1U5YWxJSXUwT3FDY0Q5MkVnUkJYOHJoK3o3WnEvUmRXdDlhM1FkVDJTNWl3Yk01WlFCQUVRV2VWb0ZQRDZIUm95MzA4ZWdDdWM3MmV2ZllBU1RMYzBhbFRjdUpZM1MwdVE0bi95VFBKdzdjSk1zUWR6emFPYXpvNmhKb3QrWDhsUEczTEpTY1hRWjgvL3ZmRndCd3oyTy9nQU5acGNWeEhOaCt4dklFQ2drQjVDdHNWRW5laWVLSTl2YXIxV3I0eUh2ZUNxQi80WDFkZGUrTjhOVFA2MFpVM1htcjkvZWMvMVVBMHZMZXlSYmMvcC85VXlxODFqbnlRRGlIRlNOTmdXTDRUKy9pN3QyZ1N2M3E0MWRRYmJkdjM0NWdYTXA3c21pY1pLMWhFTUQxdEIwK1ZEbHViWGY3TkVuSTRaK21DWnBOV1ZicWxYKzJ0dFIzYjFpaFFTa29QUk5hbFdFRUFOaFoycEtkQUdydlk1YXpFOTN0b3ZzSmg0ZUhhVmRWb0ppMDBMdEZTaitLMEFzOUtxSTM2a0gxL1VMdGJrU3RyQWdiUklINktRcGJmL0EzWUEvSmZsb1hMdXViTkxHemFOV2R6VU1YNHRYLzU4VnJrQ3BseC9Pb1dFcTcweVlxWlZrV2xTcklISVRaMkl2UUZac3lVZnJDVXM1ZXpqblNiSk1tcEZyK25KV3pMcDV5TkJ0cUY0YzU1R1BUNWFhTFR6MnEwSDh2Mit0bGYvM1lrUDRpcjczOVB4REhlZFNtaWg4REZ1UDQwNlNEbVNGL1VXb3UraThBV0o5K25PNFZ1QzVhRitZbHVQVkYzSThkOTV1UERyMkNzbVZabUROSGxpMlluSnhDSTN0ZWc0TzJ0bzF4WG9aQU4wOXd6dkhRZjcweDYvWFdIZTZ6SzJGWW9VRXBLSjFpblhYV1dRd0FIbmpnQVhIZkwzOUY1eTB1U1R2ekU4cVc3blE2U0ZwU1NKODdOeTl1Ny9zK0xEdG5lUzhXaHFMbkV2YXluWDVzcU5QcEVHdFIvUU55cjV1dnJKRjc3Snp3N2lmQStpUkt4SEZNOVVWMTZxUDdOblcyMnh0bHFtdXZ2VnBxb2FnY3QrRFowZ2JJR1NlNzI4QkFuYlM3YnFkTHRjaHN1NWpYcUk0YmpTYTlqN0l4WTd2WWo0eU1FTm11VkN2d3dpd0pJaEdJR2pMMFpYSmJDM1BuRHVXRDB4STJ6enYrTUFERmVneDZHMTFPNnVkajA5dW9QbFYvYVdhZ2pib1JGWTV0TkJyd004TW0wMXpwUUM2M05CcU4zSERaN1pJaHROdU40TzNFNHErUHBkK1k5UVZSSFpmeFZTbUtINUN0d3FwNVJCcnF0bTNiU0VPVWZlZVpSMnJ4Nng5UTJUQ3MwS0FVekJqRldybHlKVHYxNzY4UVFGYWVzU1haQmVjY2s1UFNiK2U1SGhsT2RmZEQzS3dXQ3VVckZyS3pDTWgra1pmNjM3M0JnTW91SkFTb1FFa1FodWhtTE9jclg5b0hiMWxSb2ZhUnR1ZTBLZzN1bi8xRGVCbkZZTGNmMnpmV1hzZk83RzBLbkhNa3loRGE2emRVeDl5Q3crUTlQY2ZINVBna0FHRE9ISnNLaERDZTI4aGV1K0RlSy9vK3NCSXdJL3kyRisvOTZCZUZXaFROWmhPTnBpVFJ3MFBEVk9vYUFCQU55VitoRmNPMUdNNDdXWVlKVnlxVnZ0VmYxRXU0cGhQaW9rQXVGTkZIcXdPazhmSHpkL3lVMnFpWDBPMTBxSjhUanRpVHlsY2Z0dGUvRnNvU0JTb3B3OGw5bUw0ZlFDeStwREFtaFg0bWtINGFZcmZiUmJqdEgybThOSDZHSW1ObThueXoyY1I0VnI2OFdxdWlsajNITkUyeGozM3pGUURBRHV0K2NvZWJsd1REQ2cxS3dZeXhRaDF2V2o2SUIzNHVkeU8xYlJ1QnYrUEczSFl5RjV3cnI3eXN5YW1nc3pxZFJWemJxVUJBVUVuS2xIZndXUzRweXNWaHB4QXNwNDdyOWJwMGdRQ0l0WnBWZGpWUCtManp4OC9oejErbHZrR0JNTnZrZ0RHTFl0RVp5NnZEUkh0ZUFHVU4wKytsRzRBYmpRYjVQTU13TEFqeXFpMDA2a2JKSWp3bDdjR3lHZmxab3poR0VPUXBiYzNNTU4zdGRJQzhXdWVNWVZZVzFxbW5uc3BPKy9DMUFwQWFvbnFvN1hhYlVzazloSEJWc3F1V1V0K0xYdGFTcGluNUdKTTB5ZU83d3Y1VllGelhKVTNRNlNsdlJQVVVCZ2JBV0RNN0h0Uk1HM2xPb20wN3hDSzdQZVBWNzZ0bkllbTVqWG9kMWhjRFkzbUZ2azQzMWtvTUpBaERLUWQ2dm9mR3RCUXZWc3k1Wjhia0toMnpzckFBNE9RL2Z5VUE0TnVQalJUL29lUXFiK2ZYZnZIck1zYnI0cFdIdk9UN1hkdXA0TUtnMWZkL2YzZXlqTUJZOVpWSGRucjlBeitUZ3ZGZnZlWWwzN0l2NW54TkZqZXBkRHBFNGNJd2hHTTdhTDNud3BmV0NmdjlzbXRtVXJaU21MV0ZkZXl4eHpJQWVQamhoOFhOMzVCVVNzUWRORnRadmFkZ0NxeWFSME93UG5wR1A2MHdpZU9zckxmYzdER3hkMHdZNkkwVnp6T0lIVGdUcjh2T0M2RCtzT3d6U2NqNHlCaG8xMWpmRDZoQUJ3QTA1NTRQUUtaaTZheE5wMEpKVmtvNzdhUmdicFlJNGlRNzFHVzFiUnZidzdNQkFFUGJWd05lWHZnL3lhSS9XKzE4dTdscXBRby9ZNFdjY3l5dmZYWEdCWFlkczdhd0ZHUjlCQ2tFQkdFZUo5V0t0MU9kZDhkeDRDQmZSTW9ocmN0WXFwcE1rcVJreVUvU0JKN0lhb0dLb25HeVg4MTNRTzJyS0xjUjdwOTNsNXRCMGpRRmVwSWdWSi9VbWhYYnEvNlROQ0Z2UXBvbXBCbjJKbFhJLzNPQTU0WlRZdlZ4akRETHExU2JXd0V5ekdmdm9UNURuMEhNK3NLYVNWemJrUy9ob3JEZHY4SFlJUUEwdFgvc1lQbWJjbUJzS3dEZ2VlZU5XQ3krL1A5MS8rcmFWV3A3aFA3L3YyVVZPbWRlL045MzlCSlk0V3hSS29WWlgxZ25uM3d5dS9QT093VUFmTy9oZ2J6VWRXTUFIU0hsR3NkMWNrSGVjL3QrMVo5dCtRQVNDSkg3MHBqRkNoVE5jblprVC9yeCs4NU84UG5yOHMyK09WR2FCRzgrVWlaSGRMc0hnenZ5dkY2UFZJOVJCMURvWDBIUFo1U0dWbFVKMlVWaUpZQW04K3VsQklRUWlLY2xDNDNqQkoxR0ZzN2pDWG91UEUweG1Ta0dLNDcreXF6WUozVVlPNVpCS1poMWlnVUFKNTEwRW4xaGlucmRmSGNFcXlsM2ZCZDhHRzR0MjN5U3UzQlFyTm9IU0hrRHlMN3VmODYyR3dsRElNaUVkSTlMcWdEZ2MxYUFpODZSN0ZDbk1weHpDdU5Oa3BqMnJkYWR6WnMzYjhiQ1JWbUttR1hCNlZNMlVoOVhtcWFvckpISm95bm5XblU5QysydTdDY1VBckhhRGtaek5kR09xVDBWREtOSUJTQW1hTFdscG51Z2Q5Y1ZTOTQ2dSt4UHgyNnhzSFNvUmJacTFTcnhvNS9JQWlIMWVwMDBNZGZ6Q2lFc1pNZTVPYXN2MVUxeWd5U3o4Z1IvemhHcmx3YmdNLzhrMmN5SHorMFdRbTVjVnlVcTZMdFg1QzZWQStyZkFrUldCTTJ4cVE3VjlOQUhFR3FhcG9yQ3FQejhlc1NKaXRyTVU5d3RaaFUrQ3N1eWdCUUliNVJKRTlIN0xza3JTSHU1N2FWZXIyTnFTa3BxRWUvaW9MZmVQdXRzcng4TUt6UW9CYnNkeFZLNDRJSUwyRTAzM1NRQTRMRU4rK1JVeGJZcFRQamFMMVhRYVN1ZlNtN2IwWjNFU25STzBwVFlqQURnWkgxOGJuV0FDOThyMllrZWZPZTVIbFNweXFpYkY5NzNvZ0IrTElNVUhUaXd2aTV0VGV4RHVWa2hTUktFajBvSGNwd2tRS3pxdnpNb2Y0d2VidDFxdDhnR3BWaGk1VXZYb25IbWgrUjlIQnRKb21MaVhWSVlqampwL3QyU1dnRzc4Y0lDY2paMzVyc0YxdDRtejhWSmt0Y1BiVHdMYnNtdGZ2UGFtcnl2ZXlSSmNoWnAyemFsL25QT3NXcXRsTi8rOW95NEVFVkF1WG11ZysvOVVCWUxlZHVaajFNSmNBYUdiZStUOTZob3RySHF6NjlIbDJ1YlFDVjV2THErTVpOaW85MXVkNGVNN2ppT1VSbjVBczFacGNtbmFZcjEyMVhjLzFkL3p5YzZjekNzMEtBVTdMYWtWTWNkZDl3aERqendRQURBNnB2MWNqMTVXdFo0Szl0Z1hOdlUzSEVjY3JuRVNWNFhJdEIyWm5WZEY2NW1MMG9tWlZaUkhNY1VSZEJzdFhESUNsbjI2TzM3L2dxVmFoYjA5NDB6U1N0MC8vSVc2ak9LNDBMbWo5ckZ6SEVjU3RjU2orU1JIR21ha3FhbjlwNW14L2lrUWVyeFdPdCsreWM0NVpSVGR2djN0bHV6UW9WVFRqbUY1SzNUVHRvZlgvNjZLdHFXVW5CYkdBYUF2eEJCb0cxcXJxVjg2V2xRUUI2M25pUkpudkoxL3RPd1BqMEVvSGZiMzN3c2pMRThiTVd5WUo5NGkveGpDcHFNbFM5S09jNThEQ3BTdzNieWFBak9PYlVmRzVNTGV5amVFN2F0Tm9hSzhZTk5yd1VBckZ5NSt5OHF3TEJDZzVMd3NsajlPMFg5UHkvLzZ4TzJYd2xJK3c2UVJSeUVDd0VVYXlJMEdrM2FZTHRXclpLN2huT09TcFpsYkRzT3hIbXlJbktpQlIwMmJ0Z1RCOCtYVzRTOGZiOE5xTlh5cUF2bFVtR1RnbUxVMjYxV1RqVXRSa200akRGVXMydHQyNEY0UkJsMU9iSExxVGZLM3dPRGU2NWdiNTNlYlF5ZXZ5OWUzZ3RMd3hsbi8xakFYNEJhdFVycFVRQm94L3Z4aVFuUzh1cjFPaTJzSkU1b1UzUFhjWUh6NWNLSzR4ajhwdjBBQUc5ZS9oTTgrK3l6QUdTQnRkY1AvaHNBeVFvcENIR0M1MXZDdGR0NTZwckZNSjBGM2FWSmdxSGhJUURaOXNVTDVPSkxrcFJTdEY1MTlKby9pSGRpV0tGQktYaFpDTzh2QmJldWVRTURnTHZ1dWt0ODU5K2xvR3RiTmpxWlA2N2RiaE4xQ2NLd1VFUTNPa2RHTHNCemdjejdvcWdWSU90UGZQQ0RIMlFBY09PTk53b01abTE0VHFVUTUxRVZldGFOU0lXTU8wZFc1eXFqWkVFUUlKVkVDaitiZUROT1BQSEVQd2hLcGZBSE5aa1h4V0p4K2JGdmZPUktZTWUwTVd0SXNzandmVnZBYnMyTGVSeDkwSG9Bd0RISEhGTjRUdmZkZDU4QWdOZFZma2puaEJCb1A1OUZ2MnJhWjdmYlFhc2xIZDZIZHI1VGlEOW5sM1ZldGpMVWZ3ZkRDZzFLd2Y4ZWlnVUFpOFhsdmFkT2VQUFByclNIYy8vZ2FVZHVBaUFUV1U4Ly9mUVhmVDYzM1hhYlVDV0Y5QUloVVJUaFBWdmZMMlBPLzRDcGtvR0JnWUdCZ1lHQmdZR0JnWUdCZ1lHQmdZR0JnWUdCZ1lHQmdZR0JnWUdCZ1lHQmdZR0JnWUdCZ1lHQmdZR0JnWUdCZ1lHQmdZR0JnWUdCZ1lHQmdZR0JnY0hMQ1A4UHIrNDdhNXlLekpNQUFBQUFTVVZPUks1Q1lJST0iIGlkPSJpbWFnZTc2MTY3MzNhZjkiIHRyYW5zZm9ybT0ic2NhbGUoMSAtMSl0cmFuc2xhdGUoMCAtMTQ0KSIgeD0iMCIgeT0iLTIxLjIiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTQ0Ii8+CiAgIDwvZz4KICAgPGcgaWQ9ImxpbmUyZF8xIj4KICAgIDxwYXRoIGQ9Ik0gOTkuNDIyODE2IDE1OC4wMjYxNTQgCkwgOTkuNDIyODE2IDI5LjE3Mzg0NiAKIiBjbGlwLXBhdGg9InVybCgjcDdlMWZmNzY0YzApIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjMDAwMDAwOyBzdHJva2Utd2lkdGg6IDEuNTsgc3Ryb2tlLWxpbmVjYXA6IHNxdWFyZSIvPgogICA8L2c+CiAgIDxnIGlkPSJsaW5lMmRfMiI+CiAgICA8cGF0aCBkPSJNIDAgOTYuMTA3OCAKTCAxNDkuMjYxNTM4IDk2LjEwNzggCiIgY2xpcC1wYXRoPSJ1cmwoI3A3ZTFmZjc2NGMwKSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAxLjU7IHN0cm9rZS1saW5lY2FwOiBzcXVhcmUiLz4KICAgPC9nPgogICA8ZyBpZD0idGV4dF8xIj4KICAgIDxnIGlkPSJwYXRjaF8yIj4KICAgICA8cGF0aCBkPSJNIDE0LjkyNjE1NCA0MC43ODc1OTYgCkwgMjEuNjEyNDA0IDQwLjc4NzU5NiAKTCAyMS42MTI0MDQgMjkuMTczODQ2IApMIDE0LjkyNjE1NCAyOS4xNzM4NDYgCnoKIiBzdHlsZT0iZmlsbDogI2ZmZmZmZjsgc3Ryb2tlOiAjZmZmZmZmOyBzdHJva2UtbGluZWpvaW46IG1pdGVyIi8+CiAgICA8L2c+CiAgICA8IS0tIEwgLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNC45MjYxNTQgMzguMjkxOTcxKXNjYWxlKDAuMTIgLTAuMTIpIj4KICAgICA8ZGVmcz4KICAgICAgPHBhdGggaWQ9IkRlamFWdVNhbnMtNGMiIGQ9Ik0gNjI4IDQ2NjYgCkwgMTI1OSA0NjY2IApMIDEyNTkgNTMxIApMIDM1MzEgNTMxIApMIDM1MzEgMCAKTCA2MjggMCAKTCA2MjggNDY2NiAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPC9kZWZzPgogICAgIDx1c2UgeGxpbms6aHJlZj0iI0RlamFWdVNhbnMtNGMiLz4KICAgIDwvZz4KICAgPC9nPgogICA8ZyBpZD0idGV4dF8yIj4KICAgIDxnIGlkPSJwYXRjaF8zIj4KICAgICA8cGF0aCBkPSJNIDEyNS45OTcyNiA0MC43ODc1OTYgCkwgMTM0LjMzNTM4NSA0MC43ODc1OTYgCkwgMTM0LjMzNTM4NSAyOS4xNzM4NDYgCkwgMTI1Ljk5NzI2IDI5LjE3Mzg0NiAKegoiIHN0eWxlPSJmaWxsOiAjZmZmZmZmOyBzdHJva2U6ICNmZmZmZmY7IHN0cm9rZS1saW5lam9pbjogbWl0ZXIiLz4KICAgIDwvZz4KICAgIDwhLS0gUiAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEyNS45OTcyNiAzOC4yOTE5NzEpc2NhbGUoMC4xMiAtMC4xMikiPgogICAgIDxkZWZzPgogICAgICA8cGF0aCBpZD0iRGVqYVZ1U2Fucy01MiIgZD0iTSAyODQxIDIxODggClEgMzA0NCAyMTE5IDMyMzYgMTg5NCAKUSAzNDI4IDE2NjkgMzYyMiAxMjc1IApMIDQyNjMgMCAKTCAzNTg0IDAgCkwgMjk4OCAxMTk3IApRIDI3NTYgMTY2NiAyNTM5IDE4MTkgClEgMjMyMiAxOTcyIDE5NDcgMTk3MiAKTCAxMjU5IDE5NzIgCkwgMTI1OSAwIApMIDYyOCAwIApMIDYyOCA0NjY2IApMIDIwNTMgNDY2NiAKUSAyODUzIDQ2NjYgMzI0NyA0MzMxIApRIDM2NDEgMzk5NyAzNjQxIDMzMjIgClEgMzY0MSAyODgxIDM0MzYgMjU5MCAKUSAzMjMxIDIzMDAgMjg0MSAyMTg4IAp6Ck0gMTI1OSA0MTQ3IApMIDEyNTkgMjQ5MSAKTCAyMDUzIDI0OTEgClEgMjUwOSAyNDkxIDI3NDIgMjcwMiAKUSAyOTc1IDI5MTMgMjk3NSAzMzIyIApRIDI5NzUgMzczMSAyNzQyIDM5MzkgClEgMjUwOSA0MTQ3IDIwNTMgNDE0NyAKTCAxMjU5IDQxNDcgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgIDwvZGVmcz4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLTUyIi8+CiAgICA8L2c+CiAgIDwvZz4KICAgPGcgaWQ9InRleHRfMyI+CiAgICA8ZyBpZD0icGF0Y2hfNCI+CiAgICAgPHBhdGggZD0iTSAwIDE2NS4xODQ2MTUgCkwgMzYuNzU3NSAxNjUuMTg0NjE1IApMIDM2Ljc1NzUgMTUzLjU3MDg2NSAKTCAwIDE1My41NzA4NjUgCnoKIiBzdHlsZT0iZmlsbDogI2ZmZmZmZjsgc3Ryb2tlOiAjZmZmZmZmOyBzdHJva2UtbGluZWpvaW46IG1pdGVyIi8+CiAgICA8L2c+CiAgICA8IS0tIHk9LTEyIC0tPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxNjIuNjg4OTkpc2NhbGUoMC4xMiAtMC4xMikiPgogICAgIDxkZWZzPgogICAgICA8cGF0aCBpZD0iRGVqYVZ1U2Fucy03OSIgZD0iTSAyMDU5IC0zMjUgClEgMTgxNiAtOTUwIDE1ODQgLTExNDAgClEgMTM1MyAtMTMzMSA5NjYgLTEzMzEgCkwgNTA2IC0xMzMxIApMIDUwNiAtODUwIApMIDg0NCAtODUwIApRIDEwODEgLTg1MCAxMjEyIC03MzcgClEgMTM0NCAtNjI1IDE1MDMgLTIwNiAKTCAxNjA2IDU2IApMIDE5MSAzNTAwIApMIDgwMCAzNTAwIApMIDE4OTQgNzYzIApMIDI5ODggMzUwMCAKTCAzNTk3IDM1MDAgCkwgMjA1OSAtMzI1IAp6CiIgdHJhbnNmb3JtPSJzY2FsZSgwLjAxNTYyNSkiLz4KICAgICAgPHBhdGggaWQ9IkRlamFWdVNhbnMtM2QiIGQ9Ik0gNjc4IDI5MDYgCkwgNDY4NCAyOTA2IApMIDQ2ODQgMjM4MSAKTCA2NzggMjM4MSAKTCA2NzggMjkwNiAKegpNIDY3OCAxNjMxIApMIDQ2ODQgMTYzMSAKTCA0Njg0IDExMDAgCkwgNjc4IDExMDAgCkwgNjc4IDE2MzEgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgICA8cGF0aCBpZD0iRGVqYVZ1U2Fucy0yZCIgZD0iTSAzMTMgMjAwOSAKTCAxOTk3IDIwMDkgCkwgMTk5NyAxNDk3IApMIDMxMyAxNDk3IApMIDMxMyAyMDA5IAp6CiIgdHJhbnNmb3JtPSJzY2FsZSgwLjAxNTYyNSkiLz4KICAgICAgPHBhdGggaWQ9IkRlamFWdVNhbnMtMzEiIGQ9Ik0gNzk0IDUzMSAKTCAxODI1IDUzMSAKTCAxODI1IDQwOTEgCkwgNzAzIDM4NjYgCkwgNzAzIDQ0NDEgCkwgMTgxOSA0NjY2IApMIDI0NTAgNDY2NiAKTCAyNDUwIDUzMSAKTCAzNDgxIDUzMSAKTCAzNDgxIDAgCkwgNzk0IDAgCkwgNzk0IDUzMSAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgIDxwYXRoIGlkPSJEZWphVnVTYW5zLTMyIiBkPSJNIDEyMjggNTMxIApMIDM0MzEgNTMxIApMIDM0MzEgMCAKTCA0NjkgMCAKTCA0NjkgNTMxIApRIDgyOCA5MDMgMTQ0OCAxNTI5IApRIDIwNjkgMjE1NiAyMjI4IDIzMzggClEgMjUzMSAyNjc4IDI2NTEgMjkxNCAKUSAyNzcyIDMxNTAgMjc3MiAzMzc4IApRIDI3NzIgMzc1MCAyNTExIDM5ODQgClEgMjI1MCA0MjE5IDE4MzEgNDIxOSAKUSAxNTM0IDQyMTkgMTIwNCA0MTE2IApRIDg3NSA0MDEzIDUwMCAzODAzIApMIDUwMCA0NDQxIApRIDg4MSA0NTk0IDEyMTIgNDY3MiAKUSAxNTQ0IDQ3NTAgMTgxOSA0NzUwIApRIDI1NDQgNDc1MCAyOTc1IDQzODcgClEgMzQwNiA0MDI1IDM0MDYgMzQxOSAKUSAzNDA2IDMxMzEgMzI5OCAyODczIApRIDMxOTEgMjYxNiAyOTA2IDIyNjYgClEgMjgyOCAyMTc1IDI0MDkgMTc0MiAKUSAxOTkxIDEzMDkgMTIyOCA1MzEgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgIDwvZGVmcz4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLTc5Ii8+CiAgICAgPHVzZSB4bGluazpocmVmPSIjRGVqYVZ1U2Fucy0zZCIgeD0iNTkuMTc5Njg4Ii8+CiAgICAgPHVzZSB4bGluazpocmVmPSIjRGVqYVZ1U2Fucy0yZCIgeD0iMTQyLjk2ODc1Ii8+CiAgICAgPHVzZSB4bGluazpocmVmPSIjRGVqYVZ1U2Fucy0zMSIgeD0iMTc5LjA1MjczNCIvPgogICAgIDx1c2UgeGxpbms6aHJlZj0iI0RlamFWdVNhbnMtMzIiIHg9IjI0Mi42NzU3ODEiLz4KICAgIDwvZz4KICAgPC9nPgogIDwvZz4KICA8ZyBpZD0iYXhlc18yIj4KICAgPGcgY2xpcC1wYXRoPSJ1cmwoI3A0NTM5N2JiY2I4KSI+CiAgICA8aW1hZ2UgeGxpbms6aHJlZj0iZGF0YTppbWFnZS9wbmc7YmFzZTY0LAppVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBTEVBQUFDUUNBWUFBQUJIMllwV0FBQW16MGxFUVZSNG5PMTllN1FkVlpubmI5ZjduSE1mU1c1ZXZCTkpnandHa3VpQXRzVEIxbTVSMjRXQTRoTmtiTUdtZFdsTEE4dHV3V2xXdXdaYnBkdG1EZmJZT0U0Q2crT0xJRGl0cnA2QnBVMkRpRWpBUmhvVUVhTVFTTGpKZlp4SHZYYnQrV1BYL3VxcmM4OUZVYmk1SjltL3JLeGJ0MjZkcWwxMXZ2cjI3M3R1d01MQ3dzTEN3c0xDd3NMQ3dzTEN3c0xDd3NMQzRtQ0cyTjhEZUw3dzBZOStWQjEvL1BFQWdGV3JWaUVJQWdDQTY3ckk4eHdBME9sMEFBQlBQdmtrZHU3Y0NRQzQ4c29yRDVobmNMQmlxTC9BajN6a0krcVVVMDRCQUJ4MTFGR0k0eGdBb0pTQzR6Z0FnQ1JKNExvdUFDQ0tJdnBzbXFZQWdKMDdkK0lYdi9pRk9kOVFQNCtERmM3K0hvQ0Z4ZStLb2RNOEgvclFoOVNwcDU0S0FGaTdkaTFtWm1ZQUFMN3ZvOUZvQUFBY3g0RlNDZ0NRWlJtU0pBRUFvaGhoR0JMRmtGS2kyKzBDQUthbnAwbUR2K2xOYnhxNlozT3dZbWkrcU1zdXUwd0J3QmxubkFFaDlMQ0RJQ0JoYkxmYk5TRTF4NFJoU0VKY0ZBVUFvTlZxSWNzeUFFQ2U1NUJTMHJZUjZHYXppUzFidGd6Tjh6bVlZZW1FeGRCaktEVE5KWmRjb3M0NTV4ejYzV2hPMTNWcCt1LzFlcVNWbTgwbWFlS2lLTkJxdFFCVWRDSk5VOUxFVWtyNm5CQ0NQamM3TzR0ZXJ3Y0FlT01iM3pnVXorbGdoYmUvQi9CcytNQUhQcUFBNFBUVFR5ZEtFRVVSd2pBRW9IbXdnWlNTZmsvVGxQZ3hBUEphR0FSQlVQTmVHUDdNTVRvNlNnSzlFTGptbW1zVW9PbVBvVDFGVVdCMmRoYUE5Wnc4R3l5ZHNCaDZMTnEzKzhJTEwxUm5ubmttQUdERmloV2tpZHZ0TmtaR1JnQm9UV3kycFpRMC9YTVVSVUYrWXFOWmZkOG5yZTA0RGxHTExNdElLd3NoU0NNKyt1aWplTnZiM3ZhOFA2dHQyN1lwQUZpOWVuVnRqTXUrc3FZNnFMenEzcmM4amwvKzhwY0FnUFBQUDMvUmZtLzdBNHVXVG16Y3VCRVRFeE1BdENCeUNtR0VMa2tTNHNkTGx5Nmx6eHFCQjdTUW1tTzQyODBJY1JpR3RCMEVBUWx1SE1mMHVXYXorYnpmMzdadDI5U0ozOU91UWloQU9JSzJIVmRQa0VJSUd2UEUxOVppQW1zQkFOZGZmNzA2Nzd6enJDQ1hzSFRDWXVpeDZEVHhSUmRkcEFEZ0pTOTVDUmxmanVQQTgvUlFoUkMxb0liUm5KN25rYlllR1JtaC9ad1c4SjltV3lsRm1sdEtTZGYwUEkvMkQ2SXB2eTArOTduUEtRQTQvbzZYMGRQM2ZRK2U1NWZqUlkxYVNLbkhtU1FKWktGbmh2VzNiY2EzenJoVEFjRHVzeDdGK1BnNEFHM1FublBPT1FlZGhsNTBRcnh4NDBZQVdyZ0dSZVBHeDhkcG11ZDhOOHN5Mmc5VWdzQmZBQ09nUExlQ3Z3aEtLVW9TMnJWckYzRlFNNDdmRlZkZmZiVjY2YjJ2QWdBSTE0RW9DUzhmbzdrdkRVVThYaWtGVldocWthWVpSa2EwMjNEVlhhK29YZU9IRi81VVRiNzU1M2p5eVNjQkhCejgyZElKaTZISG90TEVGMXh3Z2RxMGFSTUFyVW1OWWVmN1BrM3RlL2JzSVMzTC9jUktWVnJML0IwQUdvMUc3VGdBTmYrdmxKSitGMExnOGNjZkJ3RGNjODg5NVBrNDhzZ2pjZjMxMXlzQStHME1xa3N2dlZRQndISEhIUWZ4azNJR0VBN05CcTdyTWFNekpRcmhlUjZDUUk5ZEZwTG9CS0FRQkpIWkpLUFFHSUlydGgrTmxWajNYSWM1dEZoVVFyeDY5V3FhVnBNa3FYa0t6RGJQaStqMWVqVk9iSVEzejNPTWpZMEIwRUxNM1dZQTVnUTN6RGtjeDhIaGh4OE9RTDhnaG1PSFlVZ2VrZXV1dTA1ZGNNRUZ6MG1RVFo3emlsczNBSDdKdVlNQW9mQm9QSVozeTBJQzVmQWN4Nm05Y0lxZVFRVFBLMTlVQVVUbE9CM0hwUlJUUTYxdXVlVVdkY1laWnh6UWxNTFNDWXVoeDZMU3hJY2Zmamhwa0RBTVNhdnMyN2VQc3N0ODM4Zm82Q2dkWS9JaXBKU2t4WmN1WFVvVW9paUttdEZrampWVGVWRVVsRHN4TXpPRGRydE41MTZ5WkFrQVBSTVlUYnhtelpybmRFK2YrTVFuMUl2dmVybit4YXVvamlvVXVrWHBGU2trcENxcGdnQUtwVFd1NndKT2VienJ1RkN1VnRHZUorQ1d2dVJHbzBrNUlYbWVJYzhkdWtjQU9QSmJKenluOFE0akZwVVFlNTVISG9FNGprbTQxcTVkaTlXclZ3T29jMWp1alZpK2ZEbE4vMUpLOGpMdzh4Z2F3Yy9CM1czOG1CVXJWcEJYb3RQcDBMWEd4c2F3ZGV0V0JUeTc1WC9sbFZjcUFIajU0MjlDNXBWY1hTbDZHYUFZclJFZ3owTlJGQlhIL2VNcFlGUmZkMVFwRko4ZHArZmtsTWNrU1lyWldUM09YTXE1MUVuT3pRczUwR0RwaE1YUVkxRnA0cFVyVjJMNTh1VUFORzB3Mmk5TjA1bzJOZlJnMWFwVlJCczRGVEJhR05BYXlSeHZ6c2ZEdVZ3TGU1NUhWR1ZxYW9yT0UwVVJYU2ZMc2w4Ymh2N01aejZqWHZLVDErdGZIRUNJa3JySUFvNm85SWFoRFNnQWhVcURHcC80eUloZjgzY1hIOVRaZU9rMUlicGRiUWltV1FxUVJoZDBmblB1WHEvN3JHTTlFTEFvaFBqeXl5OVhnQlpLSTFSR2FBSE5UdzFWR0IwZEpRNjRkKzllVEUxTkFkRFZHbHpRelhZVVJiVE5JM1k4OEdFRUZ3QW1KeWNCYU8rSUtTd05nb0RTT1htaTBTYy8rVWxsWEgvTlpoTkhIWFVVQUdEVjdTZkNjVXJ1QzRXaWZIbXlMQ2NoRTA3MUlqbU9BN2M4dnRGc1lQekQ1c1h5YU94Wmx0SFlndW5sRkNqaFViMDBUU0JsL1Y2UC9xZk5Weno3MHg5K1dEcGhNZlJZRkpyWVVBakhxUUlBWFBzcXBUQTlQUTFBYXg2akNiTXNvMk00TFppZG5hWDljUnpUOU15UE1ZRU1vS0lmUlZGUVVJV1BKVTFUMHBxN2QrL0dNODg4QTBEVG4wTlBlUkFBNExwdGVNNXVmWjZOUDBEamJ5OEVBRWhab0NpTk51RjVOYjh2M1dzUWt0WVAvN1FMV1JwamlobUNlL2JzUWJSMVJibS9RQzRySDNvYzYrZVI1NVhCYXM1OXhLejQrSHpQL1VEQm9oQmk4d1ZtV1ZhYitvMWJyZFBwVVBCQ1NrbmNOa2tTRXRBOHovSFVVMDhCMEZPNzRiQ2U1NUVnR01GVlNsSEZoRktxUm1FNEJ6VUMwZWwwcURmRklTZi9Help0MXB4WWlFa0FtdHFJSWtjaFdWTFJaVjhBQUl6KzNaL1VnaWt5MG8rOENSZmR0ejBCQU5nNy9TdWlORTQyVHM4bHozUGkrZEhXRmZRaXhYRk1MeDRYM0RBSzRaWGpmK3dQSDlBbitmcXZmZnhERDBzbkxJWWVpeW9jZWROTk55bGpIQlZGZ1QxNzlnRFE0V2p1VFRCR2x1LzdGQkNabnA0bVdpS0VJRTNzdWk1NUo0ejJ5cktNdEROUG1vK2lpS2JobVprWjdOcTFDd0N3Zk5OOWFMYTA5dVU1RDQ3aklEUDlLL0ljS1BTMjUzcnd5NXlIS0lvdy92Y1g2YkVyUmRwM2NuSVNkOTExRndCZ1ltSUNKNTk4TWdCdFJISXFGUDVQVFNHNjNTNFVlUng2akFJcG1tRldOMXJrcUhqc0xZOENBQjUvL0hFeWZnL1VPcjFGZFZNMzNIQ0RNdFBxaWhVcmFsRTFBOGR4U0loMzc5Nk5GU3YwbDh3NWJoQUVKTnhGVWRCMGEvYTEyKzFhQmJRUjZIMzc5aEgzYnJWYUdEL2grd0QwaTJET0VVVVJVWTUycDRPaVRNcVJTVndsOUhnZVdxVWJydEZzSXY3Wjc5TjF6UXNUQkFGMjdOZ0JBTml3WVVQTlE4S2prTVNoUHpkR09SWDdwdlloaVRWM2YvUTE5K0hWOTc2bVBHZElZelBQVE1vY1AzdXpGbWh1VCt6YXRRdnZmLy83RjlYMy85dkMwZ21Mb2NlaU1PeTJiOSt1QUczSTdOdTNENEQyTUpqY2hXWExsbFU1Qjh3b1c3RmlCUm1GZVo3WHFBQXZDdTFIR0liWXUzY3ZIV3UwMXVFdmZ3amp0ZVAxNHdtQ2dBSWNvcENZYlZkR29jcTBkb2NRY0YxOWZLUFJRRmlPYS9lT2w2SW9wZ0JVSGdPZ1BydU1qWTNWdkJiY04yenVPeEFPMmgxOTNUUko4ZU10MzlNSEo5ci9iTzdMaEtPRFVGOC9pUk9zMzM1TWVXWkYvdXVOWWpOdXYvMVlCUUQzMzM4L0xyNzQ0cUhWeXZ0OTRGLzg0aGVWK1hKNTEwcWdxcWhJa2dTSGJkWlRPNVRDcmdkK0R3Q3daTW1TU3JoWUdaSlNpcWJ0WHErSHhvWTdhdWZsd3BSTGlVWjUzYWpSZ0Z2K3pmZDlDcXI0dm8ra1cwWUR1OTJLbjB0WnBZTDZQdEVBMy9PeDU0SC9PT2RhSE8xMm02akx4bzBiYVpybjNwSTBUWWtmdDl0dDNILy8vUUEwaHphNUpFbVNZUFcyUXdIb3FoZkQvNk5JZnk0SWdscWtzaWpIbm1jWnVmNSs5THI3NmZxam82TTA1aXpMYUl4Nzl1d2hHK1dxcTY3YTczTERZZW1FeGRCanY3eFJsMXh5aVhyRkszUnQyUHFOdDhQM1RYSjRkVXdIRGVTbTBWK1d3U3VuZVZVVXBGbWtMR0JtWVNFY25VY0F3QkVDUmRBcXR5dnZnem1IdzZkdUtTa3M3TG91YWQrUjBWR0kwdHN3TlRYRkRDV21mVjBQYnBtY1BqNCtqdVN4VndQUTRYQ2pRZWREcDlQQjBVY2ZEVURUZ0tlZmZocUFubzI0RDl1TUo0NWo4cFlZWXhiUW10NFlyTXV1bThEb3FQYW5tNlQ1UnJPSktLeG1PRU5WZE5xbTN2N2hrb3llbytmV0F6SUdDZ3Bwb3EvVDdYYkpoNS9sR2FiVy9RdnQzeDlhZXI5dzRzMmJOMlBkU2JmcEFiQ0tESjczMjh0Y0dwempPQ1I0d3ZOcXRJRlAxMkdvdjNBSWdVeFUwYjcrNWltdTY1SmdPMEpBbE5mMVBRL2pMZjI1UEV1eGIzcEtuNk5RbEpQZ01KZGRzOUZBczZRUXp6eHdNdkpjVDcyKzc5ZFNQYzN4UEhucHNNTU9JeUVLdzVEMjh4WmJSVkVRcDFkS1lkV3FWYlNmbDJBWlFRK0NBSGs1VGlQRVAxNVNvRFdpejNmMHVUMDhjbU41ZnptdzRaY21DRlAxb1BOOGo4N25PQzdkZDVabGxDN2FHbWxWUVNhWlkyS3ZibkpUcUFKZitNSjZCUUR2ZWM5N0ZreVlMWjJ3R0hvc3FDYSs0b29yZEUrSlY5NEwxOVZUSFBmanVwNkhEc3FnUWg1RE1pUEVaZHJTR0lCcGxoRUg0Wm9KQUtMeTlSVENSYXpDY3J2VU5sNVZtTWsxZGVoV0JtR25QVVUwb3lnSytLVjI4anlQUXVEcVY2L0Rrdy9wS2Q3M1ZXMG1NZHEwMFdoUTZIalZxbFZVL05wdXQrZGs2Z0ZhbXhvdHg5TklXNjBXR2JHODgxR1daZGozVDRjQkFLWVBMNUJuR1RiOFFRN1ZMRFBrdmx2TllxN3J3bk9yL2gwUEhWTE9MckZUZXg0R1Npbkt1Z3VDQURJdlp5OVZoZVJOdHlKenpzWlB0d0FBYnI3NVpuWG1tV2N1aURaZVVQNXk2NjIzS2dBNDlxWGZoZStia3BxYytGZ1FCQ1NzK3hJUFNhS0RHcnlyWlJpR2lDTDlKV3RMdm55d2pzc2lhYUtha29VN2grTU5xdVF3MjdXb1hscEc5ZnlBaWpFUEV4ZmlzY2NlQTFCZkR3U282TkRJeUVndFllbVlZNDRweCtXUWEyL1BuajE0MFl0ZUJFRHpiQjZjcWFxZ3EzdnF6NEUyeitUbi82dFo1WnNvaGFUY2IyaE9GSWFJeXBkaXcva3BQWXVmM0JpUnF6Qk5VcUloZ1I5UXRGRlhrRlJqTWM4anpkS0JRcy9IcUFxRnFmV2FLNTk3N3JrdnFKeFpPbUV4OUZnd09uSFJSUmVwRjUzNGZ3RUFqbE5aeTl6YUY4S0JHNzhmQURBbUpmWjYxd0dvRzJJY3Z1OEJvbXovQkVBd3JTVlZXV05XRktUbGVHTnRybzBOK2pQYTRIaDAvWkV5TFB6d3ZRL1hERVN6dlhUcFVyTFk5KzdkaTdWcmRmTy9zYkV4dXY3azVDVDV2bmtBaDJ0MHJ0a0dqVkUvUDRmb2grZDVsTDhCcGRBem1waFJEM1BmMDlNSk5WNFVqcWl1aVNybDAzTXJ3OW56ZlBpbWZaZ2pFSlN6WnhQMXloYXFEMVJWMFcydjI4TVJSeHd4Y1B6UE42d210aGg2TEpnbW5waVlnT3ZNMHUvR2RjT1hHNGhrRDcxQ1I0NWFyUmFhcytjQ0FQTEdWdEt5anV1U2I5WjEzYXFDR1ZWdk02aktINW9rQ1duQ1FYVjFmRDhBNUZsbGJMbUJ2czZTSlVzdythTlR5cjFwTFhIZmFMekp5VWtjZWVTUkFMUldOc24xUEpUZTYvWElhQXZEa1BhbmFWcGJ3b0UzVCtTekIrOThaSXpiSTk4K2k1OXMxUnF5QUJDV0JxanhOUWRCUVA3eG4yNE5jTUw3OUd6eDRuYzVlUGdHelpzTFdWQjVsT002ZEUrYkxuQlFlVEFWVEFhU1Vnb1BialhMVE1USXl6SFdHcjFBWWVyL0hZbUZ3SUlKOFpvMWErQjVEK3VMZWo0Smp1Y1Y4Rk50dmVjRkVNZjZJYmRhTFFyam9uTityV1l1aE9sNFUwMGtXWmFoUGZwRitwMmFEckpNc0VFTnRBdFpVRkdsS2dyS2YzQTlGK1BsMUR2NzhCYmt1WDY1ZUdOdjNvL2lwSk5Pb3UwNGprbmdKaWNuU2FCZDE2WHI4aWFGbk1idzZoSitqMXlnZWZQRVJxT0JadmxpOUhvOUdwdTU1MXhLOUVxYTQ0eU1ZR3BLQzNlejJjUng3elpybFRScjlYN3poY3I1czZZZTBYRU1DRVBCZUdzdUlJazc4NTdqK1lTbEV4WkRqd1dsRTJhMmNSd0JsUDVIcjNEaFI1WFB1Q2lDYW5EbHRNcHpiZmxDaTN6NkNzTVFmdnh1K3QwY2s2dWNISWtTWlJoYjVrUXg0aVZmcHZBMmo1Q3RsTy9GUGJmZkF3QVlHNXVsNmJ2VmFwRVduWmlZd0NHSEhBS2dycDA4ejZzbEwvR1pvTDhHenV6bmtUbCtmdzVMU0RMYm5JS2xhWXFqM3FHUC8rV1hLaU5TbHByZEZ3SkZtUXgwL05QYkVmNkQzczQrZG5iTmZkWWYxZXlINHppMTdEcWlYYUpnNDgybzhucG11b2ZpZXljc1NLWDFnZ2t4THkySEVGU1BGc21Fd3I2dTYySms1UE42WUo2SEpQa3dmWlkvM0JyM1l2NUs2cTdUQjE3akJ0U2JCUzRWZndMaG0yNDZDWGIrVEM5Y2Z0dlBicVByOElUN3Fha3BTaEZkdFdyVndLQUpYOVRSOS8xYVVJUDNTcDdQUThJRm5EZjlOdUZnM2phQVoreTVub2RtK1RMa3VYNFc2M1oraWE3VHkxSjZXZlpOVGxJT3hueUtvZjhabW1OKzhiVUlucSs5SUlVcW1LMVJ2WUNwbitBdGQzc0xVcVJxNllURjBHTkJOYkZKMkFaNFQxMndoSjc2OFVId3R3QkFHaG1vaDZsNU0wRDllV01zZXJVUWNMOWhOek16ZzBjZWVRUUFzSFBuVGdvTEE5VUNOcDduMGRROE96dEw1eHNmSHljS3dmM1hYSU5sV1VaTEVQQzJ0TnhvNHRFNDNnK3VmNWJoeC9PLzlZZlp6UU0wNXpuKzZadjFyaUFnUXpFTVFuUzYydGdhdStZMlRGL3lPZ0NneENJemx2a011NnI4U2lCRVZJN0RxenhOdVNRanVmRUNMTll6SHhaTWlQWHlXbnE3V1ZRTElDWkZ0V1pHLzVkVzhVUlpLL3djdEhnaVA1NExNSGR4M1hmZmZRQ0FCeDU0Z003Qisxc0VRVUJoWVNFRU9ldlhybDFMbkhqWnNtVjBuZjZnaWRubTFTUmNXT2V6L0RuMzVlZmo3alllQXVadEM4YXV1WTN5RjVaNkhxVkx4Z09DUTQ3alVHMWVGRWExQUF0dk5ENGZ0WGowUzRZM0s4cVNjeHdIc3V6RW1Zc2NTWnFVejJEaDBuSXNuYkFZZWl6WTY5THRkdEZVSnVnUTFwS3pxOVdMQ25yRGhSQjB6R2o0U1FBZnBmMWNhM0d0elBkVE5scW5nMS85NmxjQWdEV0gzNGo3ZnZTNldqVzBsTEsyZXBJeDRqWnMySUJqanowV2dQYkY4Z3c0SHBvZTVFbmcyb3diZHYzSk1ueWJoOVc1QVRwbzBjaWlLREQrMzNTTlhaSldTVDBxcUNjejZiOG5GTWpJWlU2ZUh0LzNNVm9hcUh3OGcyWTVBMk9ZWjJtS3JEUWNqWUZlWFJqbHM1azdFN3hRV0RBaDNyMTdOeEpQVDhsZW50Rk5Ka2xDVnJmSDJqelYxdUJ3SE9UenBBcHlseFVYQkM0NGhwODJ2RkVjZXVpaGtGSlNSQXVvMGlDWEwxOU9tV1ZyMXF5cHRkSGluVFVISmVWelFlUkZxM3lCUnk3MC9WNElBMDRodUZzdHp5dTM0SkpyNzBhUFBERVJsQ3E3WmFicEhLNWNGRlUwTGdvak9yZjdYOTVjaXd6eWwzR1E5MGRuMnBYTGtjVXg1V3NVUlVHcGtJN3JVTjNlODdYaTFHOENTeWNzaGg0THBvbDM3ZHFGWW5ZS0FCQ3p6ajI4cnMzM2ZRUjVwZGxJRXdjdVpERlhPd2doYXBxSCsya05mTi9Ic21YTEFBRGQ3a2V4ZnIwT1VwaXVPRVZSZ0Rkc01iNVRybG43dFR4dkI4Q1QwLzNPM3dBQVBPR1FZZE1MLzd3MjA4dzNYYzhYOXVWTCtTNzdyQTYrNUxLaVMwb3BTTlo1YUpEdjJWQ1NLSXFBeTgrazdVRmo0Yk1idjljNGpwRW1aUUNKelVaSmtsRHVCQVFxdzVMbGdML1FXREFodnZycXE4VmIzM3FXQW5Ud3dDVENjQ2QrRUFUd25RSE9kZ21LdXZWUHdZTlNORGt0QVNyaHBnREgwcVVEQXhDKzc5Y0tRamxWNk85Q0JOUnpIcHlacTVCU2ZadEhRc3lqZ0R5b3dNL1g3d1hnTDRZUmhxWFhmbDhuSkVEYkVVYitwS3pzZ2tRbWxWMGdLMDhKN2Z2TE14QUZWVVIwa0VmQzNGZi8vamlPa2VXVmtxajR1YVNFTENGK2ZkN0ZDd0ZMSnl5R0hndGFZM2YzM2FjQkFQN29qeDVFRUdpdDZQdVYvMU4xTXNUTWFPSlYwQTMzYWdCQXJDNmg4L0dzTU82cGNCeW5SalA0MUdzUU1JM0UvYStEQWhQOTROYzA0VjgzVFdwRzVxQ0ZiZmdZZVZDaGYzRklua1pxQWpHanNwbzU5R2RBejBhSVlNNzltVkM2Njdvby92SU1BSnBDREFvcnorY2I1alBOOUcwdEZFVlpwcDlsRk5iMi9ZRDU1MTJhSWZpeURpODBGbFNJVGRCQkNBSFhWQStrUUM3TEZNWWtxWGtWakNCR2pRWjE2VkZPbmJNWktzQjdHL01wZEJDLzVGOE9kK1VCRmZYZ1FaVm55ejgyWG82UlBLK1Z1dk9wbWxNZWZrNyt3dlF2b203Mkc1ZGY1OCsyREhTREJVRlFheUxZMzJPajJXek9XUUxOakd2UUM4WEhVQlFGZG4renpHSDJQQ3hab3E4LytVeWxJQW9wSWRtOW1xaXMrN0pINTF6emhZS2xFeFpEandYVnhMdDM2K1VBVkpxaEtIMlhVaFRJV0EwYzExcWNFaGp0RUtsUEkvRXUxZWZwQ3g2WVk3SXNxeGxUL2UxT2VWcGh2NytXaDJLNTV1YmFuMTlubWZvSEFFQ2llTUNnSGpybUduU1FnY2kzdVliVURRTG41bHB3cXNPRExPWjMvdlBadkNHRDZCTFBpcE5TUXVZVnBXczJkWkZDdDVGUWRiU1VCWGtudXAwT0dlQm52ZkdOQzFaSnY2QkNmTzIxMXdvQTJMTGxTK3JVVTc0REFKQXFwK1d2TWphdEJ5eGE1VGt1NGw2WitsY1VpS0tyQUFCNStCRTZua2ZTZUJTT2QrUGhRakJvaXVYSlJlYjNmbkNCbnBtWlFaTW9UT1UreTNNSjM1K2IwTk9mQURUSWxjV1RpdVlyMmVmb3B3SDlQSHUrUUViLy9tcnNPZDMzMC8vSGh4Q0djamh3SGYxOVRFd0l6TXlXenpyUGtSdDM0bVJ2UVYxckJwWk9XQXc5OWtzdnRrY2VlUVN2T0xrTVp4WUZkWmJKMldwSW51OVJ0NXFFR1h3eWwrU2piQlgvRldoZFR1Zmw5SU9PWjB2RmNrM010VFBYY0lPQ0dzRGNjRGVndzd4anRQWnk5U2c5ejBYSDErbWovandKNS8xK2JEN0dRYlBCc3hVRkRMb3ZUb1Y0aWlySG9KN0lPMjhxYUVaMG5hcm5tK000Vkt3TEFGRmtRdXdTZVZsSzF4cVJPT2RUcHl4NFE4SDkxbWYycTEvOXFtNXBkZXkzYUFyeWZKODY3YmlPUjl4U3U3S3FhY29FRXZoaTViN3ZJM2ExKzQwdkU4QzlBNE8rMlA1Y0F4NmxHeVE0bkdMdzVRdEdSMGZuOEZGenJVSG5HWlM0eEQ5ajl2Tng4aUFMeDN6VkdPWnZnL0pST0lYSXNndzdiNnJXQTZIY0VJRDZOUWVzNlNHVWdwVGFqc256dk9MUWQ2Mis0cFZmYVM3NGttT1dUbGdNUGZhYkpqYjQ0UjFuS2hPQzVnV2hSVjVRdWgvWHdvMUdWRXVRTjl1TnFFSGhUNk9SZ2NFZGRmcjlvb1A2aW5ITWw0Z1BES1ljL1pVYWd3eXIrUXBDK1hYNncrZURydHMvcmtIKzhVRW9pb0l5elo3NmhrOFZHVExQaVU2a2FVb2RnSGlmUEIzSXFJeHdzempsRy81cTgzNlJwLzIrWnNlOUQ1Mk9WNTF5SndCZHNxVEsxVFNUTEtrdE5HNEVQR1FyQkNtRldvc3EwNmVpOGUyckVaOVZDWEkvUE0rcmxSWHhLWmJUaGtHdXNmbFNGWUY2WlBDNUN1NGdLdElQN24weGRnRlBFK1ZSeUVIWDc4K3pOc3NYSk1teUd0K1ZSb2lUcEdwUTJHeFNkWXZ3cWpGT3o4eGc5S0VYNzlmMW95MmRzQmg2N0hkTi9MNzN2VS84KzMzdkt1Znp1bVl6VktIVmFzRXJqVG5QOVdCaUNVV1JrMmNEdHdKZFg4ZjJ2WEZ2b09FME1PR2U1Vi8wSjduUGw4QStYNk0vWStGekgzQ3Qvekx6QWZkN0ZlWkxMeldJNHhpN3Yybk9XWGxjWE5mRjh0UG41b1p3OElWc3pQWFROSzA2RnJIZUdJNFExTE1pQ0VQYW42UXBrbkxXOHp4QkduckpJOGZ2VnkwTUxBSWhCa0FSdTZJb2lLWHozaENPNjhEenl1SkxWUzA5SUhPSjlDYlRzTVFsWGxjVUJhS2JQdzBBU002NmxLN0RCWVUzS3hrVThlb1hWUDRDREJKb251dkIzWFNjMTNJQjVSU2wzL1BBeDJtT2VlYmJMb3FpS2srcTdxayt4bjVCN2krLzRxVlBuTHFZNzBDaDZ1Zm1zUnlVTUF3cE1oZkhIZDNndk1UKzhFaHdXRHBoTWZSWUZKcjRuZ2YvRUFEd3FsUHVySmZkbTNSRDF5T1ZrMmRWUW5iOGxiaHFBTWhxMDF6SHBRNlp6MllvR1F3eXZMaEc0NVJqdnV3dm5nbG5QbVBBang5RVVmcTd3dy95cUxpdUE2Q2FQYUpUcDlreFZlZDg3dnNGTkczZ2dSOHp1M0VmZXhLRzhFekN2WlRraGZENlF1TkJZS2hXUWNiYy90YkN3Q0p3c1hIOCtBZHZWeWIxMFBWY2lESW5WUUNRNWJJR2VacVQxMEo4UTFBYlVwOHRoc2l0OVBqTVN3WUtNZzhvekxmOHdYd3Z3SHlwbFlOU092dTlHZjE5SlF6bTQ4ZWNydkJyOHB4amMzNWVjc1RIYU03UmNscDBMQytWNnZhNmVQd2JtbkxFY1ViSnlyN3ZVN0JES1FYSExZdEFwMmZ3MnN0UFhEU3lZK21FeGRCalVkQUpneVJKeUJmcGVSV0ZrRGNYMUZLLzIrNVMvZGhJYTZRS2RpeHZJWkJsaFVPaFNIT2J4bjVBcGMxNElybDd3MVhJVE9hVmg2cjJ6L2NRbnozWTF6d29SVlNwcXJObGZ6WVpyeHdabE9mUW4wNDUzelc1aGlicTVMcGt1S1ZwV3FzWE5JalFNQStBbHNXVmJIMjk5dDBoUmtiTFp4TUM3VFpiOHNITUtJNkRibGNiZjQwZnJkdnZIZ21PUlNYRW0wL2RMbjc4L2JjckFJaUNhbW9VRUVqejBvTWhpNG8yaEFIQ2liTHplaFJDVHBkTytpeXJKZWxValZyMHoxYXJoV1czZmhZQTBFc1NFZ0luYzRpS3VLNkw4S3VmQWdCMHo3cTROczVCTGpBdWhEd3R0RDlpTjhnOTE1K0VOTWc5eURrMGR4SHlLaFordlBtN2xOTDB3QVlFOWRMWEtaVHNmc0t5WEN6dU9SZ2YwODk2ZWlaSHU2MnBXNkVLaER2V2F4Nzg5Y1orNThFY2xrNVlERDBXbFNZR2dCLzgrMnNCQUZzMmZaZTBJcmU2bTYxbVZlSy9MS0tzdHlST2tJcFNXL3NGL0tSYWlwWTNoMTc1emVzUUJBR3lVaVh4TmVTaUtJSWo1NWJqNzl1M2p3bzJmZC9IMmp0dUJBQ2tiN3RzM2dMTFFSNkpmZ3JSM3plWmY1Ny9OTWNNQ21iTUZ4emg1ekpOeEFWQTRXVUY0SWx2NnlMWElBaW9TK25JaUlNazFkdXRsc0QwbEo2bFdnOGVkOFZyRnBrR05sZzBGbVkvZHR4eHRob3ppMjEvdXg0dzhKYVVTMUUxbWtRRnNpeWxMeXNNUWdTWjZmdWdrTFhUOHF4ekkyZFpsbElxYUtzMWd0SFJhczJMVEdrM1ZhZlRRWmJvN1NBSXFIaFR2dk12QnBZNThhcnBPSTZKZS9KeW8zN0JOUzZ4UE05ck9id0cvY2xBZ3hLWStEWlZLVTlQSTFUVmttdm1wWC9tTzRvU3JJUVExT29xeXpNS2FxUnBoczd0UjF3QkFJdFZnQUZMSnl3T0FDdzZPbUd3YWN0TjRxRjczcWtBSUhUREtuZ3hWcVZmSm1tQ05DdmJKdlY2dFB5cjY3bHdJbjFyK1ZOVlZZampWQVdqWmpuZEpFa29kTXVYMDlYSGxkTzZWT1FkRWNLaG5nb1M5Y29MbzAyRkVLVGRzeXlidHlBei9CK2ZvdnNJeW1NYXJvdk9lUittWXdiMXB1Zy96NkRnaUJsTHQ5dWx2Qk1BTUVtdHkwOEw4ZFJ0cGZHWFM1cDF1T0g1OGc5dVdMUXpOY2VpRldJQTJQSFQxd01BWHFuK0JRNlZBYm1VOUpQbFdjVlZQYTlhaTAzd1BnNVYycUxqVklreWNXenlDWElLbUxodXZTdW5JeG45Y0ZqRmgxTlovZ2J6RlpseWR4am4yVW9wNUdYWDlqUk5hYTNyWnFPQjBSditIZ0RRUGYvaWVWMXZnMXJCOW5zd3pFOGo0b1dVRk1oSTBoVExUOVBIUHZuUHNrWkRUdjdUbzRkQ2VBMHNuYkFZZWd6RkcvZndwODVUWTZicVF3Z0tndlI2UGN6TTZBNDh5NVl0aForVzNSOG5Ja29uakovb1VvdC9rMG9JcUtwYmozQVFoSHA3ZEhTMEZyQXd2dWs0VGlqTHE5RnNvdFhTbW52bVRSOGsyakM2NzdQMDJkNktEOWFTMW5rUERGb042YnBQVUNBbVRWTkVvVGErR28xR3JXOXc4c2RWRnA3UjlMelJvQkFDNnA0bW5kK0FrdCs3WFVweXo2WEV5TXYwT2NJd1lETkhSWDgybkxoK0tHU0NZMUhUQ1lOakhyenhpcCtjOEs2L0JvRFdTSXVzNTVtWkdXclhwSE1VOVBFRjQ0bU80MUtVeXZRUEd4MGRyZVZYVkgzaHFpaVg3b2xtbW9qa3hDdjdlN3laMWx4aG10YW1jcDdxT2FocVE4cXFoTWwxM0txNUdrZmZMaU9ZczdPelJLT0VFR2lrcGZjakNDb096Vkl1QzlQYXluV1JseTltcDlPaFk0OWJlOXlpaXNBOVZ3d0ZuUkRiNUcvbTNtazUrai9IeE1JcmxwRzkxNzdnMS9CMkxJRzNZd25jSGVQUDZYTlQvNXJwLzNla3RmMytTdS9qL3NxRldYZnUrY1pRYUdJQU9PYlNiUUlBN3Z1cnM1WFJZRUVRWUpTeTNyeTZFVlRHLzVGVml6UWFqUnV5dHYrT0l5ZzlFYWkwWFpJa1NINnZ6RE80VFNKb21rYlpManBuYSs5QjF1bGdmT3EvQXdCRXEwbmVER0J1TzZuKzdSb0VVOFNDN3hhSVB2OXArbjNtdkEvcXNmMnJEeWtydW1Jc045ZHhhR2FpbVVnSTVwV1JaQlNmZXY1bTByN0RLcndHUTZHSk9UYjkvT3YwOEVkR1JoR0dFY0l3SXI1cFVpdk4veXhOa2FZSjBqUkJHQVFJZ3dDdTY5QlNzTDd2MDdieFdzUnhnaXpMME9sMDBPbDBFRFVpdUs1WC9uZnAzSG1lSThzelpIbEdFYlg1b21xOFlzUkU4V2kvQXNwNEdnQkFsZjg0OU5qaWNsMDhTV3ZlSzZXVG5XUWhrYVFwWko1RDVqa0tLWFhIeXRLZHFQOFhpT01lNHJqM0FuMDcrd2REbzRrTnhEYjU4WHMvaHI4ZStNZE9xWDM1OTk4RE1MZ2s3dGx4bWcrMHk5WHVYK2tEaGk4ekx2M2JvTFh0NzJoWXp4WHliaE41KzkyRmNOaTFMOGZRQ1RFQTNIL2tHd0FBcjNycVRxQmN1RkowRkFwcWZsZjVocWRucGl0anJBRGd6Ti9hS1MyMU5nQzBPeW44c3E3UDlUenF2OENuK3psMWVDYnZJcXNPNm04dFpicEpLbFg1bFhPWkkwQkE1M1JVZVI2M0hzVGdSYWFVamFZVVRhY3l6NUgwMVFoS0tlbllrOTY3YnVnOEQ3OEpobzVPV0ZqMFl5ZzE4WHZmKzE0QkFEZmNjSVA2VDAvY0FRRHdBeDlGVzJ1NU9Ja3hQYTFyMEJxTkppVzlDQ0VBVjd1WithS1BmQ1dnSFNkcExYOUkrd1lzbjVpZ1k0eHhKREM0eGFxVWtwb0s5djlkTWI4MnNpcGh5SVRTa3lSQm82R25sRHpQMmJyWEZaZCs1dWcvUjJIODNDd3ZXREVOTFZ5WC9OazhuM2pUQmNQbiszMHVHRW9oTmpqMzNIUEZqVGZlcUFEZ3BULzlObVRiNUEya0dCdlRHWEN0WmxWWFJvRUczNE9MdWMyMHBaUzBCa2V1Mk1MblJWRVpXa3djSE1lQktzK1pwaWtDc3lTRHF0TU1jODdvSHo4TlNUa1lWZDFnRWlmSTRySmszdmVoZkgzTW5oZGRCdCt2RzRSbUNPWTFrVVdCWGhtbzROVGw4ZVVQQWdEZThZNTNITkFDREZnNllYRUFZS2cxTVFDODg1M3ZKRTN6YjMvMlZnVUF2dWRUYTM3UDk2a1ppSUZ4U1FFQWltcnEzZjM2QzdIeGF6cjVabnFUaTdqTVZZNmlDSGxKQTl5Z1hsL25tSVNhVG9hUjBubWcram9abVpCdVVLZ3FxbGdvSkIxOS9qelBNYlYzQ2dBd3NYSUNaWStVTWxtL3pKZ3JDb3E4S1ZYNXZ0dXpzOVRJNUhWWGJEbmd0ZTRnREwwUWMveUh6M3haQU1DUEwzNjdvaUxUUEVmV0YyU1F6S3ZBS3lNTy9lY3ZJRDI5WEsxb2I2clhvQUF3T2pJQzE2bTZDNDArbzlmcGFFZm53dkNMVE1VRGd4bThsRCtKWStyY0tmT0t1bVI1VHNlSVNZRmxFM29GMUltZi9RM2xpZXhkZnhsRlJMSTB4ZDR5M1AwSGYvSHlnMUp3T1N5ZHNCaDZIRkNhMk9ET0Y3OEs2OWF0QXdBY2MrZlhxdHhiNDBPVkVxRXh3bjdmaHpLTFB0N3FRM3JsS2sxaGlKbHlqYm8weStCN3BSOVhWYXZXTDN2aTg1Z3BOV3R2VndHczFKZmhTVDlGVVdEbGwvNVJIK002NkhTcUJRMU5hWlZLQ3pMVTJ1MDI3UjhaR2FsSzhIZDhERDk4MmVrQWdIZjg1d1BmV0hzdU9PQWZ4dmJ0MjlXSlA3aTEycEhwQm9XbTdOOTFQV3JocEpSQzd6UXQ4SEVjMDVKbFM1Y3V4WGpwN1lpaUJ0R1BiREpEcDB4czM3Tm5ENDU0OFJFQWRBWVo1K0ZwcWptcnZLV0hkdmxpZEhzOTlGNWRkcWpjM3NZcnZ2ek5PZCtGV292THhjOXh3RVRXWGloWU9tRXg5RGpnTlRISExiZmNvdGJmL2hWNG5vZXdUSVQzUGIrV2NXWnlqNVBUSko1NjZpa0FPdjk0NlJKdGJJVlJSSUdTUEpkSW50R2VoeWVmZUFLcjF4MENvSzZ0aFJESXY2NHBoSHFEajk1WHBnQUFNN016T09ITjM3d0NBTVJyWjYyMi9SMXdVQWt4eDgwMzM2d0E0S1R2ZlFOK1VGWmVDSWVDR2xPbmRJZ1RCNzZQM2lxZEJybk8zVjRKZlJ2VTNIRFhybDBZTzFUbjlxNWF0WnBjYWZxZHFPclhUQ1hLaHRPdk8yaWYvZk1OU3ljc2hoNVdHL3lHMkxwMXF3S0FRdzg5RkJ2OHJ3TUEwcjBwMXJmL3Q2WUU3KzU4L05wcnIxVUFzSExsU3B5OC9Ec0FkSmJjWTNnekFMMjI5ZGxubjIyZnVZV0ZoWVdGaFlXRmhZV0ZoWVdGaFlXRmhZV0ZoWVdGaFlXRmhZV0ZoWVdGaFlXRmhZV0ZoWVdGaFlXRmhZV0ZoWVdGaFlXRmhZV0ZoWVdGaFlXRmhZV0ZoWVdGaFlXRmhZV0ZoWVdGaFlXRmhZV0ZoWVdGaGNYdmlQOFBTa3VwVVNjcUc5d0FBQUFBU1VWT1JLNUNZSUk9IiBpZD0iaW1hZ2VlYzJiYWIwNjAxIiB0cmFuc2Zvcm09InNjYWxlKDEgLTEpdHJhbnNsYXRlKDAgLTE0NCkiIHg9IjE0OSIgeT0iLTIxLjIiIHdpZHRoPSIxNzciIGhlaWdodD0iMTQ0Ii8+CiAgIDwvZz4KICAgPGcgaWQ9ImxpbmUyZF8zIj4KICAgIDxwYXRoIGQ9Ik0gMjQxLjk2Mzc3MiAxNTguMDI2MTU0IApMIDI0MS45NjM3NzIgMjkuMTczODQ2IAoiIGNsaXAtcGF0aD0idXJsKCNwNDUzOTdiYmNiOCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICMwMDAwMDA7IHN0cm9rZS13aWR0aDogMS41OyBzdHJva2UtbGluZWNhcDogc3F1YXJlIi8+CiAgIDwvZz4KICAgPGcgaWQ9ImxpbmUyZF80Ij4KICAgIDxwYXRoIGQ9Ik0gMTQ5LjI2MTUzOCA5Ni4xMDc4IApMIDMxNy4xMDQ2MTUgOTYuMTA3OCAKIiBjbGlwLXBhdGg9InVybCgjcDQ1Mzk3YmJjYjgpIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjMDAwMDAwOyBzdHJva2Utd2lkdGg6IDEuNTsgc3Ryb2tlLWxpbmVjYXA6IHNxdWFyZSIvPgogICA8L2c+CiAgIDxnIGlkPSJ0ZXh0XzQiPgogICAgPGcgaWQ9InBhdGNoXzUiPgogICAgIDxwYXRoIGQ9Ik0gMTQ5LjI2MTUzOCAxNjUuMTg0NjE1IApMIDE4MS42ODk2NjMgMTY1LjE4NDYxNSAKTCAxODEuNjg5NjYzIDE1My41NzA4NjUgCkwgMTQ5LjI2MTUzOCAxNTMuNTcwODY1IAp6CiIgc3R5bGU9ImZpbGw6ICNmZmZmZmY7IHN0cm9rZTogI2ZmZmZmZjsgc3Ryb2tlLWxpbmVqb2luOiBtaXRlciIvPgogICAgPC9nPgogICAgPCEtLSB4PTMyIC0tPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTQ5LjI2MTUzOCAxNjIuNjg4OTkpc2NhbGUoMC4xMiAtMC4xMikiPgogICAgIDxkZWZzPgogICAgICA8cGF0aCBpZD0iRGVqYVZ1U2Fucy03OCIgZD0iTSAzNTEzIDM1MDAgCkwgMjI0NyAxNzk3IApMIDM1NzggMCAKTCAyOTAwIDAgCkwgMTg4MSAxMzc1IApMIDg2MyAwIApMIDE4NCAwIApMIDE1NDQgMTgzMSAKTCAzMDAgMzUwMCAKTCA5NzggMzUwMCAKTCAxOTA2IDIyNTMgCkwgMjgzNCAzNTAwIApMIDM1MTMgMzUwMCAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgIDxwYXRoIGlkPSJEZWphVnVTYW5zLTMzIiBkPSJNIDI1OTcgMjUxNiAKUSAzMDUwIDI0MTkgMzMwNCAyMTEyIApRIDM1NTkgMTgwNiAzNTU5IDEzNTYgClEgMzU1OSA2NjYgMzA4NCAyODcgClEgMjYwOSAtOTEgMTczNCAtOTEgClEgMTQ0MSAtOTEgMTEzMCAtMzMgClEgODE5IDI1IDQ4OCAxNDEgCkwgNDg4IDc1MCAKUSA3NTAgNTk3IDEwNjIgNTE5IApRIDEzNzUgNDQxIDE3MTYgNDQxIApRIDIzMDkgNDQxIDI2MjAgNjc1IApRIDI5MzEgOTA5IDI5MzEgMTM1NiAKUSAyOTMxIDE3NjkgMjY0MiAyMDAxIApRIDIzNTMgMjIzNCAxODM4IDIyMzQgCkwgMTI5NCAyMjM0IApMIDEyOTQgMjc1MyAKTCAxODYzIDI3NTMgClEgMjMyOCAyNzUzIDI1NzUgMjkzOSAKUSAyODIyIDMxMjUgMjgyMiAzNDc1IApRIDI4MjIgMzgzNCAyNTY3IDQwMjYgClEgMjMxMyA0MjE5IDE4MzggNDIxOSAKUSAxNTc4IDQyMTkgMTI4MSA0MTYyIApRIDk4NCA0MTA2IDYyOCAzOTg4IApMIDYyOCA0NTUwIApRIDk4OCA0NjUwIDEzMDIgNDcwMCAKUSAxNjE2IDQ3NTAgMTg5NCA0NzUwIApRIDI2MTMgNDc1MCAzMDMxIDQ0MjMgClEgMzQ1MCA0MDk3IDM0NTAgMzU0MSAKUSAzNDUwIDMxNTMgMzIyOCAyODg2IApRIDMwMDYgMjYxOSAyNTk3IDI1MTYgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgIDwvZGVmcz4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLTc4Ii8+CiAgICAgPHVzZSB4bGluazpocmVmPSIjRGVqYVZ1U2Fucy0zZCIgeD0iNTkuMTc5Njg4Ii8+CiAgICAgPHVzZSB4bGluazpocmVmPSIjRGVqYVZ1U2Fucy0zMyIgeD0iMTQyLjk2ODc1Ii8+CiAgICAgPHVzZSB4bGluazpocmVmPSIjRGVqYVZ1U2Fucy0zMiIgeD0iMjA2LjU5MTc5NyIvPgogICAgPC9nPgogICA8L2c+CiAgPC9nPgogIDxnIGlkPSJheGVzXzMiPgogICA8ZyBjbGlwLXBhdGg9InVybCgjcDYwNGQ1MjRhYjUpIj4KICAgIDxpbWFnZSB4bGluazpocmVmPSJkYXRhOmltYWdlL3BuZztiYXNlNjQsCmlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFKWUFBQUN4Q0FZQUFBQW1xRVJzQUFBd0tVbEVRVlI0bk8xOWViZ2RSWjMyVzczM09lY3V1VmxJQWlZS2FJSUlnUW1MR0JBSEFjVnhjQUFkK1ZRR3htY2NVV1FnaUxLTWtYVlVpQ3dqZklvaWpINFJSUGFSaVNnRERxZ0JDYUFvdy9LRlFReVFuU1IzTzB0dlZmTkhkZjJxK3R4emxXZmszSHVUNmZkNWVPajByVk5kM1YzOTJ4ZWdSSWtTSlVxVUtGR2lSSWtTSlVxVUtGR2lSSWtTSlVxVUtGR2lSSWtTSlVxVUtGR2lSSWtTSlVxVUtGR2lSSWtTSlVxVUtGR2lSSWtTSlVxVW1KbzQ1NXh6eERubm5DT215anc3QTloa0wyQ2ljTjU1NTRuZGQ5OGRBUENMWDQzQ2NSd0FRSlpsY0QxWERoTEF5TWdJQU9DV2U1NWZoaTAzWFBySDVyM3R0dHNFQU15ZE94ZU15Y2ZaYURUZ3VuTE9WcXVGbDE1NkNRRHd1OS85RGwvKzhwZi9Wenh6YTdJWFVHTG54RTc5OVZ4ODhjWGlUVzk2RXdEZ3A3L2Noa3FsQWdDd0xQMDlSVkZFMUFVQTRqZ0dJQ2xOcTlVQ0FOejIzWDhzUEtlYmI3NVpBRUJmWHgvZXR1QnVBSURuZWZUM0pFbmcrejc5TzhzNEFLRFpiT0RoeDQ0QUFMejQ0b3Y0NGhlL3VOTSsvNTN1eGk2ODhFS3g5OTU3QXdEdXZuc2JzYnphTEU3SHJ1Y2lpUk1BUUxQWlJKcWxBQUNMV2JCdEd3QmcyemFHaG9ZQUFFSUkzUHp0enpNQXVPdXV1NFFhYzhDaUh5UExNZ0NTcFhJdU41RGpPQWpEVUY3TGRSRW44bHBabW1Ka2RCUUFrS1lwc2xUKzlvNGZMc1NGRjE2NFU3MkxraFdXNkFwMm1xL2tsbHR1RVhmZStTb0dCcWJEc3VSdFpSbEg2bThGQU5UWVhMajlUUUFBWXd5TmVnT0FwRmhKVGxFY3g0RWZCUExZdHBHbWtwSnQycndKdFdvTkFIREUyd2R3MUdHUHlqRytRMk9pWm9TRXkyUFBkWWxpVlNvVkNDRVZ4U1JKTUpwVExNZHhpRHB5enJGdDJ6WTg4L3p4T1BIRUUzZUtkN0xEMzhUSmYzK3RBQ0JmWk84MmVKNEhkL0NOQUlyc3llMXIwb3NFUVBKVEsyckJZcEp3QzBoMkJRQ09JWGZWVzRQRUZrLzl5S0hZZDhFUDZXOXBJc2ZiamcxbXk4ZkpPVWVRYjlEQURXaHNob3pZb21WWmNQTDFKRWxDc2wxeldHNytOeS82N2c3OWJrcFdXS0lyY0NaN0FmOFRYSGJaWlFJQVZ2OUdrUGJsT0E3Z09IQmRsNFIwMjNiQWVTNWM4enF4Sk1keDRQbGVQc2FtODJtYWdwTXduaUtveW5sNjNCNXMyYklGQURCbnpweUNqVXJacmx6WGhXM0w4WXd4T0k2bWpta3NxUm9YQXI0dHIyc3hDMHhvb3NTRnBLenFmbjY5NmdSeDN5OE9BZ0NjYzg0NU94ejEybUUyMW5ubm5TY0E0S1ZOdStEcC81SXZ6WFVpUkZFRUFMRDZCNEZVdmxTV2J3NGhCQkpYeWxoeEs0R1Zid0xmOTJIbkw5NDBOUUFnMW1sWkZ2TDlDU0U0bVJObVQ3c0J0dTNTUE1xVVlOc09mTVBrb0RaS0hDVzBSaUU0WEZlTzhWeVhObVVjeDZTWnFyR082K0s0djNnYUFMRFhYajhVanp6eUNBRHNNQWJXa2hXVzZBcDJpTjIvZlBseXNXWnRId0JKU2RTWEhrVVJhVm1WMlZMb3JWUXF4RTQ0RjBpU09COGJRNHhLemE1YXJaSndiZHMybG43eXoybStxMi84ZHdDUzhpa1dHVVV4MXE5ZkQwQzZiaTQrL1htNUZzYkE4ekcyYmNISldXRTlXMHJDdUpkZWpucTlUbk9xdGJtdUM1WWJhdU1vUXIyaHRGVDUvMXBmRGI0bnh3b0l2THpwWkFEQXFsV3I4TG5QZlc3S3Y3Y3B2Y0JycnJsR0FNQlRhN1JtRllZaHNZc29paEI1OG9VcmY1L3YrL0RVQ3hGQ2ExdU5CdnhBbnErSTJXUU9PT3ZVSTJnRE5adE4waGEvY2RQUHlVS2ZKREUyYk5nQUFMajJnbTN3OG10SnRwbkxXSTZEaUgwT2dOeEFpcVZ1Mzc0ZEZWd0pBR2hGRVNyNWRUM1BLN0RDVm41UFNTUzF4aUR3NGRkOHVxZG1VMzQ0RU1DLy9uZ2ZBTURwcDU4K1pkOWZ5UXBMZEFWVFZuaS81cHByaEtKVUpndHhISWVva05XL0hTRXErUmo1T3lFMCt6TXBWbGdKeVZmb1p5SE8rcVQwMlhIT2lXTFY2M1ZzMzc0ZGdLU0dsaTIvdXl6TmtPVDJxalJKSUhMQm5HY2NXYTUxaG1FSTduQmFyNkoyQXdNREdCcVNsS3dTWGtIcllZd1J4UkpDd011VkNOZFdHZ1BBY21yb09BNng3aWlLOElIM1BxVWVrcGlxVkd2S0xlcVNTeTRSQVBEN0RUTkpZd3Y4QUk2clRBaDJ3VkhNZXJjQkFNa3JFQUtqZFNsM1pXa0dMOStRUFQwMUJJRmtRMHMvZGl6NStCVExBb0N0VzdjU3kvbnUzVS9RK1RpS3NXblRSZ0RBTHJ2TXhzV25yNkcvOFZ3cmRGd1htWE11blZjYnk3WnQya0RidDIvSHhvMzVQTDNmSm9OdHJWYWpGOEV6RmM0bDROZmtadkk5anpad2txU0lvbForbk9CN3Q3NFJBTEJzMmJJcDlTNUxWbGlpSzVoeXJQRHA1eVZWcWRaQWRxYzBTOEZ5LzU5dDJ3VzJLS3J5NitWY2Z1bXRWaE9LRUFkaGdEQ1U3QzhNUTV6NTBXTUJGRjA5QUlnVjl2WDFFY3Z4WEpmbXRBS0w3RTlCRUpBQmxqRUx6RlBzeXNab0l2THpyREMvb2t3REF3TkVLVU1Xa0k4U1FrZ2ZwUUM1bDVqRllQczJyYS8rNUZseXJvVmZBbU9hSGl4Y3VQQTFQOXVKeEpRaW44ZWQrQ1VSR2xxVFlpZW13ellJZ2tLczA1bWZXZ0lBK0tkdjNRSkF5aURLTVZ5cFZGQ3JWUUVBU3ovMkFXS2hnSDdaV1pZWkJreUJiM3hER2lXejZoYmFIRm1XRVF1NzlvSlg2YmVXWlJVY3lZUE56d0RJRGJERy9BcW1KcmhwMHlaVWNSWGRuN29uSlFjeXh1aXpqK0lJZzQrZFR2T3ArL1BlZWhuaVhKNzg1YStPeE1jLy92RXA4ejVMVmxpaUs1Z1NPL3lZYTFjSkFLajExQkQ4N0NFQWdHVmJFRGtyRWtJVTdGVFZxcVJDNTV4NUJGR0VUWnMyNFZ0M1BZQTBUWWh0MVdwVkxQM1lCd0RJTDEyeFBNdXk2RGpMTWhMWW95Z2lOdmZONy84Q2FSNklsNlpwUVhpLzhMVG5BRWczanRJUU53MStncWhPR0laRXNVeTJ5Qmdybk4rMGFSTUFvTis5VmdjazFtcjA5NVJKeWxRZnJXUG9pWDhBQUNSeFFsUXYyUGVyTkhjVXRmRFRYN3dEQUxCMDZkSkpmNitUTG1OZGRORkY0cG5lWGdDQTZ6b1FSeDRGQUJBUDNBOGM5UjU1L0pON3lYQnBXUmF4THZORjlmZjM0L04vZXdJQWtQRVRBTEVOVTcyLzhqc3JkYWlNRURqMXc5THlicklaTVRRQWE1cmNUTWlnNVJxbU5UNGhCRGlUTDNhWDZkZGp0SFVtQU1sbTFaZ3N5d3FoME9wRGNCd0h1K3l5aTd6dnVFWi9WMnRzMldmVHhxczZWK243WnhiSm0wSUkra0E4ejhlaDB3NmpaM3JCQlJkTTZ1WXFXV0dKcm1EU0tkYWFOLzgxS25rSWkrQUNhWnJIaHg5eEpLeWN6YkNqM3dPUnM2WFlkV0RubWg3bm5LaUJtU2locUVLYXBnWHFvbEs3NGlnaSt4WmpERisvNVFHNUdLRTFSRGFRd1dLNWtPNjBZSTNPQkFBc3UrZ1pXSloyR1NuMk45SThBNjdMYU00UVZ3QUFvaXdHNDdsMjY1eEQ2MG5UbE5nZkQ4L1hpZ0xUd1lJVWJWcUo5Ym9zUmlLQ0RBbFNZVHNPUFlQOTk5Ly9OVC8vYm1IU050YUtGU3NFQUR3VWhwcHQ4SXcyaFpKZEZCU0x5REpPTHlGTjAwSjJEQ0JmaUdKbnJ1dlNjYjFleDFkdnVBZUFsTjhzSzVkMUxFWkdUdk02NnY4MGI1LzBTU0lGa0lkYU1UQmtrZnl0WWxYcXVxNHJyeHZIRWMxZnFWNk94UDQ4alZIbWh2WnJxWHRUYTIvODVpd3dOallQdHZYVTV6U2I5VHk0cmx6WVc1SUY5SHhQT3Vta1NXR0pKU3NzMFJWTUNzWDZ3aGUrSUI2cVNVSFR0bTBkYlptQUlqc0ZGeERJU1g0YlJUR3BDckVJWlV3MVdJd1FncWpiOGh0K1NEWWZEeDdpV051dWxQYkhMRDAzQkVobkZrSWczVEk5WDh1MjNBaGJIQlBpQ2xxTHpSM0VNYU8xbS81QnE4cHBUak1iMjF3empWVnVJVXRIdVVwcWE0MTVGclp0dzNXazVweG1LUTZzSEVUUCt0SkxMNTF3cWpVcEcydkJnZ1hZcUJiZzJPUVRkRjBQKzgyOUdBRHcyTnJ6aUIyYTdBL1E0YnYvL0Y5Vm5MMlhzcnpydjZ1WEZNY3hob2VIQVVpL21zbHlWT1JubXFZNC9sUFMzMmhaRm02OVJtcW9VUnpSbkg5OTJoQkdScVM4TXpMYWdEQ2lUTlZhTE11aThaenJIRVpBYi9va1NWQkxMNU5qN1BPSmpjZHhYSWhjQmVSRzZjMjFaU2ZRVWE2V1pjRldHOHV5WU9jczNiSXR3T0NXU3FSWXNHQUJKZ01sS3l6UkZVd0t4YnBITEVKdmZweWthU0hKUVgzcFM5NThCWDY5ZmhrQTRNOTJ2UlNQdjN3K0FNa2lGWVV6alkvcUMvVjluNFJlemprYWVXVG1oMDRiTW54OG1vWGVlazJ2cGloeGdxRmhtZWIxc2JOYVJpU3FoemlUZ3JiWGR4SFprYUlvd3RDUVhHTzFWb1BiWVg3THR1QXhTWm5TTkNXQnZTZTRFcTMwYkRtbjU1RnRUc0d5TEV5Zm5yUGZIa0ZyTkcxaUpxdFBrNVEwNnRSd0l5MWF2N0x6UytneUpwVDNYblhWVlFJQS91T0FKZWpwa1VaQi80V2c4TEFPbVBjbEFJRHJ1R1J0ZDEyM01NYVVzZDVWbGM1WjljS0NJQ0NaSmtrU0NpbmVPdlB1amh1TGM0NW12dmxhVVlScXJySTdyZ3ZtNUN5SEF4czJ5UWpTZDAxZnByWFlORU9Tdjh6RzRQbVU3Rm94TkYzeldtbWF3cWxjQ0FEbzdlbEZLNVZzM1BNODBpclZSMk9hVGRneit0NDU1MVFlSUVrU3VqN25ITUdtSytnNHltWElrWkVSck9vOUhNREVXdVJMVmxpaUs1aFFWdmpRUVZJVDlGMGRCUnEvSWFHVStJT2JseU9PdGFha3REamJ0c240OTlTbWk3RDREZjhFQURpaTUyejZxdFdYemprdkNNSm05dk5vYmlBRk5Mc3d0Y2krdnI1Q25xREtiRzRhTmlvaE5DdTJMWnRvZnQrTTVSZ2RsSUYrMjdZMTRRUjVZS0p6QWYwMkNBTWRGbU93Y2M0NXphbW9tNGxzWVFydi9xOENBSVo2UGdWMy9lWDVZamppNldmSzY2eTdEQ001MWVhQ2t5RHZlejRPRy8zNW1EbTdqUWtqalRmZWVLTjQ2S0JEQVNBM1Rtb0hzL21BbFh5MGVPUkx1anFNNnhhaUxZK2VKbCtnK1hMSWltM01BWUNzMTVzMmJjSzJtWGNEa0N5UHFzcFlGdHhjT3pORGdCM2ZSU1BQcm9uakdCczNTci9kRVRPK1NOcGNwVm9oMmFqVmFsSDFtRGlPd1RPcDNXWlpSaXpTRHk0bUo3UG5lYWkzNm5SZDB5SXZuNUYybEkrT2pzSzVUMjZtakdlSWMxYVlaU2xaNFczSGdaMkhVbHRNWnpLQkFmV0JNd0VBajdjZW03RFFtcElWbHVnS3VyNTdseTFiSmdCZzV2dGVvYnc3SWJUeDg4bitMeFNFY1dWZkVvSmozMjBYQVNnYUVEM1B3d2ZteXZPTzQraWlIemtyYWRldUZMWnUzWXJCd1VFQXdQQmNyU2tKSVloYStMNlBvQ29qSTVJNFFiMGhLUXJuSFAwdnZSK0F6Q3RVNDZ2VktsMjNYcThqam1JYWI5ck1WRkpHRUFURTBoVzFVbEFhYUdJVURWSFU2OFVYWDhUTXg3K2RQNHVVM0ZHdTQraklXc09JS29SQWM0WlVhc0FNZDFpYTRaYW52dzhBdU9TU1M3cjY3aWVkWXUwLytFOFRmczF3N2RFZHozUHdqdWNCWVBVVHE3SDZpZFhqVHpyK1R3dW90K3BqTnRYcmhlYk1zK2kveVViWGhmZTN2T1V0QUlBaGF6MTk2Vnp3d292UUFpc3poRzBkMnk1VHVoSTZOZ1gyZHZ1T0VFV2JqNXA3K3ZUcEpEOXQyN1lOaWVGQ29iRG5NQ1FLT0ZvZjFUYXlOS1ZySmtsQzFITjBkQlI5ZlRKRE93eEQycGhabGhYV1lJWmJOeUpwMmpEbFE1TnFGcW4zMkV5aU1BajFHRXNUSFRNMkszK1U4dnBtL0pZbDZIMTBHMTNmV0Z2bTN3Y0E4SVNuYjF6b29obWNjK3l6VmJLMjMweGJSaS9Oc213ODJmOUZxQi9zUHlRTEdIdWVWOWh3N1EvZjlKKzFvNmVuaC82L1cvYXB3dThBd0dwYWVKWjlTNTdQTXZJaE5wc05HdmZZcng3RGdYOTJJQURBc1IyeVAxWERLbnA3ZW1tdVRpOS90RGxhV0p0NTNHN29OWE1wMy94ZnR5RTJ3bnpVcG9sbW5rMXBZV21hVW1pUmZINzVoMllMMGhBRkJBWUdCam8rbTljYms4NEtTK3ljNkNyRldyNTh1WERjWndESWluZS9DdjRSQUxCZjYwTHdSRnUrSCsrUjVnTXJTYUNJbXVkWmNQTWtWY2R4ME1ONzZOaGtlNlpGSGloU3JDekxDakhtSnRUdnpOK2I5aVRMc3VEa2dYdUJDSWlpOVBmM2E2cktMQzI4eC9VeGEybS9ibnVJc21samF4OVR5SlIrM3oraUo3ZGpwVm1HK3JRejVQa2tvWXFDU1pxUTZjR3lMVktPaEJCVXNzbXhIYnh4UkZhUlhyNTh1ZWhtY1pHdWJxdzk5dGdERzIyWk5mejByMEo0WEQ2Y1h5KzVBUHNta3YweHNMYVhtOUgvYlZ1U2Y4L3pjSlI3amh6UGluSkZPMHhaWTNCd2tMUXdNdzdlZkdtbUJpY0xwc2xIMHR2Ymg1RlJhVkRsdG9QKy9uNEF3SUk5RjlDRzZPbnBvZWdDMy9iUmpKdTBobmFmbm9KSzNHZzBHcGcyYmRxNHo2NWRWa3lPa21uNjRpbkF5alhmTE1xSUZhcHhnTnp3eWhCcjJSYThQTG5Fc2l6d1ZINGdlK3l4eDdqWGZqMVFzc0lTWFVGWEtkYk1tVFB4NDlYeWl3NERDMHpGS1BrKy90T1NGR3UvK2lWNGUxTlNzaWQ2ejhOSDEvOGVnS1JTQlkwckY3ek4rbGdtSlRDRmNQWDNwNTU2aWtvOEhuend3WmczYng2TjdSUXNXSy9YTVJqTDZBYXo1b0lRZ2lqZkM3OS9BWHU5WlM4QWt1b01QWmpYczZyVkVCeHFqNW5UcER3dnZmUVNIbjMwVVhvMmh4OStPSTB4MTk5K2IrYmZuZnUvQWplM2J3V3RGbHhEMkRmWmFIUzREb0YyOGdxRXdyanZtVE5ub3B2b3lzWlNaUjFYL09abXc4UWc0T2JINFNOWDBjTjVKcXRRM2M5UEg3Z2R5RGVUV1V1MDNmOW5SbG1hdVlJS1p0MHB0YkZXcmx5Smd3NlNVWldMRnk4dWFKRnFqbXExaXJjbHB3SUFuc1AxZUhCWVJrYnMzZEpsdDE5NTVSV1NxM1pkUDU4MnY2eGxxbDFKNXJxZWVFSVdHRm05ZW5VaG5kL2N1R2E2V1B1NjFETm9IK3Y3Zm9FVlJvZkt6V1RaTnNLY1hUdU9ROFhoRWlNVmJmNnRLK2c5ZGFQOFpNa0tTM1FGWGFGWWlzeHV4WFpLb1JKQ0VHV3lQWS9Tcnp3aDZJdTY1ZWxicWRBVlk0ejhUVXVQUEtPZ0NTcDBPallwbCsvN0JlMVBGWWhOa2dTSEhISUlnTEVKcGNyQnZJaDlCb3R5YnJGMjdWcnd2VFhGbkQ5L1BnQ0FOMnl3QTFWQ0xJZjZUam5uSk9BLzhzZ2plUHp4eDJsdVJYbk0raE1tRlI3djN0UjhmdUFYN0ZKVWpmQWRaNk9paEgzRzZEa0dlMTZPNGFlbEZoazhkRG5jM0dXV29idnNzQ3NiUzJrN3JHRm9jSnhUenB5VlpWUThuMWtNZHNGbHFZNzFnNzM2cDE4RHNoRHQrT3g3VHkya3lnTkZINXRaVkkweFJwdm1zY2NlbytNRERqaWdJL3N4NWJBM3ZPRU5oZXNTVzFxY0FXS3NyT1k0RG0ybXh4NTdqRFpSKy94bVpJWlpQRVNOYlplN0FLQng2bG1vWG5kVi9xUVk4SEY1dnBZWEdGSFF3WVVadkFkbG5IM0c5VE5salAxQnJmUlBSY2tLUzNRRlhhRlk1SEtwUXhNZ1pueEZTYUxab3VOMHRFMlpkUlRraWZ6cnRtMWlvMWYrNUpzMGZ1blJmeTh2WTh4bHNoc3phN3BhcmVMaGh4OEdJSVZvWmRNeDJVKzc2NldUd3RDK2J2WHY1NTkvbnVhdlZxc2RmWDdtMnRxdmJhNFprRDVKTTJwanl3a2ZBeUNqSlR4SXl0dVhYVk9ZU3dVeThveERmRHhmNzdlTDEydGZ3K3VKcm13c0xiTm9QeFd6TEdSNWtmeFU2SVE4eTZoWnhRV25ZbWM4eTVBbGVSSkNrb0F4K1dBOTM0ZWZiN2d3REdFTEhjY09GRi9Rbm52dVNScVptVEZ0MnpZRjNOMS8vLzEwUEo3TWthWXB5VGptc1FraEJEWnYzanhtVHRPWnJINnYxbWIrdG4zOVVSUmgyemFabGpZOFBFd0JpNXp6UXNzNnBhRnV0aitNdWNHL0dIT09OYi9ZektibkN3QnZ1L2Z1anZmN2VxQmtoU1c2Z3E1UUxCWGljdEtpaitLbXAyUmdXZHlNZFlrZ0l3dllySU9WWlJuOU5rczhDQ0hkSDY3andEWVNRTldZSkVuUUU4cUlnaXRYZmd0TDMvY0pBUG9MM1hYWFhja291bTdkdWtLMnRLSmdZUmppM252dkJRQWNlK3l4RkFIUjd2Y3pxVTRuKzlMSXlBak5FNFpod1pabXNuZTFubDEzM1pYaS9zMzVGTXZic0dFRDVubzNBZ0Q2UW83TTUzVFB5ai9JT0lPVnluVjZ6RVdTanEzSmxWeVhVc2xOTTcyT2N6NUdZWGc5MFpXTnBVSkpCZ2NIMFd6SXpjR0ZRSHE0OUhlWlZXQk0xWmd4Um42dDREK3U2ZWpVNVp4VDFSaXptWUJ0MjdoeXBReDVPZXN2cEx5VkpBbU9QUEpJQU1BOTk5eERwYlpOVmhZRXVoYm95cFVyY2R4eHh3RW9sblZVMXdXS0djOW11ZStWSzFjYUdkMXVRU1pTTDNCZ1lJRFdZMlptbXh0TFpXN1BzcS9IeUloOGR0VnFoWElXWGNjQlFyMG02cGNZeFJDSldwZG1oYnpCQzZuOHV0dHJoc2YvL0wxeW9wdnZHUE9jLzFTVXJMQkVWOURWdU9jVksxYUlIeTM0TXdDNUhTdi8wbTNMSWxaa093NUZDRERHZ0grL2lvNExsZk5VU2NSV2k5S3hCZ1lHWUhIZHd4bVFWT3l6Ny84ay9VNVJnODJiTitPKysyVFFZUlJGVkc3UzdJQzZmZnQyc3UwY2M4d3g0NVkwTXYyQWl2Mlp2MldNVVFaMnZWNG43ZXZvbzQvR3JGbXphSXdaM3FNRTlRSCtkUUI1MTlXY3dnWkJnTUNvRWFGcTJwdDJPZ2dCWVprYWRaNHg5UFdZSWtZc3k2WlV1emlPc2YvTmQreVlZVE9OUm9OSXRlTTRDUExONUh0K0lUMUp3YklzV0NwYkdhQ055RGxIbXBQd2tkRlIya3oxUVIwN3JsSzRiSU5WbVJ1aVZxdmg0SU1QQmlBYkhha1gwdHZiUzJ0TTA1UTB1NWRmZmhsejVzeWh0WnRWa05YNERSczIwUGlCZ1FIYXJJN2pVR01tMjdicHVrcFRWRERsc3kxYnRtQis3WHNZTnJYa25JV09qbzZTUWRseEhKS1o3Ty9xTkxxQ3dSVU9uTCtUejlIdjBlbjdaczB0S2dYZUpaU3NzRVJYMEZXS1pXWU4rNzVQNlY5bUhEalFPZmJiWkdOUkZCVmJzK1hVeWJJdGlqaTFMRFptUGpNSm8xS3BFQVU2N0xERDhOeHpxdkt4WGJCeEtXRjh6Wm8xTkg1b2FJaStlck5xODVvMWE0Z0s5ZlgxVVdoTmxtVlVnbWpod29WVXhMWlNxZEI2ekVRUXRRN0xaYkJVMTlXTWtTRTRhclZJcUsvV2F0b0FuYldsbVpuKzFHL2x6d0lNd1dka0VrbDZYYW9UYkUrS2dOdlFOWFI5WXlrVzR0aE9ZVVBSeS8vaGpjVHloTGU5WUtVbW4xK1dvWmEvVE5meUMzRkhLaUxUc215Y2NzZ0hNVy9ldkVKbXRabWtvRGJFL1BuektTSjA0OGFOSkEvNXZrL21oc0hCUWJwK2xtVjQrbW5aV0dEUm9rVjBmbkJ3a01iN3ZrOGZVVjlmSDk3NjFyZlNzY2xHemZXWW5nQVZjcTJlUzlnVFFrWGhWQ3NWMHVhaUtDSnpnL05oWFN6Ri9wNlcyU3hoeEt4QmdOMmd6UTNremJoK3JLWC85VVRKQ2t0MEJWMmxXRW1TRk9xenExS0cxbysrUzZFeW5ITnFBNGU0Q2l2SUl6Z3RDN2JSTTRkSWZxcDlkVWtTVTcwQzEzRVFoaUZjMXkxUUxETzJYVUVJUVFGNnRWcU42cW12WDcrZUtKQzU5cDZlSGhMU2UzcDZpQzBIUVVEalhkY2xscmZMTHJzUWxXcXZUV0d1UjQxeFhSZGhHTUp4ZERIZU9JN2hRS1hDV2FRVitwNkhORmIzb3NXRjVDT2NFaWk4RlE1bFh6TXc4TnkrbGFRSldnMTVUNCsrOHlqZzludkdlWE4vT3JxNnNSaGpTTys2SGdEUWRGMUtFclZ0VGFvdHk0YnZCL214QlJab2E3U1pUS0Ewd1lRbDlEQmJMVzAyQ01JQS9mMzlCUlhjWklYdFRtV3pDWUV5QVVSUlJFWlVVMXVzVkNyRW9pdVZDb2FHaG1pTTh0dE5temFONWpFMVI5LzNDK3l2VTNjTXpqbjYrL3NSSXFDUHJGNnZveGJrL2tiam8rU2N3MmJhRUtwdVMzeUhVNkpFd2hOaW5XWWNYSnBwclhDODNNdlhDeVVyTE5FVmRKVml6Wmt6QjlQcnJ3SVkrNFdZeGtjbGdIcWVCNmVpdnpTVmg4OTVocFlrRXVCTWwzLzByQXI5OXV5L2xKbk43VDY5VG1sZU1qNWRVb3M0amtub25qVnJsdTdlYXRqREZLdFN4K3A4WDE4Zm5aODFhMWJCUnFUbVZOZFcvKzlrOUFVa1cyM2hiRmlqRitiWDhkQ0k1WDFXdkFwVUFGRlFEV0JsNnJYcCswcy9tVkVsYUl2YkVEZG83ZHFFK3ZlZlA3b0szVVJYTjlaOXYzc2F0aTgzaXMwcmhiOHBwN0xqMkxBcmN0ZFlMRExZUmxwd05vdE1zc3ZSMFJZcXZibnNoUUFWdjIxZTJ6YWFFSWpDWmxKZ1ROZUlTSktFcnVQN1Bwa0p6QlowQUlqTnRWK3JsL29BRmYyRG5SSmx6UTF0dm5CemJkV0taTzBNREdrZVpqUmFIeVd6UnFQUmdDT2tlY1QxWFBJaCtyNUhtem5OVW1TZnl0bmY5VVZEcUxMQ3EzVjNDeVVyTE5FVmRJVmlmZVVyWHhFQThLSTdURUtuNXdHV3lMOUd4c0Q4clFCazFFT1dzNUJXa2lBeGJGY21DNGtiOHJqUmFLQlNtUUZBRnJ4b2orWnNKLzJkS3MrWXFmUkpraENGTTB0U0FpallzWlN4dEQyeVZZMDNxWTV0MjRYU2xTYmJOdzNBbmRiSmpWWjZLa2l5MFdoQWRSL3pmUStabFZlK3FjZFVLOHR4SGJxbVl6dlV2RnljSHVoSUI4NnBHbUNTSlBqS1BQbWV6ajMzM05kZGt1OXV0UmtoeUNKdTJUWkZnUXBybE1vcUprbFM4TldaNVlLb3cycldnekNVOC9pK1QwWlJVNDVSTUtzTm02eEgvVnN1UzdOSTMvY0xmak16UEVaZEowMVR6Smd4ZzQ2MVVkWXF5RWxtMkV3bmkzaW5kcjdxNzVSdDA1UnlWUlJGdEFtbVQ1OWVrTTJTcGpJaUo3U0JPTTlJKzhzY2wrcGVXSlpObTlLeUdKaWxQb3JTUUZwaUIwUlhLSllpclk4KytxaFlzZnBIQUhMdFQ3R0VhTDVPZ25qL01hVGxOUnFOWXQ4Wm8vM0g5VCtWanEwc3l3cHNwajNmc04xZVpiTENUaFRMVEtWdnRWclUreGtBQlJTMldpMWllYTFXaTg3N3ZrL2pmZC9YamNvTjM2TjVyVCtFOXJ4SXovTm9QclZPQmRjMTJHbWk3ME4xbHBYRmdNZldtZWNjRkswTHdickNBaFc2YmlCbGlZeFJTdXNPYVUyZXE3cysvTjhmL1Jobm55Q2pOdnY3K3d2bUFqT0N0UHAzbndhUVY5ZTdTU2NOblBtWHA5QzEybi9YenFyTXpXZGF1Tlh4MnJWcjhjd3pzdXpTL1BuemFiMGJOMjZrM01LWFgzNlpXQ0huSEd2WHJxWDVWU0tyR2Zyc09FNkJIWGNxbjJTdVA2bkpxanJWK0dveWZ0cTJYV2h3YnQ3UHFIc21qV0ZLMHhVQ0xTVU9iTDBjU2Y2eCtyNFBOa0dGc2t0V1dLSXI2Q3JGcXRmcmhXaUY0U0VaK2hHR0lkbG9LcFVLdm5yN1hRQ0FzNDcvUUtGcmxtbkViSERkRUp5Ly8zZ0FRT0Q3bEV5ZzBCNlpxYWlSeWZKTUFmL1ZWMThsMzkrNmRldklwVk9yMWVqNmE5YXN3YTY3N2tySG1SR0FwOGF2VzdlTzFsNnRWc2x2YUtiVm02VXR6ZURCVHNWTmtpUkJGR2svcTZMd2FjKzVSQTBaWTRVWGFMcU8yT1l2QXdBYVVZUkdUbUg3Ky9vTVAydDNBLzI2dXJHZWZmWlpmUFFkYndjQWZPdStCOURNKy94NW5xZmI2eVpwUWJ2ckpDdlY2M1ZFdWFFMTQ1a2hIemtReWRqeFp1V1dUa21aU1pKUW5wNHBlMFZSUlBOczNyeVpOa3FyMWFKUzNxKzg4Z3JKUG1tYTB2aklhRXBnV1padXUydHNJRE5McHIxbVJMdTVaSkNkUnUxL3N5elRjVlJXZll3TXAzNnZObGF6MllTdk5NUXNReXZmV0NPMlRiRnNtL01xUE4xQ3lRcExkQVZkcFZpZi92U24yVGUvK1UwQkFLbjlLbVpNM3cxQVhnaGtIR0hVZEhtb3Y0VmhpRTl1bHBwWXM5bkVkM2JyR3pQRzFKcE1kbU1XQ0ZGSTA3UlFrRU5wZktheHROVnFGWElERmJ0c05wc0ZsNUhKV3RROFptT0RPSTRMN0oxc2N4M09tY2VGYXM3Zk9BaE9icGNLejlNNWk1MktoZ0RBUUhJZFd2bno4RHlQYkhDam82UFlsTFB1dHgvN3IxMlY0cnRlanB0Q2QxdTlBS1NNNWJvZXRZeXpreXFXSG5jc2dMRzFFOVMvSzVVSzVzNmRDMEJHYlo2MlBTK0JIV2RnVlMxUEFjVTRwOExMTVY2ZStWTE5jVE5tek1DR0RiSjluR2xjTlpNN3pWQWM4N296WnN6bytLTE5ZcndtekkvQ05BYXJUZU82THZ5dnYwUE9VWEdSbml2ekVTdUd6TlplT1ZEQmRpMEVlZjNXcEdXVENhZTN0M2Zjemgydk4wcFdXS0lyNkRyRlVvRjRmSXVnS0VqWDg4aFlDbjg3cnE1S05pTS9PdlhsTWJMam5OWHNJUUYvNXN5WmhYcFdwcVlIRkgxejdlNGROV1o0ZUxqamw5NWVMNnBUa29kNWZyemZ0aWVDcUVnQ2svS1o4ZTFxZmViY3J1dENmUEV2NURuYmhtdk0zZW42NXJNQW9ITTFRNTFwSHJWYUJjRy9tK2o2eGxKVzZqRnhRU2VjUU9lVHBtUnRjUndYa2xyRFhHYTVNaHpCV1UwWkFzd1k2NmhGcWszVDdqODBaUy9GRWt6NXlXUW43UnJrZURKTXA2aFUzL2NMR3BwcHphZFdkWWFHYVA2K3ZZTnMrOXptUmdWMFNXL24yc3NLeWFocTAzRFBCVHZKbU0vU0gxSEpDa3ZzME9nNnhWS3A0eDkveHdld1lwNk10blFDbnpLYm04MkdJUmdMcXFGbDI3cDdxZXYyNGFxS3RBdDl0dFZiK0pyYjArRGJZK1ZObG1mNklUdlZMMjJ2ZldWR2tKcE5PZFY1MDlXU0drM1RUVERHNkxwbVVraTdOdHpwZlBzOGFxeDdyU3o5R0VXUlp2V09UYzgwYXRrSWI1VFAyajdab2JBa1dBSS8rLytINWpOMk1ha1FFN0N4empqakRBWUFEei84c0tEd21NUW1ZMm1XWldqbXJKRHpESjZuYXhTbzdncENjQXI5R0ErbUJ0ZXArbDY3Sm1odU9NVSt0MjdkU244M1k2NTIyMjAzeXVyWmJiZmR5RDlvdHYzZHVuVXJ5Vm50ckV1aDNmelJhWjEvRE1FM3ZvclU4RGVxK1JyMVJzRThveHo3d1hkQ3BCL0tyeWs0dlk5dW8yU0ZKYnFDQ1dzMnZuWHJWdnl0TGVQR2I1eWp0YVBoNFJGaUZXRVlGRm1iY3Qzd0d5Q3NZbEcxOGVDNmJzR0FTYjJmRFYraE9ZL0pJbDk5OVZVNkh3UUJGVWs3OE1BRGlXSWRldWloSk9TLzlOSkxCWitqR3UvN2ZzZHJ0UWNlZGpMdWRvSkowYkxoSThEeWZFY1dSMkI1TUNDaUZ1bzU1VTg4RDcxelpBZU1Wck1KL0Q4NXBIRmM4dzllNS9YRXhNUlE1TGp6empzRklCL2tUVytVR3Q4NytZMWtWWFpzbTFqTEkvNm5pRVgxVjM2QU0rSXpBWXh0ZWRLdWVoZmpqN1F4MC9kOTBsQUhCd2UxcnpKTjhleXp6d0tRNFRIcVplKzc3NzVZdUhBaC9kWTBXeWpONnJubm5zTnZmL3RidXRiczJiTUJBSHZ0dFJmZGgyM2JsTTdmMDlORHY3VXNxMkFVN1JSaWJSN1RmU3ovTlJwNU1UdnBLVkRSdHhrNTl0TTBwV2hTcC84aGlQeTNlMy83K3hQMnZrdFdXS0lybURCV0NNaklBRUIrMGUrdkthMmtoLzR1SXcxeW4xZ1F3UE9sWGViTVpHbUJ0cmJicm9EaWw5N0ozOGdZSTJPdFdiZnIrZWVmcDlDWHZyNCs2cmN6Yjk2OGp2SDNhWnFTWFdyeDRzVlVhWG4xNnRVMHo0c3Z2a2hGUVJ6SG9ldTJGNU16cVZRbk8xWW5vK3pHL1E3QzdDZGxiK29vdG5YOXNUUXp4bXQyRzhmSFlIUGorNWhvVE9qR1VnKzR0N2NYVzNOam51ZDVCWWUwZW9Ebkp6TmhKV00zam1sOE5EZU91Wm5HazhQVWRTcVZDdFZpMkxKbEMybHpTNVlzb1dQVGlHcktaNHl4QWh0VlVhTzl2YjFZdFdvVnphbnFQc3lhTld0Y0dhb1Qyek1kekozYXZKajNFUnFoeTVKZDZvcCtwbW5sMmNOay9CcHVYZGx4SGQxQXlRcExkQVVUU3JGTWQ0SnBKN0pVMVJYSHdjSHBad0VBM09JZGJWRHQycFlwcUxlUGFROU5vZFI4dzErMnh4NTdZSjk5OWdFZ2hYU3pDbk1uZjJLN01WT043K3Zydzd2Zi9XNEFzaytpZ3VkNVJMMHFsY3E0elFmTXRMTS9kSi9UMzVOaDlOMXZrL05kK1Z1dExXWWNTU28xUko3cDJtTEpLUWNnK3ZXOVk2N1piVXlvVnFod3h4MTNpT0Y5WlBhT3lmNkNJTUFoUEc5UmF6eHN4blJIOS9ZK2h1MW9yekJqUm05dU40ckZxazNXMDlNejd1WWNUMnZyWkl4Vjk2TEdLQTIwVXFuUXhwbzJiVm9oQ2RhVUZUdFozRTI1TGpFS3I2bmY5Vi83SE5RcmpPT1lyaU9FZmdaREg5b0wrNzEzdndsL3p4TktzVjRMbmdqK0dRQ3cybkh4OTBPZm5PVFZkSWJibEJSUENJSEliMDNhT29iLzRhM28vZHF6OU8vMGxNVUFaSFk1ejNzUG9WSHY5Tk91WTFJMlZxUFJvRlQ2d1BmaDVHbjR0dU5RYzZGbW11SXE5MG9Bc2tDR3pYUlQ3OC94ejlOYzdVSnYrN0VDNTdxUXZoQzZGYThaWmdOb0t2R29leVc1bXVxTk92cCtld3dBbVpXODV5elpCeWNNUXdTeEZLQmJudDVnbkhPYVh3alJrY0syYTdTZGxCQTF2dEZvRUFVMEtaYmpPSWhQbFEybWV1cTljUExraXpSTkVVOVFkZVR4VUFydkpicUNTYUZZanVOZzMyRlp6MnJ0YmpjVmhPbFZ5dkdjSkRwcjE5SVp2Snh6WE8xZkJRQlltcHpWY2Y1T0ZNdE1JbTJYbVV5WlRNbEFydzV2SlpVOWptS3NHNUNWQ2Q4bnZvVEI3WU1BSkNXWlBuMzZtRG5iKzFhYkVSQ2RoUFB4N3NFMGE1aHVLa28vZTNBRzZybDNZdEN4TVA5UUdkRmdsbUJTdFNBbUdwUEdDanNaTVg5cDIwRHUrNUlkR0hJN2ttWERkclN0Uy9DeE5xdE8wUUhqaGFDTUYza3A2NkhLNjZlSmpsendYQTlwcm5IVldJMnF0eVJKaWl3YjJ3UzhuUzEzU3BaUTErdTBKdlZ2dFlHMi9hUVhXU1p0Z0dtbWkzOVlsb3E2bFhqNVlmbU1aaTRXWkNJdFdXR0puUXFUWW00QWdGV3JWc2thV25OWGtFVmVDSUZmNXJIYW5MbXcyUjh1eE9xNUhwYW1raDEyb2dUdERtc0ZreHFZOVIzTW1QU2ZpOHVvOUdJY0oyU2VPQ3E1RUo2bmFuNTVPblVzMUc0ZmM4NC9GRlhSYnJzeTE1NGtDZGJlM3ZtK2lkb2JWWk50UzErblhxOWoxMFB5aHB0TDlwaVVkenhwNWdhVlppWG02TEFWTUliSVVrdEtvWW00Zm9CY2NHS0YxWURqYTFWcG5sQWJyRk5rS0ZCTXJERGRKZTFRNTMzSHB4UjNvR2pRMVRIeU9zekhhL2xJSzhtWWVjeHIyYmI5Und1dnFmLy83bGF1UzVrekxSYU05NUdaQm1VdU9QN3ozcEdPNHlZS0pTc3MwUlZNR3NYNjRBYy9TQ0hMTDh6K0xnRGdsMTRWSXRXTkdwVUlLcmlBTUR6MlZQOEFQakltMlZJbmU1YkpidG9GZG5PTW9tU3J2YXVoSWdONHB0dmdBWklLQUVEOGRJelVsdFRMNi9OMTJoWVkyQUY2L2s3ck1hM3RwbERmS1Vvanl4Z1pPZVBVS0xUTFFDSGJZTkQ5aWN6a1ZTN3dWNWRPdkxYZHhLUmIzbDk0NFFYOGJCZTVPVElqbkVVMjBzNWJ4ZmsyMVhWaWxtN1NGSVlWT3QvSnRkS2V4MmYydEZGSWtnUS9qUzhGQUtUMXhFaWFLQmJlTURWUmhUUkpxWU5za2lad0g1VDMwWE40cldCQ01ZdVVtS245bmFJWDFNYXFWQ3A2azZVUmJXd0lVRUJma2lRNkZjeElMVk5WZlNZVEpTc3MwUlZNT3NVNjZhU1QySFhYWFNjQTRKSERuMEN0UnllbUtqTHZPSTRSdnF6N3hGaVdSVEZ0bllSYTB6alpycG1aVFNoalM3SWFubkd5UzdXams1MU0xckNLNk85cVRQekxCTzVocmw1akRsTkxIYzhGcGViWTgwVGdoUitvTm5VK0ZRTVdJcUVvQnNkMkVPVHRZa2JydWxiWFI2NTh4NlN5UVdBS2JDd0FPUFhVVXhrZ1RSQTM5OGpHMTRIdncxSGxwZHZhKzVLOEphRGxNTVBnU2lxNG9lcWI4cFk1Zm5Cd0VLSTNaMCt1UXl5SGMwSFg1QmJIbkJkazVqYXptRDR2dURiaU1wdlcwbXExVUJFaFhhZFRTUURUc3Q0ZXZBZ0FMOTVtcTF5U0FwdmptUU9XeTVYY2lSRzE1TVlPd3hEVzZqMlh2ZWFIM21XVXJMQkVWekFsS0paQ3E5VWkxbVlaR1R1V1pSRTF5TEtNdENYR0dMRkZzNCtOTW1hR1lVaTlidHI5ZzVUbzJXZ2dyY2hqMDBXVVpvWVZ6ZWhrYWhtSnM0SUwramNYbk5ibDdLNFRVOXRyT2lqVTYzVVN2Q3VWQ21Va3FiRkpValIrRXZ1M0xXbzNGOGNjYVNZcFZoUmxlTitQZ2t0ZnkzT2VDRXlwamZYS0s2L2c1SjRUQVFBM3ZlRjJnL3pybm9heDJVbkNzbEd0NWRWc2pFSm55ajkyVFc4TDV5ZTV2OC96Q2xxWTZkY3pHek9wRjl6dVExU0YxemJ1dmdHejE4c3VGZTRlcm83Z1RESktzMktzY3pFMTgxcnIvdFVDNTNuako4ZUc0OXFZL1g3ZDE4YzlaRE8yL2xqRzM5dU9YV2hPb0Q2K09JN29lQ3BvZ2laS1ZsaWlLNWhTRk92a2swOW1Eejc0b0N3dG1hWm81WUYyR2RmMm56Ukp5WTRqb3c0MEd3UGtGLzNQTmNsaW1HQzRKSlVGL3BmRnM4bTJaTlpyNk8vdlIraEp5aEZGRVRXNUJIUTJUSklrcU9YWCtmM3ZmNC8rM2ZvQkFQWEJPaFRKcUZTcXhIYURJQ2lVVTFLVUw0NWpyTDA5THhEaU9oQThaL1cyRFFpQmpmYzRxTDVMdW1JYWpRWmFyYnl3aDJPVFZoakhNV3hWQ2RBSVdUN3hpZ01tWFJNME1hVVdZMkxWcWxYaTVubFNReFFRU1BKd21sYXJSVjBYZ2lCRXJhWTZySWJJeE1jQXdDaVVVYWRJMVdxMWdvczhXUVBWTkIxRVVVUUcwaVNKcWFWd0ZxZGcrWFZHaGtiQUhsa0NBSmc5ZXpZV3pWOEVJUGZoR1ZxZUtuL1oyOU1MR0RYYzFKak5temRqMDcvcEdxUkJVS1ZqaFdidUh4d2RIY1h3c0pTZmVKYkJWMTB2WEkvZVdwWmxPUHI4M2Fma095eFpZWW11WUVxeFFoTkxsaXhoZDl4eGh3Q0FlL2IrU2NlRVZNWVltT2x2RXhiU0xLT29nRGpSUGpiQlJVZERwTy83NlBHbFVUYUtJNktNbVpOUnRieHAwL3ZSeU5ubzR0MFhhdzNSMW00aXovVW9jN3VkV3BsS2dBcUtqWk9ZMHQ0OHI1bzM4SVR1TjhRWVZJSEJlbDFIZ0pqZDBxelZDNmVNM2FvZFUzWmpBYnBvRytjQ1FTaFpnZURGRXR5cUgyS1NmUVNBMUI1MXFsU01JTWpmRG1PNDNKR1c2YytuK3MyYkZXa0MzOWZ6cFFrWkg3TXNwZXJQakRHS1pnMzhnRHdDcGttQW85aWpVTUhjWksxV1JKNkZPSW5oTXgrY2c0ekN0bTJVZnVRdW1UVmFyU2I1Sno5NnZ6ZGx6QXZ0S0ZsaGlhNWdTbE9zVDN6aUV3eVE1WS8rZmZIUDVFa0xSREY4enlmcUZWRzF3R0xKUmlvRG1TUTZRZ0JGU25Kd3NoUUE4TEMxWEpjQ1NoS0tiUmNDRkdjdW9DTWRraVRSYk5HMWtOYnlNcGVzR0RXcTdHN2I3d3NnaE00RzEydExZVnVTRmFwZTJiSlRsMFNhR25YbE9jZEhyejU0U2dyc0pxYjB4bEk0L3ZqajJRTVBQQ0FBNFBZOTc5RitRK2NVdEhJRGVaYXBYanRHREZXV2tWUFpORm0wb3hCTmF2aWF6WWpNelcrNVM1N2pTeUNZc1hHTkg0d1hsVXJaejF5dmh4dWhPOFBEZ0pQM0lIUnNlVDRNSFRRYmFveG03OGQvYWQ4cHY2bUFraFdXNkJKMkNJb0Z5QWFVQVBBUjd3VGM4aVpKUFpCOGIwemhEczR6Y0o1WFpHNGRoU01jV1NkeHRUaU5XTklxKzNJc0VUS2IybVJaQjBWTDhZaXRPbTdaRUVKcVltbVM2aDdXU0FyS0E0WGxXSjJqUmpubnNBYnpRaUJDcjdQVmFpSGpVaUZ3M1F3c3pUWEhmSTF4QXNTeGp0RTNEYmM3QW5hWWpYWEtLYWN3QUZpeFlvVkk1dVV0ZUR2a3pFVlJSSDY5ZDdGL0FTQ05rTzhVTjZDYTVybDV3c1l2cks4QUFBNWw1OUp2SGNjcHNFSlZxZGx4ZFJsdDEzRXBWTWFFNlNnSEFKRVhZQmFaTUh5SXV0dUdiZHNRZkRCZmN5K2dsRmNWRVFzQlFHNnN3ZTJEK0Q5WEhMaERzRUNGa2hXVzZBcDJxSytnSFhmZWVhZTRjNjhIQU9pTVg3TWI2V0Y4Qkc2dVpRVkJTTm9rb0Z1ak9MYU5KWkI5bURubitKbVFsQ3lPWWpKS2NzNnhidDA2QU1CZlY2N1dEY0ZkajY3bCtSNFl6MlBVT2FlaS9VbVNVUFhuTkUzeHUvc2IrZm1VMHBpM2J0UGxCSlJkakdjY3poTUxsZ0hBWDAxaGU5VjQyS0UzbG9ucnI3OWUvTnQrUDBkdlR5K085dk1jUU1OSzczbStUa3dWdkJDR29qWWZzeXlrcWVwWDJLU05sV1laQnUrUk5VWDMzMzkvek91Wmw4L3BrZUhXZFYzd05EY2ZwQ2sxK0U2U3BPQWRVSE1LSWVqaC8rYXVGb2FIWmRqTDMxd3o5VTBKcndVbEt5elJGZXd3d3ZzZmd6S20vdUFIUHhETnhmY0RrT1JZUlN2QTlCTWFsZmg0eGltWm90aFZUTTFRN0x6YWFEU0EzbnlNWVN5Tm1qRUZJM0l1aUJWbW5NTlNUY0FCNm5mRGpJb2UwYjYveGQ5OCtNTTdCYVZTMktsdXBoMTMzMzIzMkxENzdRQ2t0ZDVNRUtXOFB5UFp3WEZkOHQ5bG5GTngvdXlodDFPejhmNytmcnh6bjNmU25HcDhHcWNVb21QYk5qM1lPSTRORml3S3Fmcjd2bXVmbmZiNWw2eXdSRmV3MDM0eG5YRFpxbU1GQUhpdWl6Q1VPWHVXYlZFU2hPZDdjRlMydEJCbzFLVUdkOXFpbXdyUDZja0hueFFBVUsxVVllVWxMTE0wUlpRTDVyWmxrV3VwMld5U3hycDQvdUpsd2I3K0RxZmgvVS93djJwampZZXJILzhROWZoUld1Um45bnR0ZldlZWZFQnVNak4vOEcxejlxRTRxZjh0RzZrZEpTc3NVYUpFaVJJbFNwUW9VYUpFaVJJbFNwUW9VYUpFaVJJbFNwUW9VYUpFaVJJbFNwUW9VYUpFaVJJbFNwUW9VYUpFaVJJbFNwUW9VZUpQeFg4RGR4THQwSW1jNlI4QUFBQUFTVVZPUks1Q1lJST0iIGlkPSJpbWFnZWMwNzljODE3MmYiIHRyYW5zZm9ybT0ic2NhbGUoMSAtMSl0cmFuc2xhdGUoMCAtMTc3KSIgeD0iMzI2IiB5PSItNS4yIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE3NyIvPgogICA8L2c+CiAgIDxnIGlkPSJsaW5lMmRfNSI+CiAgICA8cGF0aCBkPSJNIDQyNS4zNjEyNzggMTczLjEwNDYxNSAKTCA0MjUuMzYxMjc4IDE0LjA5NTM4NSAKIiBjbGlwLXBhdGg9InVybCgjcDYwNGQ1MjRhYjUpIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjMDAwMDAwOyBzdHJva2Utd2lkdGg6IDEuNTsgc3Ryb2tlLWxpbmVjYXA6IHNxdWFyZSIvPgogICA8L2c+CiAgIDxnIGlkPSJsaW5lMmRfNiI+CiAgICA8cGF0aCBkPSJNIDMyNS45Mzg0NjIgODkuMjM2MjI4IApMIDQ3NS4yIDg5LjIzNjIyOCAKIiBjbGlwLXBhdGg9InVybCgjcDYwNGQ1MjRhYjUpIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjMDAwMDAwOyBzdHJva2Utd2lkdGg6IDEuNTsgc3Ryb2tlLWxpbmVjYXA6IHNxdWFyZSIvPgogICA8L2c+CiAgIDxnIGlkPSJ0ZXh0XzUiPgogICAgPGcgaWQ9InBhdGNoXzYiPgogICAgIDxwYXRoIGQ9Ik0gMzQwLjg2NDYxNSAyNS43MDkxMzUgCkwgMzQ3LjU1MDg2NSAyNS43MDkxMzUgCkwgMzQ3LjU1MDg2NSAxNC4wOTUzODUgCkwgMzQwLjg2NDYxNSAxNC4wOTUzODUgCnoKIiBzdHlsZT0iZmlsbDogI2ZmZmZmZjsgc3Ryb2tlOiAjZmZmZmZmOyBzdHJva2UtbGluZWpvaW46IG1pdGVyIi8+CiAgICA8L2c+CiAgICA8IS0tIEwgLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNDAuODY0NjE1IDIzLjIxMzUxKXNjYWxlKDAuMTIgLTAuMTIpIj4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLTRjIi8+CiAgICA8L2c+CiAgIDwvZz4KICAgPGcgaWQ9InRleHRfNiI+CiAgICA8ZyBpZD0icGF0Y2hfNyI+CiAgICAgPHBhdGggZD0iTSA0NTEuOTM1NzIxIDI1LjcwOTEzNSAKTCA0NjAuMjczODQ2IDI1LjcwOTEzNSAKTCA0NjAuMjczODQ2IDE0LjA5NTM4NSAKTCA0NTEuOTM1NzIxIDE0LjA5NTM4NSAKegoiIHN0eWxlPSJmaWxsOiAjZmZmZmZmOyBzdHJva2U6ICNmZmZmZmY7IHN0cm9rZS1saW5lam9pbjogbWl0ZXIiLz4KICAgIDwvZz4KICAgIDwhLS0gUiAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQ1MS45MzU3MjEgMjMuMjEzNTEpc2NhbGUoMC4xMiAtMC4xMikiPgogICAgIDx1c2UgeGxpbms6aHJlZj0iI0RlamFWdVNhbnMtNTIiLz4KICAgIDwvZz4KICAgPC9nPgogICA8ZyBpZD0idGV4dF83Ij4KICAgIDxnIGlkPSJwYXRjaF84Ij4KICAgICA8cGF0aCBkPSJNIDMyNS45Mzg0NjIgMTgxLjkzODQ2MiAKTCAzNTcuNTYyMjEyIDE4MS45Mzg0NjIgCkwgMzU3LjU2MjIxMiAxNzAuMzI0NzEyIApMIDMyNS45Mzg0NjIgMTcwLjMyNDcxMiAKegoiIHN0eWxlPSJmaWxsOiAjZmZmZmZmOyBzdHJva2U6ICNmZmZmZmY7IHN0cm9rZS1saW5lam9pbjogbWl0ZXIiLz4KICAgIDwvZz4KICAgIDwhLS0gej0xOCAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMyNS45Mzg0NjIgMTc5LjQ0MjgzNylzY2FsZSgwLjEyIC0wLjEyKSI+CiAgICAgPGRlZnM+CiAgICAgIDxwYXRoIGlkPSJEZWphVnVTYW5zLTdhIiBkPSJNIDM1MyAzNTAwIApMIDMwODQgMzUwMCAKTCAzMDg0IDI5NzUgCkwgOTIyIDQ1OSAKTCAzMDg0IDQ1OSAKTCAzMDg0IDAgCkwgMjc1IDAgCkwgMjc1IDUyNSAKTCAyNDM4IDMwNDEgCkwgMzUzIDMwNDEgCkwgMzUzIDM1MDAgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgICA8cGF0aCBpZD0iRGVqYVZ1U2Fucy0zOCIgZD0iTSAyMDM0IDIyMTYgClEgMTU4NCAyMjE2IDEzMjYgMTk3NSAKUSAxMDY5IDE3MzQgMTA2OSAxMzEzIApRIDEwNjkgODkxIDEzMjYgNjUwIApRIDE1ODQgNDA5IDIwMzQgNDA5IApRIDI0ODQgNDA5IDI3NDMgNjUxIApRIDMwMDMgODk0IDMwMDMgMTMxMyAKUSAzMDAzIDE3MzQgMjc0NSAxOTc1IApRIDI0ODggMjIxNiAyMDM0IDIyMTYgCnoKTSAxNDAzIDI0ODQgClEgOTk3IDI1ODQgNzcwIDI4NjIgClEgNTQ0IDMxNDEgNTQ0IDM1NDEgClEgNTQ0IDQxMDAgOTQyIDQ0MjUgClEgMTM0MSA0NzUwIDIwMzQgNDc1MCAKUSAyNzMxIDQ3NTAgMzEyOCA0NDI1IApRIDM1MjUgNDEwMCAzNTI1IDM1NDEgClEgMzUyNSAzMTQxIDMyOTggMjg2MiAKUSAzMDcyIDI1ODQgMjY2OSAyNDg0IApRIDMxMjUgMjM3OCAzMzc5IDIwNjggClEgMzYzNCAxNzU5IDM2MzQgMTMxMyAKUSAzNjM0IDYzNCAzMjIwIDI3MSAKUSAyODA2IC05MSAyMDM0IC05MSAKUSAxMjYzIC05MSA4NDggMjcxIApRIDQzNCA2MzQgNDM0IDEzMTMgClEgNDM0IDE3NTkgNjkwIDIwNjggClEgOTQ3IDIzNzggMTQwMyAyNDg0IAp6Ck0gMTE3MiAzNDgxIApRIDExNzIgMzExOSAxMzk4IDI5MTYgClEgMTYyNSAyNzEzIDIwMzQgMjcxMyAKUSAyNDQxIDI3MTMgMjY3MCAyOTE2IApRIDI5MDAgMzExOSAyOTAwIDM0ODEgClEgMjkwMCAzODQ0IDI2NzAgNDA0NyAKUSAyNDQxIDQyNTAgMjAzNCA0MjUwIApRIDE2MjUgNDI1MCAxMzk4IDQwNDcgClEgMTE3MiAzODQ0IDExNzIgMzQ4MSAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPC9kZWZzPgogICAgIDx1c2UgeGxpbms6aHJlZj0iI0RlamFWdVNhbnMtN2EiLz4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLTNkIiB4PSI1Mi40OTAyMzQiLz4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLTMxIiB4PSIxMzYuMjc5Mjk3Ii8+CiAgICAgPHVzZSB4bGluazpocmVmPSIjRGVqYVZ1U2Fucy0zOCIgeD0iMTk5LjkwMjM0NCIvPgogICAgPC9nPgogICA8L2c+CiAgPC9nPgogIDxnIGlkPSJheGVzXzQiLz4KIDwvZz4KIDxkZWZzPgogIDxjbGlwUGF0aCBpZD0icDdlMWZmNzY0YzAiPgogICA8cmVjdCB4PSIwIiB5PSIyMi4wMTUzODUiIHdpZHRoPSIxNDkuMjYxNTM4IiBoZWlnaHQ9IjE0My4xNjkyMzEiLz4KICA8L2NsaXBQYXRoPgogIDxjbGlwUGF0aCBpZD0icDQ1Mzk3YmJjYjgiPgogICA8cmVjdCB4PSIxNDkuMjYxNTM4IiB5PSIyMi4wMTUzODUiIHdpZHRoPSIxNzYuNjc2OTIzIiBoZWlnaHQ9IjE0My4xNjkyMzEiLz4KICA8L2NsaXBQYXRoPgogIDxjbGlwUGF0aCBpZD0icDYwNGQ1MjRhYjUiPgogICA8cmVjdCB4PSIzMjUuOTM4NDYyIiB5PSI1LjI2MTUzOCIgd2lkdGg9IjE0OS4yNjE1MzgiIGhlaWdodD0iMTc2LjY3NjkyMyIvPgogIDwvY2xpcFBhdGg+CiA8L2RlZnM+Cjwvc3ZnPgo=" alt="image"/>
+      </div>
+  </div>
+  <div class="pure-u-1 pure-u-md-1-3 raise">
+    <p class="elem-warn">No image provided to fit in NiftiLabelsMasker. Plotting ROIs of label image on the MNI152Template for reporting.</p>
+    <p class="elem-desc">This reports shows the regions defined by the labels of the mask.</p>
+    <p class="elem-desc">The masker has <b>300</b> different non-overlapping regions.</p>
+    <p></p>
+    <p></p>
+    <details>
+      <summary class="pure-button">Regions summary</summary>
+      <table class="pure-table">
+        <thead>
+          <tr>
+            <th>label value</th>
+            <th>size (in mm^3)</th>
+            <th>relative size (in %)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-column=label value>1</td>
+            <td data-column=size (in mm^3)>3112</td>
+            <td data-column=relative size (in %)>0.29</td>
+          </tr>
+          <tr>
+            <td data-column=label value>2</td>
+            <td data-column=size (in mm^3)>4088</td>
+            <td data-column=relative size (in %)>0.39</td>
+          </tr>
+          <tr>
+            <td data-column=label value>3</td>
+            <td data-column=size (in mm^3)>3352</td>
+            <td data-column=relative size (in %)>0.32</td>
+          </tr>
+          <tr>
+            <td data-column=label value>4</td>
+            <td data-column=size (in mm^3)>3248</td>
+            <td data-column=relative size (in %)>0.31</td>
+          </tr>
+          <tr>
+            <td data-column=label value>5</td>
+            <td data-column=size (in mm^3)>2648</td>
+            <td data-column=relative size (in %)>0.25</td>
+          </tr>
+          <tr>
+            <td data-column=label value>6</td>
+            <td data-column=size (in mm^3)>3880</td>
+            <td data-column=relative size (in %)>0.37</td>
+          </tr>
+          <tr>
+            <td data-column=label value>7</td>
+            <td data-column=size (in mm^3)>928</td>
+            <td data-column=relative size (in %)>0.09</td>
+          </tr>
+          <tr>
+            <td data-column=label value>8</td>
+            <td data-column=size (in mm^3)>3568</td>
+            <td data-column=relative size (in %)>0.34</td>
+          </tr>
+          <tr>
+            <td data-column=label value>9</td>
+            <td data-column=size (in mm^3)>2184</td>
+            <td data-column=relative size (in %)>0.21</td>
+          </tr>
+          <tr>
+            <td data-column=label value>10</td>
+            <td data-column=size (in mm^3)>2352</td>
+            <td data-column=relative size (in %)>0.22</td>
+          </tr>
+          <tr>
+            <td data-column=label value>11</td>
+            <td data-column=size (in mm^3)>4656</td>
+            <td data-column=relative size (in %)>0.44</td>
+          </tr>
+          <tr>
+            <td data-column=label value>12</td>
+            <td data-column=size (in mm^3)>2128</td>
+            <td data-column=relative size (in %)>0.2</td>
+          </tr>
+          <tr>
+            <td data-column=label value>13</td>
+            <td data-column=size (in mm^3)>3328</td>
+            <td data-column=relative size (in %)>0.32</td>
+          </tr>
+          <tr>
+            <td data-column=label value>14</td>
+            <td data-column=size (in mm^3)>5776</td>
+            <td data-column=relative size (in %)>0.55</td>
+          </tr>
+          <tr>
+            <td data-column=label value>15</td>
+            <td data-column=size (in mm^3)>5848</td>
+            <td data-column=relative size (in %)>0.55</td>
+          </tr>
+          <tr>
+            <td data-column=label value>16</td>
+            <td data-column=size (in mm^3)>4608</td>
+            <td data-column=relative size (in %)>0.44</td>
+          </tr>
+          <tr>
+            <td data-column=label value>17</td>
+            <td data-column=size (in mm^3)>2536</td>
+            <td data-column=relative size (in %)>0.24</td>
+          </tr>
+          <tr>
+            <td data-column=label value>18</td>
+            <td data-column=size (in mm^3)>4456</td>
+            <td data-column=relative size (in %)>0.42</td>
+          </tr>
+          <tr>
+            <td data-column=label value>19</td>
+            <td data-column=size (in mm^3)>5584</td>
+            <td data-column=relative size (in %)>0.53</td>
+          </tr>
+          <tr>
+            <td data-column=label value>20</td>
+            <td data-column=size (in mm^3)>3416</td>
+            <td data-column=relative size (in %)>0.32</td>
+          </tr>
+          <tr>
+            <td data-column=label value>21</td>
+            <td data-column=size (in mm^3)>3288</td>
+            <td data-column=relative size (in %)>0.31</td>
+          </tr>
+          <tr>
+            <td data-column=label value>22</td>
+            <td data-column=size (in mm^3)>3480</td>
+            <td data-column=relative size (in %)>0.33</td>
+          </tr>
+          <tr>
+            <td data-column=label value>23</td>
+            <td data-column=size (in mm^3)>3424</td>
+            <td data-column=relative size (in %)>0.32</td>
+          </tr>
+          <tr>
+            <td data-column=label value>24</td>
+            <td data-column=size (in mm^3)>1304</td>
+            <td data-column=relative size (in %)>0.12</td>
+          </tr>
+          <tr>
+            <td data-column=label value>25</td>
+            <td data-column=size (in mm^3)>3408</td>
+            <td data-column=relative size (in %)>0.32</td>
+          </tr>
+          <tr>
+            <td data-column=label value>26</td>
+            <td data-column=size (in mm^3)>4784</td>
+            <td data-column=relative size (in %)>0.45</td>
+          </tr>
+          <tr>
+            <td data-column=label value>27</td>
+            <td data-column=size (in mm^3)>1416</td>
+            <td data-column=relative size (in %)>0.13</td>
+          </tr>
+          <tr>
+            <td data-column=label value>28</td>
+            <td data-column=size (in mm^3)>2056</td>
+            <td data-column=relative size (in %)>0.19</td>
+          </tr>
+          <tr>
+            <td data-column=label value>29</td>
+            <td data-column=size (in mm^3)>1776</td>
+            <td data-column=relative size (in %)>0.17</td>
+          </tr>
+          <tr>
+            <td data-column=label value>30</td>
+            <td data-column=size (in mm^3)>3352</td>
+            <td data-column=relative size (in %)>0.32</td>
+          </tr>
+          <tr>
+            <td data-column=label value>31</td>
+            <td data-column=size (in mm^3)>2512</td>
+            <td data-column=relative size (in %)>0.24</td>
+          </tr>
+          <tr>
+            <td data-column=label value>32</td>
+            <td data-column=size (in mm^3)>2008</td>
+            <td data-column=relative size (in %)>0.19</td>
+          </tr>
+          <tr>
+            <td data-column=label value>33</td>
+            <td data-column=size (in mm^3)>1792</td>
+            <td data-column=relative size (in %)>0.17</td>
+          </tr>
+          <tr>
+            <td data-column=label value>34</td>
+            <td data-column=size (in mm^3)>4864</td>
+            <td data-column=relative size (in %)>0.46</td>
+          </tr>
+          <tr>
+            <td data-column=label value>35</td>
+            <td data-column=size (in mm^3)>4016</td>
+            <td data-column=relative size (in %)>0.38</td>
+          </tr>
+          <tr>
+            <td data-column=label value>36</td>
+            <td data-column=size (in mm^3)>2464</td>
+            <td data-column=relative size (in %)>0.23</td>
+          </tr>
+          <tr>
+            <td data-column=label value>37</td>
+            <td data-column=size (in mm^3)>1264</td>
+            <td data-column=relative size (in %)>0.12</td>
+          </tr>
+          <tr>
+            <td data-column=label value>38</td>
+            <td data-column=size (in mm^3)>3144</td>
+            <td data-column=relative size (in %)>0.3</td>
+          </tr>
+          <tr>
+            <td data-column=label value>39</td>
+            <td data-column=size (in mm^3)>1832</td>
+            <td data-column=relative size (in %)>0.17</td>
+          </tr>
+          <tr>
+            <td data-column=label value>40</td>
+            <td data-column=size (in mm^3)>3424</td>
+            <td data-column=relative size (in %)>0.32</td>
+          </tr>
+          <tr>
+            <td data-column=label value>41</td>
+            <td data-column=size (in mm^3)>2288</td>
+            <td data-column=relative size (in %)>0.22</td>
+          </tr>
+          <tr>
+            <td data-column=label value>42</td>
+            <td data-column=size (in mm^3)>1680</td>
+            <td data-column=relative size (in %)>0.16</td>
+          </tr>
+          <tr>
+            <td data-column=label value>43</td>
+            <td data-column=size (in mm^3)>3752</td>
+            <td data-column=relative size (in %)>0.36</td>
+          </tr>
+          <tr>
+            <td data-column=label value>44</td>
+            <td data-column=size (in mm^3)>2496</td>
+            <td data-column=relative size (in %)>0.24</td>
+          </tr>
+          <tr>
+            <td data-column=label value>45</td>
+            <td data-column=size (in mm^3)>3008</td>
+            <td data-column=relative size (in %)>0.28</td>
+          </tr>
+          <tr>
+            <td data-column=label value>46</td>
+            <td data-column=size (in mm^3)>2080</td>
+            <td data-column=relative size (in %)>0.2</td>
+          </tr>
+          <tr>
+            <td data-column=label value>47</td>
+            <td data-column=size (in mm^3)>2736</td>
+            <td data-column=relative size (in %)>0.26</td>
+          </tr>
+          <tr>
+            <td data-column=label value>48</td>
+            <td data-column=size (in mm^3)>3608</td>
+            <td data-column=relative size (in %)>0.34</td>
+          </tr>
+          <tr>
+            <td data-column=label value>49</td>
+            <td data-column=size (in mm^3)>2880</td>
+            <td data-column=relative size (in %)>0.27</td>
+          </tr>
+          <tr>
+            <td data-column=label value>50</td>
+            <td data-column=size (in mm^3)>3992</td>
+            <td data-column=relative size (in %)>0.38</td>
+          </tr>
+          <tr>
+            <td data-column=label value>51</td>
+            <td data-column=size (in mm^3)>2856</td>
+            <td data-column=relative size (in %)>0.27</td>
+          </tr>
+          <tr>
+            <td data-column=label value>52</td>
+            <td data-column=size (in mm^3)>2232</td>
+            <td data-column=relative size (in %)>0.21</td>
+          </tr>
+          <tr>
+            <td data-column=label value>53</td>
+            <td data-column=size (in mm^3)>1880</td>
+            <td data-column=relative size (in %)>0.18</td>
+          </tr>
+          <tr>
+            <td data-column=label value>54</td>
+            <td data-column=size (in mm^3)>6104</td>
+            <td data-column=relative size (in %)>0.58</td>
+          </tr>
+          <tr>
+            <td data-column=label value>55</td>
+            <td data-column=size (in mm^3)>5000</td>
+            <td data-column=relative size (in %)>0.47</td>
+          </tr>
+          <tr>
+            <td data-column=label value>56</td>
+            <td data-column=size (in mm^3)>3600</td>
+            <td data-column=relative size (in %)>0.34</td>
+          </tr>
+          <tr>
+            <td data-column=label value>57</td>
+            <td data-column=size (in mm^3)>3144</td>
+            <td data-column=relative size (in %)>0.3</td>
+          </tr>
+          <tr>
+            <td data-column=label value>58</td>
+            <td data-column=size (in mm^3)>3536</td>
+            <td data-column=relative size (in %)>0.33</td>
+          </tr>
+          <tr>
+            <td data-column=label value>59</td>
+            <td data-column=size (in mm^3)>2528</td>
+            <td data-column=relative size (in %)>0.24</td>
+          </tr>
+          <tr>
+            <td data-column=label value>60</td>
+            <td data-column=size (in mm^3)>1256</td>
+            <td data-column=relative size (in %)>0.12</td>
+          </tr>
+          <tr>
+            <td data-column=label value>61</td>
+            <td data-column=size (in mm^3)>3760</td>
+            <td data-column=relative size (in %)>0.36</td>
+          </tr>
+          <tr>
+            <td data-column=label value>62</td>
+            <td data-column=size (in mm^3)>3072</td>
+            <td data-column=relative size (in %)>0.29</td>
+          </tr>
+          <tr>
+            <td data-column=label value>63</td>
+            <td data-column=size (in mm^3)>4280</td>
+            <td data-column=relative size (in %)>0.41</td>
+          </tr>
+          <tr>
+            <td data-column=label value>64</td>
+            <td data-column=size (in mm^3)>2160</td>
+            <td data-column=relative size (in %)>0.2</td>
+          </tr>
+          <tr>
+            <td data-column=label value>65</td>
+            <td data-column=size (in mm^3)>4080</td>
+            <td data-column=relative size (in %)>0.39</td>
+          </tr>
+          <tr>
+            <td data-column=label value>66</td>
+            <td data-column=size (in mm^3)>1952</td>
+            <td data-column=relative size (in %)>0.18</td>
+          </tr>
+          <tr>
+            <td data-column=label value>67</td>
+            <td data-column=size (in mm^3)>5336</td>
+            <td data-column=relative size (in %)>0.51</td>
+          </tr>
+          <tr>
+            <td data-column=label value>68</td>
+            <td data-column=size (in mm^3)>3304</td>
+            <td data-column=relative size (in %)>0.31</td>
+          </tr>
+          <tr>
+            <td data-column=label value>69</td>
+            <td data-column=size (in mm^3)>2328</td>
+            <td data-column=relative size (in %)>0.22</td>
+          </tr>
+          <tr>
+            <td data-column=label value>70</td>
+            <td data-column=size (in mm^3)>2392</td>
+            <td data-column=relative size (in %)>0.23</td>
+          </tr>
+          <tr>
+            <td data-column=label value>71</td>
+            <td data-column=size (in mm^3)>3272</td>
+            <td data-column=relative size (in %)>0.31</td>
+          </tr>
+          <tr>
+            <td data-column=label value>72</td>
+            <td data-column=size (in mm^3)>3240</td>
+            <td data-column=relative size (in %)>0.31</td>
+          </tr>
+          <tr>
+            <td data-column=label value>73</td>
+            <td data-column=size (in mm^3)>2912</td>
+            <td data-column=relative size (in %)>0.28</td>
+          </tr>
+          <tr>
+            <td data-column=label value>74</td>
+            <td data-column=size (in mm^3)>5840</td>
+            <td data-column=relative size (in %)>0.55</td>
+          </tr>
+          <tr>
+            <td data-column=label value>75</td>
+            <td data-column=size (in mm^3)>1760</td>
+            <td data-column=relative size (in %)>0.17</td>
+          </tr>
+          <tr>
+            <td data-column=label value>76</td>
+            <td data-column=size (in mm^3)>2120</td>
+            <td data-column=relative size (in %)>0.2</td>
+          </tr>
+          <tr>
+            <td data-column=label value>77</td>
+            <td data-column=size (in mm^3)>1840</td>
+            <td data-column=relative size (in %)>0.17</td>
+          </tr>
+          <tr>
+            <td data-column=label value>78</td>
+            <td data-column=size (in mm^3)>1584</td>
+            <td data-column=relative size (in %)>0.15</td>
+          </tr>
+          <tr>
+            <td data-column=label value>79</td>
+            <td data-column=size (in mm^3)>2448</td>
+            <td data-column=relative size (in %)>0.23</td>
+          </tr>
+          <tr>
+            <td data-column=label value>80</td>
+            <td data-column=size (in mm^3)>4792</td>
+            <td data-column=relative size (in %)>0.45</td>
+          </tr>
+          <tr>
+            <td data-column=label value>81</td>
+            <td data-column=size (in mm^3)>7248</td>
+            <td data-column=relative size (in %)>0.69</td>
+          </tr>
+          <tr>
+            <td data-column=label value>82</td>
+            <td data-column=size (in mm^3)>6040</td>
+            <td data-column=relative size (in %)>0.57</td>
+          </tr>
+          <tr>
+            <td data-column=label value>83</td>
+            <td data-column=size (in mm^3)>3912</td>
+            <td data-column=relative size (in %)>0.37</td>
+          </tr>
+          <tr>
+            <td data-column=label value>84</td>
+            <td data-column=size (in mm^3)>2480</td>
+            <td data-column=relative size (in %)>0.23</td>
+          </tr>
+          <tr>
+            <td data-column=label value>85</td>
+            <td data-column=size (in mm^3)>2200</td>
+            <td data-column=relative size (in %)>0.21</td>
+          </tr>
+          <tr>
+            <td data-column=label value>86</td>
+            <td data-column=size (in mm^3)>4240</td>
+            <td data-column=relative size (in %)>0.4</td>
+          </tr>
+          <tr>
+            <td data-column=label value>87</td>
+            <td data-column=size (in mm^3)>5240</td>
+            <td data-column=relative size (in %)>0.5</td>
+          </tr>
+          <tr>
+            <td data-column=label value>88</td>
+            <td data-column=size (in mm^3)>5264</td>
+            <td data-column=relative size (in %)>0.5</td>
+          </tr>
+          <tr>
+            <td data-column=label value>89</td>
+            <td data-column=size (in mm^3)>5392</td>
+            <td data-column=relative size (in %)>0.51</td>
+          </tr>
+          <tr>
+            <td data-column=label value>90</td>
+            <td data-column=size (in mm^3)>5632</td>
+            <td data-column=relative size (in %)>0.53</td>
+          </tr>
+          <tr>
+            <td data-column=label value>91</td>
+            <td data-column=size (in mm^3)>4320</td>
+            <td data-column=relative size (in %)>0.41</td>
+          </tr>
+          <tr>
+            <td data-column=label value>92</td>
+            <td data-column=size (in mm^3)>4344</td>
+            <td data-column=relative size (in %)>0.41</td>
+          </tr>
+          <tr>
+            <td data-column=label value>93</td>
+            <td data-column=size (in mm^3)>7488</td>
+            <td data-column=relative size (in %)>0.71</td>
+          </tr>
+          <tr>
+            <td data-column=label value>94</td>
+            <td data-column=size (in mm^3)>2184</td>
+            <td data-column=relative size (in %)>0.21</td>
+          </tr>
+          <tr>
+            <td data-column=label value>95</td>
+            <td data-column=size (in mm^3)>2752</td>
+            <td data-column=relative size (in %)>0.26</td>
+          </tr>
+          <tr>
+            <td data-column=label value>96</td>
+            <td data-column=size (in mm^3)>3336</td>
+            <td data-column=relative size (in %)>0.32</td>
+          </tr>
+          <tr>
+            <td data-column=label value>97</td>
+            <td data-column=size (in mm^3)>3328</td>
+            <td data-column=relative size (in %)>0.32</td>
+          </tr>
+          <tr>
+            <td data-column=label value>98</td>
+            <td data-column=size (in mm^3)>1584</td>
+            <td data-column=relative size (in %)>0.15</td>
+          </tr>
+          <tr>
+            <td data-column=label value>99</td>
+            <td data-column=size (in mm^3)>2928</td>
+            <td data-column=relative size (in %)>0.28</td>
+          </tr>
+          <tr>
+            <td data-column=label value>100</td>
+            <td data-column=size (in mm^3)>4256</td>
+            <td data-column=relative size (in %)>0.4</td>
+          </tr>
+          <tr>
+            <td data-column=label value>101</td>
+            <td data-column=size (in mm^3)>3624</td>
+            <td data-column=relative size (in %)>0.34</td>
+          </tr>
+          <tr>
+            <td data-column=label value>102</td>
+            <td data-column=size (in mm^3)>4968</td>
+            <td data-column=relative size (in %)>0.47</td>
+          </tr>
+          <tr>
+            <td data-column=label value>103</td>
+            <td data-column=size (in mm^3)>4384</td>
+            <td data-column=relative size (in %)>0.42</td>
+          </tr>
+          <tr>
+            <td data-column=label value>104</td>
+            <td data-column=size (in mm^3)>8472</td>
+            <td data-column=relative size (in %)>0.8</td>
+          </tr>
+          <tr>
+            <td data-column=label value>105</td>
+            <td data-column=size (in mm^3)>4840</td>
+            <td data-column=relative size (in %)>0.46</td>
+          </tr>
+          <tr>
+            <td data-column=label value>106</td>
+            <td data-column=size (in mm^3)>4544</td>
+            <td data-column=relative size (in %)>0.43</td>
+          </tr>
+          <tr>
+            <td data-column=label value>107</td>
+            <td data-column=size (in mm^3)>3344</td>
+            <td data-column=relative size (in %)>0.32</td>
+          </tr>
+          <tr>
+            <td data-column=label value>108</td>
+            <td data-column=size (in mm^3)>2656</td>
+            <td data-column=relative size (in %)>0.25</td>
+          </tr>
+          <tr>
+            <td data-column=label value>109</td>
+            <td data-column=size (in mm^3)>2384</td>
+            <td data-column=relative size (in %)>0.23</td>
+          </tr>
+          <tr>
+            <td data-column=label value>110</td>
+            <td data-column=size (in mm^3)>1560</td>
+            <td data-column=relative size (in %)>0.15</td>
+          </tr>
+          <tr>
+            <td data-column=label value>111</td>
+            <td data-column=size (in mm^3)>1184</td>
+            <td data-column=relative size (in %)>0.11</td>
+          </tr>
+          <tr>
+            <td data-column=label value>112</td>
+            <td data-column=size (in mm^3)>3536</td>
+            <td data-column=relative size (in %)>0.33</td>
+          </tr>
+          <tr>
+            <td data-column=label value>113</td>
+            <td data-column=size (in mm^3)>9256</td>
+            <td data-column=relative size (in %)>0.88</td>
+          </tr>
+          <tr>
+            <td data-column=label value>114</td>
+            <td data-column=size (in mm^3)>4880</td>
+            <td data-column=relative size (in %)>0.46</td>
+          </tr>
+          <tr>
+            <td data-column=label value>115</td>
+            <td data-column=size (in mm^3)>3144</td>
+            <td data-column=relative size (in %)>0.3</td>
+          </tr>
+          <tr>
+            <td data-column=label value>116</td>
+            <td data-column=size (in mm^3)>2936</td>
+            <td data-column=relative size (in %)>0.28</td>
+          </tr>
+          <tr>
+            <td data-column=label value>117</td>
+            <td data-column=size (in mm^3)>1736</td>
+            <td data-column=relative size (in %)>0.16</td>
+          </tr>
+          <tr>
+            <td data-column=label value>118</td>
+            <td data-column=size (in mm^3)>4208</td>
+            <td data-column=relative size (in %)>0.4</td>
+          </tr>
+          <tr>
+            <td data-column=label value>119</td>
+            <td data-column=size (in mm^3)>2432</td>
+            <td data-column=relative size (in %)>0.23</td>
+          </tr>
+          <tr>
+            <td data-column=label value>120</td>
+            <td data-column=size (in mm^3)>4000</td>
+            <td data-column=relative size (in %)>0.38</td>
+          </tr>
+          <tr>
+            <td data-column=label value>121</td>
+            <td data-column=size (in mm^3)>3736</td>
+            <td data-column=relative size (in %)>0.35</td>
+          </tr>
+          <tr>
+            <td data-column=label value>122</td>
+            <td data-column=size (in mm^3)>4592</td>
+            <td data-column=relative size (in %)>0.43</td>
+          </tr>
+          <tr>
+            <td data-column=label value>123</td>
+            <td data-column=size (in mm^3)>2952</td>
+            <td data-column=relative size (in %)>0.28</td>
+          </tr>
+          <tr>
+            <td data-column=label value>124</td>
+            <td data-column=size (in mm^3)>7424</td>
+            <td data-column=relative size (in %)>0.7</td>
+          </tr>
+          <tr>
+            <td data-column=label value>125</td>
+            <td data-column=size (in mm^3)>4304</td>
+            <td data-column=relative size (in %)>0.41</td>
+          </tr>
+          <tr>
+            <td data-column=label value>126</td>
+            <td data-column=size (in mm^3)>4528</td>
+            <td data-column=relative size (in %)>0.43</td>
+          </tr>
+          <tr>
+            <td data-column=label value>127</td>
+            <td data-column=size (in mm^3)>2624</td>
+            <td data-column=relative size (in %)>0.25</td>
+          </tr>
+          <tr>
+            <td data-column=label value>128</td>
+            <td data-column=size (in mm^3)>5608</td>
+            <td data-column=relative size (in %)>0.53</td>
+          </tr>
+          <tr>
+            <td data-column=label value>129</td>
+            <td data-column=size (in mm^3)>5088</td>
+            <td data-column=relative size (in %)>0.48</td>
+          </tr>
+          <tr>
+            <td data-column=label value>130</td>
+            <td data-column=size (in mm^3)>3152</td>
+            <td data-column=relative size (in %)>0.3</td>
+          </tr>
+          <tr>
+            <td data-column=label value>131</td>
+            <td data-column=size (in mm^3)>4920</td>
+            <td data-column=relative size (in %)>0.47</td>
+          </tr>
+          <tr>
+            <td data-column=label value>132</td>
+            <td data-column=size (in mm^3)>4088</td>
+            <td data-column=relative size (in %)>0.39</td>
+          </tr>
+          <tr>
+            <td data-column=label value>133</td>
+            <td data-column=size (in mm^3)>4928</td>
+            <td data-column=relative size (in %)>0.47</td>
+          </tr>
+          <tr>
+            <td data-column=label value>134</td>
+            <td data-column=size (in mm^3)>4848</td>
+            <td data-column=relative size (in %)>0.46</td>
+          </tr>
+          <tr>
+            <td data-column=label value>135</td>
+            <td data-column=size (in mm^3)>7288</td>
+            <td data-column=relative size (in %)>0.69</td>
+          </tr>
+          <tr>
+            <td data-column=label value>136</td>
+            <td data-column=size (in mm^3)>4448</td>
+            <td data-column=relative size (in %)>0.42</td>
+          </tr>
+          <tr>
+            <td data-column=label value>137</td>
+            <td data-column=size (in mm^3)>2960</td>
+            <td data-column=relative size (in %)>0.28</td>
+          </tr>
+          <tr>
+            <td data-column=label value>138</td>
+            <td data-column=size (in mm^3)>4760</td>
+            <td data-column=relative size (in %)>0.45</td>
+          </tr>
+          <tr>
+            <td data-column=label value>139</td>
+            <td data-column=size (in mm^3)>3368</td>
+            <td data-column=relative size (in %)>0.32</td>
+          </tr>
+          <tr>
+            <td data-column=label value>140</td>
+            <td data-column=size (in mm^3)>3808</td>
+            <td data-column=relative size (in %)>0.36</td>
+          </tr>
+          <tr>
+            <td data-column=label value>141</td>
+            <td data-column=size (in mm^3)>3144</td>
+            <td data-column=relative size (in %)>0.3</td>
+          </tr>
+          <tr>
+            <td data-column=label value>142</td>
+            <td data-column=size (in mm^3)>3632</td>
+            <td data-column=relative size (in %)>0.34</td>
+          </tr>
+          <tr>
+            <td data-column=label value>143</td>
+            <td data-column=size (in mm^3)>1696</td>
+            <td data-column=relative size (in %)>0.16</td>
+          </tr>
+          <tr>
+            <td data-column=label value>144</td>
+            <td data-column=size (in mm^3)>1552</td>
+            <td data-column=relative size (in %)>0.15</td>
+          </tr>
+          <tr>
+            <td data-column=label value>145</td>
+            <td data-column=size (in mm^3)>2248</td>
+            <td data-column=relative size (in %)>0.21</td>
+          </tr>
+          <tr>
+            <td data-column=label value>146</td>
+            <td data-column=size (in mm^3)>4088</td>
+            <td data-column=relative size (in %)>0.39</td>
+          </tr>
+          <tr>
+            <td data-column=label value>147</td>
+            <td data-column=size (in mm^3)>1808</td>
+            <td data-column=relative size (in %)>0.17</td>
+          </tr>
+          <tr>
+            <td data-column=label value>148</td>
+            <td data-column=size (in mm^3)>2896</td>
+            <td data-column=relative size (in %)>0.27</td>
+          </tr>
+          <tr>
+            <td data-column=label value>149</td>
+            <td data-column=size (in mm^3)>1768</td>
+            <td data-column=relative size (in %)>0.17</td>
+          </tr>
+          <tr>
+            <td data-column=label value>150</td>
+            <td data-column=size (in mm^3)>4184</td>
+            <td data-column=relative size (in %)>0.4</td>
+          </tr>
+          <tr>
+            <td data-column=label value>151</td>
+            <td data-column=size (in mm^3)>5224</td>
+            <td data-column=relative size (in %)>0.49</td>
+          </tr>
+          <tr>
+            <td data-column=label value>152</td>
+            <td data-column=size (in mm^3)>4056</td>
+            <td data-column=relative size (in %)>0.38</td>
+          </tr>
+          <tr>
+            <td data-column=label value>153</td>
+            <td data-column=size (in mm^3)>4320</td>
+            <td data-column=relative size (in %)>0.41</td>
+          </tr>
+          <tr>
+            <td data-column=label value>154</td>
+            <td data-column=size (in mm^3)>6568</td>
+            <td data-column=relative size (in %)>0.62</td>
+          </tr>
+          <tr>
+            <td data-column=label value>155</td>
+            <td data-column=size (in mm^3)>952</td>
+            <td data-column=relative size (in %)>0.09</td>
+          </tr>
+          <tr>
+            <td data-column=label value>156</td>
+            <td data-column=size (in mm^3)>3760</td>
+            <td data-column=relative size (in %)>0.36</td>
+          </tr>
+          <tr>
+            <td data-column=label value>157</td>
+            <td data-column=size (in mm^3)>2496</td>
+            <td data-column=relative size (in %)>0.24</td>
+          </tr>
+          <tr>
+            <td data-column=label value>158</td>
+            <td data-column=size (in mm^3)>2728</td>
+            <td data-column=relative size (in %)>0.26</td>
+          </tr>
+          <tr>
+            <td data-column=label value>159</td>
+            <td data-column=size (in mm^3)>2664</td>
+            <td data-column=relative size (in %)>0.25</td>
+          </tr>
+          <tr>
+            <td data-column=label value>160</td>
+            <td data-column=size (in mm^3)>6368</td>
+            <td data-column=relative size (in %)>0.6</td>
+          </tr>
+          <tr>
+            <td data-column=label value>161</td>
+            <td data-column=size (in mm^3)>2440</td>
+            <td data-column=relative size (in %)>0.23</td>
+          </tr>
+          <tr>
+            <td data-column=label value>162</td>
+            <td data-column=size (in mm^3)>5760</td>
+            <td data-column=relative size (in %)>0.55</td>
+          </tr>
+          <tr>
+            <td data-column=label value>163</td>
+            <td data-column=size (in mm^3)>3168</td>
+            <td data-column=relative size (in %)>0.3</td>
+          </tr>
+          <tr>
+            <td data-column=label value>164</td>
+            <td data-column=size (in mm^3)>3752</td>
+            <td data-column=relative size (in %)>0.36</td>
+          </tr>
+          <tr>
+            <td data-column=label value>165</td>
+            <td data-column=size (in mm^3)>5240</td>
+            <td data-column=relative size (in %)>0.5</td>
+          </tr>
+          <tr>
+            <td data-column=label value>166</td>
+            <td data-column=size (in mm^3)>2984</td>
+            <td data-column=relative size (in %)>0.28</td>
+          </tr>
+          <tr>
+            <td data-column=label value>167</td>
+            <td data-column=size (in mm^3)>3008</td>
+            <td data-column=relative size (in %)>0.28</td>
+          </tr>
+          <tr>
+            <td data-column=label value>168</td>
+            <td data-column=size (in mm^3)>4600</td>
+            <td data-column=relative size (in %)>0.44</td>
+          </tr>
+          <tr>
+            <td data-column=label value>169</td>
+            <td data-column=size (in mm^3)>5320</td>
+            <td data-column=relative size (in %)>0.5</td>
+          </tr>
+          <tr>
+            <td data-column=label value>170</td>
+            <td data-column=size (in mm^3)>4632</td>
+            <td data-column=relative size (in %)>0.44</td>
+          </tr>
+          <tr>
+            <td data-column=label value>171</td>
+            <td data-column=size (in mm^3)>4784</td>
+            <td data-column=relative size (in %)>0.45</td>
+          </tr>
+          <tr>
+            <td data-column=label value>172</td>
+            <td data-column=size (in mm^3)>2920</td>
+            <td data-column=relative size (in %)>0.28</td>
+          </tr>
+          <tr>
+            <td data-column=label value>173</td>
+            <td data-column=size (in mm^3)>3120</td>
+            <td data-column=relative size (in %)>0.3</td>
+          </tr>
+          <tr>
+            <td data-column=label value>174</td>
+            <td data-column=size (in mm^3)>6104</td>
+            <td data-column=relative size (in %)>0.58</td>
+          </tr>
+          <tr>
+            <td data-column=label value>175</td>
+            <td data-column=size (in mm^3)>3208</td>
+            <td data-column=relative size (in %)>0.3</td>
+          </tr>
+          <tr>
+            <td data-column=label value>176</td>
+            <td data-column=size (in mm^3)>1120</td>
+            <td data-column=relative size (in %)>0.11</td>
+          </tr>
+          <tr>
+            <td data-column=label value>177</td>
+            <td data-column=size (in mm^3)>2072</td>
+            <td data-column=relative size (in %)>0.2</td>
+          </tr>
+          <tr>
+            <td data-column=label value>178</td>
+            <td data-column=size (in mm^3)>2984</td>
+            <td data-column=relative size (in %)>0.28</td>
+          </tr>
+          <tr>
+            <td data-column=label value>179</td>
+            <td data-column=size (in mm^3)>2080</td>
+            <td data-column=relative size (in %)>0.2</td>
+          </tr>
+          <tr>
+            <td data-column=label value>180</td>
+            <td data-column=size (in mm^3)>2256</td>
+            <td data-column=relative size (in %)>0.21</td>
+          </tr>
+          <tr>
+            <td data-column=label value>181</td>
+            <td data-column=size (in mm^3)>2176</td>
+            <td data-column=relative size (in %)>0.21</td>
+          </tr>
+          <tr>
+            <td data-column=label value>182</td>
+            <td data-column=size (in mm^3)>3008</td>
+            <td data-column=relative size (in %)>0.28</td>
+          </tr>
+          <tr>
+            <td data-column=label value>183</td>
+            <td data-column=size (in mm^3)>3712</td>
+            <td data-column=relative size (in %)>0.35</td>
+          </tr>
+          <tr>
+            <td data-column=label value>184</td>
+            <td data-column=size (in mm^3)>1912</td>
+            <td data-column=relative size (in %)>0.18</td>
+          </tr>
+          <tr>
+            <td data-column=label value>185</td>
+            <td data-column=size (in mm^3)>2408</td>
+            <td data-column=relative size (in %)>0.23</td>
+          </tr>
+          <tr>
+            <td data-column=label value>186</td>
+            <td data-column=size (in mm^3)>1408</td>
+            <td data-column=relative size (in %)>0.13</td>
+          </tr>
+          <tr>
+            <td data-column=label value>187</td>
+            <td data-column=size (in mm^3)>2096</td>
+            <td data-column=relative size (in %)>0.2</td>
+          </tr>
+          <tr>
+            <td data-column=label value>188</td>
+            <td data-column=size (in mm^3)>2616</td>
+            <td data-column=relative size (in %)>0.25</td>
+          </tr>
+          <tr>
+            <td data-column=label value>189</td>
+            <td data-column=size (in mm^3)>3192</td>
+            <td data-column=relative size (in %)>0.3</td>
+          </tr>
+          <tr>
+            <td data-column=label value>190</td>
+            <td data-column=size (in mm^3)>2728</td>
+            <td data-column=relative size (in %)>0.26</td>
+          </tr>
+          <tr>
+            <td data-column=label value>191</td>
+            <td data-column=size (in mm^3)>2464</td>
+            <td data-column=relative size (in %)>0.23</td>
+          </tr>
+          <tr>
+            <td data-column=label value>192</td>
+            <td data-column=size (in mm^3)>1568</td>
+            <td data-column=relative size (in %)>0.15</td>
+          </tr>
+          <tr>
+            <td data-column=label value>193</td>
+            <td data-column=size (in mm^3)>3248</td>
+            <td data-column=relative size (in %)>0.31</td>
+          </tr>
+          <tr>
+            <td data-column=label value>194</td>
+            <td data-column=size (in mm^3)>1296</td>
+            <td data-column=relative size (in %)>0.12</td>
+          </tr>
+          <tr>
+            <td data-column=label value>195</td>
+            <td data-column=size (in mm^3)>4232</td>
+            <td data-column=relative size (in %)>0.4</td>
+          </tr>
+          <tr>
+            <td data-column=label value>196</td>
+            <td data-column=size (in mm^3)>1216</td>
+            <td data-column=relative size (in %)>0.12</td>
+          </tr>
+          <tr>
+            <td data-column=label value>197</td>
+            <td data-column=size (in mm^3)>1304</td>
+            <td data-column=relative size (in %)>0.12</td>
+          </tr>
+          <tr>
+            <td data-column=label value>198</td>
+            <td data-column=size (in mm^3)>1072</td>
+            <td data-column=relative size (in %)>0.1</td>
+          </tr>
+          <tr>
+            <td data-column=label value>199</td>
+            <td data-column=size (in mm^3)>3248</td>
+            <td data-column=relative size (in %)>0.31</td>
+          </tr>
+          <tr>
+            <td data-column=label value>200</td>
+            <td data-column=size (in mm^3)>1344</td>
+            <td data-column=relative size (in %)>0.13</td>
+          </tr>
+          <tr>
+            <td data-column=label value>201</td>
+            <td data-column=size (in mm^3)>1584</td>
+            <td data-column=relative size (in %)>0.15</td>
+          </tr>
+          <tr>
+            <td data-column=label value>202</td>
+            <td data-column=size (in mm^3)>8464</td>
+            <td data-column=relative size (in %)>0.8</td>
+          </tr>
+          <tr>
+            <td data-column=label value>203</td>
+            <td data-column=size (in mm^3)>3192</td>
+            <td data-column=relative size (in %)>0.3</td>
+          </tr>
+          <tr>
+            <td data-column=label value>204</td>
+            <td data-column=size (in mm^3)>3168</td>
+            <td data-column=relative size (in %)>0.3</td>
+          </tr>
+          <tr>
+            <td data-column=label value>205</td>
+            <td data-column=size (in mm^3)>3288</td>
+            <td data-column=relative size (in %)>0.31</td>
+          </tr>
+          <tr>
+            <td data-column=label value>206</td>
+            <td data-column=size (in mm^3)>1592</td>
+            <td data-column=relative size (in %)>0.15</td>
+          </tr>
+          <tr>
+            <td data-column=label value>207</td>
+            <td data-column=size (in mm^3)>2032</td>
+            <td data-column=relative size (in %)>0.19</td>
+          </tr>
+          <tr>
+            <td data-column=label value>208</td>
+            <td data-column=size (in mm^3)>4000</td>
+            <td data-column=relative size (in %)>0.38</td>
+          </tr>
+          <tr>
+            <td data-column=label value>209</td>
+            <td data-column=size (in mm^3)>2704</td>
+            <td data-column=relative size (in %)>0.26</td>
+          </tr>
+          <tr>
+            <td data-column=label value>210</td>
+            <td data-column=size (in mm^3)>2280</td>
+            <td data-column=relative size (in %)>0.22</td>
+          </tr>
+          <tr>
+            <td data-column=label value>211</td>
+            <td data-column=size (in mm^3)>4192</td>
+            <td data-column=relative size (in %)>0.4</td>
+          </tr>
+          <tr>
+            <td data-column=label value>212</td>
+            <td data-column=size (in mm^3)>4352</td>
+            <td data-column=relative size (in %)>0.41</td>
+          </tr>
+          <tr>
+            <td data-column=label value>213</td>
+            <td data-column=size (in mm^3)>3896</td>
+            <td data-column=relative size (in %)>0.37</td>
+          </tr>
+          <tr>
+            <td data-column=label value>214</td>
+            <td data-column=size (in mm^3)>5720</td>
+            <td data-column=relative size (in %)>0.54</td>
+          </tr>
+          <tr>
+            <td data-column=label value>215</td>
+            <td data-column=size (in mm^3)>4568</td>
+            <td data-column=relative size (in %)>0.43</td>
+          </tr>
+          <tr>
+            <td data-column=label value>216</td>
+            <td data-column=size (in mm^3)>4048</td>
+            <td data-column=relative size (in %)>0.38</td>
+          </tr>
+          <tr>
+            <td data-column=label value>217</td>
+            <td data-column=size (in mm^3)>4096</td>
+            <td data-column=relative size (in %)>0.39</td>
+          </tr>
+          <tr>
+            <td data-column=label value>218</td>
+            <td data-column=size (in mm^3)>2728</td>
+            <td data-column=relative size (in %)>0.26</td>
+          </tr>
+          <tr>
+            <td data-column=label value>219</td>
+            <td data-column=size (in mm^3)>3480</td>
+            <td data-column=relative size (in %)>0.33</td>
+          </tr>
+          <tr>
+            <td data-column=label value>220</td>
+            <td data-column=size (in mm^3)>3576</td>
+            <td data-column=relative size (in %)>0.34</td>
+          </tr>
+          <tr>
+            <td data-column=label value>221</td>
+            <td data-column=size (in mm^3)>2272</td>
+            <td data-column=relative size (in %)>0.22</td>
+          </tr>
+          <tr>
+            <td data-column=label value>222</td>
+            <td data-column=size (in mm^3)>2032</td>
+            <td data-column=relative size (in %)>0.19</td>
+          </tr>
+          <tr>
+            <td data-column=label value>223</td>
+            <td data-column=size (in mm^3)>2824</td>
+            <td data-column=relative size (in %)>0.27</td>
+          </tr>
+          <tr>
+            <td data-column=label value>224</td>
+            <td data-column=size (in mm^3)>2312</td>
+            <td data-column=relative size (in %)>0.22</td>
+          </tr>
+          <tr>
+            <td data-column=label value>225</td>
+            <td data-column=size (in mm^3)>3248</td>
+            <td data-column=relative size (in %)>0.31</td>
+          </tr>
+          <tr>
+            <td data-column=label value>226</td>
+            <td data-column=size (in mm^3)>1960</td>
+            <td data-column=relative size (in %)>0.19</td>
+          </tr>
+          <tr>
+            <td data-column=label value>227</td>
+            <td data-column=size (in mm^3)>2896</td>
+            <td data-column=relative size (in %)>0.27</td>
+          </tr>
+          <tr>
+            <td data-column=label value>228</td>
+            <td data-column=size (in mm^3)>4464</td>
+            <td data-column=relative size (in %)>0.42</td>
+          </tr>
+          <tr>
+            <td data-column=label value>229</td>
+            <td data-column=size (in mm^3)>2928</td>
+            <td data-column=relative size (in %)>0.28</td>
+          </tr>
+          <tr>
+            <td data-column=label value>230</td>
+            <td data-column=size (in mm^3)>2624</td>
+            <td data-column=relative size (in %)>0.25</td>
+          </tr>
+          <tr>
+            <td data-column=label value>231</td>
+            <td data-column=size (in mm^3)>3160</td>
+            <td data-column=relative size (in %)>0.3</td>
+          </tr>
+          <tr>
+            <td data-column=label value>232</td>
+            <td data-column=size (in mm^3)>5648</td>
+            <td data-column=relative size (in %)>0.53</td>
+          </tr>
+          <tr>
+            <td data-column=label value>233</td>
+            <td data-column=size (in mm^3)>2720</td>
+            <td data-column=relative size (in %)>0.26</td>
+          </tr>
+          <tr>
+            <td data-column=label value>234</td>
+            <td data-column=size (in mm^3)>2928</td>
+            <td data-column=relative size (in %)>0.28</td>
+          </tr>
+          <tr>
+            <td data-column=label value>235</td>
+            <td data-column=size (in mm^3)>1944</td>
+            <td data-column=relative size (in %)>0.18</td>
+          </tr>
+          <tr>
+            <td data-column=label value>236</td>
+            <td data-column=size (in mm^3)>3384</td>
+            <td data-column=relative size (in %)>0.32</td>
+          </tr>
+          <tr>
+            <td data-column=label value>237</td>
+            <td data-column=size (in mm^3)>1864</td>
+            <td data-column=relative size (in %)>0.18</td>
+          </tr>
+          <tr>
+            <td data-column=label value>238</td>
+            <td data-column=size (in mm^3)>3472</td>
+            <td data-column=relative size (in %)>0.33</td>
+          </tr>
+          <tr>
+            <td data-column=label value>239</td>
+            <td data-column=size (in mm^3)>3952</td>
+            <td data-column=relative size (in %)>0.37</td>
+          </tr>
+          <tr>
+            <td data-column=label value>240</td>
+            <td data-column=size (in mm^3)>2984</td>
+            <td data-column=relative size (in %)>0.28</td>
+          </tr>
+          <tr>
+            <td data-column=label value>241</td>
+            <td data-column=size (in mm^3)>3608</td>
+            <td data-column=relative size (in %)>0.34</td>
+          </tr>
+          <tr>
+            <td data-column=label value>242</td>
+            <td data-column=size (in mm^3)>4736</td>
+            <td data-column=relative size (in %)>0.45</td>
+          </tr>
+          <tr>
+            <td data-column=label value>243</td>
+            <td data-column=size (in mm^3)>5936</td>
+            <td data-column=relative size (in %)>0.56</td>
+          </tr>
+          <tr>
+            <td data-column=label value>244</td>
+            <td data-column=size (in mm^3)>3696</td>
+            <td data-column=relative size (in %)>0.35</td>
+          </tr>
+          <tr>
+            <td data-column=label value>245</td>
+            <td data-column=size (in mm^3)>5056</td>
+            <td data-column=relative size (in %)>0.48</td>
+          </tr>
+          <tr>
+            <td data-column=label value>246</td>
+            <td data-column=size (in mm^3)>4864</td>
+            <td data-column=relative size (in %)>0.46</td>
+          </tr>
+          <tr>
+            <td data-column=label value>247</td>
+            <td data-column=size (in mm^3)>3688</td>
+            <td data-column=relative size (in %)>0.35</td>
+          </tr>
+          <tr>
+            <td data-column=label value>248</td>
+            <td data-column=size (in mm^3)>3200</td>
+            <td data-column=relative size (in %)>0.3</td>
+          </tr>
+          <tr>
+            <td data-column=label value>249</td>
+            <td data-column=size (in mm^3)>2560</td>
+            <td data-column=relative size (in %)>0.24</td>
+          </tr>
+          <tr>
+            <td data-column=label value>250</td>
+            <td data-column=size (in mm^3)>3240</td>
+            <td data-column=relative size (in %)>0.31</td>
+          </tr>
+          <tr>
+            <td data-column=label value>251</td>
+            <td data-column=size (in mm^3)>7544</td>
+            <td data-column=relative size (in %)>0.71</td>
+          </tr>
+          <tr>
+            <td data-column=label value>252</td>
+            <td data-column=size (in mm^3)>1776</td>
+            <td data-column=relative size (in %)>0.17</td>
+          </tr>
+          <tr>
+            <td data-column=label value>253</td>
+            <td data-column=size (in mm^3)>4752</td>
+            <td data-column=relative size (in %)>0.45</td>
+          </tr>
+          <tr>
+            <td data-column=label value>254</td>
+            <td data-column=size (in mm^3)>4296</td>
+            <td data-column=relative size (in %)>0.41</td>
+          </tr>
+          <tr>
+            <td data-column=label value>255</td>
+            <td data-column=size (in mm^3)>4264</td>
+            <td data-column=relative size (in %)>0.4</td>
+          </tr>
+          <tr>
+            <td data-column=label value>256</td>
+            <td data-column=size (in mm^3)>5080</td>
+            <td data-column=relative size (in %)>0.48</td>
+          </tr>
+          <tr>
+            <td data-column=label value>257</td>
+            <td data-column=size (in mm^3)>6544</td>
+            <td data-column=relative size (in %)>0.62</td>
+          </tr>
+          <tr>
+            <td data-column=label value>258</td>
+            <td data-column=size (in mm^3)>4440</td>
+            <td data-column=relative size (in %)>0.42</td>
+          </tr>
+          <tr>
+            <td data-column=label value>259</td>
+            <td data-column=size (in mm^3)>4120</td>
+            <td data-column=relative size (in %)>0.39</td>
+          </tr>
+          <tr>
+            <td data-column=label value>260</td>
+            <td data-column=size (in mm^3)>4472</td>
+            <td data-column=relative size (in %)>0.42</td>
+          </tr>
+          <tr>
+            <td data-column=label value>261</td>
+            <td data-column=size (in mm^3)>3880</td>
+            <td data-column=relative size (in %)>0.37</td>
+          </tr>
+          <tr>
+            <td data-column=label value>262</td>
+            <td data-column=size (in mm^3)>3384</td>
+            <td data-column=relative size (in %)>0.32</td>
+          </tr>
+          <tr>
+            <td data-column=label value>263</td>
+            <td data-column=size (in mm^3)>9224</td>
+            <td data-column=relative size (in %)>0.87</td>
+          </tr>
+          <tr>
+            <td data-column=label value>264</td>
+            <td data-column=size (in mm^3)>2600</td>
+            <td data-column=relative size (in %)>0.25</td>
+          </tr>
+          <tr>
+            <td data-column=label value>265</td>
+            <td data-column=size (in mm^3)>3856</td>
+            <td data-column=relative size (in %)>0.37</td>
+          </tr>
+          <tr>
+            <td data-column=label value>266</td>
+            <td data-column=size (in mm^3)>2328</td>
+            <td data-column=relative size (in %)>0.22</td>
+          </tr>
+          <tr>
+            <td data-column=label value>267</td>
+            <td data-column=size (in mm^3)>1856</td>
+            <td data-column=relative size (in %)>0.18</td>
+          </tr>
+          <tr>
+            <td data-column=label value>268</td>
+            <td data-column=size (in mm^3)>1064</td>
+            <td data-column=relative size (in %)>0.1</td>
+          </tr>
+          <tr>
+            <td data-column=label value>269</td>
+            <td data-column=size (in mm^3)>4920</td>
+            <td data-column=relative size (in %)>0.47</td>
+          </tr>
+          <tr>
+            <td data-column=label value>270</td>
+            <td data-column=size (in mm^3)>2448</td>
+            <td data-column=relative size (in %)>0.23</td>
+          </tr>
+          <tr>
+            <td data-column=label value>271</td>
+            <td data-column=size (in mm^3)>2216</td>
+            <td data-column=relative size (in %)>0.21</td>
+          </tr>
+          <tr>
+            <td data-column=label value>272</td>
+            <td data-column=size (in mm^3)>3680</td>
+            <td data-column=relative size (in %)>0.35</td>
+          </tr>
+          <tr>
+            <td data-column=label value>273</td>
+            <td data-column=size (in mm^3)>6008</td>
+            <td data-column=relative size (in %)>0.57</td>
+          </tr>
+          <tr>
+            <td data-column=label value>274</td>
+            <td data-column=size (in mm^3)>3768</td>
+            <td data-column=relative size (in %)>0.36</td>
+          </tr>
+          <tr>
+            <td data-column=label value>275</td>
+            <td data-column=size (in mm^3)>4696</td>
+            <td data-column=relative size (in %)>0.44</td>
+          </tr>
+          <tr>
+            <td data-column=label value>276</td>
+            <td data-column=size (in mm^3)>7112</td>
+            <td data-column=relative size (in %)>0.67</td>
+          </tr>
+          <tr>
+            <td data-column=label value>277</td>
+            <td data-column=size (in mm^3)>6480</td>
+            <td data-column=relative size (in %)>0.61</td>
+          </tr>
+          <tr>
+            <td data-column=label value>278</td>
+            <td data-column=size (in mm^3)>3680</td>
+            <td data-column=relative size (in %)>0.35</td>
+          </tr>
+          <tr>
+            <td data-column=label value>279</td>
+            <td data-column=size (in mm^3)>1200</td>
+            <td data-column=relative size (in %)>0.11</td>
+          </tr>
+          <tr>
+            <td data-column=label value>280</td>
+            <td data-column=size (in mm^3)>3688</td>
+            <td data-column=relative size (in %)>0.35</td>
+          </tr>
+          <tr>
+            <td data-column=label value>281</td>
+            <td data-column=size (in mm^3)>2992</td>
+            <td data-column=relative size (in %)>0.28</td>
+          </tr>
+          <tr>
+            <td data-column=label value>282</td>
+            <td data-column=size (in mm^3)>3032</td>
+            <td data-column=relative size (in %)>0.29</td>
+          </tr>
+          <tr>
+            <td data-column=label value>283</td>
+            <td data-column=size (in mm^3)>2904</td>
+            <td data-column=relative size (in %)>0.27</td>
+          </tr>
+          <tr>
+            <td data-column=label value>284</td>
+            <td data-column=size (in mm^3)>4104</td>
+            <td data-column=relative size (in %)>0.39</td>
+          </tr>
+          <tr>
+            <td data-column=label value>285</td>
+            <td data-column=size (in mm^3)>4760</td>
+            <td data-column=relative size (in %)>0.45</td>
+          </tr>
+          <tr>
+            <td data-column=label value>286</td>
+            <td data-column=size (in mm^3)>3848</td>
+            <td data-column=relative size (in %)>0.36</td>
+          </tr>
+          <tr>
+            <td data-column=label value>287</td>
+            <td data-column=size (in mm^3)>4464</td>
+            <td data-column=relative size (in %)>0.42</td>
+          </tr>
+          <tr>
+            <td data-column=label value>288</td>
+            <td data-column=size (in mm^3)>3728</td>
+            <td data-column=relative size (in %)>0.35</td>
+          </tr>
+          <tr>
+            <td data-column=label value>289</td>
+            <td data-column=size (in mm^3)>6912</td>
+            <td data-column=relative size (in %)>0.65</td>
+          </tr>
+          <tr>
+            <td data-column=label value>290</td>
+            <td data-column=size (in mm^3)>1216</td>
+            <td data-column=relative size (in %)>0.12</td>
+          </tr>
+          <tr>
+            <td data-column=label value>291</td>
+            <td data-column=size (in mm^3)>5696</td>
+            <td data-column=relative size (in %)>0.54</td>
+          </tr>
+          <tr>
+            <td data-column=label value>292</td>
+            <td data-column=size (in mm^3)>3616</td>
+            <td data-column=relative size (in %)>0.34</td>
+          </tr>
+          <tr>
+            <td data-column=label value>293</td>
+            <td data-column=size (in mm^3)>5336</td>
+            <td data-column=relative size (in %)>0.51</td>
+          </tr>
+          <tr>
+            <td data-column=label value>294</td>
+            <td data-column=size (in mm^3)>4528</td>
+            <td data-column=relative size (in %)>0.43</td>
+          </tr>
+          <tr>
+            <td data-column=label value>295</td>
+            <td data-column=size (in mm^3)>2112</td>
+            <td data-column=relative size (in %)>0.2</td>
+          </tr>
+          <tr>
+            <td data-column=label value>296</td>
+            <td data-column=size (in mm^3)>2032</td>
+            <td data-column=relative size (in %)>0.19</td>
+          </tr>
+          <tr>
+            <td data-column=label value>297</td>
+            <td data-column=size (in mm^3)>2648</td>
+            <td data-column=relative size (in %)>0.25</td>
+          </tr>
+          <tr>
+            <td data-column=label value>298</td>
+            <td data-column=size (in mm^3)>3432</td>
+            <td data-column=relative size (in %)>0.32</td>
+          </tr>
+          <tr>
+            <td data-column=label value>299</td>
+            <td data-column=size (in mm^3)>2440</td>
+            <td data-column=relative size (in %)>0.23</td>
+          </tr>
+          <tr>
+            <td data-column=label value>300</td>
+            <td data-column=size (in mm^3)>1856</td>
+            <td data-column=relative size (in %)>0.18</td>
+          </tr>
+        </tbody>
+    </table>
+    </details>
+      <details>
+      <summary class="pure-button">Parameters</summary>
+      <table class="pure-table">
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td data-column="Parameter">background_label</td>
+              <td data-column="Value">0</td>
+            </tr>
+            <tr>
+              <td data-column="Parameter">detrend</td>
+              <td data-column="Value">False</td>
+            </tr>
+            <tr>
+              <td data-column="Parameter">dtype</td>
+              <td data-column="Value">None</td>
+            </tr>
+            <tr>
+              <td data-column="Parameter">high_pass</td>
+              <td data-column="Value">None</td>
+            </tr>
+            <tr>
+              <td data-column="Parameter">high_variance_confounds</td>
+              <td data-column="Value">False</td>
+            </tr>
+            <tr>
+              <td data-column="Parameter">labels</td>
+              <td data-column="Value">None</td>
+            </tr>
+            <tr>
+              <td data-column="Parameter">labels_img</td>
+              <td data-column="Value">/home/joyneelm/ROI_viewing/Schaefer2018_300Parcels_7Networks_order_FSLMNI152_2mm.nii.gz</td>
+            </tr>
+            <tr>
+              <td data-column="Parameter">low_pass</td>
+              <td data-column="Value">None</td>
+            </tr>
+            <tr>
+              <td data-column="Parameter">mask_img</td>
+              <td data-column="Value">None</td>
+            </tr>
+            <tr>
+              <td data-column="Parameter">memory</td>
+              <td data-column="Value">Memory(location=None)</td>
+            </tr>
+            <tr>
+              <td data-column="Parameter">memory_level</td>
+              <td data-column="Value">1</td>
+            </tr>
+            <tr>
+              <td data-column="Parameter">reports</td>
+              <td data-column="Value">True</td>
+            </tr>
+            <tr>
+              <td data-column="Parameter">resampling_target</td>
+              <td data-column="Value">data</td>
+            </tr>
+            <tr>
+              <td data-column="Parameter">smoothing_fwhm</td>
+              <td data-column="Value">None</td>
+            </tr>
+            <tr>
+              <td data-column="Parameter">standardize</td>
+              <td data-column="Value">False</td>
+            </tr>
+            <tr>
+              <td data-column="Parameter">standardize_confounds</td>
+              <td data-column="Value">True</td>
+            </tr>
+            <tr>
+              <td data-column="Parameter">strategy</td>
+              <td data-column="Value">mean</td>
+            </tr>
+            <tr>
+              <td data-column="Parameter">t_r</td>
+              <td data-column="Value">None</td>
+            </tr>
+            <tr>
+              <td data-column="Parameter">verbose</td>
+              <td data-column="Value">0</td>
+            </tr>
+        </tbody>
+      </table>
+    </details>
+    </div>
+  </div>
+  <div class="note">
+    <p>This report was generated based on information provided at instantiation and fit time. Note that the masker can potentially perform resampling at transform time.</p>
+  </div>
+</div>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_beta_time_series</span><span class="p">(</span><span class="n">fmri_file</span><span class="p">,</span> <span class="n">masker</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    1. remove the extra dimension and get niimg</span>
+<span class="sd">    2. roi time series</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">fmri_img</span> <span class="o">=</span> <span class="n">load_img</span><span class="p">(</span><span class="n">img</span><span class="o">=</span><span class="n">fmri_file</span><span class="p">)</span>
+    <span class="k">assert</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">fmri_img</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">())</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">fmri_img_sq</span> <span class="o">=</span> <span class="n">new_img_like</span><span class="p">(</span><span class="n">ref_niimg</span><span class="o">=</span><span class="n">fmri_img</span><span class="p">,</span> 
+                               <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">fmri_img</span><span class="o">.</span><span class="n">get_data</span><span class="p">()),</span> 
+                               <span class="n">copy_header</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    
+    <span class="n">beta_ts</span> <span class="o">=</span> <span class="n">masker</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">fmri_img_sq</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">beta_ts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get beta time series for all subjects</span>
+<span class="n">subj_list</span><span class="p">,</span> <span class="n">beta_ts_list</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">subj</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="s1">&#39;CON&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">subj</span><span class="p">:</span> <span class="k">continue</span>
+    <span class="k">if</span> <span class="s1">&#39;xlsx&#39;</span> <span class="ow">in</span> <span class="n">subj</span><span class="p">:</span> <span class="k">continue</span>
+    <span class="c1"># data file</span>
+<span class="c1">#     print(subj)</span>
+    <span class="n">fmri_file</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">subj</span><span class="si">}</span><span class="s2">/&quot;</span>
+             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">subj</span><span class="si">}</span><span class="s2">_betas_minshifted.nii.gz&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># beta time series</span>
+    <span class="n">beta_ts</span> <span class="o">=</span> <span class="n">get_beta_time_series</span><span class="p">(</span><span class="n">fmri_file</span><span class="p">,</span> <span class="n">masker</span><span class="p">)</span>
+    <span class="c1"># np.savetxt(f&quot;{data_dir}/{subj}/{subj}_roi300_beta_ts.txt&quot;, beta_ts, fmt=&#39;%.4e&#39;)</span>
+    
+    <span class="c1"># collecting across all subjects</span>
+    <span class="n">subj_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subj</span><span class="p">)</span>
+    <span class="n">beta_ts_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">beta_ts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0/124 [00:00&lt;?, ?it/s]/tmp/ipykernel_23574/884592231.py:7: DeprecationWarning: get_data() is deprecated in favor of get_fdata(), which has a more predictable return type. To obtain get_data() behavior going forward, use numpy.asanyarray(img.dataobj).
+
+* deprecated from version: 3.0
+* Will raise &lt;class &#39;nibabel.deprecator.ExpiredDeprecationError&#39;&gt; as of version: 5.0
+  assert(np.min(fmri_img.get_data())==0)
+/tmp/ipykernel_23574/884592231.py:9: DeprecationWarning: get_data() is deprecated in favor of get_fdata(), which has a more predictable return type. To obtain get_data() behavior going forward, use numpy.asanyarray(img.dataobj).
+
+* deprecated from version: 3.0
+* Will raise &lt;class &#39;nibabel.deprecator.ExpiredDeprecationError&#39;&gt; as of version: 5.0
+  data=np.squeeze(fmri_img.get_data()),
+100%|██████████| 124/124 [01:51&lt;00:00,  1.11it/s]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># average across subjects</span>
+<span class="n">beta_ts_all_subjs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">beta_ts_list</span><span class="p">)</span>
+<span class="n">beta_ts_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">beta_ts_all_subjs</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">beta_ts_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">beta_ts_all_subjs</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">num_subjs</span><span class="p">,</span> <span class="n">num_time</span><span class="p">,</span> <span class="n">num_rois</span> <span class="o">=</span> <span class="n">beta_ts_all_subjs</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plotting-the-time-series">
+<h2>plotting the time series<a class="headerlink" href="#plotting-the-time-series" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## get proximity of balls from stimulus presented</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/home/joyneelm/approach-retreat/near_miss_analysis/near_miss_proxmity_all_subjs.pkl&#39;</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">near_miss_subjs</span> <span class="o">=</span> <span class="n">pkl</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">prox_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">near_miss_subjs</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">prox_ci</span> <span class="o">=</span> <span class="mf">1.96</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">near_miss_subjs</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">num_subjs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_roi_beta_ts</span><span class="p">(</span><span class="n">nw</span><span class="p">,</span> <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="n">figsize</span><span class="p">):</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span> 
+                            <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">,</span> 
+                            <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span> 
+                            <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+                            <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+                            <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num_time</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">idx_roi</span><span class="p">,</span> <span class="n">roi</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nw</span><span class="p">):</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="n">idx_roi</span><span class="o">//</span><span class="n">ncols</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mod</span><span class="p">(</span><span class="n">idx_roi</span><span class="p">,</span><span class="n">ncols</span><span class="p">)]</span>
+        <span class="n">ts_mean</span> <span class="o">=</span> <span class="n">beta_ts_mean</span><span class="p">[:,</span> <span class="n">idx_roi</span><span class="p">]</span>
+        <span class="n">ts_ci</span> <span class="o">=</span> <span class="mf">1.96</span> <span class="o">*</span> <span class="n">beta_ts_std</span><span class="p">[:,</span> <span class="n">idx_roi</span><span class="p">]</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">num_subjs</span><span class="p">)</span>
+
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">ts_mean</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> 
+                        <span class="p">(</span><span class="n">ts_mean</span> <span class="o">-</span> <span class="n">ts_ci</span><span class="p">),</span> 
+                        <span class="p">(</span><span class="n">ts_mean</span> <span class="o">+</span> <span class="n">ts_ci</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">13</span><span class="p">),</span> <span class="n">prox_mean</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">13</span><span class="p">),</span> 
+                        <span class="p">(</span><span class="n">prox_mean</span> <span class="o">-</span> <span class="n">prox_ci</span><span class="p">),</span> 
+                        <span class="p">(</span><span class="n">prox_mean</span> <span class="o">+</span> <span class="n">prox_ci</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+        <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">num_time</span><span class="p">,</span> 
+                   <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+                   <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+
+        <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="p">(</span><span class="n">time</span><span class="o">&gt;=</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">time</span><span class="o">&lt;=</span><span class="mi">9</span><span class="p">),</span>
+                    <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="p">(</span><span class="n">time</span><span class="o">&gt;=</span><span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">time</span><span class="o">&lt;=</span><span class="mi">14</span><span class="p">),</span>
+                    <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.8</span><span class="p">])</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">masker_labels</span><span class="p">[</span><span class="n">roi</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1">#f&quot;roi:{idx_roi:03d}&quot;</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">16</span><span class="p">))</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="o">-</span><span class="mi">6</span><span class="p">))</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time(TR)&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Response&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># plt.savefig(&#39;insula_near_miss_responses.png&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">24</span><span class="p">),</span><span class="mi">150</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">24</span><span class="p">)))</span>
+<span class="n">somot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span><span class="mi">53</span><span class="p">),</span><span class="mi">150</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span><span class="mi">53</span><span class="p">)))</span>
+<span class="n">dorsattn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">53</span><span class="p">,</span><span class="mi">69</span><span class="p">),</span><span class="mi">150</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">53</span><span class="p">,</span><span class="mi">69</span><span class="p">)))</span>
+<span class="n">ventattn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">69</span><span class="p">,</span><span class="mi">85</span><span class="p">),</span><span class="mi">150</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">69</span><span class="p">,</span><span class="mi">85</span><span class="p">)))</span>
+<span class="n">limbic</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">85</span><span class="p">,</span><span class="mi">95</span><span class="p">),</span><span class="mi">150</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">85</span><span class="p">,</span><span class="mi">95</span><span class="p">)))</span>
+<span class="n">cont</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">95</span><span class="p">,</span><span class="mi">112</span><span class="p">),</span><span class="mi">150</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">95</span><span class="p">,</span><span class="mi">112</span><span class="p">)))</span>
+<span class="n">default</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">112</span><span class="p">,</span><span class="mi">150</span><span class="p">),</span><span class="mi">150</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">112</span><span class="p">,</span><span class="mi">150</span><span class="p">)))</span>
+
+<span class="n">masks_list</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;no lesion&#39;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span>
+    <span class="s1">&#39;visual&#39;</span><span class="p">:</span><span class="n">vis</span><span class="p">,</span>
+    <span class="s1">&#39;somato-motor&#39;</span><span class="p">:</span><span class="n">somot</span><span class="p">,</span>
+    <span class="s1">&#39;dorsal attention&#39;</span><span class="p">:</span><span class="n">dorsattn</span><span class="p">,</span>
+    <span class="s1">&#39;ventral attention&#39;</span><span class="p">:</span><span class="n">ventattn</span><span class="p">,</span>
+    <span class="s1">&#39;limbic&#39;</span><span class="p">:</span><span class="n">limbic</span><span class="p">,</span> 
+    <span class="s1">&#39;executive control&#39;</span><span class="p">:</span><span class="n">cont</span><span class="p">,</span> 
+    <span class="s1">&#39;default mode&#39;</span><span class="p">:</span><span class="n">default</span><span class="p">,</span> 
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="visual-nw">
+<h3>visual nw<a class="headerlink" href="#visual-nw" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nw</span> <span class="o">=</span> <span class="n">vis</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nw</span><span class="p">))</span>
+<span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span> <span class="c1"># 48 = 8 * 6</span>
+<span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">ncols</span><span class="p">,</span> <span class="mf">3.5</span><span class="o">*</span><span class="n">nrows</span><span class="p">)</span>
+<span class="n">plot_roi_beta_ts</span><span class="p">(</span><span class="n">nw</span><span class="p">,</span> <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="n">figsize</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>48
+</pre></div>
+</div>
+<img alt="../../../_images/01-Schaefer2018_roi300_net7_beta_timeseries_13_11.png" src="../../../_images/01-Schaefer2018_roi300_net7_beta_timeseries_13_11.png" />
+</div>
+</div>
+</div>
+<div class="section" id="somato-motor">
+<h3>somato motor<a class="headerlink" href="#somato-motor" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nw</span> <span class="o">=</span> <span class="n">somot</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nw</span><span class="p">))</span>
+<span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">6</span> <span class="c1"># 58 ~ 60 = 10 * 6</span>
+<span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">ncols</span><span class="p">,</span> <span class="mf">3.5</span><span class="o">*</span><span class="n">nrows</span><span class="p">)</span>
+<span class="n">plot_roi_beta_ts</span><span class="p">(</span><span class="n">nw</span><span class="p">,</span> <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="n">figsize</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>58
+</pre></div>
+</div>
+<img alt="../../../_images/01-Schaefer2018_roi300_net7_beta_timeseries_15_11.png" src="../../../_images/01-Schaefer2018_roi300_net7_beta_timeseries_15_11.png" />
+</div>
+</div>
+</div>
+<div class="section" id="dorsal-attention">
+<h3>dorsal attention<a class="headerlink" href="#dorsal-attention" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nw</span> <span class="o">=</span> <span class="n">dorsattn</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nw</span><span class="p">))</span>
+<span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span> <span class="c1"># 32 = 8 * 4</span>
+<span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">ncols</span><span class="p">,</span> <span class="mf">3.5</span><span class="o">*</span><span class="n">nrows</span><span class="p">)</span>
+<span class="n">plot_roi_beta_ts</span><span class="p">(</span><span class="n">nw</span><span class="p">,</span> <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="n">figsize</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32
+</pre></div>
+</div>
+<img alt="../../../_images/01-Schaefer2018_roi300_net7_beta_timeseries_17_11.png" src="../../../_images/01-Schaefer2018_roi300_net7_beta_timeseries_17_11.png" />
+</div>
+</div>
+</div>
+<div class="section" id="ventral-attention">
+<h3>ventral attention<a class="headerlink" href="#ventral-attention" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nw</span> <span class="o">=</span> <span class="n">ventattn</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nw</span><span class="p">))</span>
+<span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span> <span class="c1"># 32 = 8 * 4</span>
+<span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">ncols</span><span class="p">,</span> <span class="mf">3.5</span><span class="o">*</span><span class="n">nrows</span><span class="p">)</span>
+<span class="n">plot_roi_beta_ts</span><span class="p">(</span><span class="n">nw</span><span class="p">,</span> <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="n">figsize</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32
+</pre></div>
+</div>
+<img alt="../../../_images/01-Schaefer2018_roi300_net7_beta_timeseries_19_11.png" src="../../../_images/01-Schaefer2018_roi300_net7_beta_timeseries_19_11.png" />
+</div>
+</div>
+</div>
+<div class="section" id="limbic">
+<h3>limbic<a class="headerlink" href="#limbic" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nw</span> <span class="o">=</span> <span class="n">limbic</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nw</span><span class="p">))</span>
+<span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span> <span class="c1"># 20 = 5 * 4</span>
+<span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">ncols</span><span class="p">,</span> <span class="mf">3.5</span><span class="o">*</span><span class="n">nrows</span><span class="p">)</span>
+<span class="n">plot_roi_beta_ts</span><span class="p">(</span><span class="n">nw</span><span class="p">,</span> <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="n">figsize</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
+</pre></div>
+</div>
+<img alt="../../../_images/01-Schaefer2018_roi300_net7_beta_timeseries_21_11.png" src="../../../_images/01-Schaefer2018_roi300_net7_beta_timeseries_21_11.png" />
+</div>
+</div>
+</div>
+<div class="section" id="executive-control">
+<h3>executive control<a class="headerlink" href="#executive-control" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nw</span> <span class="o">=</span> <span class="n">cont</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nw</span><span class="p">))</span>
+<span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span> <span class="c1"># 36 = 6 * 6</span>
+<span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">ncols</span><span class="p">,</span> <span class="mf">3.5</span><span class="o">*</span><span class="n">nrows</span><span class="p">)</span>
+<span class="n">plot_roi_beta_ts</span><span class="p">(</span><span class="n">nw</span><span class="p">,</span> <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="n">figsize</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34
+</pre></div>
+</div>
+<img alt="../../../_images/01-Schaefer2018_roi300_net7_beta_timeseries_23_11.png" src="../../../_images/01-Schaefer2018_roi300_net7_beta_timeseries_23_11.png" />
+</div>
+</div>
+</div>
+<div class="section" id="default-nw">
+<h3>default nw<a class="headerlink" href="#default-nw" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nw</span> <span class="o">=</span> <span class="n">default</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nw</span><span class="p">))</span>
+<span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">5</span> <span class="c1"># 76 ~ 80 = 16 * 5</span>
+<span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">ncols</span><span class="p">,</span> <span class="mf">3.5</span><span class="o">*</span><span class="n">nrows</span><span class="p">)</span>
+<span class="n">plot_roi_beta_ts</span><span class="p">(</span><span class="n">nw</span><span class="p">,</span> <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="n">figsize</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>76
+</pre></div>
+</div>
+<img alt="../../../_images/01-Schaefer2018_roi300_net7_beta_timeseries_25_11.png" src="../../../_images/01-Schaefer2018_roi300_net7_beta_timeseries_25_11.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./explainable-ai/nb/apr22"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Govinda Surampudi<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

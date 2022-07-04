@@ -14,3 +14,16 @@ parts:
         sections:
 
           - file: nb/jun22/00-data-max_desc-create-exploratory-data
+
+          - file: nb/jun22/01-data-max_desc-isfc_threat_vs_safe
+
+  - caption: July 2022
+    chapters:
+      - file: nb/jul22/jul22
+
+      - file: nb/jul22/jul22_updates
+        sections:
+
+          - file: nb/jul22/00-data-max_model-isc_desc-threat_vs_safe
+
+          - file: nb/jul22/00-data-max_model-isc_desc-early_vs_late

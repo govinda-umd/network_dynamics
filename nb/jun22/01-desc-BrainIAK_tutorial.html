@@ -1,0 +1,890 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>June30, 2022: BrainIAK tutorial &#8212; My Project [Daily Progress]</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My Project [Daily Progress]</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  June 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="jun22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="jun22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="00-data-max_desc-create-exploratory-data.html">
+     June 24, 2022: create exploratory dataset from the MAX dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-data-max_desc-isfc_threat_vs_safe.html">
+     June 24,27, 2022: Inter-subject Functional Correlation matrices
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  July 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../jul22/jul22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../jul22/jul22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/00-data-max_model-isc_desc-threat_vs_safe.html">
+     July 1, 2022: Compute Intersubject Correlation (ISC) values for threat and safe conditions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/00-data-max_model-isc_desc-early_vs_late.html">
+     July 4, 2022: Compute Intersubject Correlation (ISC) values for threat and safe conditions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/nb/jun22/01-desc-BrainIAK_tutorial.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/govinda-umd/explainable-ai"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/govinda-umd/explainable-ai/issues/new?title=Issue%20on%20page%20%2Fnb/jun22/01-desc-BrainIAK_tutorial.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/govinda-umd/explainable-ai/master?urlpath=tree/docs/nb/jun22/01-desc-BrainIAK_tutorial.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>June30, 2022: BrainIAK tutorial</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="june30-2022-brainiak-tutorial">
+<h1>June30, 2022: BrainIAK tutorial<a class="headerlink" href="#june30-2022-brainiak-tutorial" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">brainiak.isc</span> <span class="kn">import</span> <span class="p">(</span><span class="n">isc</span><span class="p">,</span> <span class="n">isfc</span><span class="p">,</span> <span class="n">bootstrap_isc</span><span class="p">,</span> <span class="n">permutation_isc</span><span class="p">,</span> 
+                        <span class="n">timeshift_isc</span><span class="p">,</span> <span class="n">phaseshift_isc</span><span class="p">,</span> <span class="n">compute_summary_statistic</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span><span class="p">,</span> <span class="n">pearsonr</span><span class="p">,</span> <span class="n">zscore</span>
+<span class="kn">from</span> <span class="nn">scipy.spatial.distance</span> <span class="kn">import</span> <span class="n">squareform</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.multitest</span> <span class="kn">import</span> <span class="n">multipletests</span>
+<span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># toy dataset</span>
+
+<span class="n">n_subjects</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">n_TRs</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">n_voxels</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="c1"># Create simple simulated data with high intersubject correlation</span>
+<span class="k">def</span> <span class="nf">simulated_timeseries</span><span class="p">(</span><span class="n">n_subjects</span><span class="p">,</span> <span class="n">n_TRs</span><span class="p">,</span> <span class="n">n_voxels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+  <span class="n">signal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_TRs</span><span class="p">,</span> <span class="n">n_voxels</span> <span class="o">//</span> <span class="mi">100</span><span class="p">)</span>
+  <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">zscore</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span>
+                 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_TRs</span><span class="p">,</span> <span class="n">n_voxels</span><span class="p">)</span> <span class="o">*</span> <span class="n">noise</span><span class="p">,</span>
+                 <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+          <span class="k">for</span> <span class="n">subject</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_subjects</span><span class="p">)]</span>
+  <span class="k">return</span> <span class="n">data</span>
+
+<span class="c1"># List of subject datasets</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">simulated_timeseries</span><span class="p">(</span><span class="n">n_subjects</span><span class="p">,</span> <span class="n">n_TRs</span><span class="p">,</span> <span class="n">n_voxels</span><span class="o">=</span><span class="n">n_voxels</span><span class="p">)</span>
+
+<span class="c1"># Inspect the shape of one of our simulated datasets</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Simulated data shape first subject: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">i.e., </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> time points and </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> voxels&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create a simple visualization of the data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdYlBu_r&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">3</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;voxels&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;time points&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Simulated data shape first subject: (300, 1000) 
+i.e., 300 time points and 1000 voxels
+</pre></div>
+</div>
+<img alt="../../_images/01-desc-BrainIAK_tutorial_2_1.png" src="../../_images/01-desc-BrainIAK_tutorial_2_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ISC analysis</span>
+
+<span class="c1"># Get the time series for a single voxel in two subjects</span>
+<span class="n">subject_a</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][:,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">subject_b</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">][:,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Check the shape of these mini-datasets</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Subject A, first voxel, shape = </span><span class="si">{</span><span class="n">subject_a</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Subject B, first voxel, shape = </span><span class="si">{</span><span class="n">subject_b</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Combine these into a list</span>
+<span class="n">both_subjects</span> <span class="o">=</span> <span class="p">[</span><span class="n">subject_a</span><span class="p">,</span> <span class="n">subject_b</span><span class="p">]</span>
+
+<span class="c1"># Compute the ISC for this voxel across the two subjects</span>
+<span class="n">iscs</span> <span class="o">=</span> <span class="n">isc</span><span class="p">(</span><span class="n">both_subjects</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ISC for first voxel across subjects A and B = </span><span class="si">{</span><span class="n">iscs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># NB: even for a single voxel, the output ISC is shaped to </span>
+<span class="c1"># to accommodate an n_ISCs x n_voxels matrix</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ISC output shape = </span><span class="si">{</span><span class="n">iscs</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">i.e., </span><span class="si">{</span><span class="n">iscs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> ISC value(s) by </span><span class="si">{</span><span class="n">iscs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> voxel(s)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Check that ISC output matches of other correlation functions in python</span>
+<span class="n">numpy_corrcoef</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">subject_a</span><span class="p">,</span> <span class="n">subject_b</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">scipy_pearsonr</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">subject_a</span><span class="p">,</span> <span class="n">subject_b</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;BrainIAK ISC = </span><span class="si">{</span><span class="n">iscs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Numpy&#39;s correlation = </span><span class="si">{</span><span class="n">numpy_corrcoef</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Scipy&#39;s correlation = </span><span class="si">{</span><span class="n">scipy_pearsonr</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">iscs</span><span class="p">,</span> <span class="n">numpy_corrcoef</span><span class="p">)</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">iscs</span><span class="p">,</span> <span class="n">scipy_pearsonr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Subject A, first voxel, shape = (300,) 
+Subject B, first voxel, shape = (300,)
+ISC for first voxel across subjects A and B = 0.5618297663385028
+ISC output shape = (1,)
+i.e., 1 ISC value(s) by 1 voxel(s)
+BrainIAK ISC = 0.561830
+Numpy&#39;s correlation = 0.561830
+Scipy&#39;s correlation = 0.561830
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import logging module and set level to INFO</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">()</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="c1"># Re-run the previous ISC analyses to see logged info</span>
+<span class="n">iscs</span> <span class="o">=</span> <span class="n">isc</span><span class="p">(</span><span class="n">both_subjects</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Set logging back to default level of WARNING</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:brainiak.utils.utils:Assuming 2 subjects with 300 time points and 1 voxel(s) or ROI(s) for ISC analysis.
+INFO:brainiak.isc:Only two subjects! Simply computing Pearson correlation.
+INFO:brainiak.isc:ISC computation will tolerate all NaNs when averaging
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pairwise approach across all subjects and voxels</span>
+<span class="n">iscs</span> <span class="o">=</span> <span class="n">isc</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Check shape of output ISC values</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ISC values shape = </span><span class="si">{</span><span class="n">iscs</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">i.e., </span><span class="si">{</span><span class="n">iscs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;pairs and </span><span class="si">{</span><span class="n">iscs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> voxels&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Minimum ISC = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">iscs</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">; &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;maximum ISC = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">iscs</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ISC values shape = (190, 1000) 
+i.e., 190 pairs and 1000 voxels
+Minimum ISC = 0.289; maximum ISC = 0.668
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualize the correlation matrix for one voxel</span>
+<span class="n">isc_matrix</span> <span class="o">=</span> <span class="n">squareform</span><span class="p">(</span><span class="n">iscs</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">isc_matrix</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">isc_matrix</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdYlBu_r&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">square</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+            <span class="n">xticklabels</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">),</span> <span class="n">yticklabels</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;subjects&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;subjects&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Create noisier data</span>
+<span class="n">noisy_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">((</span>
+    <span class="n">simulated_timeseries</span><span class="p">(</span><span class="n">n_subjects</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n_TRs</span><span class="p">,</span>
+                         <span class="n">n_voxels</span><span class="o">=</span><span class="n">n_voxels</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="mi">1</span><span class="p">))),</span>
+                        <span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">((</span>
+    <span class="n">simulated_timeseries</span><span class="p">(</span><span class="n">n_subjects</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n_TRs</span><span class="p">,</span>
+                         <span class="n">n_voxels</span><span class="o">=</span><span class="n">n_voxels</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="mi">5</span><span class="p">)))))</span>
+
+<span class="c1"># Recompute ISC and visualize data with noisy subjects</span>
+<span class="n">noisy_iscs</span> <span class="o">=</span> <span class="n">isc</span><span class="p">(</span><span class="n">noisy_data</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">isc_matrix</span> <span class="o">=</span> <span class="n">squareform</span><span class="p">(</span><span class="n">noisy_iscs</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">isc_matrix</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">isc_matrix</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdYlBu_r&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">square</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+            <span class="n">xticklabels</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">),</span> <span class="n">yticklabels</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;subjects&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;subjects&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/01-desc-BrainIAK_tutorial_6_0.png" src="../../_images/01-desc-BrainIAK_tutorial_6_0.png" />
+<img alt="../../_images/01-desc-BrainIAK_tutorial_6_1.png" src="../../_images/01-desc-BrainIAK_tutorial_6_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Leave-one-out approach</span>
+<span class="n">iscs</span> <span class="o">=</span> <span class="n">isc</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Check shape of output ISC values</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ISC values shape = </span><span class="si">{</span><span class="n">iscs</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">i.e., </span><span class="si">{</span><span class="n">iscs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;left-out subjects and </span><span class="si">{</span><span class="n">iscs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> voxel(s)&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Minimum ISC = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">iscs</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">; &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;maximum ISC = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">iscs</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ISC values shape = (20, 1000) 
+i.e., 20 left-out subjects and 1000 voxel(s)
+Minimum ISC = 0.553; maximum ISC = 0.786
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Input a list of subjects (same as before)</span>
+<span class="n">iscs</span> <span class="o">=</span> <span class="n">isc</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Stack subjects in 3rd-dimension and recompute ISC</span>
+<span class="n">data_stack</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Stacked data shape = </span><span class="si">{</span><span class="n">data_stack</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">i.e., </span><span class="si">{</span><span class="n">data_stack</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> time points, </span><span class="si">{</span><span class="n">data_stack</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;voxels, and </span><span class="si">{</span><span class="n">data_stack</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2"> subjects&quot;</span><span class="p">)</span>
+
+<span class="c1"># Input stacked numpy array</span>
+<span class="n">iscs_from_stack</span> <span class="o">=</span> <span class="n">isc</span><span class="p">(</span><span class="n">data_stack</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Make sure the ISC outputs are the same</span>
+<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">iscs</span><span class="p">,</span> <span class="n">iscs_from_stack</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stacked data shape = (300, 1000, 20)
+i.e., 300 time points, 1000 voxels, and 20 subjects
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute mean leave-one-out ISC</span>
+<span class="n">iscs</span> <span class="o">=</span> <span class="n">isc</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">summary_statistic</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ISC values shape = </span><span class="si">{</span><span class="n">iscs</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">i.e., the mean value across &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;left-out subjects for </span><span class="si">{</span><span class="n">iscs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> voxel(s)&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Mean ISC for first voxel = </span><span class="si">{</span><span class="n">iscs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Compute median leave-one-out ISC</span>
+<span class="n">iscs</span> <span class="o">=</span> <span class="n">isc</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">summary_statistic</span><span class="o">=</span><span class="s1">&#39;median&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ISC values shape = </span><span class="si">{</span><span class="n">iscs</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">i.e., the median value across &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;left-out subjects for </span><span class="si">{</span><span class="n">iscs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> voxel(s)&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Median ISC for first voxel = </span><span class="si">{</span><span class="n">iscs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ISC values shape = (1000,) 
+i.e., the mean value across left-out subjects for 1000 voxel(s)
+Mean ISC for first voxel = 0.724
+ISC values shape = (1000,) 
+i.e., the median value across left-out subjects for 1000 voxel(s)
+Median ISC for first voxel = 0.721
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Phase randomization using pairwise approach (takes a couple minutes)</span>
+<span class="n">observed</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">distribution</span> <span class="o">=</span> <span class="n">phaseshift_isc</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                           <span class="n">summary_statistic</span><span class="o">=</span><span class="s1">&#39;median&#39;</span><span class="p">,</span>
+                                           <span class="n">n_shifts</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inspect shape of null distribution</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Null distribution shape = </span><span class="si">{</span><span class="n">distribution</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">i.e., </span><span class="si">{</span><span class="n">distribution</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> randomizations &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;and </span><span class="si">{</span><span class="n">distribution</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> voxels&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get actual ISC value and p-value for first voxel</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Actual observed ISC value for first voxel = </span><span class="si">{</span><span class="n">observed</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">,&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">p-value from randomization test = </span><span class="si">{</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Null distribution shape = (200, 1000)
+i.e., 200 randomizations and 1000 voxels
+Actual observed ISC value for first voxel = 0.547,
+p-value from randomization test = 0.005
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Circular time-shift using pairwise approach (takes a couple minutes)</span>
+<span class="n">observed</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">distribution</span> <span class="o">=</span> <span class="n">timeshift_isc</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                          <span class="n">summary_statistic</span><span class="o">=</span><span class="s1">&#39;median&#39;</span><span class="p">,</span>
+                                          <span class="n">n_shifts</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inspect shape of null distribution</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Null distribution shape = </span><span class="si">{</span><span class="n">distribution</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">i.e., </span><span class="si">{</span><span class="n">distribution</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> randomizations &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;and </span><span class="si">{</span><span class="n">distribution</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> voxels&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get actual ISC value and p-value for first voxel</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Actual observed ISC value for first voxel = </span><span class="si">{</span><span class="n">observed</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">,&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">p-value from randomization test = </span><span class="si">{</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Null distribution shape = (200, 1000)
+i.e., 200 randomizations and 1000 voxels
+Actual observed ISC value for first voxel = 0.547,
+p-value from randomization test = 0.005
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute ISCs and then run bootstrap hypothesis test on ISCs</span>
+<span class="n">iscs</span> <span class="o">=</span> <span class="n">isc</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">summary_statistic</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">observed</span><span class="p">,</span> <span class="n">ci</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">distribution</span> <span class="o">=</span> <span class="n">bootstrap_isc</span><span class="p">(</span><span class="n">iscs</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                              <span class="n">ci_percentile</span><span class="o">=</span><span class="mi">95</span><span class="p">,</span>
+                                              <span class="n">summary_statistic</span><span class="o">=</span><span class="s1">&#39;median&#39;</span><span class="p">,</span>
+                                              <span class="n">n_bootstraps</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inspect shape of null distribution</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Null distribution shape = </span><span class="si">{</span><span class="n">distribution</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">i.e., </span><span class="si">{</span><span class="n">distribution</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> bootstraps &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;and </span><span class="si">{</span><span class="n">distribution</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> voxels&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get actual ISC value and p-value for first voxel</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Actual observed ISC value for first voxel = </span><span class="si">{</span><span class="n">observed</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">,&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">p-value from bootstrap hypothesis test = </span><span class="si">{</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Null distribution shape = (200, 1000)
+i.e., 200 bootstraps and 1000 voxels
+Actual observed ISC value for first voxel = 0.547,
+p-value from bootstrap hypothesis test = 0.005
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute ISCs and then run one-sample permutation test on ISCs</span>
+<span class="n">iscs</span> <span class="o">=</span> <span class="n">isc</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">summary_statistic</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">observed</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">distribution</span> <span class="o">=</span> <span class="n">permutation_isc</span><span class="p">(</span><span class="n">iscs</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                            <span class="n">summary_statistic</span><span class="o">=</span><span class="s1">&#39;median&#39;</span><span class="p">,</span>
+                                            <span class="n">n_permutations</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inspect shape of null distribution</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Null distribution shape = </span><span class="si">{</span><span class="n">distribution</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">i.e., </span><span class="si">{</span><span class="n">distribution</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> permutations &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;and </span><span class="si">{</span><span class="n">distribution</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> voxels&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get actual ISC value and p-value for first voxel</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Actual observed ISC value for first voxel = </span><span class="si">{</span><span class="n">observed</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">,&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">p-value from permutation test = </span><span class="si">{</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Null distribution shape = (200, 1000)
+i.e., 200 permutations and 1000 voxels
+Actual observed ISC value for first voxel = 0.547,
+p-value from permutation test = 0.005
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note that with few subjects, an exact test is performed</span>
+<span class="n">data_n6</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">iscs</span> <span class="o">=</span> <span class="n">isc</span><span class="p">(</span><span class="n">data_n6</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">summary_statistic</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">observed</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">distribution</span> <span class="o">=</span> <span class="n">permutation_isc</span><span class="p">(</span><span class="n">iscs</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                            <span class="n">summary_statistic</span><span class="o">=</span><span class="s1">&#39;median&#39;</span><span class="p">,</span>
+                                            <span class="n">n_permutations</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create data with noisy subset of subjects</span>
+<span class="n">noisy_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">((</span>
+    <span class="n">simulated_timeseries</span><span class="p">(</span><span class="n">n_subjects</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n_TRs</span><span class="p">,</span>
+                         <span class="n">n_voxels</span><span class="o">=</span><span class="n">n_voxels</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="mi">1</span><span class="p">))),</span>
+                        <span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">((</span>
+    <span class="n">simulated_timeseries</span><span class="p">(</span><span class="n">n_subjects</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n_TRs</span><span class="p">,</span>
+                         <span class="n">n_voxels</span><span class="o">=</span><span class="n">n_voxels</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="mi">5</span><span class="p">)))))</span>
+
+<span class="c1"># Create group_assignment variable with group labels</span>
+<span class="n">group_assignment</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Group assignments: </span><span class="se">\n</span><span class="si">{</span><span class="n">group_assignment</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Compute ISCs and then run two-sample permutation test on ISCs</span>
+<span class="n">iscs</span> <span class="o">=</span> <span class="n">isc</span><span class="p">(</span><span class="n">noisy_data</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">summary_statistic</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">observed</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">distribution</span> <span class="o">=</span> <span class="n">permutation_isc</span><span class="p">(</span><span class="n">iscs</span><span class="p">,</span>
+                                            <span class="n">group_assignment</span><span class="o">=</span><span class="n">group_assignment</span><span class="p">,</span>
+                                            <span class="n">pairwise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                            <span class="n">summary_statistic</span><span class="o">=</span><span class="s1">&#39;median&#39;</span><span class="p">,</span>
+                                            <span class="n">n_permutations</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Group assignments: 
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inspect shape of null distribution</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Null distribution shape = </span><span class="si">{</span><span class="n">distribution</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">i.e., </span><span class="si">{</span><span class="n">distribution</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> permutations &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;and </span><span class="si">{</span><span class="n">distribution</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> voxels&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get actual ISC value and p-value for first voxel</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Actual observed group difference in ISC values &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;for first voxel = </span><span class="si">{</span><span class="n">observed</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">,&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">p-value from permutation test = </span><span class="si">{</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Null distribution shape = (200, 1000)
+i.e., 200 permutations and 1000 voxels
+Actual observed group difference in ISC values for first voxel = 0.454,
+p-value from permutation test = 0.010
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create data with where half of voxels are noisy</span>
+<span class="n">noisy_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">((</span>
+    <span class="n">simulated_timeseries</span><span class="p">(</span><span class="n">n_subjects</span><span class="p">,</span> <span class="n">n_TRs</span><span class="p">,</span>
+                         <span class="n">n_voxels</span><span class="o">=</span><span class="n">n_voxels</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="mi">1</span><span class="p">))),</span>
+                        <span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">((</span>
+    <span class="n">simulated_timeseries</span><span class="p">(</span><span class="n">n_subjects</span><span class="p">,</span> <span class="n">n_TRs</span><span class="p">,</span>
+                         <span class="n">n_voxels</span><span class="o">=</span><span class="n">n_voxels</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="mi">9</span><span class="p">)))))</span>
+
+<span class="c1"># Visualize data for first subject where half of voxels are noisy</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">noisy_data</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdYlBu_r&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">3</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;voxels&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;time points&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/01-desc-BrainIAK_tutorial_21_0.png" src="../../_images/01-desc-BrainIAK_tutorial_21_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute ISCs and then run bootstrap hypothesis test on ISCs</span>
+<span class="c1"># using a realistic number of permutations (takes a few minutes)</span>
+<span class="n">iscs</span> <span class="o">=</span> <span class="n">isc</span><span class="p">(</span><span class="n">noisy_data</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">summary_statistic</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">observed</span><span class="p">,</span> <span class="n">ci</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">distribution</span> <span class="o">=</span> <span class="n">bootstrap_isc</span><span class="p">(</span><span class="n">iscs</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                              <span class="n">ci_percentile</span><span class="o">=</span><span class="mi">95</span><span class="p">,</span>
+                                              <span class="n">summary_statistic</span><span class="o">=</span><span class="s1">&#39;median&#39;</span><span class="p">,</span>
+                                              <span class="n">n_bootstraps</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get q-values (i.e., FDR-controlled p-values) using statsmodels</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">multipletests</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;fdr_by&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># We can also convert these q-values to z-values</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">q</span><span class="p">))</span>
+
+<span class="c1"># Also get significant voxels with and without correction</span>
+<span class="n">corrected</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:]</span> <span class="o">&lt;</span> <span class="mf">.05</span>
+<span class="n">uncorrected</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:]</span> <span class="o">&lt;</span> <span class="mf">.05</span>
+
+<span class="c1"># Count significant voxels before and after correction</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">uncorrected</span><span class="p">)</span><span class="si">}</span><span class="s1"> &quot;significant&quot; voxels before correction for &#39;</span>
+      <span class="sa">f</span><span class="s2">&quot;multiple tests; </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">corrected</span><span class="p">)</span><span class="si">}</span><span class="s2"> significant voxels after &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;controlling FDR at .05&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>692 &quot;significant&quot; voxels before correction for multiple tests; 521 significant voxels after controlling FDR at .05
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set up grid of subplots for visualizing voxel values and significance</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax0</span><span class="p">,</span> <span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
+                                         <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                         <span class="n">gridspec_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;height_ratios&#39;</span><span class="p">:</span>
+                                                      <span class="p">[</span><span class="mi">300</span><span class="p">,</span> <span class="mi">190</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">]})</span>
+
+<span class="c1"># Visualize data for first subject where half of voxels are noisy</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">noisy_data</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdYlBu_r&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">3</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;time points&#39;</span><span class="p">)</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;response time series for example subject&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Visualize ISC values across all pairs of subjects</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">iscs</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdYlBu_r&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;pairs of subjects&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;ISC values for all pairs of subjects&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Visualize uncorrected and corrected significant voxels</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">uncorrected</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+            <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;uncorrrected &quot;significant&quot; voxels (yellow)&#39;</span><span class="p">)</span>
+
+<span class="n">ax3</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">corrected</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+            <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;voxels&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">tick_bottom</span><span class="p">()</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;FDR-corrrected significant voxels (yellow)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/01-desc-BrainIAK_tutorial_24_0.png" src="../../_images/01-desc-BrainIAK_tutorial_24_0.png" />
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nb/jun22"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Govinda Surampudi<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

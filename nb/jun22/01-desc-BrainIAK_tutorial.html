@@ -50,6 +50,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Summary" href="../jul22/jul22.html" />
+    <link rel="prev" title="June 28, 2022: ROI ordering" href="00-data-max_desc-roi_ordering.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -98,22 +100,22 @@ const thebe_selector_output = ".output, .cell_output"
   June 2022
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="jun22.html">
    Summary
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="jun22_updates.html">
    Updates
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="00-data-max_desc-create-exploratory-data.html">
      June 24, 2022: create exploratory dataset from the MAX dataset
@@ -122,6 +124,16 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="01-data-max_desc-isfc_threat_vs_safe.html">
      June 24,27, 2022: Inter-subject Functional Correlation matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="00-data-max_desc-roi_ordering.html">
+     June 28, 2022: ROI ordering
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     June30, 2022: BrainIAK tutorial
     </a>
    </li>
   </ul>
@@ -155,7 +167,60 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../jul22/00-data-max_model-isc_desc-early_vs_late.html">
-     July 4, 2022: Compute Intersubject Correlation (ISC) values for threat and safe conditions
+     July 4, 2022: Compute Intersubject Correlation (ISC) values for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       early
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       late
+      </span>
+     </code>
+     periods in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       threat
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe
+      </span>
+     </code>
+     conditions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/00-data-max_model-isfc_desc-early_vs_late.html">
+     July 4-5, 2022: Compute Intersubject Functional Correlation (ISFC) values for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       early
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       late
+      </span>
+     </code>
+     periods in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       threat
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe
+      </span>
+     </code>
+     conditions
     </a>
    </li>
   </ul>
@@ -259,6 +324,29 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#isc">
+   ISC
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistics-on-isc">
+   Statistics on ISC
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#isfc">
+   ISFC
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -271,6 +359,29 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#isc">
+   ISC
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistics-on-isc">
+   Statistics on ISC
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#isfc">
+   ISFC
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -279,6 +390,8 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="june30-2022-brainiak-tutorial">
 <h1>June30, 2022: BrainIAK tutorial<a class="headerlink" href="#june30-2022-brainiak-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>Paper: <a class="reference external" href="https://academic.oup.com/scan/article/14/6/667/5489905">https://academic.oup.com/scan/article/14/6/667/5489905</a>
+Tutorial: <a class="reference external" href="https://github.com/snastase/isc-tutorial">https://github.com/snastase/isc-tutorial</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">brainiak.isc</span> <span class="kn">import</span> <span class="p">(</span><span class="n">isc</span><span class="p">,</span> <span class="n">isfc</span><span class="p">,</span> <span class="n">bootstrap_isc</span><span class="p">,</span> <span class="n">permutation_isc</span><span class="p">,</span> 
@@ -374,12 +487,12 @@ i.e., 300 time points and 1000 voxels
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Subject A, first voxel, shape = (300,) 
 Subject B, first voxel, shape = (300,)
-ISC for first voxel across subjects A and B = 0.5618297663385028
+ISC for first voxel across subjects A and B = 0.49804642802182514
 ISC output shape = (1,)
 i.e., 1 ISC value(s) by 1 voxel(s)
-BrainIAK ISC = 0.561830
-Numpy&#39;s correlation = 0.561830
-Scipy&#39;s correlation = 0.561830
+BrainIAK ISC = 0.498046
+Numpy&#39;s correlation = 0.498046
+Scipy&#39;s correlation = 0.498046
 </pre></div>
 </div>
 </div>
@@ -407,6 +520,8 @@ INFO:brainiak.isc:ISC computation will tolerate all NaNs when averaging
 </div>
 </div>
 </div>
+<div class="section" id="isc">
+<h2>ISC<a class="headerlink" href="#isc" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pairwise approach across all subjects and voxels</span>
@@ -423,7 +538,7 @@ INFO:brainiak.isc:ISC computation will tolerate all NaNs when averaging
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ISC values shape = (190, 1000) 
 i.e., 190 pairs and 1000 voxels
-Minimum ISC = 0.289; maximum ISC = 0.668
+Minimum ISC = 0.277; maximum ISC = 0.676
 </pre></div>
 </div>
 </div>
@@ -460,8 +575,8 @@ Minimum ISC = 0.289; maximum ISC = 0.668
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/01-desc-BrainIAK_tutorial_6_0.png" src="../../_images/01-desc-BrainIAK_tutorial_6_0.png" />
-<img alt="../../_images/01-desc-BrainIAK_tutorial_6_1.png" src="../../_images/01-desc-BrainIAK_tutorial_6_1.png" />
+<img alt="../../_images/01-desc-BrainIAK_tutorial_7_0.png" src="../../_images/01-desc-BrainIAK_tutorial_7_0.png" />
+<img alt="../../_images/01-desc-BrainIAK_tutorial_7_1.png" src="../../_images/01-desc-BrainIAK_tutorial_7_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -480,7 +595,7 @@ Minimum ISC = 0.289; maximum ISC = 0.668
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ISC values shape = (20, 1000) 
 i.e., 20 left-out subjects and 1000 voxel(s)
-Minimum ISC = 0.553; maximum ISC = 0.786
+Minimum ISC = 0.553; maximum ISC = 0.794
 </pre></div>
 </div>
 </div>
@@ -532,14 +647,17 @@ i.e., 300 time points, 1000 voxels, and 20 subjects
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ISC values shape = (1000,) 
 i.e., the mean value across left-out subjects for 1000 voxel(s)
-Mean ISC for first voxel = 0.724
+Mean ISC for first voxel = 0.667
 ISC values shape = (1000,) 
 i.e., the median value across left-out subjects for 1000 voxel(s)
-Median ISC for first voxel = 0.721
+Median ISC for first voxel = 0.665
 </pre></div>
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="statistics-on-isc">
+<h2>Statistics on ISC<a class="headerlink" href="#statistics-on-isc" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Phase randomization using pairwise approach (takes a couple minutes)</span>
@@ -566,7 +684,7 @@ Median ISC for first voxel = 0.721
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Null distribution shape = (200, 1000)
 i.e., 200 randomizations and 1000 voxels
-Actual observed ISC value for first voxel = 0.547,
+Actual observed ISC value for first voxel = 0.470,
 p-value from randomization test = 0.005
 </pre></div>
 </div>
@@ -598,7 +716,7 @@ p-value from randomization test = 0.005
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Null distribution shape = (200, 1000)
 i.e., 200 randomizations and 1000 voxels
-Actual observed ISC value for first voxel = 0.547,
+Actual observed ISC value for first voxel = 0.470,
 p-value from randomization test = 0.005
 </pre></div>
 </div>
@@ -632,7 +750,7 @@ p-value from randomization test = 0.005
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Null distribution shape = (200, 1000)
 i.e., 200 bootstraps and 1000 voxels
-Actual observed ISC value for first voxel = 0.547,
+Actual observed ISC value for first voxel = 0.470,
 p-value from bootstrap hypothesis test = 0.005
 </pre></div>
 </div>
@@ -665,7 +783,7 @@ p-value from bootstrap hypothesis test = 0.005
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Null distribution shape = (200, 1000)
 i.e., 200 permutations and 1000 voxels
-Actual observed ISC value for first voxel = 0.547,
+Actual observed ISC value for first voxel = 0.470,
 p-value from permutation test = 0.005
 </pre></div>
 </div>
@@ -731,8 +849,8 @@ p-value from permutation test = 0.005
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Null distribution shape = (200, 1000)
 i.e., 200 permutations and 1000 voxels
-Actual observed group difference in ISC values for first voxel = 0.454,
-p-value from permutation test = 0.010
+Actual observed group difference in ISC values for first voxel = 0.428,
+p-value from permutation test = 0.005
 </pre></div>
 </div>
 </div>
@@ -756,7 +874,7 @@ p-value from permutation test = 0.010
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/01-desc-BrainIAK_tutorial_21_0.png" src="../../_images/01-desc-BrainIAK_tutorial_21_0.png" />
+<img alt="../../_images/01-desc-BrainIAK_tutorial_23_0.png" src="../../_images/01-desc-BrainIAK_tutorial_23_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -792,7 +910,7 @@ p-value from permutation test = 0.010
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>692 &quot;significant&quot; voxels before correction for multiple tests; 521 significant voxels after controlling FDR at .05
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>678 &quot;significant&quot; voxels before correction for multiple tests; 528 significant voxels after controlling FDR at .05
 </pre></div>
 </div>
 </div>
@@ -836,7 +954,213 @@ p-value from permutation test = 0.010
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/01-desc-BrainIAK_tutorial_24_0.png" src="../../_images/01-desc-BrainIAK_tutorial_24_0.png" />
+<img alt="../../_images/01-desc-BrainIAK_tutorial_26_0.png" src="../../_images/01-desc-BrainIAK_tutorial_26_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="isfc">
+<h2>ISFC<a class="headerlink" href="#isfc" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute ISFCs using leave-one-out approach</span>
+<span class="n">isfcs</span><span class="p">,</span> <span class="n">iscs</span> <span class="o">=</span> <span class="n">isfc</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">vectorize_isfcs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Check shape of output ISFC values</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ISFC output shape = </span><span class="si">{</span><span class="n">isfcs</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="se">\n</span><span class="s2">i.e., </span><span class="si">{</span><span class="n">isfcs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;left-out subjects by </span><span class="si">{</span><span class="n">isfcs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> connections (i.e., voxel pairs)&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">ISCs output shape = </span><span class="si">{</span><span class="n">iscs</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="se">\n</span><span class="s2">i.e., </span><span class="si">{</span><span class="n">iscs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;left-out subjects by </span><span class="si">{</span><span class="n">iscs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> voxels&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ISFC output shape = (20, 499500)
+i.e., 20 left-out subjects by 499500 connections (i.e., voxel pairs)
+ISCs output shape = (20, 1000)
+i.e., 20 left-out subjects by 1000 voxels
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute ISFCs using leave-one-out approach</span>
+<span class="n">isfcs</span> <span class="o">=</span> <span class="n">isfc</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">vectorize_isfcs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Check shape of output ISFC values</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ISFC output shape = </span><span class="si">{</span><span class="n">isfcs</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="se">\n</span><span class="s2">i.e., </span><span class="si">{</span><span class="n">isfcs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;left-out subjects by </span><span class="si">{</span><span class="n">isfcs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> voxels by </span><span class="si">{</span><span class="n">isfcs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
+      <span class="s2">&quot;voxels&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ISFC output shape = (20, 1000, 1000)
+i.e., 20 left-out subjects by 1000 voxels by 1000 voxels
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute ISFCs using leave-one-out approach with mean</span>
+<span class="n">isfcs</span><span class="p">,</span> <span class="n">iscs</span> <span class="o">=</span> <span class="n">isfc</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">summary_statistic</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span>
+                   <span class="n">vectorize_isfcs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Check shape of output ISFC values</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean ISFC output shape = </span><span class="si">{</span><span class="n">isfcs</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="se">\n</span><span class="s2">i.e., </span><span class="si">{</span><span class="n">isfcs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;connections (i.e., voxel pairs)&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Mean ISC output shape = </span><span class="si">{</span><span class="n">iscs</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="se">\n</span><span class="s2">i.e., </span><span class="si">{</span><span class="n">iscs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
+      <span class="s2">&quot;voxels&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean ISFC output shape = (499500,)
+i.e., 499500 connections (i.e., voxel pairs)
+Mean ISC output shape = (1000,)
+i.e., 1000 voxels
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">brainiak.isc</span> <span class="kn">import</span> <span class="n">squareform_isfc</span>
+
+<span class="c1"># Start with square (redundant) ISFCs and check shape</span>
+<span class="n">isfcs_sq</span> <span class="o">=</span> <span class="n">isfc</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">vectorize_isfcs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Square (redundant) ISFCs shape: </span><span class="si">{</span><span class="n">isfcs_sq</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Convert these directly to condensed ISFCs (and ISCs)</span>
+<span class="n">isfcs_c</span><span class="p">,</span> <span class="n">iscs</span> <span class="o">=</span> <span class="n">squareform_isfc</span><span class="p">(</span><span class="n">isfcs_sq</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Condensed ISFCs shape: </span><span class="si">{</span><span class="n">isfcs_c</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">, &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;ISCs shape: </span><span class="si">{</span><span class="n">iscs</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Convert these directly back to redundant ISFCs</span>
+<span class="n">isfcs_r</span> <span class="o">=</span> <span class="n">squareform_isfc</span><span class="p">(</span><span class="n">isfcs_c</span><span class="p">,</span> <span class="n">iscs</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Converted redundant ISFCs shape: </span><span class="si">{</span><span class="n">isfcs_r</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Check that they are identical to the original square ISFCs</span>
+<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">isfcs_sq</span><span class="p">,</span> <span class="n">isfcs_r</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Square (redundant) ISFCs shape: (20, 1000, 1000)
+Condensed ISFCs shape: (20, 499500), ISCs shape: (20, 1000)
+Converted redundant ISFCs shape: (20, 1000, 1000)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get ISC values directly from ISFC matrix</span>
+<span class="n">isfcs</span><span class="p">,</span> <span class="n">iscs</span> <span class="o">=</span> <span class="n">isfc</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">vectorize_isfcs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Check that these are the same as conventional ISCs</span>
+<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">iscs</span><span class="p">,</span> <span class="n">isc</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Recompute mean ISFCs</span>
+<span class="n">isfcs</span><span class="p">,</span> <span class="n">iscs</span> <span class="o">=</span> <span class="n">isfc</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">summary_statistic</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span>
+                   <span class="n">vectorize_isfcs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Convert these to a square representation</span>
+<span class="n">isfcs</span> <span class="o">=</span> <span class="n">squareform_isfc</span><span class="p">(</span><span class="n">isfcs</span><span class="p">,</span> <span class="n">iscs</span><span class="p">)</span>
+
+<span class="c1"># Visual mean ISFC matrix</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">isfcs</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdYlBu_r&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1001</span><span class="p">,</span> <span class="mi">100</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1001</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+           <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">tick_top</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_label_position</span><span class="p">(</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1001</span><span class="p">,</span> <span class="mi">100</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1001</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;voxels&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;voxels&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/01-desc-BrainIAK_tutorial_33_0.png" src="../../_images/01-desc-BrainIAK_tutorial_33_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create more structured simulated data with 7 &quot;networks&quot;;</span>
+<span class="c1"># don&#39;t worry about the details</span>
+<span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="kn">import</span> <span class="n">gaussian_filter1d</span>
+
+<span class="k">def</span> <span class="nf">structured_timeseries</span><span class="p">(</span><span class="n">n_subjects</span><span class="p">,</span> <span class="n">n_TRs</span><span class="p">,</span> <span class="n">n_voxels</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+  <span class="n">signals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_TRs</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+  <span class="n">networks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">signals</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_TRs</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">noise</span><span class="p">,</span>
+                              <span class="n">signals</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_TRs</span><span class="p">)</span> <span class="o">*</span> <span class="n">noise</span><span class="p">,</span>
+                              <span class="n">signals</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_TRs</span><span class="p">)</span> <span class="o">*</span> <span class="n">noise</span><span class="p">,</span>
+                              <span class="o">-</span><span class="n">signals</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_TRs</span><span class="p">)</span> <span class="o">*</span> <span class="n">noise</span><span class="p">,</span>
+                              <span class="n">signals</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_TRs</span><span class="p">)</span> <span class="o">*</span> <span class="n">noise</span><span class="p">))</span>
+  <span class="n">networks</span> <span class="o">=</span> <span class="n">networks</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+  <span class="n">six</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">n_voxels</span> <span class="o">//</span> <span class="mi">20</span><span class="p">,</span> <span class="n">n_voxels</span> <span class="o">//</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+  <span class="n">seven</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">six</span><span class="p">,</span> <span class="p">(</span><span class="n">n_voxels</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">six</span><span class="p">)))</span>
+  <span class="n">voxels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">network</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">extent</span><span class="p">))</span>
+                            <span class="k">for</span> <span class="n">network</span><span class="p">,</span> <span class="n">extent</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">networks</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">seven</span><span class="p">)])</span>
+  <span class="n">areas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>
+  <span class="n">areas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">areas</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">+</span> <span class="p">[(</span><span class="mi">1000</span> <span class="o">-</span> <span class="n">areas</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])]</span>
+  <span class="n">noise_sources</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_TRs</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+  <span class="n">structured_noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span>
+      <span class="p">(</span><span class="n">noise_sources</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">))]</span> <span class="o">*</span>
+       <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span>
+                                              <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">extent</span><span class="p">))</span> 
+                                      <span class="k">for</span> <span class="n">extent</span> <span class="ow">in</span> <span class="n">areas</span><span class="p">])</span>
+  <span class="n">voxels</span> <span class="o">=</span> <span class="n">gaussian_filter1d</span><span class="p">(</span><span class="n">voxels</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+  <span class="n">structured_noise</span> <span class="o">=</span> <span class="n">gaussian_filter1d</span><span class="p">(</span><span class="n">structured_noise</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+  <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_subjects</span><span class="p">):</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">voxels</span> <span class="o">+</span> <span class="n">structured_noise</span> <span class="o">*</span> <span class="n">noise</span> <span class="o">*</span> <span class="mf">.2</span> <span class="o">+</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_TRs</span><span class="p">,</span> <span class="n">n_voxels</span><span class="p">)</span> <span class="o">*</span> <span class="n">noise</span> <span class="o">*</span> <span class="mf">1.35</span><span class="p">)</span>
+
+  <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">data</span>
+
+<span class="n">structured_data</span> <span class="o">=</span> <span class="n">structured_timeseries</span><span class="p">(</span><span class="n">n_subjects</span><span class="p">,</span> <span class="n">n_TRs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute ISFCs using leave-one-out approach with mean</span>
+<span class="n">isfcs</span><span class="p">,</span> <span class="n">iscs</span> <span class="o">=</span> <span class="n">isfc</span><span class="p">(</span><span class="n">structured_data</span><span class="p">,</span> <span class="n">pairwise</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">summary_statistic</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span>
+                   <span class="n">vectorize_isfcs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Convert these to a square representation</span>
+<span class="n">isfcs</span> <span class="o">=</span> <span class="n">squareform_isfc</span><span class="p">(</span><span class="n">isfcs</span><span class="p">,</span> <span class="n">iscs</span><span class="p">)</span>
+
+<span class="c1"># Visual mean ISFC matrix</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">isfcs</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdYlBu_r&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">.3</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1001</span><span class="p">,</span> <span class="mi">100</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1001</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+           <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">tick_top</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_label_position</span><span class="p">(</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1001</span><span class="p">,</span> <span class="mi">100</span><span class="p">)[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1001</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;voxels&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;voxels&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/01-desc-BrainIAK_tutorial_35_0.png" src="../../_images/01-desc-BrainIAK_tutorial_35_0.png" />
+</div>
 </div>
 </div>
 </div>
@@ -865,7 +1189,21 @@ p-value from permutation test = 0.010
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="00-data-max_desc-roi_ordering.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">June 28, 2022: ROI ordering</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../jul22/jul22.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Summary</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>

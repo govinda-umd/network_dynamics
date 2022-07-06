@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # July 4, 2022: Compute Intersubject Correlation (ISC) values for `early` and `late` periods in `threat` and `safe` conditions
+# # July 4-5, 2022: Compute Intersubject Functional Correlation (ISFC) values for `early` and `late` periods in `threat` and `safe` conditions
 
 # In[1]:
 
@@ -17,8 +17,9 @@ from tqdm import tqdm
 from scipy.stats import norm, zscore
 
 # ISC
-from brainiak.isc import (isc, isfc, bootstrap_isc, compute_summary_statistic)
+from brainiak.isc import (isc, isfc, bootstrap_isc, compute_summary_statistic, squareform_isfc)
 from statsmodels.stats.multitest import multipletests
+from scipy.spatial.distance import squareform
 
 # plotting
 import matplotlib.pyplot as plt
@@ -96,37 +97,64 @@ for label, name in zip(args.LABELS, args.NAMES):
 # In[4]:
 
 
-def get_isc_significant_rois(args, ts):
-    iscs = {}
-    bootstraps = {}
-    q = {}
-    z = {}
-    rois = {}
-    for block, block_ts in ts.items():
-        iscs[block] = isc(
-            block_ts, 
+def get_isfc_significant_rois(args, ts):
+    corrs = {}; bootstraps = {}; q = {}; z = {}; rois = {}
+    observed_isfcs = {}; observed_q_vals = {}; significant_rois = {}; conf_intervals = {}
+
+    for block in ts.keys():
+        isfcs, iscs = isfc(
+            ts[block], 
             pairwise=args.pairwise, 
-            summary_statistic=None
+            vectorize_isfcs=args.vectorize_isfcs
         )
+        corrs[block] = {'isfcs':isfcs, 'iscs':iscs}
 
-        # permutation test
-        bootstraps[block] = bootstrap_isc(
-            iscs[block], pairwise=args.pairwise, 
-            ci_percentile=95, 
-            summary_statistic='median',
-            n_bootstraps=args.n_bootstraps
-        )
+        bootstraps[block] = {}
+        q[block] = {}
+        z[block] = {}
+        rois[block] = {}
+        for corr_name in args.CORR_NAMES:
+            
+            # permutation test
+            observed, ci, p, distribution = bootstrap_isc(
+                corrs[block][corr_name], 
+                pairwise=args.pairwise, 
+                ci_percentile=95, 
+                summary_statistic='median',
+                n_bootstraps=args.n_bootstraps
+            )
+            bootstraps[block][corr_name] = observed, ci, p, distribution
 
-        # multiple tests correction
-        q[block] = multipletests(bootstraps[block][2], method='fdr_by')[1]
-        z[block] = np.abs(norm.ppf(q[block]))
+            # multiple tests correction
+            q[block][corr_name] = multipletests(bootstraps[block][corr_name][2], method='fdr_by')[1]
+            z[block][corr_name] = np.abs(norm.ppf(q[block][corr_name]))
 
-        # surviving rois
-        rois[block] = q[block][np.newaxis, :] < 0.05
-        # rois[name] = bootstraps[name][2][np.newaxis, :] < 0.05
-        print(f"number of significant rois for condition {block} = {np.sum(rois[block])}")
+            # surviving rois
+            rois[block][corr_name] = q[block][corr_name] < 0.05
+            print(
+                (
+                    f"percent of significant roi(-pairs) for " 
+                    f"condition {block} and correlation {corr_name[:-1]} = " 
+                    f"{100. * np.sum(rois[block][corr_name]) / len(rois[block][corr_name])} %"
+                )
+            )
+
+        # isfc matrix
+        observed_isfcs[block] = squareform_isfc(bootstraps[block]['isfcs'][0], bootstraps[block]['iscs'][0])
+        observed_q_vals[block] = squareform_isfc(q[block]['isfcs'], q[block]['iscs'])
+        significant_rois[block] = squareform_isfc(rois[block]['isfcs'], rois[block]['iscs'])
+        conf_intervals[block] = (
+            squareform_isfc(
+                bootstraps[block]['isfcs'][1][0],
+                bootstraps[block]['iscs'][1][0]
+            ),
+            squareform_isfc(
+                bootstraps[block]['isfcs'][1][1],
+                bootstraps[block]['iscs'][1][1]
+            )
+        ) 
     
-    return iscs, bootstraps, q, z, rois
+    return observed_isfcs, observed_q_vals, significant_rois, conf_intervals
 
 
 # In[5]:
@@ -162,8 +190,8 @@ def plot_iscs(args, iscs, rois):
                 ax.axvline(r, color='purple', alpha=0.3)
             
             ax.legend()
-            ax.set_title(block)
-            ax.set_ylabel(f"isc")
+            ax.set_title(f"{period}")
+            ax.set_ylabel(f"{name}")
             ax.set_xlabel(f"rois")
     
     return None
@@ -199,12 +227,22 @@ for label, name in zip(args.LABELS, args.NAMES):
 
 
 '''
-ISC
+ISFC
 leave-one-out
 bootstrap
 '''
+args.CORR_NAMES = ['isfcs', 'iscs']
 args.pairwise = False
+args.vectorize_isfcs = True
 args.n_bootstraps = 1000
-iscs, bootstraps, q, z, rois = get_isc_significant_rois(args, ts)
-plot_iscs(args, iscs, rois)
+
+isfcs, qs, rois, cis = get_isfc_significant_rois(args, ts)
+
+
+# In[8]:
+
+
+plt.matshow(obs_isfc, cmap="RdYlBu_r", vmin=-1, vmax=1)
+ax = plt.gca()
+plt.colorbar(fraction=0.046, pad=0.04)
 

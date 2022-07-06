@@ -17,6 +17,10 @@ parts:
 
           - file: nb/jun22/01-data-max_desc-isfc_threat_vs_safe
 
+          - file: nb/jun22/00-data-max_desc-roi_ordering
+
+          - file: nb/jun22/01-desc-BrainIAK_tutorial
+
   - caption: July 2022
     chapters:
       - file: nb/jul22/jul22

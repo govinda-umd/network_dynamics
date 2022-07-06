@@ -2,6 +2,9 @@
 # coding: utf-8
 
 # # June30, 2022: BrainIAK tutorial
+# 
+# Paper: https://academic.oup.com/scan/article/14/6/667/5489905
+# Tutorial: https://github.com/snastase/isc-tutorial
 
 # In[1]:
 
@@ -101,6 +104,8 @@ iscs = isc(both_subjects, pairwise=True)
 logging.getLogger().setLevel(logging.WARNING)
 
 
+# ## ISC
+
 # In[5]:
 
 
@@ -194,6 +199,8 @@ print(f"ISC values shape = {iscs.shape} \ni.e., the median value across "
       f"left-out subjects for {iscs.shape[0]} voxel(s)"
       f"\nMedian ISC for first voxel = {iscs[0]:.3f}")
 
+
+# ## Statistics on ISC
 
 # In[10]:
 
@@ -365,7 +372,7 @@ observed, ci, p, distribution = bootstrap_isc(iscs, pairwise=True,
                                               n_bootstraps=1000)
 
 
-# In[30]:
+# In[23]:
 
 
 # Get q-values (i.e., FDR-controlled p-values) using statsmodels
@@ -384,7 +391,7 @@ print(f'{np.sum(uncorrected)} "significant" voxels before correction for '
       f"controlling FDR at .05")
 
 
-# In[34]:
+# In[24]:
 
 
 # Set up grid of subplots for visualizing voxel values and significance
@@ -420,4 +427,165 @@ ax3.xaxis.tick_bottom()
 ax3.set_yticks([])
 ax3.set_title('FDR-corrrected significant voxels (yellow)')
 plt.tight_layout()
+
+
+# ## ISFC
+
+# In[25]:
+
+
+# Compute ISFCs using leave-one-out approach
+isfcs, iscs = isfc(data, pairwise=False, vectorize_isfcs=True)
+
+# Check shape of output ISFC values
+print(f"ISFC output shape = {isfcs.shape}\ni.e., {isfcs.shape[0]} "
+      f"left-out subjects by {isfcs.shape[1]} connections (i.e., voxel pairs)"
+      f"\nISCs output shape = {iscs.shape}\ni.e., {iscs.shape[0]} "
+      f"left-out subjects by {iscs.shape[1]} voxels")
+
+
+# In[26]:
+
+
+# Compute ISFCs using leave-one-out approach
+isfcs = isfc(data, pairwise=False, vectorize_isfcs=False)
+
+# Check shape of output ISFC values
+print(f"ISFC output shape = {isfcs.shape}\ni.e., {isfcs.shape[0]} "
+      f"left-out subjects by {isfcs.shape[1]} voxels by {isfcs.shape[2]} "
+      "voxels")
+
+
+# In[27]:
+
+
+# Compute ISFCs using leave-one-out approach with mean
+isfcs, iscs = isfc(data, pairwise=False, summary_statistic='mean',
+                   vectorize_isfcs=True)
+
+# Check shape of output ISFC values
+print(f"Mean ISFC output shape = {isfcs.shape}\ni.e., {isfcs.shape[0]} "
+      f"connections (i.e., voxel pairs)"
+      f"\nMean ISC output shape = {iscs.shape}\ni.e., {iscs.shape[0]} "
+      "voxels")
+
+
+# In[28]:
+
+
+from brainiak.isc import squareform_isfc
+
+# Start with square (redundant) ISFCs and check shape
+isfcs_sq = isfc(data, pairwise=False, vectorize_isfcs=False)
+print(f"Square (redundant) ISFCs shape: {isfcs_sq.shape}")
+
+# Convert these directly to condensed ISFCs (and ISCs)
+isfcs_c, iscs = squareform_isfc(isfcs_sq)
+print(f"Condensed ISFCs shape: {isfcs_c.shape}, "
+      f"ISCs shape: {iscs.shape}")
+
+# Convert these directly back to redundant ISFCs
+isfcs_r = squareform_isfc(isfcs_c, iscs)
+print(f"Converted redundant ISFCs shape: {isfcs_r.shape}")
+
+# Check that they are identical to the original square ISFCs
+assert np.array_equal(isfcs_sq, isfcs_r)
+
+
+# In[29]:
+
+
+# Get ISC values directly from ISFC matrix
+isfcs, iscs = isfc(data, pairwise=False, vectorize_isfcs=True)
+
+# Check that these are the same as conventional ISCs
+assert np.allclose(iscs, isc(data))
+
+
+# In[30]:
+
+
+# Recompute mean ISFCs
+isfcs, iscs = isfc(data, pairwise=False, summary_statistic='mean',
+                   vectorize_isfcs=True)
+
+# Convert these to a square representation
+isfcs = squareform_isfc(isfcs, iscs)
+
+# Visual mean ISFC matrix
+plt.matshow(isfcs, cmap="RdYlBu_r", vmin=-1, vmax=1)
+plt.grid(False)
+plt.xticks(np.arange(0, 1001, 100)[1:], np.arange(100, 1001, 100),
+           rotation=45)
+plt.gca().xaxis.tick_top()
+plt.gca().xaxis.set_label_position('top')
+plt.yticks(np.arange(0, 1001, 100)[1:], np.arange(100, 1001, 100))
+plt.xlabel('voxels')
+plt.ylabel('voxels')
+ax = plt.gca()
+plt.colorbar(fraction=0.046, pad=0.04);
+
+
+# In[31]:
+
+
+# Create more structured simulated data with 7 "networks";
+# don't worry about the details
+from scipy.ndimage import gaussian_filter1d
+
+def structured_timeseries(n_subjects, n_TRs, n_voxels=1000, noise=1):
+  signals = np.random.randn(n_TRs, 3)
+  networks = np.column_stack((signals + np.random.randn(n_TRs, 3) * noise,
+                              signals[:, 0] + np.random.randn(n_TRs) * noise,
+                              signals[:, 0] + np.random.randn(n_TRs) * noise,
+                              -signals[:, 2] + np.random.randn(n_TRs) * noise,
+                              signals[:, 2] + np.random.randn(n_TRs) * noise))
+  networks = networks[:, [0, 3, 4, 5, 1, 2, 6]]
+  six = np.random.randint(n_voxels // 20, n_voxels // 6, 6)
+  seven = np.append(six, (n_voxels - np.sum(six)))
+  voxels = np.column_stack([np.tile(network[:, np.newaxis], (1, extent))
+                            for network, extent in zip(networks.T, seven)])
+  areas = [0] + sorted(np.random.randint(0, 1000, 16))
+  areas = np.diff(areas).tolist() + [(1000 - areas[-1])]
+  noise_sources = np.random.randn(n_TRs, 7)
+  structured_noise = np.column_stack([np.tile(
+      (noise_sources[:, np.random.choice(range(7))] *
+       np.random.choice([-1, 1, 1, 1]))[:, np.newaxis],
+                                              (1, extent)) 
+                                      for extent in areas])
+  voxels = gaussian_filter1d(voxels, 8.0, axis=0)
+  structured_noise = gaussian_filter1d(structured_noise, 8.0, axis=0)
+  data = []
+  for s in np.arange(n_subjects):
+    data.append(voxels + structured_noise * noise * .2 +
+                np.random.randn(n_TRs, n_voxels) * noise * 1.35)
+
+  data = np.dstack(data)
+  return data
+
+structured_data = structured_timeseries(n_subjects, n_TRs)
+
+
+# In[32]:
+
+
+# Compute ISFCs using leave-one-out approach with mean
+isfcs, iscs = isfc(structured_data, pairwise=False, summary_statistic='mean',
+                   vectorize_isfcs=True)
+
+# Convert these to a square representation
+isfcs = squareform_isfc(isfcs, iscs)
+
+# Visual mean ISFC matrix
+plt.matshow(isfcs, cmap="RdYlBu_r", vmin=-.3, vmax=.3)
+plt.grid(False)
+plt.xticks(np.arange(0, 1001, 100)[1:], np.arange(100, 1001, 100),
+           rotation=45)
+plt.gca().xaxis.tick_top()
+plt.gca().xaxis.set_label_position('top')
+plt.yticks(np.arange(0, 1001, 100)[1:], np.arange(100, 1001, 100))
+plt.xlabel('voxels')
+plt.ylabel('voxels')
+ax = plt.gca()
+plt.colorbar(fraction=0.046, pad=0.04);
 

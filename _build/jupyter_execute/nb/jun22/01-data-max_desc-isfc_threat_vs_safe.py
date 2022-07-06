@@ -141,7 +141,7 @@ for label in args.LABELS:
     ax.set_xlabel(f"rois")
 
 
-# In[15]:
+# In[7]:
 
 
 nrows, ncols = len(args.LABELS), 1
@@ -162,104 +162,104 @@ for label in args.LABELS:
 # ## `early` vs `late` periods
 # within `threat` and `safe` conditions
 
-# In[7]:
-
-
-# with open(f"{proj_dir}/data/max/exploratory_data.pkl", 'rb') as f:
-#     X = pickle.load(f)
-
-# # time periods
-# TR = 1.25 #seconds
-# EARLY = np.arange(2.5, 8.75+TR, TR) // TR
-# LATE = np.arange(10.0, 16.25+TR, TR) // TR
-# EARLY = EARLY.astype(int)
-# LATE = LATE.astype(int)
-# print(EARLY, LATE)
-# PERIODS = {'early':EARLY, 'late':LATE}
-
-
 # In[8]:
 
 
-# args.PERIODS = ['early', 'late']
-# PERIOD = {'early':EARLY, 'late':LATE}
+with open(f"{proj_dir}/data/max/exploratory_data.pkl", 'rb') as f:
+    X = pickle.load(f)
 
-# # create time series collector
-# ts = {}
-# for cond in args.names:
-#     ts[cond] = {}
-#     for period in args.PERIODS:
-#         ts[cond][period] = []
-
-# # fill in time series
-# for label, cond in zip(args.LABELS, args.names):
-#     for period in args.PERIODS:
-        
-#         for idx_subj in np.arange(len(X[label])):
-            
-#             x = zscore(X[label][idx_subj][:, PERIOD[period], :], axis=0)
-#             x = np.reshape(x, (x.shape[0]*x.shape[1], x.shape[2]))
-#             ts[cond][period].append(x)
-
-# # find minimum number of time points
-# min_tp = []
-# for label, cond in zip(args.LABELS, args.names):
-#     for period in args.PERIODS:
-
-#         for idx_subj in np.arange(len(ts[cond][period])):
-#             min_tp.append(ts[cond][period][idx_subj].shape[0])
-# min_tp = min(min_tp)
-
-# for label, cond in zip(args.LABELS, args.names):
-#     for period in args.PERIODS:
-
-#         for idx_subj in np.arange(len(ts[cond][period])):
-#             ts[cond][period][idx_subj] = ts[cond][period][idx_subj][:min_tp, :]
-        
-#         ts[cond][period] = np.stack(ts[cond][period], axis=0)
-#         # print(ts[cond][period].shape)
-
-# # isfc
-# isfc = {}
-# for cond in args.names:
-#     isfc[cond] = {}
-#     for period in args.PERIODS:
-#         isfc[cond][period] = []
-
-# for label, cond in zip(args.LABELS, args.names):
-#     for period in args.PERIODS:
-#         isfc[cond][period] = get_isfc_matrix(ts[cond][period])
+# time periods
+TR = 1.25 #seconds
+EARLY = np.arange(2.5, 8.75+TR, TR) // TR
+LATE = np.arange(10.0, 16.25+TR, TR) // TR
+EARLY = EARLY.astype(int)
+LATE = LATE.astype(int)
+print(EARLY, LATE)
+PERIODS = {'early':EARLY, 'late':LATE}
 
 
 # In[9]:
 
 
-# nrows, ncols = len(args.LABELS), len(args.PERIODS)
-# fig, axs = plt.subplots(
-#     nrows=nrows, 
-#     ncols=ncols, 
-#     figsize=(5*ncols, 4*nrows), 
-#     sharex=True, 
-#     sharey=True, 
-#     dpi=120
-# )
+args.PERIODS = ['early', 'late']
+PERIOD = {'early':EARLY, 'late':LATE}
 
-# vmin, vmax = [], []
-# for label, cond in zip(args.LABELS, args.names):
-#     for idx_period, period in enumerate(args.PERIODS):
-#         vmin.append(np.min(isfc[cond][period]))
-#         vmax.append(np.max(isfc[cond][period]))
-# vmin, vmax = min(vmin), max(vmax)
+# create time series collector
+ts = {}
+for cond in args.names:
+    ts[cond] = {}
+    for period in args.PERIODS:
+        ts[cond][period] = []
 
-# for label, cond in zip(args.LABELS, args.names):
-#     for idx_period, period in enumerate(args.PERIODS):
-#         ax = axs[label][idx_period]
-#         im = ax.imshow(
-#             isfc[cond][period][args.roi_idxs][args.roi_idxs], 
-#             cmap='bwr', vmin=vmin, vmax=vmax,) 
-#         cbar = ax.figure.colorbar(im, ax=ax)
+# fill in time series
+for label, cond in zip(args.LABELS, args.names):
+    for period in args.PERIODS:
         
-#         ax.set_title(f"{cond} {period}")
-#         ax.set_ylabel(f"rois")
-#         ax.set_xlabel(f"rois")
+        for idx_subj in np.arange(len(X[label])):
+            
+            x = zscore(X[label][idx_subj][:, PERIOD[period], :], axis=0)
+            x = np.reshape(x, (x.shape[0]*x.shape[1], x.shape[2]))
+            ts[cond][period].append(x)
+
+# find minimum number of time points
+min_tp = []
+for label, cond in zip(args.LABELS, args.names):
+    for period in args.PERIODS:
+
+        for idx_subj in np.arange(len(ts[cond][period])):
+            min_tp.append(ts[cond][period][idx_subj].shape[0])
+min_tp = min(min_tp)
+
+for label, cond in zip(args.LABELS, args.names):
+    for period in args.PERIODS:
+
+        for idx_subj in np.arange(len(ts[cond][period])):
+            ts[cond][period][idx_subj] = ts[cond][period][idx_subj][:min_tp, :]
+        
+        ts[cond][period] = np.stack(ts[cond][period], axis=0)
+        # print(ts[cond][period].shape)
+
+# isfc
+isfc = {}
+for cond in args.names:
+    isfc[cond] = {}
+    for period in args.PERIODS:
+        isfc[cond][period] = []
+
+for label, cond in zip(args.LABELS, args.names):
+    for period in args.PERIODS:
+        isfc[cond][period] = get_isfc_matrix(ts[cond][period])
+
+
+# In[10]:
+
+
+nrows, ncols = len(args.LABELS), len(args.PERIODS)
+fig, axs = plt.subplots(
+    nrows=nrows, 
+    ncols=ncols, 
+    figsize=(5*ncols, 4*nrows), 
+    sharex=True, 
+    sharey=True, 
+    dpi=120
+)
+
+vmin, vmax = [], []
+for label, cond in zip(args.LABELS, args.names):
+    for idx_period, period in enumerate(args.PERIODS):
+        vmin.append(np.min(isfc[cond][period]))
+        vmax.append(np.max(isfc[cond][period]))
+vmin, vmax = min(vmin), max(vmax)
+
+for label, cond in zip(args.LABELS, args.names):
+    for idx_period, period in enumerate(args.PERIODS):
+        ax = axs[label][idx_period]
+        im = ax.imshow(
+            isfc[cond][period][args.roi_idxs][args.roi_idxs], 
+            cmap='bwr', vmin=vmin, vmax=vmax,) 
+        cbar = ax.figure.colorbar(im, ax=ax)
+        
+        ax.set_title(f"{cond} {period}")
+        ax.set_ylabel(f"rois")
+        ax.set_xlabel(f"rois")
 

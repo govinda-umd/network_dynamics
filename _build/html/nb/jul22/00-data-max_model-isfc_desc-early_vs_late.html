@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>July 4-5, 2022: Compute Intersubject Functional Correlation (ISFC) values for early and late periods in threat and safe conditions &#8212; My Project [Daily Progress]</title>
+    <title>July 4-6,11, 2022: Compute Intersubject Functional Correlation (ISFC) values for early and late periods in threat and safe conditions &#8212; Govinda&#39;s Project [Daily Progress]</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -79,7 +79,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="../../_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">My Project [Daily Progress]</h1>
+      <h1 class="site-logo" id="site-title">Govinda's Project [Daily Progress]</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -123,6 +123,16 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../jun22/01-data-max_desc-isfc_threat_vs_safe.html">
      June 24,27, 2022: Inter-subject Functional Correlation matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/00-data-max_desc-roi_ordering.html">
+     June 28, 2022: ROI ordering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/01-desc-BrainIAK_tutorial.html">
+     June30, 2022: BrainIAK tutorial
     </a>
    </li>
   </ul>
@@ -185,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     July 4-5, 2022: Compute Intersubject Functional Correlation (ISFC) values for
+     July 4-6,11, 2022: Compute Intersubject Functional Correlation (ISFC) values for
      <code class="docutils literal notranslate">
       <span class="pre">
        early
@@ -339,6 +349,16 @@ const thebe_selector_output = ".output, .cell_output"
    periods
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intersubject-correlations">
+   Intersubject correlations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistical-testing-pairwise-non-parametric-permutation-test">
+   statistical testing: pairwise non parametric permutation test
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -349,7 +369,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>July 4-5, 2022: Compute Intersubject Functional Correlation (ISFC) values for early and late periods in threat and safe conditions</h1>
+                <h1>July 4-6,11, 2022: Compute Intersubject Functional Correlation (ISFC) values for early and late periods in threat and safe conditions</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -380,6 +400,16 @@ const thebe_selector_output = ".output, .cell_output"
    periods
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intersubject-correlations">
+   Intersubject correlations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistical-testing-pairwise-non-parametric-permutation-test">
+   statistical testing: pairwise non parametric permutation test
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -389,8 +419,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="july-4-5-2022-compute-intersubject-functional-correlation-isfc-values-for-early-and-late-periods-in-threat-and-safe-conditions">
-<h1>July 4-5, 2022: Compute Intersubject Functional Correlation (ISFC) values for <code class="docutils literal notranslate"><span class="pre">early</span></code> and <code class="docutils literal notranslate"><span class="pre">late</span></code> periods in <code class="docutils literal notranslate"><span class="pre">threat</span></code> and <code class="docutils literal notranslate"><span class="pre">safe</span></code> conditions<a class="headerlink" href="#july-4-5-2022-compute-intersubject-functional-correlation-isfc-values-for-early-and-late-periods-in-threat-and-safe-conditions" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="july-4-6-11-2022-compute-intersubject-functional-correlation-isfc-values-for-early-and-late-periods-in-threat-and-safe-conditions">
+<h1>July 4-6,11, 2022: Compute Intersubject Functional Correlation (ISFC) values for <code class="docutils literal notranslate"><span class="pre">early</span></code> and <code class="docutils literal notranslate"><span class="pre">late</span></code> periods in <code class="docutils literal notranslate"><span class="pre">threat</span></code> and <code class="docutils literal notranslate"><span class="pre">safe</span></code> conditions<a class="headerlink" href="#july-4-6-11-2022-compute-intersubject-functional-correlation-isfc-values-for-early-and-late-periods-in-threat-and-safe-conditions" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -401,7 +431,8 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">pickle</span><span class="o">,</span> <span class="nn">random</span>
 <span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span><span class="p">,</span> <span class="n">zscore</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="p">(</span><span class="n">norm</span><span class="p">,</span> <span class="n">zscore</span><span class="p">,</span> <span class="n">permutation_test</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">permutations</span>
 
 <span class="c1"># ISC</span>
 <span class="kn">from</span> <span class="nn">brainiak.isc</span> <span class="kn">import</span> <span class="p">(</span><span class="n">isc</span><span class="p">,</span> <span class="n">isfc</span><span class="p">,</span> <span class="n">bootstrap_isc</span><span class="p">,</span> <span class="n">compute_summary_statistic</span><span class="p">,</span> <span class="n">squareform_isfc</span><span class="p">)</span>
@@ -440,8 +471,8 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">args</span><span class="o">.</span><span class="n">NAMES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;safe&#39;</span><span class="p">,</span> <span class="s1">&#39;threat&#39;</span><span class="p">]</span>
 <span class="n">args</span><span class="o">.</span><span class="n">MASK</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
 
-<span class="n">num_rois</span> <span class="o">=</span> <span class="mi">85</span>
-<span class="n">args</span><span class="o">.</span><span class="n">roi_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num_rois</span><span class="p">)</span>
+<span class="n">args</span><span class="o">.</span><span class="n">num_rois</span> <span class="o">=</span> <span class="mi">85</span>
+<span class="n">args</span><span class="o">.</span><span class="n">roi_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">num_rois</span><span class="p">)</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/data/max/exploratory_data.pkl&quot;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">X</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
@@ -477,7 +508,7 @@ Tutorial: <a class="reference external" href="https://github.com/snastase/isc-tu
 <p>Statistical significance was assessed by a nonparametric bootstrap hypothesis test resampling left-out subjects and corrected for multiple tests by controlling FDR at .05.</p>
 <p>i.e.:</p>
 <ol class="simple">
-<li><p>Compute leave-one-out (LOO) ISC values</p></li>
+<li><p>Compute leave-one-out (LOO) ISC and ISFC values</p></li>
 <li><p>Bootstrap hypothesis testing, (Chen et al.2016)</p></li>
 <li><p>Multiple tests correction: False Discovery Rate (FDR) at 0.05.</p></li>
 </ol>
@@ -489,7 +520,7 @@ Tutorial: <a class="reference external" href="https://github.com/snastase/isc-tu
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_isfc_significant_rois</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">ts</span><span class="p">):</span>
     <span class="n">corrs</span> <span class="o">=</span> <span class="p">{};</span> <span class="n">bootstraps</span> <span class="o">=</span> <span class="p">{};</span> <span class="n">q</span> <span class="o">=</span> <span class="p">{};</span> <span class="n">z</span> <span class="o">=</span> <span class="p">{};</span> <span class="n">rois</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">observed_isfcs</span> <span class="o">=</span> <span class="p">{};</span> <span class="n">observed_q_vals</span> <span class="o">=</span> <span class="p">{};</span> <span class="n">significant_rois</span> <span class="o">=</span> <span class="p">{};</span> <span class="n">conf_intervals</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">observed_isfcs</span> <span class="o">=</span> <span class="p">{};</span> <span class="n">observed_p_vals</span> <span class="o">=</span> <span class="p">{};</span> <span class="n">significant_rois</span> <span class="o">=</span> <span class="p">{};</span> <span class="n">conf_intervals</span> <span class="o">=</span> <span class="p">{}</span>
 
     <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">ts</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
         <span class="n">isfcs</span><span class="p">,</span> <span class="n">iscs</span> <span class="o">=</span> <span class="n">isfc</span><span class="p">(</span>
@@ -515,12 +546,13 @@ Tutorial: <a class="reference external" href="https://github.com/snastase/isc-tu
             <span class="p">)</span>
             <span class="n">bootstraps</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="n">corr_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">observed</span><span class="p">,</span> <span class="n">ci</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">distribution</span>
 
-            <span class="c1"># multiple tests correction</span>
-            <span class="n">q</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="n">corr_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">multipletests</span><span class="p">(</span><span class="n">bootstraps</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="n">corr_name</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;fdr_by&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-            <span class="n">z</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="n">corr_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="n">corr_name</span><span class="p">]))</span>
+            <span class="c1"># # multiple tests correction</span>
+            <span class="c1"># q[block][corr_name] = multipletests(bootstraps[block][corr_name][2], method=&#39;fdr_by&#39;)[1]</span>
+            <span class="c1"># z[block][corr_name] = np.abs(norm.ppf(q[block][corr_name]))</span>
 
             <span class="c1"># surviving rois</span>
-            <span class="n">rois</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="n">corr_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="n">corr_name</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.05</span>
+            <span class="c1"># rois[block][corr_name] = q[block][corr_name] &lt; 0.05</span>
+            <span class="n">rois</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="n">corr_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">bootstraps</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="n">corr_name</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.05</span>
             <span class="nb">print</span><span class="p">(</span>
                 <span class="p">(</span>
                     <span class="sa">f</span><span class="s2">&quot;percent of significant roi(-pairs) for &quot;</span> 
@@ -531,7 +563,7 @@ Tutorial: <a class="reference external" href="https://github.com/snastase/isc-tu
 
         <span class="c1"># isfc matrix</span>
         <span class="n">observed_isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="n">squareform_isfc</span><span class="p">(</span><span class="n">bootstraps</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="s1">&#39;isfcs&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">bootstraps</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="s1">&#39;iscs&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-        <span class="n">observed_q_vals</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="n">squareform_isfc</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="s1">&#39;isfcs&#39;</span><span class="p">],</span> <span class="n">q</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="s1">&#39;iscs&#39;</span><span class="p">])</span>
+        <span class="n">observed_p_vals</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="n">squareform_isfc</span><span class="p">(</span><span class="n">bootstraps</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="s1">&#39;isfcs&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">bootstraps</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="s1">&#39;iscs&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>
         <span class="n">significant_rois</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="n">squareform_isfc</span><span class="p">(</span><span class="n">rois</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="s1">&#39;isfcs&#39;</span><span class="p">],</span> <span class="n">rois</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="s1">&#39;iscs&#39;</span><span class="p">])</span>
         <span class="n">conf_intervals</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">squareform_isfc</span><span class="p">(</span>
@@ -544,22 +576,34 @@ Tutorial: <a class="reference external" href="https://github.com/snastase/isc-tu
             <span class="p">)</span>
         <span class="p">)</span> 
     
-    <span class="k">return</span> <span class="n">observed_isfcs</span><span class="p">,</span> <span class="n">observed_q_vals</span><span class="p">,</span> <span class="n">significant_rois</span><span class="p">,</span> <span class="n">conf_intervals</span>
+    <span class="k">return</span> <span class="n">observed_isfcs</span><span class="p">,</span> <span class="n">observed_p_vals</span><span class="p">,</span> <span class="n">significant_rois</span><span class="p">,</span> <span class="n">conf_intervals</span><span class="p">,</span> <span class="n">corrs</span><span class="p">,</span> <span class="n">bootstraps</span><span class="p">,</span> <span class="n">rois</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_iscs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">iscs</span><span class="p">,</span> <span class="n">rois</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_isfcs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">isfcs</span><span class="p">,</span> <span class="n">rois</span><span class="p">):</span> 
+    <span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">isfcs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">vmin</span> <span class="o">+=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">])]</span>
+        <span class="n">vmax</span> <span class="o">+=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">])]</span>
+    <span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">vmin</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">vmax</span><span class="p">)</span>
+
     <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">LABELS</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">PERIODS</span><span class="p">)</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
         <span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span> 
         <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">,</span> 
-        <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="n">ncols</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">nrows</span><span class="p">),</span> 
-        <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
-        <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+        <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">ncols</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">nrows</span><span class="p">),</span> 
+        <span class="n">sharex</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+        <span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
         <span class="n">dpi</span><span class="o">=</span><span class="mi">120</span>
+    <span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span>
+        <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+        <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+        <span class="n">wspace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.5</span>
     <span class="p">)</span>
 
     <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">LABELS</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">NAMES</span><span class="p">):</span>
@@ -567,22 +611,11 @@ Tutorial: <a class="reference external" href="https://github.com/snastase/isc-tu
             <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="n">label</span><span class="p">,</span> <span class="n">idx_period</span><span class="p">]</span>
             <span class="n">block</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">period</span><span class="si">}</span><span class="s2">&quot;</span>
 
-            <span class="n">mn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">iscs</span><span class="p">[</span><span class="n">block</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-            <span class="n">st</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">iscs</span><span class="p">[</span><span class="n">block</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">iscs</span><span class="p">[</span><span class="n">block</span><span class="p">]))</span>
-            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mn</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
-            <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span>
-                <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
-                <span class="p">(</span><span class="n">mn</span> <span class="o">-</span> <span class="n">st</span><span class="p">),</span> <span class="p">(</span><span class="n">mn</span> <span class="o">+</span> <span class="n">st</span><span class="p">),</span>
-                <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ste&#39;</span><span class="p">,</span>
-                <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span>
-            <span class="p">)</span>
+            <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">*</span> <span class="n">rois</span><span class="p">[</span><span class="n">block</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
 
-            <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">rois</span><span class="p">[</span><span class="n">block</span><span class="p">])[</span><span class="mi">1</span><span class="p">]:</span>
-                <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
-            
-            <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-            <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">period</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">block</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;rois&quot;</span><span class="p">)</span>
             <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;rois&quot;</span><span class="p">)</span>
     
     <span class="k">return</span> <span class="kc">None</span>
@@ -590,6 +623,9 @@ Tutorial: <a class="reference external" href="https://github.com/snastase/isc-tu
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="intersubject-correlations">
+<h2>Intersubject correlations<a class="headerlink" href="#intersubject-correlations" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
@@ -620,51 +656,127 @@ Tutorial: <a class="reference external" href="https://github.com/snastase/isc-tu
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">ISFC</span>
-<span class="sd">leave-one-out</span>
+<span class="sd">leave-one-out ISFC</span>
 <span class="sd">bootstrap</span>
+<span class="sd">FDR correction</span>
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="n">args</span><span class="o">.</span><span class="n">CORR_NAMES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;isfcs&#39;</span><span class="p">,</span> <span class="s1">&#39;iscs&#39;</span><span class="p">]</span>
 <span class="n">args</span><span class="o">.</span><span class="n">pairwise</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">args</span><span class="o">.</span><span class="n">vectorize_isfcs</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">args</span><span class="o">.</span><span class="n">n_bootstraps</span> <span class="o">=</span> <span class="mi">1000</span>
 
-<span class="n">isfcs</span><span class="p">,</span> <span class="n">qs</span><span class="p">,</span> <span class="n">rois</span><span class="p">,</span> <span class="n">cis</span> <span class="o">=</span> <span class="n">get_isfc_significant_rois</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">ts</span><span class="p">)</span>
+<span class="n">isfcs</span><span class="p">,</span> <span class="n">ps</span><span class="p">,</span> <span class="n">sig_rois</span><span class="p">,</span> <span class="n">cis</span><span class="p">,</span> <span class="n">corrs</span><span class="p">,</span> <span class="n">bootstraps</span><span class="p">,</span> <span class="n">rois</span> <span class="o">=</span> <span class="n">get_isfc_significant_rois</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">ts</span><span class="p">)</span>
+<span class="n">plot_isfcs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">isfcs</span><span class="p">,</span> <span class="n">sig_rois</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>percent of significant roi(-pairs) for condition safe_early and correlation isfc = 0.0 %
-percent of significant roi(-pairs) for condition safe_early and correlation isc = 0.0 %
-percent of significant roi(-pairs) for condition safe_late and correlation isfc = 0.0 %
-percent of significant roi(-pairs) for condition safe_late and correlation isc = 0.0 %
-percent of significant roi(-pairs) for condition threat_early and correlation isfc = 0.0 %
-percent of significant roi(-pairs) for condition threat_early and correlation isc = 14.117647058823529 %
-percent of significant roi(-pairs) for condition threat_late and correlation isfc = 19.971988795518207 %
-percent of significant roi(-pairs) for condition threat_late and correlation isc = 25.88235294117647 %
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>percent of significant roi(-pairs) for condition safe_early and correlation isfc = 29.747899159663866 %
+percent of significant roi(-pairs) for condition safe_early and correlation isc = 25.88235294117647 %
+percent of significant roi(-pairs) for condition safe_late and correlation isfc = 7.42296918767507 %
+percent of significant roi(-pairs) for condition safe_late and correlation isc = 5.882352941176471 %
+percent of significant roi(-pairs) for condition threat_early and correlation isfc = 32.016806722689076 %
+percent of significant roi(-pairs) for condition threat_early and correlation isc = 50.588235294117645 %
+percent of significant roi(-pairs) for condition threat_late and correlation isfc = 53.05322128851541 %
+percent of significant roi(-pairs) for condition threat_late and correlation isc = 50.588235294117645 %
+</pre></div>
+</div>
+<img alt="../../_images/00-data-max_model-isfc_desc-early_vs_late_10_1.png" src="../../_images/00-data-max_model-isfc_desc-early_vs_late_10_1.png" />
+</div>
+</div>
+<p>Showing ISFC values for each period only for the significant roi-pairs.</p>
+</div>
+<div class="section" id="statistical-testing-pairwise-non-parametric-permutation-test">
+<h2>statistical testing: pairwise non parametric permutation test<a class="headerlink" href="#statistical-testing-pairwise-non-parametric-permutation-test" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">statistic</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">axis</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">compute_summary_statistic</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">summary_statistic</span><span class="o">=</span><span class="s1">&#39;median&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span> 
+        <span class="o">-</span> <span class="n">compute_summary_statistic</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span> <span class="n">summary_statistic</span><span class="o">=</span><span class="s1">&#39;median&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+    <span class="p">)</span> 
+
+<span class="n">stats_results</span> <span class="o">=</span> <span class="p">{};</span> <span class="n">diff_isfcs</span> <span class="o">=</span> <span class="p">{};</span> <span class="n">diff_pvals</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">block1</span><span class="p">,</span> <span class="n">block2</span><span class="p">)</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">permutations</span><span class="p">(</span><span class="n">corrs</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="mi">2</span><span class="p">)):</span>
+    <span class="n">obs1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">corrs</span><span class="p">[</span><span class="n">block1</span><span class="p">][</span><span class="s1">&#39;isfcs&#39;</span><span class="p">],</span> <span class="n">corrs</span><span class="p">[</span><span class="n">block1</span><span class="p">][</span><span class="s1">&#39;iscs&#39;</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">obs2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">corrs</span><span class="p">[</span><span class="n">block2</span><span class="p">][</span><span class="s1">&#39;isfcs&#39;</span><span class="p">],</span> <span class="n">corrs</span><span class="p">[</span><span class="n">block2</span><span class="p">][</span><span class="s1">&#39;iscs&#39;</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="n">stats_results</span><span class="p">[(</span><span class="n">block1</span><span class="p">,</span> <span class="n">block2</span><span class="p">)]</span> <span class="o">=</span> <span class="n">permutation_test</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">(</span><span class="n">obs1</span><span class="p">,</span> <span class="n">obs2</span><span class="p">),</span>
+        <span class="n">statistic</span><span class="o">=</span><span class="n">statistic</span><span class="p">,</span>
+        <span class="n">permutation_type</span><span class="o">=</span><span class="s1">&#39;samples&#39;</span><span class="p">,</span>
+        <span class="n">vectorized</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">n_resamples</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">n_bootstraps</span><span class="p">,</span>
+        <span class="n">batch</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+        <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">random_state</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">SEED</span>
+    <span class="p">)</span>
+
+    <span class="n">diff_isfcs</span><span class="p">[(</span><span class="n">block1</span><span class="p">,</span> <span class="n">block2</span><span class="p">)]</span> <span class="o">=</span> <span class="n">squareform_isfc</span><span class="p">(</span>
+        <span class="n">isfcs</span><span class="o">=</span><span class="n">stats_results</span><span class="p">[(</span><span class="n">block1</span><span class="p">,</span> <span class="n">block2</span><span class="p">)]</span><span class="o">.</span><span class="n">statistic</span><span class="p">[:</span><span class="o">-</span><span class="n">args</span><span class="o">.</span><span class="n">num_rois</span><span class="p">],</span>
+        <span class="n">iscs</span><span class="o">=</span><span class="n">stats_results</span><span class="p">[(</span><span class="n">block1</span><span class="p">,</span> <span class="n">block2</span><span class="p">)]</span><span class="o">.</span><span class="n">statistic</span><span class="p">[</span><span class="o">-</span><span class="n">args</span><span class="o">.</span><span class="n">num_rois</span><span class="p">:]</span>
+    <span class="p">)</span>
+
+    <span class="n">diff_pvals</span><span class="p">[(</span><span class="n">block1</span><span class="p">,</span> <span class="n">block2</span><span class="p">)]</span> <span class="o">=</span> <span class="n">squareform_isfc</span><span class="p">(</span>
+        <span class="n">isfcs</span><span class="o">=</span><span class="n">stats_results</span><span class="p">[(</span><span class="n">block1</span><span class="p">,</span> <span class="n">block2</span><span class="p">)]</span><span class="o">.</span><span class="n">pvalue</span><span class="p">[:</span><span class="o">-</span><span class="n">args</span><span class="o">.</span><span class="n">num_rois</span><span class="p">],</span>
+        <span class="n">iscs</span><span class="o">=</span><span class="n">stats_results</span><span class="p">[(</span><span class="n">block1</span><span class="p">,</span> <span class="n">block2</span><span class="p">)]</span><span class="o">.</span><span class="n">pvalue</span><span class="p">[</span><span class="o">-</span><span class="n">args</span><span class="o">.</span><span class="n">num_rois</span><span class="p">:],</span>
+    <span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.05</span>
+
+    <span class="n">diff_isfcs</span><span class="p">[(</span><span class="n">block1</span><span class="p">,</span> <span class="n">block2</span><span class="p">)]</span> <span class="o">*=</span> <span class="n">diff_pvals</span><span class="p">[(</span><span class="n">block1</span><span class="p">,</span> <span class="n">block2</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12it [01:41,  8.43s/it]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">obs_isfc</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdYlBu_r&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">diff_isfcs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">vmin</span> <span class="o">+=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">diff_isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">])]</span>
+    <span class="n">vmax</span> <span class="o">+=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">diff_isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">])]</span>
+<span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">vmin</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">vmax</span><span class="p">)</span>
+
+<span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">LABELS</span><span class="p">)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">PERIODS</span><span class="p">)]</span><span class="o">*</span><span class="mi">2</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+    <span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span> 
+    <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">,</span> 
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">ncols</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">nrows</span><span class="p">),</span> 
+    <span class="n">sharex</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+    <span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+    <span class="n">dpi</span><span class="o">=</span><span class="mi">120</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span>
+    <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+    <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+    <span class="n">wspace</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.25</span>
+<span class="p">)</span>
+
+<span class="n">blocks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">diff_isfcs</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+<span class="k">for</span> <span class="n">idx_blk1</span><span class="p">,</span> <span class="n">block1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">corrs</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+    <span class="k">for</span> <span class="n">idx_blk2</span><span class="p">,</span> <span class="n">block2</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">corrs</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+        <span class="k">if</span> <span class="n">idx_blk1</span> <span class="o">&lt;=</span> <span class="n">idx_blk2</span><span class="p">:</span> 
+            <span class="n">axs</span><span class="p">[</span><span class="n">idx_blk1</span><span class="p">,</span> <span class="n">idx_blk2</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+            <span class="k">continue</span>
+
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="n">idx_blk1</span><span class="p">,</span> <span class="n">idx_blk2</span><span class="p">]</span>
+
+        <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">diff_isfcs</span><span class="p">[(</span><span class="n">block1</span><span class="p">,</span> <span class="n">block2</span><span class="p">)],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">idx_blk1</span> <span class="o">==</span> <span class="n">idx_blk2</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">block2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">idx_blk2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">block1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">)</span>
+        <span class="c1"># ax.set_xlabel(f&quot;rois&quot;)</span>
+    
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">/home/govindas/network_dynamics/nb/jul22/00-data-max_model-isfc_desc-early_vs_late.ipynb Cell 11&#39;</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/00-data-max_model-isfc_desc-early_vs_late.ipynb#ch0000015vscode-remote?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">obs_isfc</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdYlBu_r&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/00-data-max_model-isfc_desc-early_vs_late.ipynb#ch0000015vscode-remote?line=1&#39;</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/00-data-max_model-isfc_desc-early_vs_late.ipynb#ch0000015vscode-remote?line=2&#39;</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;obs_isfc&#39; is not defined
-</pre></div>
-</div>
+<img alt="../../_images/00-data-max_model-isfc_desc-early_vs_late_14_0.png" src="../../_images/00-data-max_model-isfc_desc-early_vs_late_14_0.png" />
 </div>
 </div>
 </div>

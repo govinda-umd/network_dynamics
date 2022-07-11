@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: My Project [Daily Progress]
+title: Govinda's Project [Daily Progress]
 author: Govinda Surampudi
 logo: logo.png
 exclude_patterns : ['_tag', '_reset_cell_id', '**.ipynb_checkpoints']

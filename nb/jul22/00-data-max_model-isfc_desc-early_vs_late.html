@@ -516,9 +516,9 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="sd">plotting tick labels</span>
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="n">minor_ticks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
-    <span class="mi">0</span><span class="p">,</span> 
+    <span class="c1"># 0, </span>
     <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">up_roi_idxs</span><span class="p">),</span>
-    <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">up_roi_idxs</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">down_roi_idxs</span><span class="p">)</span>
+    <span class="c1"># len(args.up_roi_idxs) + len(args.down_roi_idxs)</span>
 <span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">minor_ticks</span><span class="p">)</span>
 
@@ -544,7 +544,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0 26 43]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[26]
 [13 34]
 [&#39;up&#39; &#39;down&#39;]
 </pre></div>

@@ -29,10 +29,12 @@ plt.rcParamsDefault['font.sans-serif'] = "Arial"
 plt.rcParams['font.size'] = 14
 plt.rcParams["errorbar.capsize"] = 0.5
 
+import cmasher as cmr #CITE ITS PAPER IN YOUR MANUSCRIPT
+
 # main dirs
 proj_dir = pjoin(os.environ['HOME'], 'network_dynamics')
 results_dir = f"{proj_dir}/results"
-month_dir = f"{proj_dir}/nb/jun22"
+month_dir = f"{proj_dir}/nb/jul22"
 
 # folders
 sys.path.insert(0, proj_dir)
@@ -53,16 +55,72 @@ args.LABELS = [0, 1]
 args.NAMES = ['safe', 'threat']
 args.MASK = -100
 
-args.num_rois = 85
-args.roi_idxs = np.arange(args.num_rois)
+args.provide_roi_idxs = True
+if args.provide_roi_idxs:
+    with open(f"{proj_dir}/data/max/exploratory_data_roi_indices.pkl", 'rb') as f:
+        args.up_roi_idxs, args.down_roi_idxs, args.roi_idxs = pickle.load(f)
+        args.num_rois = len(args.roi_idxs)
+else:
+    args.num_rois = 85
+    args.roi_idxs = np.arange(args.num_rois)
 
 with open(f"{proj_dir}/data/max/exploratory_data.pkl", 'rb') as f:
     X = pickle.load(f)
 
 
+# In[3]:
+
+
+args.up_roi_idxs, args.down_roi_idxs
+
+
+# In[4]:
+
+
+'''
+change roi ordering
+'''
+for label in args.LABELS:
+    for idx_subj in range(len(X[label])):
+        X[label][idx_subj] = X[label][idx_subj][:, :, args.roi_idxs]
+
+
+# In[5]:
+
+
+'''
+plotting tick labels
+'''
+minor_ticks = np.array([
+    0, 
+    len(args.up_roi_idxs),
+    len(args.up_roi_idxs) + len(args.down_roi_idxs)
+])
+print(minor_ticks)
+
+# minor_tick_labels = np.array([
+#     r'$\rightarrow$',
+#     r'$\leftarrow$'+ r'$\rightarrow$',
+#     r'$\leftarrow$',
+# ])
+# print(minor_tick_labels)
+
+major_ticks = np.array([
+    round(len(args.up_roi_idxs) // 2),
+    round(len(args.up_roi_idxs) + len(args.down_roi_idxs) // 2),
+])
+print(major_ticks)
+
+major_tick_labels = np.array([
+    'up',
+    'down',
+])
+print(major_tick_labels)
+
+
 # ### `early` and `late` periods 
 
-# In[3]:
+# In[6]:
 
 
 '''
@@ -82,7 +140,7 @@ for label, name in zip(args.LABELS, args.NAMES):
         ts[name].append(zscore(x, axis=0))
 
 
-# In[4]:
+# In[7]:
 
 
 '''
@@ -125,7 +183,7 @@ for label, name in zip(args.LABELS, args.NAMES):
 # 
 # LOO method relates to computing ISFC values, as the mean time series of the remaining subjects converges to the common signal across subjects.
 
-# In[5]:
+# In[8]:
 
 
 def get_isfcs(args, ts):
@@ -173,7 +231,7 @@ def get_isfcs(args, ts):
     return corrs, bootstraps, rois
 
 
-# In[6]:
+# In[9]:
 
 
 def plot_isfcs(args, isfcs, rois): 
@@ -206,18 +264,28 @@ def plot_isfcs(args, isfcs, rois):
 
             im = ax.imshow(
                 isfcs[block], #* rois[block], 
-                cmap='RdBu_r', vmin=vmin, vmax=vmax
+                cmap=cmr.iceburn, vmin=vmin, vmax=vmax
             )
             ax.figure.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
 
             if label == 0: ax.set_title(f"{period}")
             if idx_period == 0: ax.set_ylabel(f"{name}", size='large')
-            # ax.set_xlabel(f"rois")
-    
+            
+            ax.set_yticks(major_ticks, major_tick_labels, rotation=90, va='center')
+            ax.set_xticks(major_ticks, major_tick_labels, rotation=0, ha='center')
+
+            ax.set_yticks(minor_ticks-0.5, minor=True)
+            ax.set_xticks(minor_ticks-0.5, minor=True)
+            ax.tick_params(
+                which='major', direction='out', length=7, 
+                # grid_color='white', grid_linewidth='1.5'
+            )
+            ax.grid(which='minor', color='w', linestyle='-', linewidth=1.5)
+
     return None
 
 
-# In[7]:
+# In[10]:
 
 
 '''
@@ -239,7 +307,7 @@ corrs, bootstraps, rois = get_isfcs(args, ts)
 
 # Showing ISFC values for each period only for the *significant* roi-pairs.
 
-# In[8]:
+# In[11]:
 
 
 observed_isfcs = {}; observed_p_vals = {}; 
@@ -281,7 +349,7 @@ plot_isfcs(args, observed_isfcs, significant_rois)
 # 
 # We plot the statistic between every pair of conditions only for the roi-pairs that differentiate significantly between the conditions.
 
-# In[9]:
+# In[12]:
 
 
 def get_comparison_stats(args, corrs,):
@@ -311,7 +379,7 @@ def get_comparison_stats(args, corrs,):
     return stats_results
 
 
-# In[10]:
+# In[13]:
 
 
 def plot_isfc_comparisons(args, corrs, diff_isfcs,):
@@ -348,15 +416,26 @@ def plot_isfc_comparisons(args, corrs, diff_isfcs,):
 
             im = ax.imshow(
                 diff_isfcs[(block2, block1)], 
-                cmap='RdBu_r', vmin=vmin, vmax=vmax
+                cmap=cmr.iceburn, vmin=vmin, vmax=vmax
             )
             ax.figure.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
 
             if idx_blk1 == idx_blk2+1: ax.set_title(f"{block2}")
             if idx_blk2 == 0: ax.set_ylabel(f"{block1}", size='large')
 
+            ax.set_yticks(major_ticks, major_tick_labels, rotation=90, va='center')
+            ax.set_xticks(major_ticks, major_tick_labels, rotation=0, ha='center')
 
-# In[11]:
+            ax.set_yticks(minor_ticks-0.5, minor=True)
+            ax.set_xticks(minor_ticks-0.5, minor=True)
+            ax.tick_params(
+                which='major', direction='out', length=7, 
+                # grid_color='white', grid_linewidth='1.5'
+            )
+            ax.grid(which='minor', color='w', linestyle='-', linewidth=1.5)
+
+
+# In[14]:
 
 
 stats_results = get_comparison_stats(args, corrs)
@@ -387,7 +466,7 @@ for idx, block in enumerate(corrs.keys()):
     cond_idx[block] = idx
 
 
-# In[12]:
+# In[15]:
 
 
 plot_isfc_comparisons(args, corrs, diff_isfcs)

@@ -33,3 +33,5 @@ parts:
           - file: nb/jul22/00-data-max_model-isc_desc-early_vs_late
 
           - file: nb/jul22/00-data-max_model-isfc_desc-early_vs_late
+
+          - file: nb/jul22/00-data-max_desc-roi_ordering_and_colormap

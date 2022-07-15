@@ -50,6 +50,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="July 15, 2022: Selecting a subset of ROIs and colormaps" href="00-data-max_desc-roi_ordering_and_colormap.html" />
     <link rel="prev" title="July 4, 2022: Compute Intersubject Correlation (ISC) values for early and late periods in threat and safe conditions" href="00-data-max_model-isc_desc-early_vs_late.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -220,6 +221,11 @@ const thebe_selector_output = ".output, .cell_output"
       </span>
      </code>
      conditions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="00-data-max_desc-roi_ordering_and_colormap.html">
+     July 15, 2022: Selecting a subset of ROIs and colormaps
     </a>
    </li>
   </ul>
@@ -436,10 +442,12 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">14</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;errorbar.capsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span>
 
+<span class="kn">import</span> <span class="nn">cmasher</span> <span class="k">as</span> <span class="nn">cmr</span> <span class="c1">#CITE ITS PAPER IN YOUR MANUSCRIPT</span>
+
 <span class="c1"># main dirs</span>
 <span class="n">proj_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;network_dynamics&#39;</span><span class="p">)</span>
 <span class="n">results_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/results&quot;</span>
-<span class="n">month_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/nb/jun22&quot;</span>
+<span class="n">month_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/nb/jul22&quot;</span>
 
 <span class="c1"># folders</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">proj_dir</span><span class="p">)</span>
@@ -461,11 +469,84 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">args</span><span class="o">.</span><span class="n">NAMES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;safe&#39;</span><span class="p">,</span> <span class="s1">&#39;threat&#39;</span><span class="p">]</span>
 <span class="n">args</span><span class="o">.</span><span class="n">MASK</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
 
-<span class="n">args</span><span class="o">.</span><span class="n">num_rois</span> <span class="o">=</span> <span class="mi">85</span>
-<span class="n">args</span><span class="o">.</span><span class="n">roi_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">num_rois</span><span class="p">)</span>
+<span class="n">args</span><span class="o">.</span><span class="n">provide_roi_idxs</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">provide_roi_idxs</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/data/max/exploratory_data_roi_indices.pkl&quot;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">up_roi_idxs</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">down_roi_idxs</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">roi_idxs</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">num_rois</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">roi_idxs</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">args</span><span class="o">.</span><span class="n">num_rois</span> <span class="o">=</span> <span class="mi">85</span>
+    <span class="n">args</span><span class="o">.</span><span class="n">roi_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">num_rois</span><span class="p">)</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/data/max/exploratory_data.pkl&quot;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">X</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="o">.</span><span class="n">up_roi_idxs</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">down_roi_idxs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 6,  7, 12, 13, 14, 15, 16, 17, 18, 19, 47, 48, 49, 50, 53, 54, 69,
+        70, 73, 74, 75, 76, 77, 78, 79, 80]),
+ array([ 0,  1,  2,  3,  4,  5, 20, 21, 22, 23, 24, 59, 60, 61, 62, 83, 84]))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">change roi ordering</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">LABELS</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">idx_subj</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">label</span><span class="p">])):</span>
+        <span class="n">X</span><span class="p">[</span><span class="n">label</span><span class="p">][</span><span class="n">idx_subj</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">label</span><span class="p">][</span><span class="n">idx_subj</span><span class="p">][:,</span> <span class="p">:,</span> <span class="n">args</span><span class="o">.</span><span class="n">roi_idxs</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">plotting tick labels</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">minor_ticks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="mi">0</span><span class="p">,</span> 
+    <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">up_roi_idxs</span><span class="p">),</span>
+    <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">up_roi_idxs</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">down_roi_idxs</span><span class="p">)</span>
+<span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">minor_ticks</span><span class="p">)</span>
+
+<span class="c1"># minor_tick_labels = np.array([</span>
+<span class="c1">#     r&#39;$\rightarrow$&#39;,</span>
+<span class="c1">#     r&#39;$\leftarrow$&#39;+ r&#39;$\rightarrow$&#39;,</span>
+<span class="c1">#     r&#39;$\leftarrow$&#39;,</span>
+<span class="c1"># ])</span>
+<span class="c1"># print(minor_tick_labels)</span>
+
+<span class="n">major_ticks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="nb">round</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">up_roi_idxs</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">),</span>
+    <span class="nb">round</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">up_roi_idxs</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">down_roi_idxs</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">),</span>
+<span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">major_ticks</span><span class="p">)</span>
+
+<span class="n">major_tick_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="s1">&#39;up&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;down&#39;</span><span class="p">,</span>
+<span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">major_tick_labels</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0 26 43]
+[13 34]
+[&#39;up&#39; &#39;down&#39;]
 </pre></div>
 </div>
 </div>
@@ -616,14 +697,24 @@ Tutorial: <a class="reference external" href="https://github.com/snastase/isc-tu
 
             <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span>
                 <span class="n">isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">],</span> <span class="c1">#* rois[block], </span>
-                <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span>
+                <span class="n">cmap</span><span class="o">=</span><span class="n">cmr</span><span class="o">.</span><span class="n">iceburn</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span>
             <span class="p">)</span>
             <span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">label</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">period</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">idx_period</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">)</span>
-            <span class="c1"># ax.set_xlabel(f&quot;rois&quot;)</span>
-    
+            
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">major_ticks</span><span class="p">,</span> <span class="n">major_tick_labels</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">major_ticks</span><span class="p">,</span> <span class="n">major_tick_labels</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">minor_ticks</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">minor_ticks</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span>
+                <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;out&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> 
+                <span class="c1"># grid_color=&#39;white&#39;, grid_linewidth=&#39;1.5&#39;</span>
+            <span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+
     <span class="k">return</span> <span class="kc">None</span>
 </pre></div>
 </div>
@@ -650,14 +741,14 @@ Tutorial: <a class="reference external" href="https://github.com/snastase/isc-tu
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>percent of significant roi(-pairs) for condition safe_early and correlation isfc = 17.030812324929972 %
-percent of significant roi(-pairs) for condition safe_early and correlation isc = 12.941176470588236 %
-percent of significant roi(-pairs) for condition safe_late and correlation isfc = 21.84873949579832 %
-percent of significant roi(-pairs) for condition safe_late and correlation isc = 11.764705882352942 %
-percent of significant roi(-pairs) for condition threat_early and correlation isfc = 26.610644257703083 %
-percent of significant roi(-pairs) for condition threat_early and correlation isc = 36.470588235294116 %
-percent of significant roi(-pairs) for condition threat_late and correlation isfc = 39.57983193277311 %
-percent of significant roi(-pairs) for condition threat_late and correlation isc = 38.8235294117647 %
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>percent of significant roi(-pairs) for condition safe_early and correlation isfc = 17.27574750830565 %
+percent of significant roi(-pairs) for condition safe_early and correlation isc = 13.953488372093023 %
+percent of significant roi(-pairs) for condition safe_late and correlation isfc = 19.37984496124031 %
+percent of significant roi(-pairs) for condition safe_late and correlation isc = 9.30232558139535 %
+percent of significant roi(-pairs) for condition threat_early and correlation isfc = 29.235880398671096 %
+percent of significant roi(-pairs) for condition threat_early and correlation isc = 39.53488372093023 %
+percent of significant roi(-pairs) for condition threat_late and correlation isfc = 34.10852713178294 %
+percent of significant roi(-pairs) for condition threat_late and correlation isc = 30.232558139534884 %
 </pre></div>
 </div>
 </div>
@@ -698,7 +789,7 @@ percent of significant roi(-pairs) for condition threat_late and correlation isc
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/00-data-max_model-isfc_desc-early_vs_late_11_0.png" src="../../_images/00-data-max_model-isfc_desc-early_vs_late_11_0.png" />
+<img alt="../../_images/00-data-max_model-isfc_desc-early_vs_late_14_0.png" src="../../_images/00-data-max_model-isfc_desc-early_vs_late_14_0.png" />
 </div>
 </div>
 </div>
@@ -774,12 +865,23 @@ percent of significant roi(-pairs) for condition threat_late and correlation isc
 
             <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span>
                 <span class="n">diff_isfcs</span><span class="p">[(</span><span class="n">block2</span><span class="p">,</span> <span class="n">block1</span><span class="p">)],</span> 
-                <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span>
+                <span class="n">cmap</span><span class="o">=</span><span class="n">cmr</span><span class="o">.</span><span class="n">iceburn</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span>
             <span class="p">)</span>
             <span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">idx_blk1</span> <span class="o">==</span> <span class="n">idx_blk2</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">block2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">idx_blk2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">block1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">)</span>
+
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">major_ticks</span><span class="p">,</span> <span class="n">major_tick_labels</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">major_ticks</span><span class="p">,</span> <span class="n">major_tick_labels</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">minor_ticks</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">minor_ticks</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span>
+                <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;out&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> 
+                <span class="c1"># grid_color=&#39;white&#39;, grid_linewidth=&#39;1.5&#39;</span>
+            <span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -816,7 +918,7 @@ percent of significant roi(-pairs) for condition threat_late and correlation isc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6it [00:50,  8.47s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6it [00:11,  1.99s/it]
 </pre></div>
 </div>
 </div>
@@ -828,7 +930,7 @@ percent of significant roi(-pairs) for condition threat_late and correlation isc
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/00-data-max_model-isfc_desc-early_vs_late_16_0.png" src="../../_images/00-data-max_model-isfc_desc-early_vs_late_16_0.png" />
+<img alt="../../_images/00-data-max_model-isfc_desc-early_vs_late_19_0.png" src="../../_images/00-data-max_model-isfc_desc-early_vs_late_19_0.png" />
 </div>
 </div>
 </div>
@@ -865,6 +967,13 @@ percent of significant roi(-pairs) for condition threat_late and correlation isc
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">July 4, 2022: Compute Intersubject Correlation (ISC) values for <code class="docutils literal notranslate"><span class="pre">early</span></code> and <code class="docutils literal notranslate"><span class="pre">late</span></code> periods in <code class="docutils literal notranslate"><span class="pre">threat</span></code> and <code class="docutils literal notranslate"><span class="pre">safe</span></code> conditions</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="00-data-max_desc-roi_ordering_and_colormap.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">July 15, 2022: Selecting a subset of ROIs and colormaps</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>July 4-6,11-12,15, 2022: Compute Intersubject Functional Correlation (ISFC) values for early and late periods in threat and safe conditions &#8212; Govinda&#39;s Project [Daily Progress]</title>
+    <title>July 19, 2022: Compute Intersubject Functional Correlation (ISFC) values for early and late periods in threat and safe conditions &#8212; Govinda&#39;s Project [Daily Progress]</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -50,8 +50,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="July 15, 2022: Selecting a subset of ROIs and colormaps" href="00-data-max_desc-roi_ordering_and_colormap.html" />
-    <link rel="prev" title="July 4, 2022: Compute Intersubject Correlation (ISC) values for early and late periods in threat and safe conditions" href="00-data-max_model-isc_desc-early_vs_late.html" />
+    <link rel="prev" title="July 20, 22: Plot trial level response time series" href="01-data-max_desc-plot_response_time_series.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -194,8 +193,8 @@ const thebe_selector_output = ".output, .cell_output"
      conditions
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="00-data-max_model-isfc_desc-early_vs_late.html">
      July 4-6,11-12,15, 2022: Compute Intersubject Functional Correlation (ISFC) values for
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -233,8 +232,8 @@ const thebe_selector_output = ".output, .cell_output"
      July 20, 22: Plot trial level response time series
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="01-data-max_trial_level_model-isfc_desc-early_vs_late.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      July 19, 2022: Compute Intersubject Functional Correlation (ISFC) values for
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -305,7 +304,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/nb/jul22/00-data-max_model-isfc_desc-early_vs_late.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -325,7 +324,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/govinda-umd/explainable-ai/issues/new?title=Issue%20on%20page%20%2Fnb/jul22/00-data-max_model-isfc_desc-early_vs_late.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/govinda-umd/explainable-ai/issues/new?title=Issue%20on%20page%20%2Fnb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -346,7 +345,7 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/govinda-umd/explainable-ai/master?urlpath=tree/docs/nb/jul22/00-data-max_model-isfc_desc-early_vs_late.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/govinda-umd/explainable-ai/master?urlpath=tree/docs/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -404,7 +403,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>July 4-6,11-12,15, 2022: Compute Intersubject Functional Correlation (ISFC) values for early and late periods in threat and safe conditions</h1>
+                <h1>July 19, 2022: Compute Intersubject Functional Correlation (ISFC) values for early and late periods in threat and safe conditions</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -449,8 +448,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="july-4-6-11-12-15-2022-compute-intersubject-functional-correlation-isfc-values-for-early-and-late-periods-in-threat-and-safe-conditions">
-<h1>July 4-6,11-12,15, 2022: Compute Intersubject Functional Correlation (ISFC) values for <code class="docutils literal notranslate"><span class="pre">early</span></code> and <code class="docutils literal notranslate"><span class="pre">late</span></code> periods in <code class="docutils literal notranslate"><span class="pre">threat</span></code> and <code class="docutils literal notranslate"><span class="pre">safe</span></code> conditions<a class="headerlink" href="#july-4-6-11-12-15-2022-compute-intersubject-functional-correlation-isfc-values-for-early-and-late-periods-in-threat-and-safe-conditions" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="july-19-2022-compute-intersubject-functional-correlation-isfc-values-for-early-and-late-periods-in-threat-and-safe-conditions">
+<h1>July 19, 2022: Compute Intersubject Functional Correlation (ISFC) values for <code class="docutils literal notranslate"><span class="pre">early</span></code> and <code class="docutils literal notranslate"><span class="pre">late</span></code> periods in <code class="docutils literal notranslate"><span class="pre">threat</span></code> and <code class="docutils literal notranslate"><span class="pre">safe</span></code> conditions<a class="headerlink" href="#july-19-2022-compute-intersubject-functional-correlation-isfc-values-for-early-and-late-periods-in-threat-and-safe-conditions" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -465,7 +464,10 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
 
 <span class="c1"># ISC</span>
-<span class="kn">from</span> <span class="nn">brainiak.isc</span> <span class="kn">import</span> <span class="p">(</span><span class="n">isc</span><span class="p">,</span> <span class="n">isfc</span><span class="p">,</span> <span class="n">bootstrap_isc</span><span class="p">,</span> <span class="n">compute_summary_statistic</span><span class="p">,</span> <span class="n">squareform_isfc</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">brainiak.isc</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">isc</span><span class="p">,</span> <span class="n">isfc</span><span class="p">,</span> <span class="n">bootstrap_isc</span><span class="p">,</span> <span class="n">compute_summary_statistic</span><span class="p">,</span> <span class="n">squareform_isfc</span><span class="p">,</span> <span class="n">compute_correlation</span><span class="p">,</span>
+    <span class="n">_check_timeseries_input</span><span class="p">,</span> <span class="n">_check_targets_input</span><span class="p">,</span> <span class="n">_threshold_nans</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">statsmodels.stats.multitest</span> <span class="kn">import</span> <span class="n">multipletests</span>
 <span class="kn">from</span> <span class="nn">scipy.spatial.distance</span> <span class="kn">import</span> <span class="n">squareform</span>
 
@@ -512,7 +514,7 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="n">args</span><span class="o">.</span><span class="n">num_rois</span> <span class="o">=</span> <span class="mi">85</span>
     <span class="n">args</span><span class="o">.</span><span class="n">roi_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">num_rois</span><span class="p">)</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/data/max/exploratory_data.pkl&quot;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/data/max/exploratory_data_trial_level_responses.pkl&quot;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">X</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -596,14 +598,12 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">LABELS</span><span class="p">:</span>
     <span class="n">min_trials</span> <span class="o">+=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">X</span><span class="p">[</span><span class="n">label</span><span class="p">]]</span>
 <span class="n">min_trials</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">min_trials</span><span class="p">)</span>
-
-<span class="n">ts</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">LABELS</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">NAMES</span><span class="p">):</span>
-    <span class="n">ts</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">X</span><span class="p">[</span><span class="n">label</span><span class="p">]:</span>
-        <span class="n">trl</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="n">min_trials</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="p">(</span><span class="n">min_trials</span><span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">))</span>
-        <span class="n">ts</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">zscore</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;minimum number of trials = </span><span class="si">{</span><span class="n">min_trials</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>minimum number of trials = 11
 </pre></div>
 </div>
 </div>
@@ -630,7 +630,7 @@ const thebe_selector_output = ".output, .cell_output"
             <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span> <span class="n">args</span><span class="o">.</span><span class="n">PERIOD_TRS</span><span class="p">[</span><span class="n">idx_period</span><span class="p">],</span> <span class="p">:]</span>
             <span class="n">trl</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
             <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="n">min_trials</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="p">(</span><span class="n">min_trials</span><span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">))</span>
-            <span class="n">ts</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">period</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="p">[</span><span class="n">zscore</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span>
+            <span class="n">ts</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">period</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="p">[</span><span class="n">zscore</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nan_policy</span><span class="o">=</span><span class="s1">&#39;omit&#39;</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -656,6 +656,7 @@ Tutorial: <a class="reference external" href="https://github.com/snastase/isc-tu
     <span class="n">corrs</span> <span class="o">=</span> <span class="p">{};</span> <span class="n">bootstraps</span> <span class="o">=</span> <span class="p">{};</span> <span class="n">rois</span> <span class="o">=</span> <span class="p">{}</span>
 
     <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">ts</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="c1"># if block == &#39;safe_early&#39;: continue</span>
         <span class="n">isfcs</span><span class="p">,</span> <span class="n">iscs</span> <span class="o">=</span> <span class="n">isfc</span><span class="p">(</span>
             <span class="n">ts</span><span class="p">[</span><span class="n">block</span><span class="p">],</span> 
             <span class="n">pairwise</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">pairwise</span><span class="p">,</span> 
@@ -729,6 +730,8 @@ Tutorial: <a class="reference external" href="https://github.com/snastase/isc-tu
             <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="n">label</span><span class="p">,</span> <span class="n">idx_period</span><span class="p">]</span>
             <span class="n">block</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">period</span><span class="si">}</span><span class="s2">&quot;</span>
 
+            <span class="c1"># if block == &#39;safe_early&#39;: continue</span>
+
             <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span>
                 <span class="n">isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">],</span> <span class="c1">#* rois[block], </span>
                 <span class="n">cmap</span><span class="o">=</span><span class="n">cmr</span><span class="o">.</span><span class="n">iceburn</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span>
@@ -775,14 +778,432 @@ Tutorial: <a class="reference external" href="https://github.com/snastase/isc-tu
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>percent of significant roi(-pairs) for condition safe_early and correlation isfc = 17.27574750830565 %
-percent of significant roi(-pairs) for condition safe_early and correlation isc = 13.953488372093023 %
-percent of significant roi(-pairs) for condition safe_late and correlation isfc = 19.37984496124031 %
-percent of significant roi(-pairs) for condition safe_late and correlation isc = 9.30232558139535 %
-percent of significant roi(-pairs) for condition threat_early and correlation isfc = 29.235880398671096 %
-percent of significant roi(-pairs) for condition threat_early and correlation isc = 39.53488372093023 %
-percent of significant roi(-pairs) for condition threat_late and correlation isfc = 34.10852713178294 %
-percent of significant roi(-pairs) for condition threat_late and correlation isc = 30.232558139534884 %
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb Cell 13</span> in <span class="ni">&lt;cell line: 10&gt;</span><span class="nt">()</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000012vscode-remote?line=6&#39;</span><span class="o">&gt;</span><span class="mi">7</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">args</span><span class="o">.</span><span class="n">vectorize_isfcs</span> <span class="o">=</span> <span class="kc">True</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000012vscode-remote?line=7&#39;</span><span class="o">&gt;</span><span class="mi">8</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">args</span><span class="o">.</span><span class="n">n_bootstraps</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="o">---&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000012vscode-remote?line=9&#39;</span><span class="o">&gt;</span><span class="mi">10</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">corrs</span><span class="p">,</span> <span class="n">bootstraps</span><span class="p">,</span> <span class="n">rois</span> <span class="o">=</span> <span class="n">get_isfcs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">ts</span><span class="p">)</span>
+
+<span class="nn">/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb Cell 13</span> in <span class="ni">get_isfcs</span><span class="nt">(args, ts)</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000012vscode-remote?line=1&#39;</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">corrs</span> <span class="o">=</span> <span class="p">{};</span> <span class="n">bootstraps</span> <span class="o">=</span> <span class="p">{};</span> <span class="n">rois</span> <span class="o">=</span> <span class="p">{}</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000012vscode-remote?line=3&#39;</span><span class="o">&gt;</span><span class="mi">4</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">ts</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000012vscode-remote?line=4&#39;</span><span class="o">&gt;</span><span class="mi">5</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="c1"># if block == &#39;safe_early&#39;: continue</span>
+<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000012vscode-remote?line=5&#39;</span><span class="o">&gt;</span><span class="mi">6</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="n">isfcs</span><span class="p">,</span> <span class="n">iscs</span> <span class="o">=</span> <span class="n">isfc</span><span class="p">(</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000012vscode-remote?line=6&#39;</span><span class="o">&gt;</span><span class="mi">7</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>         <span class="n">ts</span><span class="p">[</span><span class="n">block</span><span class="p">],</span> 
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000012vscode-remote?line=7&#39;</span><span class="o">&gt;</span><span class="mi">8</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>         <span class="n">pairwise</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">pairwise</span><span class="p">,</span> 
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000012vscode-remote?line=8&#39;</span><span class="o">&gt;</span><span class="mi">9</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>         <span class="n">vectorize_isfcs</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">vectorize_isfcs</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000012vscode-remote?line=9&#39;</span><span class="o">&gt;</span><span class="mi">10</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="p">)</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000012vscode-remote?line=10&#39;</span><span class="o">&gt;</span><span class="mi">11</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="n">corrs</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;isfcs&#39;</span><span class="p">:</span><span class="n">isfcs</span><span class="p">,</span> <span class="s1">&#39;iscs&#39;</span><span class="p">:</span><span class="n">iscs</span><span class="p">}</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000012vscode-remote?line=12&#39;</span><span class="o">&gt;</span><span class="mi">13</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="n">bootstraps</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="nn">File ~/venvs/expln-ai3.9/lib/python3.9/site-packages/brainiak/isc.py:340,</span> in <span class="ni">isfc</span><span class="nt">(data, targets, pairwise, summary_statistic, vectorize_isfcs, tolerate_nans)</span>
+<span class="g g-Whitespace">    </span><span class="mi">337</span> <span class="n">targets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rollaxis</span><span class="p">(</span><span class="n">targets</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span> <span class="c1"># Compute leave-one-out ISFCs</span>
+<span class="ne">--&gt; </span><span class="mi">340</span> <span class="n">isfcs</span> <span class="o">=</span> <span class="p">[</span><span class="n">compute_correlation</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">subject</span><span class="o">.</span><span class="n">T</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>                              <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">mean</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>                                  <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">targets</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span>                                  <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>                              <span class="n">return_nans</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span>          <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">subject</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">)]</span>
+<span class="g g-Whitespace">    </span><span class="mi">347</span> <span class="c1"># Transpose and average ISFC matrices for both directions</span>
+<span class="g g-Whitespace">    </span><span class="mi">348</span> <span class="n">isfcs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">([(</span><span class="n">isfc_matrix</span> <span class="o">+</span> <span class="n">isfc_matrix</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="k">if</span>
+<span class="g g-Whitespace">    </span><span class="mi">349</span>                    <span class="n">symmetric</span> <span class="k">else</span> <span class="n">isfc_matrix</span> <span class="k">for</span>
+<span class="g g-Whitespace">    </span><span class="mi">350</span>                    <span class="n">isfc_matrix</span> <span class="ow">in</span> <span class="n">isfcs</span><span class="p">])</span>
+
+<span class="nn">File ~/venvs/expln-ai3.9/lib/python3.9/site-packages/brainiak/isc.py:340,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">337</span> <span class="n">targets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rollaxis</span><span class="p">(</span><span class="n">targets</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span> <span class="c1"># Compute leave-one-out ISFCs</span>
+<span class="ne">--&gt; </span><span class="mi">340</span> <span class="n">isfcs</span> <span class="o">=</span> <span class="p">[</span><span class="n">compute_correlation</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">subject</span><span class="o">.</span><span class="n">T</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>                              <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">mean</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>                                  <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">targets</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span>                                  <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>                              <span class="n">return_nans</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span>          <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">subject</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">)]</span>
+<span class="g g-Whitespace">    </span><span class="mi">347</span> <span class="c1"># Transpose and average ISFC matrices for both directions</span>
+<span class="g g-Whitespace">    </span><span class="mi">348</span> <span class="n">isfcs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">([(</span><span class="n">isfc_matrix</span> <span class="o">+</span> <span class="n">isfc_matrix</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="k">if</span>
+<span class="g g-Whitespace">    </span><span class="mi">349</span>                    <span class="n">symmetric</span> <span class="k">else</span> <span class="n">isfc_matrix</span> <span class="k">for</span>
+<span class="g g-Whitespace">    </span><span class="mi">350</span>                    <span class="n">isfc_matrix</span> <span class="ow">in</span> <span class="n">isfcs</span><span class="p">])</span>
+
+<span class="nn">File ~/venvs/expln-ai3.9/lib/python3.9/site-packages/brainiak/fcma/util.py:139,</span> in <span class="ni">compute_correlation</span><span class="nt">(matrix1, matrix2, return_nans)</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span> <span class="n">corr_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span> <span class="c1"># blas routine is column-major</span>
+<span class="ne">--&gt; </span><span class="mi">139</span> <span class="n">blas</span><span class="o">.</span><span class="n">compute_single_matrix_multiplication</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span>                                           <span class="n">r2</span><span class="p">,</span> <span class="n">r1</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span>                                           <span class="mf">1.0</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">142</span>                                           <span class="n">matrix2</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span>                                           <span class="n">matrix1</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">144</span>                                           <span class="mf">0.0</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">145</span>                                           <span class="n">corr_data</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">146</span>                                           <span class="n">r2</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">147</span> <span class="k">return</span> <span class="n">corr_data</span>
+
+<span class="nn">File ~/venvs/expln-ai3.9/lib/python3.9/site-packages/brainiak/fcma/cython_blas.pyx:554,</span> in <span class="ni">brainiak.fcma.cython_blas.compute_single_matrix_multiplication</span><span class="nt">()</span>
+
+<span class="ne">ValueError</span>: Buffer dtype mismatch, expected &#39;float&#39; but got &#39;double&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">block</span> <span class="o">=</span> <span class="s1">&#39;safe_early&#39;</span>
+<span class="n">ts</span><span class="p">[</span><span class="n">block</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[array([[ 0.05467964, -0.1205243 ,  0.11093244, ..., -0.1721219 ,
+          1.1138121 , -0.02757837],
+        [-0.27324003,  0.20324907,  0.06163792, ..., -0.6667481 ,
+         -0.20829572, -0.79133695],
+        [-1.4730301 ,  0.03608631,  0.40999284, ...,  0.5071012 ,
+          0.10341553, -0.31673962],
+        ...,
+        [ 0.39005592,  1.6999999 ,  1.307258  , ...,  2.0048394 ,
+          0.7809346 , -1.1238575 ],
+        [-1.1773952 ,  1.6153642 ,  1.6138225 , ...,  0.03018999,
+          1.0810596 ,  0.6425069 ],
+        [ 0.21952426,  1.0759467 ,  0.8285861 , ...,  0.45071515,
+          0.17208433,  2.3088193 ]], dtype=float32),
+ array([[-1.0902061 ,  0.4389728 , -0.44221652, ...,  1.7102178 ,
+          1.189734  , -0.5876645 ],
+        [-0.03746334, -0.96664035,  0.18394639, ...,  1.6425256 ,
+          0.20199731, -1.4414313 ],
+        [-0.07555286,  1.82937   , -0.2525016 , ...,  2.5530515 ,
+          1.1477486 , -1.2802129 ],
+        ...,
+        [-1.7792044 , -1.8347045 ,  0.45844206, ..., -0.1831459 ,
+         -0.6850129 , -2.1006868 ],
+        [-2.3324249 , -1.9655458 ,  0.5923131 , ..., -0.05504523,
+         -1.1527041 , -1.9377308 ],
+        [-2.2236216 , -0.9541626 , -0.03525096, ..., -0.8993202 ,
+          0.27787495, -1.5134262 ]], dtype=float32),
+ array([[ 0.6009991 ,  0.2868164 , -1.8440654 , ...,  0.40048474,
+          1.8115262 ,  1.2665278 ],
+        [-0.65942085,  0.4817043 ,  0.37554786, ...,  0.87222135,
+          1.392617  ,  1.4598368 ],
+        [ 0.266081  ,  0.6430558 , -1.67839   , ..., -0.36677316,
+          0.01465276,  1.2180288 ],
+        ...,
+        [-2.5901923 , -0.52676684,  1.7225707 , ..., -1.8092902 ,
+          0.18052918,  0.6363132 ],
+        [-0.3495892 , -0.88360786,  1.0370953 , ...,  0.4847384 ,
+         -0.7152098 ,  0.23352343],
+        [-0.18441537,  0.48300213,  0.5204489 , ..., -1.3446829 ,
+         -0.6202572 ,  0.95933765]], dtype=float32),
+ array([[-0.01613312, -0.1439441 ,  0.23595472, ..., -0.49642292,
+          0.5987537 ,  0.6473687 ],
+        [-0.5419689 ,  0.02906274,  0.7875941 , ...,  0.422688  ,
+          1.3886348 ,  1.4174653 ],
+        [ 1.1146282 ,  0.23839326,  0.24505296, ..., -0.6403834 ,
+          0.59103245,  0.7137259 ],
+        ...,
+        [ 1.3266754 ,  0.25945404, -0.71594596, ..., -0.45190406,
+          0.99736136,  1.2595623 ],
+        [ 0.5151946 ,  0.4064375 , -0.77537113, ..., -0.29380226,
+          0.46413505,  0.8986396 ],
+        [-0.47906622, -0.23490281, -1.0006177 , ..., -0.8689528 ,
+         -0.10119489,  0.46769464]], dtype=float32),
+ array([[-0.36736104,  0.18577237, -0.0318805 , ...,  1.1467097 ,
+          0.07185549, -0.5354583 ],
+        [-1.1051304 ,  0.07320585,  0.973755  , ...,  0.90317965,
+          0.45198327, -1.2607144 ],
+        [ 0.43687326,  0.69321525,  1.0197825 , ...,  0.4403286 ,
+         -0.8089485 , -0.7715019 ],
+        ...,
+        [-0.564365  ,  0.33349824, -1.183294  , ..., -0.5232255 ,
+          0.43030927,  1.0267352 ],
+        [-0.89650893, -0.19382171, -0.5247401 , ..., -0.12714516,
+          1.2020881 ,  0.77853715],
+        [-0.27069893, -0.5718404 ,  0.21835507, ..., -1.7133218 ,
+          0.8317271 ,  0.88996214]], dtype=float32),
+ array([[ 0.35095328,  1.3907964 ,  0.76941824, ...,  0.3011957 ,
+         -1.0818708 ,  0.27824152],
+        [ 0.00619424,  0.83167773, -0.51082295, ..., -0.04586672,
+          0.7281338 , -0.41911182],
+        [-0.705004  ,  0.90523654, -0.8977817 , ...,  0.2740284 ,
+          0.4055057 ,  0.5251284 ],
+        ...,
+        [-0.14465041,  1.0798309 ,  0.12460133, ...,  1.4414375 ,
+          1.4987284 ,  2.4590669 ],
+        [ 0.33073398,  0.38003072,  1.0013162 , ...,  1.0856065 ,
+          2.9861817 ,  2.9950225 ],
+        [-0.34268135, -0.33303237, -0.95336515, ..., -0.40100607,
+          1.4273089 ,  2.150139  ]], dtype=float32),
+ array([[-0.63828695, -0.07262231,  0.22802725, ..., -0.5254978 ,
+          0.09285837,  0.1381071 ],
+        [-0.15847284, -0.16567522,  0.35929978, ..., -0.8859163 ,
+          0.87023544,  0.32754177],
+        [-0.38762382, -0.45219025, -0.37019137, ..., -0.15203756,
+         -0.2120993 , -0.90674365],
+        ...,
+        [-0.14377284,  0.5293298 ,  0.54744685, ...,  0.4099474 ,
+          0.8894084 ,  0.45462468],
+        [-0.6653489 , -0.17268626,  0.9644676 , ...,  0.9351716 ,
+          0.2704268 , -0.14622012],
+        [-1.4207566 , -0.13021822,  0.5791999 , ...,  0.419082  ,
+          1.2630439 , -0.22013783]], dtype=float32),
+ array([[-0.43374643, -0.6765802 , -1.8451805 , ...,  1.2124602 ,
+         -0.637453  , -1.2481025 ],
+        [-1.123016  , -1.237147  , -1.2836652 , ..., -0.3661897 ,
+         -0.6203999 , -2.0654752 ],
+        [-1.1840678 , -1.5923294 , -1.519654  , ..., -1.4095252 ,
+         -1.3404413 , -2.180265  ],
+        ...,
+        [ 2.8597772 ,  1.5311317 ,  0.28550372, ...,  0.3225474 ,
+          0.04768639, -1.0489491 ],
+        [ 2.15981   ,  1.9802839 ,  0.49146184, ...,  0.7153636 ,
+          0.2996277 ,  0.6766107 ],
+        [ 1.3292159 ,  2.1387348 ,  0.12790696, ...,  0.49903315,
+         -0.35878888, -0.40174946]], dtype=float32),
+ array([[ 1.2227213 ,  1.7898635 ,  1.4998453 , ...,  1.5570065 ,
+          2.3997836 , -0.21279317],
+        [ 1.1813873 ,  1.1846159 ,  2.0086474 , ...,  1.2441341 ,
+          2.2567425 ,  1.0240226 ],
+        [ 0.7810337 ,  0.86005366,  0.97621316, ...,  0.71320224,
+          1.3478278 ,  0.87331784],
+        ...,
+        [ 0.01992953,  0.48573333,  0.79535943, ...,  0.78599054,
+          0.7041403 , -0.4639491 ],
+        [-0.55217206,  0.229462  ,  1.6631372 , ...,  1.4471794 ,
+         -0.11431637, -0.05452459],
+        [-0.1600735 , -0.35719457,  0.64454687, ...,  0.47345528,
+          0.5201123 ,  0.32491696]], dtype=float32),
+ array([[-0.39893678,  1.1961985 , -0.19503002, ...,  0.38812324,
+         -2.0063298 , -1.027074  ],
+        [ 0.13506043, -0.8018087 ,  0.02910656, ..., -0.13244836,
+         -2.497149  ,  0.7121856 ],
+        [-0.29627836, -0.07333429, -0.15257448, ..., -0.03214478,
+         -1.8210675 , -1.3876334 ],
+        ...,
+        [-0.04606091,  0.04796081,  0.18638207, ...,  0.5178686 ,
+          0.13167039,  1.443688  ],
+        [ 1.2923037 , -0.657438  ,  0.39009136, ...,  0.6952426 ,
+          0.9169699 ,  1.5735629 ],
+        [-0.28979042, -1.3208157 ,  0.42463458, ..., -1.7184092 ,
+          0.73596984,  1.178281  ]], dtype=float32),
+ array([[-1.63647   ,  1.0557574 ,  1.6381121 , ...,  1.0760838 ,
+         -0.5498385 , -0.6486637 ],
+        [-1.825441  ,  1.16266   ,  1.1131771 , ...,  0.62030363,
+          0.44446704, -1.354175  ],
+        [-0.9370232 ,  0.5323837 ,  1.4325966 , ...,  0.75693566,
+         -0.9560606 , -1.3286552 ],
+        ...,
+        [ 0.13477264,  0.6317825 , -0.52011925, ...,  1.7635891 ,
+          1.1362096 ,  0.737012  ],
+        [ 0.5987926 ,  0.98362416, -0.8138217 , ...,  1.5152284 ,
+          0.4810227 ,  1.1548989 ],
+        [ 1.3691632 ,  0.40531304, -0.6756222 , ...,  1.0927155 ,
+          1.4790784 ,  1.1008283 ]], dtype=float32),
+ array([[-0.2530966 ,  1.3063489 ,  1.7978756 , ..., -1.1738688 ,
+          2.1047318 ,  2.4705245 ],
+        [ 0.81142706,  1.4917502 ,  0.8945636 , ..., -0.9645451 ,
+          0.87259656,  1.5897517 ],
+        [ 1.0569404 ,  2.0428777 ,  1.0143164 , ...,  0.5564943 ,
+          1.8612311 ,  1.740322  ],
+        ...,
+        [-0.8110414 ,  0.11124085, -0.21969576, ..., -1.2553201 ,
+          0.03873038,  0.6108807 ],
+        [-1.0841948 , -0.4656307 , -0.7025822 , ..., -0.66497207,
+         -0.8950554 , -0.16393162],
+        [-0.4193774 ,  0.40673187, -0.27684927, ..., -0.9724476 ,
+         -1.1694839 , -0.02717057]], dtype=float32),
+ array([[ 0.38235882, -0.03719908, -0.3471695 , ..., -0.27221394,
+          1.2306705 , -0.69701   ],
+        [ 0.22348   ,  1.2659516 ,  0.58468   , ..., -0.7330281 ,
+          1.9617251 , -0.11691989],
+        [ 0.72745067,  0.46265113,  1.0364716 , ...,  0.5882661 ,
+          1.5316596 ,  0.2999228 ],
+        ...,
+        [ 1.4280231 , -0.12556204,  0.93854207, ...,  0.20414332,
+         -1.3436007 ,  0.69635653],
+        [ 1.1302187 ,  1.3369597 , -0.05544968, ..., -0.58395237,
+         -0.5947905 , -0.28748694],
+        [ 1.3807542 ,  0.5164956 , -0.51375985, ..., -0.23926286,
+         -1.787858  ,  0.21714626]], dtype=float32),
+ array([[ 0.04672363,  1.2031654 ,  0.5978186 , ..., -0.83485824,
+          1.562633  ,  1.0973346 ],
+        [ 0.06061576,  1.2907249 ,  0.6375783 , ..., -0.16776887,
+          2.1039147 ,  1.9441279 ],
+        [-0.33720377,  0.88625497, -0.23456833, ..., -1.0472869 ,
+          1.4109889 ,  1.427915  ],
+        ...,
+        [ 0.27674398,  1.2377092 ,  0.78878266, ...,  0.65258884,
+         -0.20523176, -1.1250322 ],
+        [ 0.5261911 ,  1.8266437 ,  1.254465  , ...,  1.1189926 ,
+         -0.72491705, -0.16096534],
+        [ 1.1703345 ,  1.4637997 ,  0.6884762 , ...,  1.5035983 ,
+         -0.08644591, -0.02225113]], dtype=float32),
+ array([[-0.03142907, -0.43671712, -0.35960948, ..., -0.2050399 ,
+          0.25649953,  0.9991626 ],
+        [ 0.17638738,  0.14333746, -0.395984  , ...,  0.7367457 ,
+         -1.4569818 , -0.36336464],
+        [-0.5552813 ,  0.4183417 , -0.5797603 , ...,  0.39272985,
+          0.01335435,  0.2787918 ],
+        ...,
+        [-0.32095847,  1.0709677 ,  0.9058553 , ...,  2.0619826 ,
+         -1.3266742 , -0.78524846],
+        [ 0.7233912 ,  1.9769262 ,  1.1298513 , ...,  2.372128  ,
+         -0.33734053,  0.2360495 ],
+        [ 3.515807  ,  2.4978976 ,  4.1736135 , ...,  2.8103113 ,
+          1.0635599 ,  1.8070794 ]], dtype=float32),
+ array([[ 0.03005645,  0.35280472, -0.07356001, ...,  0.60725254,
+         -0.4458566 ,  0.52927744],
+        [-0.02533957,  0.5753886 ,  0.24672061, ...,  0.3084391 ,
+         -0.13438794,  1.2098398 ],
+        [ 0.20841618,  0.141915  ,  0.09698676, ...,  0.5079474 ,
+         -0.15896581,  1.0016932 ],
+        ...,
+        [-0.04902106, -0.74473786,  1.7512975 , ...,  1.4693774 ,
+          2.5659616 ,  1.6300476 ],
+        [-0.6636666 , -0.7913614 ,  0.3881745 , ...,  0.11610536,
+          2.2746997 ,  1.2929256 ],
+        [-0.36252117, -1.444805  ,  0.2829871 , ...,  0.6709132 ,
+          2.7052584 ,  0.8905685 ]], dtype=float32),
+ array([[-0.34149414,  0.79170233, -1.4666971 , ...,  1.2132771 ,
+         -0.74670595,  0.45696414],
+        [ 0.24850735,  0.9885441 , -0.3372411 , ...,  1.8238181 ,
+          0.23770219,  1.8057705 ],
+        [ 0.70946234,  1.7284595 , -1.0566392 , ...,  1.867966  ,
+         -0.45154414,  1.1577821 ],
+        ...,
+        [ 1.2705373 ,  0.5122881 , -0.00577941, ..., -0.9169091 ,
+         -1.7446399 , -0.11612249],
+        [ 1.8356994 ,  1.3263667 , -0.21875888, ..., -0.05401946,
+         -0.9550807 ,  0.6641789 ],
+        [ 0.3948882 , -0.1898292 , -0.19716863, ..., -0.53099334,
+         -0.8792355 , -0.2788212 ]], dtype=float32),
+ array([[-1.8462324 , -1.1019943 , -0.134882  , ..., -0.94230115,
+         -0.918902  , -0.460253  ],
+        [-1.5608443 , -0.59674025, -0.16197313, ..., -1.1637074 ,
+         -0.6134775 , -1.4321903 ],
+        [-0.8962423 , -0.64819276, -0.10215591, ..., -1.3317739 ,
+         -1.1752467 , -0.04660454],
+        ...,
+        [-1.0472773 , -0.6113873 , -0.76225185, ...,  1.0147622 ,
+          0.54093444,  1.6806352 ],
+        [-0.52342033,  0.20763984, -0.7188753 , ...,  0.7384777 ,
+          0.985849  ,  1.8828396 ],
+        [-2.5898647 , -1.0353441 , -1.274519  , ...,  0.37516865,
+         -0.20625688,  1.3388352 ]], dtype=float32),
+ array([[-4.2945313e-01, -5.7286566e-01, -2.8352776e-01, ...,
+         -1.4324529e-01, -2.8453302e-01,  2.1711046e-02],
+        [ 2.5201908e-01,  1.9704622e-01, -3.5163981e-01, ...,
+         -1.2276010e-01, -7.6526088e-01, -4.9583110e-01],
+        [-6.3160932e-01, -2.5506580e-01, -7.9713178e-01, ...,
+         -5.8569628e-01, -9.3446440e-01, -9.8440892e-01],
+        ...,
+        [ 2.1301311e-02, -3.1074975e-03, -5.6306553e-01, ...,
+          8.2865894e-01, -4.2267638e-01, -1.0159745e+00],
+        [ 7.2022724e-01,  5.8973128e-01,  2.9160178e-01, ...,
+          5.0792205e-01, -6.2255484e-01,  1.2997827e-01],
+        [ 1.6453022e+00,  2.6759152e+00,  2.3117876e+00, ...,
+          3.2834580e+00,  1.3339640e+00,  1.6572773e+00]], dtype=float32),
+ array([[-0.00465488,  0.93134266,  1.1376437 , ..., -0.16209063,
+         -0.47678435,  0.16534871],
+        [ 1.5459905 ,  1.6242288 ,  0.94547904, ...,  0.8306264 ,
+          0.58089477, -0.04403859],
+        [ 0.43122867,  1.2264693 ,  0.7974012 , ...,  0.39347342,
+          0.3993007 , -0.36021352],
+        ...,
+        [ 1.5232393 , -0.19633776, -0.47749105, ..., -0.8728544 ,
+         -0.5582148 , -1.855595  ],
+        [ 1.747526  ,  0.13805996, -0.04781496, ..., -0.6093056 ,
+          0.04484311, -0.8059216 ],
+        [ 1.4276162 ,  0.206576  , -0.7473656 , ..., -0.73407775,
+         -1.0844004 , -1.3383832 ]], dtype=float32),
+ array([[ 0.10430992,  0.8946466 , -0.37460408, ...,  0.6846237 ,
+          1.312182  ,  1.0861565 ],
+        [ 1.1035126 ,  0.8159738 , -0.27841622, ...,  0.9293671 ,
+          0.41869274,  0.0125413 ],
+        [-0.2714355 ,  0.2946867 , -0.09463416, ...,  0.13709134,
+          0.47902378,  0.28650978],
+        ...,
+        [ 0.5903775 , -1.7051659 ,  0.92764586, ...,  0.37930644,
+          0.2228197 , -0.03488985],
+        [-0.9283711 , -1.453177  , -0.19249272, ..., -0.31952587,
+         -0.9446685 , -0.6649396 ],
+        [-1.9250278 , -1.5968988 ,  0.39215526, ...,  0.3495622 ,
+         -1.1152163 , -0.48616388]], dtype=float32),
+ array([[ 1.0643315 ,  0.7615804 ,  0.4294187 , ..., -0.9341118 ,
+         -0.02317371, -1.0618144 ],
+        [ 1.4462237 ,  1.7305909 ,  1.3678639 , ..., -0.66534775,
+          0.62075645, -0.17828672],
+        [ 1.8101969 ,  0.46123114,  1.5090569 , ...,  0.08755745,
+          1.1281768 , -0.03469395],
+        ...,
+        [-1.1173517 ,  0.04683448, -0.28107157, ...,  1.7790548 ,
+          0.6038034 ,  1.577013  ],
+        [-1.7488817 ,  0.37340435,  0.10790796, ...,  0.96252614,
+          0.3125368 ,  0.8533564 ],
+        [-1.4702162 ,  0.4251311 ,  0.18431763, ...,  0.4391662 ,
+         -0.52147233,  0.6121044 ]], dtype=float32),
+ array([[ 0.2175425 , -0.04245514,  0.60891676, ...,  0.9131135 ,
+          0.5421676 , -0.79530984],
+        [ 0.14415473,  0.32632118,  0.7213945 , ...,  1.1674726 ,
+          1.1294754 ,  0.3167155 ],
+        [ 0.7800879 ,  0.80873495,  0.7027218 , ...,  1.4006084 ,
+          0.9217511 ,  1.2932161 ],
+        ...,
+        [ 0.39129227,  0.5209018 ,  0.9428583 , ...,  0.50970876,
+         -0.25760046,  1.0464972 ],
+        [ 1.3873783 , -0.15417036,  0.9421812 , ...,  1.1580393 ,
+         -0.04077496,  0.2440088 ],
+        [ 1.3884375 ,  0.7089561 ,  0.9571273 , ...,  0.5556652 ,
+          0.03279844,  0.3716828 ]], dtype=float32),
+ array([[-1.4750683 , -2.3910444 , -1.9851906 , ..., -1.5786444 ,
+         -1.0610772 , -1.879557  ],
+        [-1.5770146 , -1.9669216 , -1.6474518 , ..., -0.9019256 ,
+         -1.5418335 , -1.8434125 ],
+        [-0.4485469 , -1.1755791 , -0.32333493, ..., -1.4672692 ,
+         -1.3768983 , -2.3615172 ],
+        ...,
+        [ 2.818118  ,  2.6624725 ,  0.30299935, ..., -0.5180743 ,
+         -0.44471145,  1.3744808 ],
+        [ 2.2125187 ,  1.2404201 , -0.5014913 , ..., -0.17291228,
+          0.11495208,  1.7020737 ],
+        [ 1.615558  ,  2.166974  ,  0.03187057, ..., -0.21451074,
+         -0.18666345,  1.4045786 ]], dtype=float32),
+ array([[ 0.98459774,  1.6409392 , -0.9393371 , ...,  0.63419837,
+          1.0619582 ,  0.7461167 ],
+        [-0.53382814,  0.55944026, -1.5911512 , ..., -0.6849383 ,
+          0.20538603, -1.1474048 ],
+        [ 0.62627447,  1.2520157 , -0.8436252 , ...,  0.3586628 ,
+          0.27246785, -0.3661219 ],
+        ...,
+        [-0.09596034, -0.25008908,  1.1459581 , ...,  1.0032865 ,
+          0.2335684 ,  0.44637328],
+        [-0.10156677, -0.59937763,  0.5950813 , ...,  1.4220028 ,
+          0.00718342, -0.14644468],
+        [-0.10333774, -0.6926041 ,  0.3274361 , ...,  2.0406024 ,
+         -0.36793318, -0.46364203]], dtype=float32),
+ array([[        nan,         nan,         nan, ...,         nan,
+                 nan,         nan],
+        [        nan,         nan,         nan, ...,         nan,
+                 nan,         nan],
+        [ 1.1129316 , -0.2033738 ,  2.1315    , ..., -2.2143643 ,
+          2.3364453 ,  1.1186693 ],
+        ...,
+        [ 0.73180133, -0.0115065 ,  0.93017876, ..., -1.2243594 ,
+          0.46633184, -0.42237195],
+        [ 0.1799658 ,  0.22238821,  1.1385717 , ..., -0.35432062,
+          0.9475131 ,  1.1501056 ],
+        [ 0.65211594,  0.4481738 ,  1.2548435 , ...,  1.1029478 ,
+          0.93590206,  1.6714541 ]], dtype=float32),
+ array([[-9.9188477e-01, -9.9051476e-02,  9.6365082e-01, ...,
+         -7.9933935e-01, -8.7403065e-01, -9.6394557e-01],
+        [-1.3387688e+00,  1.8155779e-03,  8.3656222e-01, ...,
+         -7.1412396e-01,  1.5703011e-01,  1.0121071e+00],
+        [ 6.2076189e-02,  4.7211725e-01,  1.6427634e+00, ...,
+         -8.7241381e-01, -6.3067454e-01, -1.6339467e-01],
+        ...,
+        [ 1.1293008e+00,  9.4454402e-01,  9.3474084e-01, ...,
+         -6.1553991e-01, -1.9635191e-02, -4.4361466e-01],
+        [ 1.9568465e+00,  2.9989028e-01, -9.1096562e-01, ...,
+          5.9113771e-01,  6.1599720e-01, -3.3453096e-02],
+        [ 2.2923117e+00,  1.2333868e+00, -1.4526036e+00, ...,
+          6.6802436e-01,  2.2726121e+00,  3.9501542e-01]], dtype=float32)]
 </pre></div>
 </div>
 </div>
@@ -793,6 +1214,7 @@ percent of significant roi(-pairs) for condition threat_late and correlation isc
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">observed_isfcs</span> <span class="o">=</span> <span class="p">{};</span> <span class="n">observed_p_vals</span> <span class="o">=</span> <span class="p">{};</span> 
 <span class="n">significant_rois</span> <span class="o">=</span> <span class="p">{};</span> <span class="n">conf_intervals</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">bootstraps</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">block</span> <span class="o">==</span> <span class="s1">&#39;safe_early&#39;</span><span class="p">:</span> <span class="k">continue</span>
     <span class="n">observed_isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="n">squareform_isfc</span><span class="p">(</span>
         <span class="n">bootstraps</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="s1">&#39;isfcs&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> 
         <span class="n">bootstraps</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="s1">&#39;iscs&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
@@ -823,7 +1245,32 @@ percent of significant roi(-pairs) for condition threat_late and correlation isc
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/00-data-max_model-isfc_desc-early_vs_late_14_0.png" src="../../_images/00-data-max_model-isfc_desc-early_vs_late_14_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="nn">/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb Cell 15</span> in <span class="ni">&lt;cell line: 30&gt;</span><span class="nt">()</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000014vscode-remote?line=16&#39;</span><span class="o">&gt;</span><span class="mi">17</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="n">conf_intervals</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000014vscode-remote?line=17&#39;</span><span class="o">&gt;</span><span class="mi">18</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>         <span class="n">squareform_isfc</span><span class="p">(</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000014vscode-remote?line=18&#39;</span><span class="o">&gt;</span><span class="mi">19</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>             <span class="n">bootstraps</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="s1">&#39;isfcs&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000014vscode-remote?line=24&#39;</span><span class="o">&gt;</span><span class="mi">25</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>         <span class="p">)</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000014vscode-remote?line=25&#39;</span><span class="o">&gt;</span><span class="mi">26</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="p">)</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000014vscode-remote?line=27&#39;</span><span class="o">&gt;</span><span class="mi">28</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="n">observed_isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">*=</span> <span class="n">significant_rois</span><span class="p">[</span><span class="n">block</span><span class="p">]</span>
+<span class="o">---&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000014vscode-remote?line=29&#39;</span><span class="o">&gt;</span><span class="mi">30</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">plot_isfcs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">observed_isfcs</span><span class="p">,</span> <span class="n">significant_rois</span><span class="p">)</span>
+
+<span class="nn">/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb Cell 15</span> in <span class="ni">plot_isfcs</span><span class="nt">(args, isfcs, rois)</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000014vscode-remote?line=26&#39;</span><span class="o">&gt;</span><span class="mi">27</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">block</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">period</span><span class="si">}</span><span class="s2">&quot;</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000014vscode-remote?line=28&#39;</span><span class="o">&gt;</span><span class="mi">29</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="c1"># if block == &#39;safe_early&#39;: continue</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000014vscode-remote?line=30&#39;</span><span class="o">&gt;</span><span class="mi">31</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span>
+<span class="o">---&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000014vscode-remote?line=31&#39;</span><span class="o">&gt;</span><span class="mi">32</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="n">isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">],</span> <span class="c1">#* rois[block], </span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000014vscode-remote?line=32&#39;</span><span class="o">&gt;</span><span class="mi">33</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="n">cmap</span><span class="o">=</span><span class="n">cmr</span><span class="o">.</span><span class="n">iceburn</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000014vscode-remote?line=33&#39;</span><span class="o">&gt;</span><span class="mi">34</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="p">)</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000014vscode-remote?line=34&#39;</span><span class="o">&gt;</span><span class="mi">35</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.ipynb#ch0000014vscode-remote?line=36&#39;</span><span class="o">&gt;</span><span class="mi">37</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="k">if</span> <span class="n">label</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">period</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="ne">KeyError</span>: &#39;safe_early&#39;
+</pre></div>
+</div>
+<img alt="../../_images/01-data-max_trial_level_model-isfc_desc-early_vs_late_15_1.png" src="../../_images/01-data-max_trial_level_model-isfc_desc-early_vs_late_15_1.png" />
 </div>
 </div>
 </div>
@@ -952,7 +1399,7 @@ percent of significant roi(-pairs) for condition threat_late and correlation isc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6it [00:11,  1.99s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3it [00:06,  2.04s/it]
 </pre></div>
 </div>
 </div>
@@ -964,7 +1411,7 @@ percent of significant roi(-pairs) for condition threat_late and correlation isc
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/00-data-max_model-isfc_desc-early_vs_late_19_0.png" src="../../_images/00-data-max_model-isfc_desc-early_vs_late_19_0.png" />
+<img alt="../../_images/01-data-max_trial_level_model-isfc_desc-early_vs_late_20_0.png" src="../../_images/01-data-max_trial_level_model-isfc_desc-early_vs_late_20_0.png" />
 </div>
 </div>
 </div>
@@ -995,19 +1442,12 @@ percent of significant roi(-pairs) for condition threat_late and correlation isc
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="00-data-max_model-isc_desc-early_vs_late.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="01-data-max_desc-plot_response_time_series.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">July 4, 2022: Compute Intersubject Correlation (ISC) values for <code class="docutils literal notranslate"><span class="pre">early</span></code> and <code class="docutils literal notranslate"><span class="pre">late</span></code> periods in <code class="docutils literal notranslate"><span class="pre">threat</span></code> and <code class="docutils literal notranslate"><span class="pre">safe</span></code> conditions</p>
+            <p class="prev-next-title">July 20, 22: Plot trial level response time series</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="00-data-max_desc-roi_ordering_and_colormap.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">July 15, 2022: Selecting a subset of ROIs and colormaps</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             

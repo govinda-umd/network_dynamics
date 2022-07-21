@@ -836,7 +836,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_22719/1436769480.py:14: RuntimeWarning: Mean of empty slice
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_24365/1436769480.py:14: RuntimeWarning: Mean of empty slice
   np.ascontiguousarray(mean(
 </pre></div>
 </div>
@@ -933,7 +933,69 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/01-data-max_desc-plot_response_time_series_14_0.png" src="../../_images/01-data-max_desc-plot_response_time_series_14_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb Cell 15</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">corrs</span> <span class="o">=</span> <span class="p">{}</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=2&#39;</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">ts</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=3&#39;</span><span class="o">&gt;</span><span class="mi">4</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="n">isfcs</span><span class="p">,</span> <span class="n">iscs</span> <span class="o">=</span> <span class="n">isfc</span><span class="p">(</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=4&#39;</span><span class="o">&gt;</span><span class="mi">5</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>         <span class="n">ts</span><span class="p">[</span><span class="n">block</span><span class="p">],</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=5&#39;</span><span class="o">&gt;</span><span class="mi">6</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>         <span class="n">pairwise</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=6&#39;</span><span class="o">&gt;</span><span class="mi">7</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>         <span class="n">summary_statistic</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=7&#39;</span><span class="o">&gt;</span><span class="mi">8</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>         <span class="n">vectorize_isfcs</span><span class="o">=</span><span class="kc">True</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=8&#39;</span><span class="o">&gt;</span><span class="mi">9</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="p">)</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=9&#39;</span><span class="o">&gt;</span><span class="mi">10</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="n">corrs</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;isfcs&#39;</span><span class="p">:</span><span class="n">isfcs</span><span class="p">,</span> <span class="s1">&#39;iscs&#39;</span><span class="p">:</span><span class="n">iscs</span><span class="p">}</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=11&#39;</span><span class="o">&gt;</span><span class="mi">12</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="c1"># display(isfcs)</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=12&#39;</span><span class="o">&gt;</span><span class="mi">13</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="c1"># display(np.sum(np.isnan(isfcs)))</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=13&#39;</span><span class="o">&gt;</span><span class="mi">14</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="c1"># display(isfcs.shape)</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=14&#39;</span><span class="o">&gt;</span><span class="mi">15</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="c1"># display(np.argwhere(np.isnan(isfcs)))</span>
+
+<span class="nn">File ~/venvs/expln-ai3.9/lib/python3.9/site-packages/brainiak/isc.py:340,</span> in <span class="ni">isfc</span><span class="nt">(data, targets, pairwise, summary_statistic, vectorize_isfcs, tolerate_nans)</span>
+<span class="g g-Whitespace">    </span><span class="mi">337</span> <span class="n">targets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rollaxis</span><span class="p">(</span><span class="n">targets</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span> <span class="c1"># Compute leave-one-out ISFCs</span>
+<span class="ne">--&gt; </span><span class="mi">340</span> <span class="n">isfcs</span> <span class="o">=</span> <span class="p">[</span><span class="n">compute_correlation</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">subject</span><span class="o">.</span><span class="n">T</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>                              <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">mean</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>                                  <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">targets</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span>                                  <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>                              <span class="n">return_nans</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span>          <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">subject</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">)]</span>
+<span class="g g-Whitespace">    </span><span class="mi">347</span> <span class="c1"># Transpose and average ISFC matrices for both directions</span>
+<span class="g g-Whitespace">    </span><span class="mi">348</span> <span class="n">isfcs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">([(</span><span class="n">isfc_matrix</span> <span class="o">+</span> <span class="n">isfc_matrix</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="k">if</span>
+<span class="g g-Whitespace">    </span><span class="mi">349</span>                    <span class="n">symmetric</span> <span class="k">else</span> <span class="n">isfc_matrix</span> <span class="k">for</span>
+<span class="g g-Whitespace">    </span><span class="mi">350</span>                    <span class="n">isfc_matrix</span> <span class="ow">in</span> <span class="n">isfcs</span><span class="p">])</span>
+
+<span class="nn">File ~/venvs/expln-ai3.9/lib/python3.9/site-packages/brainiak/isc.py:340,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">337</span> <span class="n">targets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rollaxis</span><span class="p">(</span><span class="n">targets</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span> <span class="c1"># Compute leave-one-out ISFCs</span>
+<span class="ne">--&gt; </span><span class="mi">340</span> <span class="n">isfcs</span> <span class="o">=</span> <span class="p">[</span><span class="n">compute_correlation</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">subject</span><span class="o">.</span><span class="n">T</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>                              <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">mean</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>                                  <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">targets</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span>                                  <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>                              <span class="n">return_nans</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span>          <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">subject</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">)]</span>
+<span class="g g-Whitespace">    </span><span class="mi">347</span> <span class="c1"># Transpose and average ISFC matrices for both directions</span>
+<span class="g g-Whitespace">    </span><span class="mi">348</span> <span class="n">isfcs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">([(</span><span class="n">isfc_matrix</span> <span class="o">+</span> <span class="n">isfc_matrix</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="k">if</span>
+<span class="g g-Whitespace">    </span><span class="mi">349</span>                    <span class="n">symmetric</span> <span class="k">else</span> <span class="n">isfc_matrix</span> <span class="k">for</span>
+<span class="g g-Whitespace">    </span><span class="mi">350</span>                    <span class="n">isfc_matrix</span> <span class="ow">in</span> <span class="n">isfcs</span><span class="p">])</span>
+
+<span class="nn">File ~/venvs/expln-ai3.9/lib/python3.9/site-packages/brainiak/fcma/util.py:126,</span> in <span class="ni">compute_correlation</span><span class="nt">(matrix1, matrix2, return_nans)</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span> <span class="n">corr_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span> <span class="c1"># blas routine is column-major</span>
+<span class="ne">--&gt; </span><span class="mi">126</span> <span class="n">blas</span><span class="o">.</span><span class="n">compute_single_matrix_multiplication</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">127</span>                                           <span class="n">r2</span><span class="p">,</span> <span class="n">r1</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span>                                           <span class="mf">1.0</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span>                                           <span class="n">matrix2</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span>                                           <span class="n">matrix1</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span>                                           <span class="mf">0.0</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">132</span>                                           <span class="n">corr_data</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span>                                           <span class="n">r2</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="k">return</span> <span class="n">corr_data</span>
+
+<span class="nn">File ~/venvs/expln-ai3.9/lib/python3.9/site-packages/brainiak/fcma/cython_blas.pyx:554,</span> in <span class="ni">brainiak.fcma.cython_blas.compute_single_matrix_multiplication</span><span class="nt">()</span>
+
+<span class="ne">ValueError</span>: Buffer dtype mismatch, expected &#39;float&#39; but got &#39;double&#39;
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -944,13 +1006,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[nan, nan, nan, ..., nan, nan, nan],
-       [nan, nan, nan, ..., nan, nan, nan],
-       [nan, nan, nan, ..., nan, nan, nan],
-       ...,
-       [nan, nan, nan, ..., nan, nan, nan],
-       [nan, nan, nan, ..., nan, nan, nan],
-       [nan, nan, nan, ..., nan, nan, nan]])
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="nn">/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb Cell 16</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000025vscode-remote?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">block</span> <span class="o">=</span> <span class="s1">&#39;safe_early&#39;</span>
+<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000025vscode-remote?line=1&#39;</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">corrs</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="s1">&#39;isfcs&#39;</span><span class="p">]</span>
+
+<span class="ne">KeyError</span>: &#39;safe_early&#39;
 </pre></div>
 </div>
 </div>
@@ -964,7 +1026,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_22719/1732644666.py:3: RuntimeWarning: Mean of empty slice
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_24365/1732644666.py:3: RuntimeWarning: Mean of empty slice
   np.nanmean([a, b], axis=1)
 </pre></div>
 </div>

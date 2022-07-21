@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # July 4-6,11-12,15, 2022: Compute Intersubject Functional Correlation (ISFC) values for `early` and `late` periods in `threat` and `safe` conditions
+# # July 19, 2022: Compute Intersubject Functional Correlation (ISFC) values for `early` and `late` periods in `threat` and `safe` conditions
 
 # In[1]:
 
@@ -18,7 +18,10 @@ from scipy.stats import (norm, zscore, permutation_test)
 from itertools import combinations
 
 # ISC
-from brainiak.isc import (isc, isfc, bootstrap_isc, compute_summary_statistic, squareform_isfc)
+from brainiak.isc import (
+    isc, isfc, bootstrap_isc, compute_summary_statistic, squareform_isfc, compute_correlation,
+    _check_timeseries_input, _check_targets_input, _threshold_nans
+)
 from statsmodels.stats.multitest import multipletests
 from scipy.spatial.distance import squareform
 
@@ -64,7 +67,7 @@ else:
     args.num_rois = 85
     args.roi_idxs = np.arange(args.num_rois)
 
-with open(f"{proj_dir}/data/max/exploratory_data.pkl", 'rb') as f:
+with open(f"{proj_dir}/data/max/exploratory_data_trial_level_responses.pkl", 'rb') as f:
     X = pickle.load(f)
 
 
@@ -130,17 +133,10 @@ min_trials = []
 for label in args.LABELS:
     min_trials += [x.shape[0] for x in X[label]]
 min_trials = min(min_trials)
-
-ts = {}
-for label, name in zip(args.LABELS, args.NAMES):
-    ts[name] = []
-    for x in X[label]:
-        trl, t, r = x.shape
-        x = np.reshape(x[:min_trials, ...], (min_trials*t, r))
-        ts[name].append(zscore(x, axis=0))
+print(f"minimum number of trials = {min_trials}")
 
 
-# In[7]:
+# In[13]:
 
 
 '''
@@ -163,7 +159,7 @@ for label, name in zip(args.LABELS, args.NAMES):
             x = x[:, args.PERIOD_TRS[idx_period], :]
             trl, t, r = x.shape
             x = np.reshape(x[:min_trials, ...], (min_trials*t, r))
-            ts[f"{name}_{period}"] += [zscore(x, axis=0)]
+            ts[f"{name}_{period}"] += [zscore(x, axis=0, nan_policy='omit')]
 
 
 # ### Intersubject correlations
@@ -190,6 +186,7 @@ def get_isfcs(args, ts):
     corrs = {}; bootstraps = {}; rois = {}
 
     for block in ts.keys():
+        # if block == 'safe_early': continue
         isfcs, iscs = isfc(
             ts[block], 
             pairwise=args.pairwise, 
@@ -262,6 +259,8 @@ def plot_isfcs(args, isfcs, rois):
             ax = axs[label, idx_period]
             block = f"{name}_{period}"
 
+            # if block == 'safe_early': continue
+
             im = ax.imshow(
                 isfcs[block], #* rois[block], 
                 cmap=cmr.iceburn, vmin=vmin, vmax=vmax
@@ -305,14 +304,22 @@ corrs, bootstraps, rois = get_isfcs(args, ts)
 # z[block][corr_name] = np.abs(norm.ppf(q[block][corr_name]))
 
 
+# In[15]:
+
+
+block = 'safe_early'
+ts[block]
+
+
 # Showing ISFC values for each period only for the *significant* roi-pairs.
 
-# In[11]:
+# In[ ]:
 
 
 observed_isfcs = {}; observed_p_vals = {}; 
 significant_rois = {}; conf_intervals = {}
 for block in bootstraps.keys():
+    if block == 'safe_early': continue
     observed_isfcs[block] = squareform_isfc(
         bootstraps[block]['isfcs'][0], 
         bootstraps[block]['iscs'][0]
@@ -349,7 +356,7 @@ plot_isfcs(args, observed_isfcs, significant_rois)
 # 
 # We plot the statistic between every pair of conditions only for the roi-pairs that differentiate significantly between the conditions.
 
-# In[12]:
+# In[ ]:
 
 
 def get_comparison_stats(args, corrs,):
@@ -379,7 +386,7 @@ def get_comparison_stats(args, corrs,):
     return stats_results
 
 
-# In[13]:
+# In[ ]:
 
 
 def plot_isfc_comparisons(args, corrs, diff_isfcs,):
@@ -435,7 +442,7 @@ def plot_isfc_comparisons(args, corrs, diff_isfcs,):
             ax.grid(which='minor', color='w', linestyle='-', linewidth=1.5)
 
 
-# In[14]:
+# In[ ]:
 
 
 stats_results = get_comparison_stats(args, corrs)
@@ -466,7 +473,7 @@ for idx, block in enumerate(corrs.keys()):
     cond_idx[block] = idx
 
 
-# In[15]:
+# In[ ]:
 
 
 plot_isfc_comparisons(args, corrs, diff_isfcs)

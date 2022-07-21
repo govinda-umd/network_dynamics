@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 from tqdm import tqdm
 
 def contiguous_regions(condition):
@@ -43,6 +44,75 @@ def get_max_data_trials(args, data_df, subj_idx_list):
     
     return X
 
+# ----------------------------------
+
+def get_columns_design_matrix(design_mat_path):
+    raw_cols = open(design_mat_path, 'r').readlines()[3].split('"')[1].split(';')
+    raw_cols = [raw_col.strip() for raw_col in raw_cols]
+
+    design_mat = np.loadtxt(design_mat_path)
+    design_mat = pd.DataFrame(design_mat, columns=raw_cols)
+
+    raw_cols = [
+        raw_col 
+        for raw_col in raw_cols 
+        if "Run" not in raw_col 
+        if "Motion" not in raw_col
+    ]
+    design_mat = design_mat[raw_cols]
+
+    used_cols = []
+    for col, col_data in design_mat.iteritems():
+        if col_data.sum() == 0: continue
+        used_cols.append(col)
+    
+    # display(design_mat[used_cols])
+
+    return raw_cols, used_cols
+
+
+def get_cond_ts(args, response_data, label='FNS#'):
+    cols = [
+        col 
+        for col in response_data 
+        if label in col 
+        if 'r_' not in col
+    ]
+    cond_ts = np.stack(
+        np.split(
+            response_data[cols].to_numpy().astype(np.float32).T, 
+            len(cols) // args.TRIAL_LEN, 
+            axis=0
+        ),
+        axis=0
+    )
+    return cond_ts
+
+
+def get_max_trial_level_responses(args, main_data_dir, subjs):
+    X = {}
+    for label in args.LABELS:
+        X[label] = []
+
+    for subj in tqdm(subjs):
+
+        data_dir = f"{main_data_dir}/{subj}"
+
+        design_mat_path = f"{data_dir}/{subj}_Main_block_Deconv.x1D"
+        response_file_path = f"{data_dir}/{subj}_Main_block_Deconv_bucket.1D"
+
+        raw_cols, used_cols = get_columns_design_matrix(design_mat_path)
+        response_data = pd.DataFrame(columns=raw_cols)
+        response_data[used_cols] = np.loadtxt(response_file_path)[:, 1::2]
+
+        for label, name in zip(args.LABELS, args.LABEL_NAMES):
+            X[label].append(
+                get_cond_ts(args, response_data, name).astype(np.float32)
+            )
+    
+    return X
+
+# ----------------------------------
 
 def sim_data_additive_white_noise(args, X, y):
     '''

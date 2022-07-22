@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # July 20, 22: Plot trial level response time series
-# individually for each trial for each subject.
+# # July 20, 22: Debug why `safe_early` ISFC is all NaNs.
 
 # In[1]:
 

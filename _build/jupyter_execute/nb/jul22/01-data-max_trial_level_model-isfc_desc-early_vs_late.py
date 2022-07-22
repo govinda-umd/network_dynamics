@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # July 19, 2022: Compute Intersubject Functional Correlation (ISFC) values for `early` and `late` periods in `threat` and `safe` conditions
+# # July 19,21, 2022: Compute Intersubject Functional Correlation (ISFC) values for `early` and `late` periods in `threat` and `safe` conditions
 
 # In[1]:
 
@@ -47,7 +47,7 @@ sys.path.insert(0, proj_dir)
 # In[2]:
 
 
-'''
+''''
 exploratory data
 '''
 class ARGS(): pass
@@ -70,16 +70,6 @@ else:
 with open(f"{proj_dir}/data/max/exploratory_data_trial_level_responses.pkl", 'rb') as f:
     X = pickle.load(f)
 
-
-# In[3]:
-
-
-args.up_roi_idxs, args.down_roi_idxs
-
-
-# In[4]:
-
-
 '''
 change roi ordering
 '''
@@ -88,7 +78,13 @@ for label in args.LABELS:
         X[label][idx_subj] = X[label][idx_subj][:, :, args.roi_idxs]
 
 
-# In[5]:
+# In[3]:
+
+
+args.up_roi_idxs, args.down_roi_idxs
+
+
+# In[4]:
 
 
 '''
@@ -123,9 +119,25 @@ print(major_tick_labels)
 
 # ### `early` and `late` periods 
 
-# In[6]:
+# In[5]:
 
 
+# step 1. sort trials based on number of nan values present
+for label in args.LABELS:
+    for idx in np.arange(len(X[label])):
+        x = X[label][idx]
+        num_nans_trial = np.squeeze(
+            np.apply_over_axes(
+                np.sum, 
+                np.isnan(x), 
+                axes=(1, 2)
+            )
+        )
+        num_nans_trial_idxs = np.argsort(num_nans_trial)
+        x = x[num_nans_trial_idxs, :, :]
+        X[label][idx] = x
+
+# step 2. create time series
 '''
 find minimum number of trials across subjects
 '''
@@ -134,10 +146,6 @@ for label in args.LABELS:
     min_trials += [x.shape[0] for x in X[label]]
 min_trials = min(min_trials)
 print(f"minimum number of trials = {min_trials}")
-
-
-# In[13]:
-
 
 '''
 time series of early and late periods
@@ -161,6 +169,9 @@ for label, name in zip(args.LABELS, args.NAMES):
             x = np.reshape(x[:min_trials, ...], (min_trials*t, r))
             ts[f"{name}_{period}"] += [zscore(x, axis=0, nan_policy='omit')]
 
+for block in ts.keys():
+    ts[block] = np.dstack(ts[block])
+
 
 # ### Intersubject correlations
 # 
@@ -179,7 +190,7 @@ for label, name in zip(args.LABELS, args.NAMES):
 # 
 # LOO method relates to computing ISFC values, as the mean time series of the remaining subjects converges to the common signal across subjects.
 
-# In[8]:
+# In[6]:
 
 
 def get_isfcs(args, ts):
@@ -190,6 +201,7 @@ def get_isfcs(args, ts):
         isfcs, iscs = isfc(
             ts[block], 
             pairwise=args.pairwise, 
+            summary_statistic=None,
             vectorize_isfcs=args.vectorize_isfcs
         )
         corrs[block] = {'isfcs':isfcs, 'iscs':iscs}
@@ -219,24 +231,37 @@ def get_isfcs(args, ts):
 
             print(
                 (
-                    f"percent of significant roi(-pairs) for " 
-                    f"condition {block} and correlation {corr_name[:-1]} = " 
+                    f"condition {block} and correlation {corr_name[:-1]} : " 
                     f"{100. * np.sum(rois[block][corr_name]) / len(rois[block][corr_name])} %"
+                    f"significant roi(-pairs)"
                 )
             )
 
     return corrs, bootstraps, rois
 
 
-# In[9]:
+# In[7]:
+
+
+def get_min_max(d):
+    '''
+    min and max values of the matrices:
+    used in plotting the matrices
+    '''
+    vals = []
+    for block in d.keys():
+        vals.append(d[block])
+    vals = np.concatenate(vals, axis=0).flatten()
+    vmin = np.nanquantile(vals, q=0.05)
+    vmax = np.nanquantile(vals, q=0.95)
+    return -max(-vmin, vmax), max(-vmin, vmax)
+
+
+# In[8]:
 
 
 def plot_isfcs(args, isfcs, rois): 
-    vmin, vmax = [], []
-    for block in isfcs.keys():
-        vmin += [np.min(isfcs[block])]
-        vmax += [np.max(isfcs[block])]
-    vmin, vmax = min(vmin), max(vmax)
+    vmin, vmax = get_min_max(isfcs)
 
     nrows, ncols = len(args.LABELS), len(args.PERIODS)
     fig, axs = plt.subplots(
@@ -284,7 +309,7 @@ def plot_isfcs(args, isfcs, rois):
     return None
 
 
-# In[10]:
+# In[9]:
 
 
 '''
@@ -304,22 +329,15 @@ corrs, bootstraps, rois = get_isfcs(args, ts)
 # z[block][corr_name] = np.abs(norm.ppf(q[block][corr_name]))
 
 
-# In[15]:
-
-
-block = 'safe_early'
-ts[block]
-
-
 # Showing ISFC values for each period only for the *significant* roi-pairs.
 
-# In[ ]:
+# In[10]:
 
 
 observed_isfcs = {}; observed_p_vals = {}; 
 significant_rois = {}; conf_intervals = {}
 for block in bootstraps.keys():
-    if block == 'safe_early': continue
+    # if block == 'safe_early': continue
     observed_isfcs[block] = squareform_isfc(
         bootstraps[block]['isfcs'][0], 
         bootstraps[block]['iscs'][0]
@@ -356,7 +374,7 @@ plot_isfcs(args, observed_isfcs, significant_rois)
 # 
 # We plot the statistic between every pair of conditions only for the roi-pairs that differentiate significantly between the conditions.
 
-# In[ ]:
+# In[11]:
 
 
 def get_comparison_stats(args, corrs,):
@@ -386,15 +404,11 @@ def get_comparison_stats(args, corrs,):
     return stats_results
 
 
-# In[ ]:
+# In[12]:
 
 
 def plot_isfc_comparisons(args, corrs, diff_isfcs,):
-    vmin, vmax = [], []
-    for block in diff_isfcs.keys():
-        vmin += [np.min(diff_isfcs[block])]
-        vmax += [np.max(diff_isfcs[block])]
-    vmin, vmax = min(vmin), max(vmax)
+    vmin, vmax = get_min_max(diff_isfcs)
 
     nrows, ncols = [len(corrs.keys())]*2
     fig, axs = plt.subplots(
@@ -442,7 +456,7 @@ def plot_isfc_comparisons(args, corrs, diff_isfcs,):
             ax.grid(which='minor', color='w', linestyle='-', linewidth=1.5)
 
 
-# In[ ]:
+# In[13]:
 
 
 stats_results = get_comparison_stats(args, corrs)
@@ -473,7 +487,7 @@ for idx, block in enumerate(corrs.keys()):
     cond_idx[block] = idx
 
 
-# In[ ]:
+# In[14]:
 
 
 plot_isfc_comparisons(args, corrs, diff_isfcs)

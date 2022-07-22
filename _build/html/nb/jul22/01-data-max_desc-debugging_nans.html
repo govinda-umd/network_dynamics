@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>July 20, 22: Plot trial level response time series &#8212; Govinda&#39;s Project [Daily Progress]</title>
+    <title>July 20, 22: Debug why safe_early ISFC is all NaNs. &#8212; Govinda&#39;s Project [Daily Progress]</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -50,8 +50,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="July 19, 2022: Compute Intersubject Functional Correlation (ISFC) values for early and late periods in threat and safe conditions" href="01-data-max_trial_level_model-isfc_desc-early_vs_late.html" />
-    <link rel="prev" title="July 15, 2022: Selecting a subset of ROIs and colormaps" href="00-data-max_desc-roi_ordering_and_colormap.html" />
+    <link rel="next" title="July 19,21, 2022: Compute Intersubject Functional Correlation (ISFC) values for early and late periods in threat and safe conditions" href="01-data-max_trial_level_model-isfc_desc-early_vs_late.html" />
+    <link rel="prev" title="July 18,19, 2022: Trial level responses in the MAX paradigm: exploratory dataset: &amp; plotting time series" href="00-max_dataset_trial_level_responses.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -228,14 +228,25 @@ const thebe_selector_output = ".output, .cell_output"
      July 15, 2022: Selecting a subset of ROIs and colormaps
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="00-max_dataset_trial_level_responses.html">
+     July 18,19, 2022: Trial level responses in the MAX paradigm: exploratory dataset: &amp; plotting time series
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     July 20, 22: Plot trial level response time series
+     July 20, 22: Debug why
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe_early
+      </span>
+     </code>
+     ISFC is all NaNs.
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="01-data-max_trial_level_model-isfc_desc-early_vs_late.html">
-     July 19, 2022: Compute Intersubject Functional Correlation (ISFC) values for
+     July 19,21, 2022: Compute Intersubject Functional Correlation (ISFC) values for
      <code class="docutils literal notranslate">
       <span class="pre">
        early
@@ -305,7 +316,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/nb/jul22/01-data-max_desc-debugging_nans.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -325,7 +336,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/govinda-umd/explainable-ai/issues/new?title=Issue%20on%20page%20%2Fnb/jul22/01-data-max_desc-plot_response_time_series.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/govinda-umd/explainable-ai/issues/new?title=Issue%20on%20page%20%2Fnb/jul22/01-data-max_desc-debugging_nans.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -346,7 +357,7 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/govinda-umd/explainable-ai/master?urlpath=tree/docs/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/govinda-umd/explainable-ai/master?urlpath=tree/docs/nb/jul22/01-data-max_desc-debugging_nans.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -433,7 +444,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>July 20, 22: Plot trial level response time series</h1>
+                <h1>July 20, 22: Debug why safe_early ISFC is all NaNs.</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -507,9 +518,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="july-20-22-plot-trial-level-response-time-series">
-<h1>July 20, 22: Plot trial level response time series<a class="headerlink" href="#july-20-22-plot-trial-level-response-time-series" title="Permalink to this headline">¶</a></h1>
-<p>individually for each trial for each subject.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="july-20-22-debug-why-safe-early-isfc-is-all-nans">
+<h1>July 20, 22: Debug why <code class="docutils literal notranslate"><span class="pre">safe_early</span></code> ISFC is all NaNs.<a class="headerlink" href="#july-20-22-debug-why-safe-early-isfc-is-all-nans" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -682,7 +692,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/01-data-max_desc-plot_response_time_series_6_0.png" src="../../_images/01-data-max_desc-plot_response_time_series_6_0.png" />
+<img alt="../../_images/01-data-max_desc-debugging_nans_6_0.png" src="../../_images/01-data-max_desc-debugging_nans_6_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -722,7 +732,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/01-data-max_desc-plot_response_time_series_7_0.png" src="../../_images/01-data-max_desc-plot_response_time_series_7_0.png" />
+<img alt="../../_images/01-data-max_desc-debugging_nans_7_0.png" src="../../_images/01-data-max_desc-debugging_nans_7_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -763,7 +773,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/01-data-max_desc-plot_response_time_series_8_0.png" src="../../_images/01-data-max_desc-plot_response_time_series_8_0.png" />
+<img alt="../../_images/01-data-max_desc-debugging_nans_8_0.png" src="../../_images/01-data-max_desc-debugging_nans_8_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -836,7 +846,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_24365/1436769480.py:14: RuntimeWarning: Mean of empty slice
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_30220/1436769480.py:14: RuntimeWarning: Mean of empty slice
   np.ascontiguousarray(mean(
 </pre></div>
 </div>
@@ -935,20 +945,20 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb Cell 15</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">corrs</span> <span class="o">=</span> <span class="p">{}</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=2&#39;</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">ts</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=3&#39;</span><span class="o">&gt;</span><span class="mi">4</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="n">isfcs</span><span class="p">,</span> <span class="n">iscs</span> <span class="o">=</span> <span class="n">isfc</span><span class="p">(</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=4&#39;</span><span class="o">&gt;</span><span class="mi">5</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>         <span class="n">ts</span><span class="p">[</span><span class="n">block</span><span class="p">],</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=5&#39;</span><span class="o">&gt;</span><span class="mi">6</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>         <span class="n">pairwise</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=6&#39;</span><span class="o">&gt;</span><span class="mi">7</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>         <span class="n">summary_statistic</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=7&#39;</span><span class="o">&gt;</span><span class="mi">8</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>         <span class="n">vectorize_isfcs</span><span class="o">=</span><span class="kc">True</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=8&#39;</span><span class="o">&gt;</span><span class="mi">9</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="p">)</span>
-     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=9&#39;</span><span class="o">&gt;</span><span class="mi">10</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="n">corrs</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;isfcs&#39;</span><span class="p">:</span><span class="n">isfcs</span><span class="p">,</span> <span class="s1">&#39;iscs&#39;</span><span class="p">:</span><span class="n">iscs</span><span class="p">}</span>
-     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=11&#39;</span><span class="o">&gt;</span><span class="mi">12</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="c1"># display(isfcs)</span>
-     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=12&#39;</span><span class="o">&gt;</span><span class="mi">13</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="c1"># display(np.sum(np.isnan(isfcs)))</span>
-     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=13&#39;</span><span class="o">&gt;</span><span class="mi">14</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="c1"># display(isfcs.shape)</span>
-     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000011vscode-remote?line=14&#39;</span><span class="o">&gt;</span><span class="mi">15</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="c1"># display(np.argwhere(np.isnan(isfcs)))</span>
+<span class="nn">/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-debugging_nans.ipynb Cell 15</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-debugging_nans.ipynb#ch0000014vscode-remote?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">corrs</span> <span class="o">=</span> <span class="p">{}</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-debugging_nans.ipynb#ch0000014vscode-remote?line=2&#39;</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">ts</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-debugging_nans.ipynb#ch0000014vscode-remote?line=3&#39;</span><span class="o">&gt;</span><span class="mi">4</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="n">isfcs</span><span class="p">,</span> <span class="n">iscs</span> <span class="o">=</span> <span class="n">isfc</span><span class="p">(</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-debugging_nans.ipynb#ch0000014vscode-remote?line=4&#39;</span><span class="o">&gt;</span><span class="mi">5</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>         <span class="n">ts</span><span class="p">[</span><span class="n">block</span><span class="p">],</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-debugging_nans.ipynb#ch0000014vscode-remote?line=5&#39;</span><span class="o">&gt;</span><span class="mi">6</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>         <span class="n">pairwise</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-debugging_nans.ipynb#ch0000014vscode-remote?line=6&#39;</span><span class="o">&gt;</span><span class="mi">7</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>         <span class="n">summary_statistic</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-debugging_nans.ipynb#ch0000014vscode-remote?line=7&#39;</span><span class="o">&gt;</span><span class="mi">8</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>         <span class="n">vectorize_isfcs</span><span class="o">=</span><span class="kc">True</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-debugging_nans.ipynb#ch0000014vscode-remote?line=8&#39;</span><span class="o">&gt;</span><span class="mi">9</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="p">)</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-debugging_nans.ipynb#ch0000014vscode-remote?line=9&#39;</span><span class="o">&gt;</span><span class="mi">10</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>     <span class="n">corrs</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;isfcs&#39;</span><span class="p">:</span><span class="n">isfcs</span><span class="p">,</span> <span class="s1">&#39;iscs&#39;</span><span class="p">:</span><span class="n">iscs</span><span class="p">}</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-debugging_nans.ipynb#ch0000014vscode-remote?line=11&#39;</span><span class="o">&gt;</span><span class="mi">12</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="c1"># display(isfcs)</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-debugging_nans.ipynb#ch0000014vscode-remote?line=12&#39;</span><span class="o">&gt;</span><span class="mi">13</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="c1"># display(np.sum(np.isnan(isfcs)))</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-debugging_nans.ipynb#ch0000014vscode-remote?line=13&#39;</span><span class="o">&gt;</span><span class="mi">14</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="c1"># display(isfcs.shape)</span>
+     <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-debugging_nans.ipynb#ch0000014vscode-remote?line=14&#39;</span><span class="o">&gt;</span><span class="mi">15</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="c1"># display(np.argwhere(np.isnan(isfcs)))</span>
 
 <span class="nn">File ~/venvs/expln-ai3.9/lib/python3.9/site-packages/brainiak/isc.py:340,</span> in <span class="ni">isfc</span><span class="nt">(data, targets, pairwise, summary_statistic, vectorize_isfcs, tolerate_nans)</span>
 <span class="g g-Whitespace">    </span><span class="mi">337</span> <span class="n">targets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rollaxis</span><span class="p">(</span><span class="n">targets</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -1008,9 +1018,9 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb Cell 16</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000025vscode-remote?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">block</span> <span class="o">=</span> <span class="s1">&#39;safe_early&#39;</span>
-<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-plot_response_time_series.ipynb#ch0000025vscode-remote?line=1&#39;</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">corrs</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="s1">&#39;isfcs&#39;</span><span class="p">]</span>
+<span class="nn">/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-debugging_nans.ipynb Cell 16</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-debugging_nans.ipynb#ch0000015vscode-remote?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">block</span> <span class="o">=</span> <span class="s1">&#39;safe_early&#39;</span>
+<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://ssh-remote%2B129.2.150.11/home/govindas/network_dynamics/nb/jul22/01-data-max_desc-debugging_nans.ipynb#ch0000015vscode-remote?line=1&#39;</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">corrs</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="s1">&#39;isfcs&#39;</span><span class="p">]</span>
 
 <span class="ne">KeyError</span>: &#39;safe_early&#39;
 </pre></div>
@@ -1026,7 +1036,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_24365/1732644666.py:3: RuntimeWarning: Mean of empty slice
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_30220/1732644666.py:3: RuntimeWarning: Mean of empty slice
   np.nanmean([a, b], axis=1)
 </pre></div>
 </div>
@@ -1384,7 +1394,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/01-data-max_desc-plot_response_time_series_28_0.png" src="../../_images/01-data-max_desc-plot_response_time_series_28_0.png" />
+<img alt="../../_images/01-data-max_desc-debugging_nans_28_0.png" src="../../_images/01-data-max_desc-debugging_nans_28_0.png" />
 </div>
 </div>
 </div>
@@ -1417,17 +1427,17 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="00-data-max_desc-roi_ordering_and_colormap.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="00-max_dataset_trial_level_responses.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">July 15, 2022: Selecting a subset of ROIs and colormaps</p>
+            <p class="prev-next-title">July 18,19, 2022: Trial level responses in the MAX paradigm: exploratory dataset: &amp; plotting time series</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="01-data-max_trial_level_model-isfc_desc-early_vs_late.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">July 19, 2022: Compute Intersubject Functional Correlation (ISFC) values for <code class="docutils literal notranslate"><span class="pre">early</span></code> and <code class="docutils literal notranslate"><span class="pre">late</span></code> periods in <code class="docutils literal notranslate"><span class="pre">threat</span></code> and <code class="docutils literal notranslate"><span class="pre">safe</span></code> conditions</p>
+        <p class="prev-next-title">July 19,21, 2022: Compute Intersubject Functional Correlation (ISFC) values for <code class="docutils literal notranslate"><span class="pre">early</span></code> and <code class="docutils literal notranslate"><span class="pre">late</span></code> periods in <code class="docutils literal notranslate"><span class="pre">threat</span></code> and <code class="docutils literal notranslate"><span class="pre">safe</span></code> conditions</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

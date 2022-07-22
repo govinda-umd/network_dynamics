@@ -36,6 +36,8 @@ parts:
 
           - file: nb/jul22/00-data-max_desc-roi_ordering_and_colormap
 
-          - file: nb/jul22/01-data-max_desc-plot_response_time_series
+          - file: nb/jul22/00-max_dataset_trial_level_responses
+
+          - file: nb/jul22/01-data-max_desc-debugging_nans
 
           - file: nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late

@@ -383,11 +383,12 @@ def get_comparison_stats(args, corrs,):
 
 
 def plot_isfc_comparisons(args, corrs, diff_isfcs,):
-    vmin, vmax = [], []
-    for block in diff_isfcs.keys():
-        vmin += [np.min(diff_isfcs[block])]
-        vmax += [np.max(diff_isfcs[block])]
-    vmin, vmax = min(vmin), max(vmax)
+    # vmin, vmax = [], []
+    # for block in diff_isfcs.keys():
+    #     vmin += [np.min(diff_isfcs[block])]
+    #     vmax += [np.max(diff_isfcs[block])]
+    # vmin, vmax = min(vmin), max(vmax)
+    vmin, vmax = -0.125, 0.125
 
     nrows, ncols = [len(corrs.keys())]*2
     fig, axs = plt.subplots(

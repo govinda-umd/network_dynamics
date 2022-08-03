@@ -41,3 +41,12 @@ parts:
           - file: nb/jul22/01-data-max_desc-debugging_nans
 
           - file: nb/jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late
+
+  - caption: August 2022
+    chapters:
+      - file: nb/aug22/aug22
+
+      - file: nb/aug22/aug22_updates
+        sections:
+
+          - file: nb/jul22/02-create_rois

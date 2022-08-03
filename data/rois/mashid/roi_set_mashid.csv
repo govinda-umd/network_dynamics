@@ -1,0 +1,48 @@
+network,roi_name,coordinates
+Salience,Frontoinsular cortex L,"[-34, 18, 4]"
+Salience,Frontoinsular cortex R,"[34, 22, 4]"
+Salience,Dorsal anterior cingulate cortex,"[2, 10, 40]"
+Salience,Temporo-parietal junction L,"[-62, -26, 36]"
+Salience,Temporo-parietal junction R,"[62, -26, 36]"
+Salience,Inferotemporal cortex L,"[-54, -62, -4]"
+Salience,Inferotemporal cortex R,"[54, -54, -8]"
+Salience,Precentral L,"[-26, -6, 64]"
+Salience,Precentral R,"[26, -2, 64]"
+Salience,Dorsolateral prefrontal cortex L,"[-38, 42, 24]"
+Salience,Dorsolateral prefrontal cortex R,"[34, 46, 28]"
+Salience,Inferior frontal gyrus L,"[-54, 6, 20]"
+Salience,Inferior frontal gyrus R,"[54, 10, 12]"
+Executive,Orbital frontoinsula L,"[-36, 24, -10]"
+Executive,Dorsolateral prefrontal cortex R,"[46, 46, 14]"
+Executive,Dorsolateral prefrontal cortex L,"[-34, 46, 6]"
+Executive,Ventrolateral prefrontal cortex R,"[34, 56, -6]"
+Executive,Ventrolateral prefrontal cortex L,"[-32, 54, -4]"
+Executive,Frontal operculum R,"[56, 14, 14]"
+Executive,Dorsolateral prefrontal cortex or frontal eye field R,"[30, 12, 60]"
+Executive,Dorsolateral prefrontal cortex or frontal eye field L,"[-32, 18, 50]"
+Executive,Dorsomedial prefrontal cortex,"[0, 36, 46]"
+Executive,Lateral parietal R ,"[38, -56, 44]"
+Executive,Lateral parietal L ,"[-48, -48, 48]"
+Executive,Inferior temporal R,"[58, -54, -16]"
+Task negative,Posterior cingulateprecuneus (PCC),"[-3, -38, 38]"
+Task negative,Retro-splenial,"[2, -52, 9]"
+Task negative,Lateral parietal cortex (LP) L,"[-50, -64, 38]"
+Task negative,Lateral parietal cortex (LP) R,"[50, -64, 38]"
+Task negative,Medial prefrontal cortex (MPF) L,"[-4, 42, -9]"
+Task negative,Medial prefrontal cortex (MPF) R,"[0, 59, 16]"
+Task negative,Superior frontal L,"[-16, 44, 51]"
+Task negative,Superior frontal R,"[17, 43, 51]"
+Task negative,Inferior temporal L,"[-62, -33, -20]"
+Task negative,Inferior temporal R,"[66, -18, -20]"
+Task negative,Parahippocampal gyrus L,"[-22, -26, -20]"
+Task negative,Parahippocampal gyrus R,"[25, -26, -18]"
+Subcortical,Amygdala Central-Medial L,[]
+Subcortical,Amygdala Central-Medial R,[]
+Subcortical,Amygdala Lateral L,[]
+Subcortical,Amygdala Lateral R,[]
+Subcortical,Periaqueductal gray (PAG) L,[]
+Subcortical,Periaqueductal gray (PAG) R,[]
+Subcortical, Habenula L, []
+Subcortical, Habenula R, []
+Subcortical, Bed nucleus of the stria terminalis (BST) L, []
+Subcortical, Bed nucleus of the stria terminalis (BST) R, []

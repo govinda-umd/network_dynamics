@@ -302,6 +302,35 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="03-data-max_trial_level_rois-mashid_order-nw-model-isfc_desc-early_vs_late.html">
+     Aug 9, 2022: Compute Intersubject Functional Correlation (ISFC) values for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       early
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       late
+      </span>
+     </code>
+     periods in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       threat
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe
+      </span>
+     </code>
+     conditions for Mashid’s set of rois
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="03-data-max_trial_level_rois-mashid_order-uzd-model-isfc_desc-early_vs_late.html">
      Aug 9, 2022: Compute Intersubject Functional Correlation (ISFC) values for
      <code class="docutils literal notranslate">
@@ -901,15 +930,11 @@ condition threat_late and correlation isc : 14.117647058823529 %significant roi(
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats_results</span> <span class="o">=</span> <span class="n">isc_utils</span><span class="o">.</span><span class="n">get_comparison_stats</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">corrs</span><span class="p">)</span>
 
 <span class="n">diff_isfcs</span><span class="p">,</span> <span class="n">diff_pvals</span> <span class="o">=</span> <span class="n">isc_utils</span><span class="o">.</span><span class="n">get_diff_isfcs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">stats_results</span><span class="p">,</span> <span class="n">significant_rois</span><span class="p">)</span>
-
-<span class="n">cond_idx</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">block</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">corrs</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
-    <span class="n">cond_idx</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="n">idx</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6it [01:31, 15.32s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6it [01:04, 10.72s/it]
 </pre></div>
 </div>
 </div>

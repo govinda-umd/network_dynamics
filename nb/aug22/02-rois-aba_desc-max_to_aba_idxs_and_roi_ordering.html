@@ -1,0 +1,943 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>August 11, 2022: map ABA rois to MAX rois, and group ABA rois into three groups – up, down, zero. &#8212; Govinda&#39;s Project [Daily Progress]</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="August 10, 2022: generate trial level responses of MAX data for ABA rois" href="02-rois-aba_desc-create_rois.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Govinda's Project [Daily Progress]</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  June 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../jun22/jun22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../jun22/jun22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/00-data-max_desc-create-exploratory-data.html">
+     June 24, 2022: create exploratory dataset from the MAX dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/01-data-max_desc-isfc_threat_vs_safe.html">
+     June 24,27, 2022: Inter-subject Functional Correlation matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/00-data-max_desc-roi_ordering.html">
+     June 28, 2022: ROI ordering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/01-desc-BrainIAK_tutorial.html">
+     June30, 2022: BrainIAK tutorial
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  July 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../jul22/jul22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../jul22/jul22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/00-data-max_model-isc_desc-threat_vs_safe.html">
+     July 1, 2022: Compute Intersubject Correlation (ISC) values for threat and safe conditions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/00-data-max_model-isc_desc-early_vs_late.html">
+     July 4, 2022: Compute Intersubject Correlation (ISC) values for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       early
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       late
+      </span>
+     </code>
+     periods in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       threat
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe
+      </span>
+     </code>
+     conditions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/00-data-max_model-isfc_desc-early_vs_late.html">
+     July 4-6,11-12,15, 2022: Compute Intersubject Functional Correlation (ISFC) values for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       early
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       late
+      </span>
+     </code>
+     periods in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       threat
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe
+      </span>
+     </code>
+     conditions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/00-data-max_desc-roi_ordering_and_colormap.html">
+     July 15, 2022: Selecting a subset of ROIs and colormaps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/00-max_dataset_trial_level_responses.html">
+     July 18,19, 2022: Trial level responses in the MAX paradigm: exploratory dataset: &amp; plotting time series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/01-data-max_desc-debugging_nans.html">
+     July 20, 22: Debug why
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe_early
+      </span>
+     </code>
+     ISFC is all NaNs.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.html">
+     July 19,21, 2022: Compute Intersubject Functional Correlation (ISFC) values for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       early
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       late
+      </span>
+     </code>
+     periods in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       threat
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe
+      </span>
+     </code>
+     conditions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  August 2022
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="aug22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="aug22_updates.html">
+   Updates
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-rois-mashid_desc-create_rois.html">
+     July 28, August 1,3,8,15-16, 2022: create new set of rois from center coordinates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-rois-aba_desc-create_rois.html">
+     August 10, 2022: generate trial level responses of MAX data for ABA rois
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     August 11, 2022: map ABA rois to MAX rois, and group ABA rois into three groups – up, down, zero.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/nb/aug22/02-rois-aba_desc-max_to_aba_idxs_and_roi_ordering.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/govinda-umd/explainable-ai"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/govinda-umd/explainable-ai/issues/new?title=Issue%20on%20page%20%2Fnb/aug22/02-rois-aba_desc-max_to_aba_idxs_and_roi_ordering.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/govinda-umd/explainable-ai/master?urlpath=tree/docs/nb/aug22/02-rois-aba_desc-max_to_aba_idxs_and_roi_ordering.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#max-rois">
+   MAX rois
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aba-rois">
+   ABA rois
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aba-to-max">
+   ABA to MAX
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>August 11, 2022: map ABA rois to MAX rois, and group ABA rois into three groups – up, down, zero.</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#max-rois">
+   MAX rois
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aba-rois">
+   ABA rois
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aba-to-max">
+   ABA to MAX
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="august-11-2022-map-aba-rois-to-max-rois-and-group-aba-rois-into-three-groups-up-down-zero">
+<h1>August 11, 2022: map ABA rois to MAX rois, and group ABA rois into three groups – up, down, zero.<a class="headerlink" href="#august-11-2022-map-aba-rois-to-max-rois-and-group-aba-rois-into-three-groups-up-down-zero" title="Permalink to this headline">¶</a></h1>
+<p>up, down, zero.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span> 
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">pjoin</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="nn">pickle</span><span class="o">,</span> <span class="nn">random</span>
+
+<span class="kn">from</span> <span class="nn">nltools</span> <span class="kn">import</span> <span class="n">mask</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">image</span><span class="p">,</span> <span class="n">masking</span>
+
+<span class="c1"># plotting</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParamsDefault</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;sans-serif&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParamsDefault</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Arial&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;errorbar.capsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+<span class="kn">import</span> <span class="nn">cmasher</span> <span class="k">as</span> <span class="nn">cmr</span> <span class="c1">#CITE ITS PAPER IN YOUR MANUSCRIPT</span>
+
+<span class="c1"># main dirs</span>
+<span class="n">proj_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;network_dynamics&#39;</span><span class="p">)</span>
+<span class="n">results_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/results&quot;</span>
+<span class="n">month_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/nb/aug22&quot;</span>
+
+<span class="c1"># folders</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">proj_dir</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">helpers.dataset_utils</span> <span class="k">as</span> <span class="nn">dataset_utils</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/govindas/venvs/expln-ai3.9/lib/python3.9/site-packages/nilearn/input_data/__init__.py:27: FutureWarning: The import path &#39;nilearn.input_data&#39; is deprecated in version 0.9. Importing from &#39;nilearn.input_data&#39; will be possible at least until release 0.13.0. Please import from &#39;nilearn.maskers&#39; instead.
+  warnings.warn(message, FutureWarning)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="max-rois">
+<h2>MAX rois<a class="headerlink" href="#max-rois" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_roi_name_file</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/parcellations/MAX_85_ROI_masks/ROI_names.txt&quot;</span>
+<span class="p">)</span>
+<span class="n">max_roi_names</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">max_roi_name_file</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;roi_name&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+<span class="n">max_roi_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">max_roi_names</span><span class="p">)</span>
+<span class="n">max_roi_names</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;R med. OFC&#39;,
+ &#39;L med. OFC&#39;,
+ &#39;R lat. OFC&#39;,
+ &#39;L lat. OFC&#39;,
+ &#39;M vmPFC1&#39;,
+ &#39;M vmPFC2&#39;,
+ &#39;R dlPFC&#39;,
+ &#39;L dlPFC&#39;,
+ &#39;R FEF&#39;,
+ &#39;L FEF&#39;,
+ &#39;R pregenual ACC&#39;,
+ &#39;L pregenual ACC&#39;,
+ &#39;R ACC&#39;,
+ &#39;L ACC&#39;,
+ &#39;R ant. MCC&#39;,
+ &#39;L ant. MCC&#39;,
+ &#39;R post. MCC&#39;,
+ &#39;L post. MCC&#39;,
+ &#39;R pre-SMA&#39;,
+ &#39;L pre-SMA&#39;,
+ &#39;M PCC&#39;,
+ &#39;R PCC/precuneus&#39;,
+ &#39;L PCC/precuneus&#39;,
+ &#39;R PCC&#39;,
+ &#39;L PCC&#39;,
+ &#39;R Ventral striatum&#39;,
+ &#39;L Ventral striatum&#39;,
+ &#39;R ant. Putamen&#39;,
+ &#39;L ant. Putamen&#39;,
+ &#39;R post. Putamen&#39;,
+ &#39;L post. Putamen&#39;,
+ &#39;R ant. Caudate&#39;,
+ &#39;L ant. Caudate&#39;,
+ &#39;R post. Caudate&#39;,
+ &#39;L post. Caudate&#39;,
+ &#39;R IFG-1&#39;,
+ &#39;L IFG-1&#39;,
+ &#39;R IFG-2&#39;,
+ &#39;L IFG-2&#39;,
+ &#39;R IFG-3&#39;,
+ &#39;L IFG-3&#39;,
+ &#39;R IFG-4&#39;,
+ &#39;L IFG-4&#39;,
+ &#39;R IFG-5&#39;,
+ &#39;L IFG-5&#39;,
+ &#39;R IFG-6&#39;,
+ &#39;L IFG-6&#39;,
+ &#39;R ant. ventral Insula&#39;,
+ &#39;L ant. ventral Insula&#39;,
+ &#39;R ant. dorsal Insula&#39;,
+ &#39;L ant. dorsal Insula&#39;,
+ &#39;R mid/post Insula&#39;,
+ &#39;L mid/post Insula&#39;,
+ &#39;R BST&#39;,
+ &#39;L BST&#39;,
+ &#39;R CeMe Amygdala&#39;,
+ &#39;L CeMe Amygdala&#39;,
+ &#39;R BLBM Amygdala&#39;,
+ &#39;L BLBM Amygdala&#39;,
+ &#39;R ant. Hippocampus&#39;,
+ &#39;L ant. Hippocampus&#39;,
+ &#39;R Hippocampus body&#39;,
+ &#39;L Hippocampus body&#39;,
+ &#39;R Hippocampus tail&#39;,
+ &#39;L Hippocampus tail&#39;,
+ &#39;R Hypothalamus&#39;,
+ &#39;L Hypothalamus&#39;,
+ &#39;R v ant/sup Thalamus&#39;,
+ &#39;L v ant/sup Thalamus&#39;,
+ &#39;R v ant/inf Thalamus&#39;,
+ &#39;L v ant/inf Thalamus&#39;,
+ &#39;R v lat/post Thalamus&#39;,
+ &#39;L v lat/post Thalamus&#39;,
+ &#39;R v med/post Thalamus&#39;,
+ &#39;L  v med/post Thalamus&#39;,
+ &#39;R d ant/lat Thalamus&#39;,
+ &#39;L  d ant/lat Thalamus&#39;,
+ &#39;R d ant/med Thalamus&#39;,
+ &#39;L  d ant/med Thalamus&#39;,
+ &#39;R PAG&#39;,
+ &#39;L PAG&#39;,
+ &#39;R CrusI-shackman&#39;,
+ &#39;L CrusI-shackman&#39;,
+ &#39;R CrusI-krienen&#39;,
+ &#39;L CrusI-krienen&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ARGS</span><span class="p">():</span> <span class="k">pass</span>
+<span class="n">args</span> <span class="o">=</span> <span class="n">ARGS</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/data/max/exploratory_data_roi_indices.pkl&quot;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">args</span><span class="o">.</span><span class="n">up_roi_idxs</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">down_roi_idxs</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">roi_idxs</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">args</span><span class="o">.</span><span class="n">num_rois</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">roi_idxs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="aba-rois">
+<h2>ABA rois<a class="headerlink" href="#aba-rois" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">set_name</span> <span class="o">=</span> <span class="s1">&#39;aba&#39;</span>
+<span class="n">aba_roi_name_file</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;/home/govindas/vscode-BSWIFT-mnt/ABA/ROI_mask/ABA_36ROIs_gm.txt&quot;</span>
+<span class="p">)</span>
+<span class="n">aba_roi_names</span> <span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="n">aba_roi_name_file</span><span class="p">,</span>
+    <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span>
+<span class="p">)[[</span><span class="s1">&#39;sHemi&#39;</span><span class="p">,</span> <span class="s1">&#39;ROI&#39;</span><span class="p">]]</span>
+<span class="n">aba_roi_names</span> <span class="o">=</span> <span class="p">(</span><span class="n">aba_roi_names</span><span class="p">[</span><span class="s1">&#39;sHemi&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">aba_roi_names</span><span class="p">[</span><span class="s1">&#39;ROI&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">values</span>
+<span class="n">aba_roi_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">aba_roi_names</span><span class="p">)</span>
+<span class="n">aba_roi_names</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;R Hypothalamus&#39;,
+ &#39;L Hypothalamus&#39;,
+ &#39;R ACC&#39;,
+ &#39;L ACC&#39;,
+ &#39;R ant. MCC&#39;,
+ &#39;L ant. MCC&#39;,
+ &#39;R post. MCC&#39;,
+ &#39;L post. MCC&#39;,
+ &#39;R PCC&#39;,
+ &#39;L PCC&#39;,
+ &#39;R Ventral striatum&#39;,
+ &#39;L Ventral striatum&#39;,
+ &#39;R IFG-5&#39;,
+ &#39;L IFG-5&#39;,
+ &#39;R ant. ventral Insula&#39;,
+ &#39;L ant. ventral Insula&#39;,
+ &#39;R ant. dorsal Insula&#39;,
+ &#39;L ant. dorsal Insula&#39;,
+ &#39;R mid/post Insula&#39;,
+ &#39;L mid/post Insula&#39;,
+ &#39;R BST&#39;,
+ &#39;L BST&#39;,
+ &#39;R CeMe Amygdala&#39;,
+ &#39;L CeMe Amygdala&#39;,
+ &#39;R BLBM Amygdala&#39;,
+ &#39;L BLBM Amygdala&#39;,
+ &#39;R ant. Hippocampus&#39;,
+ &#39;L ant. Hippocampus&#39;,
+ &#39;R PAG&#39;,
+ &#39;L PAG&#39;,
+ &#39;R Pulvinar&#39;,
+ &#39;L Pulvinar&#39;,
+ &#39;R VTA-SNc&#39;,
+ &#39;L VTA-SNc&#39;,
+ &#39;Ant. vmPFC&#39;,
+ &#39;Post. vmPFC&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>34 out of 36 ABA rois are taken from the MAX rois, and two rois are added: Pulvinar and VTA-SNc.</p>
+</div>
+<div class="section" id="aba-to-max">
+<h2>ABA to MAX<a class="headerlink" href="#aba-to-max" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">map aba onto max</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="c1"># for 33 rois</span>
+<span class="n">aba_to_max_idxs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">aba_idx</span><span class="p">:</span><span class="n">max_roi_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">aba_roi</span><span class="p">)</span> 
+    <span class="k">for</span> <span class="n">aba_idx</span><span class="p">,</span> <span class="n">aba_roi</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">aba_roi_names</span><span class="p">)</span> 
+    <span class="k">if</span> <span class="n">aba_roi</span> <span class="ow">in</span> <span class="n">max_roi_names</span>
+<span class="p">}</span>
+<span class="c1"># for the two additional rois</span>
+<span class="k">for</span> <span class="n">aba_roi_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">34</span><span class="p">):</span>
+    <span class="n">aba_to_max_idxs</span><span class="p">[</span><span class="n">aba_roi_idx</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="c1"># for vmPFC</span>
+<span class="n">aba_to_max_idxs</span><span class="p">[</span><span class="mi">34</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">aba_to_max_idxs</span><span class="p">[</span><span class="mi">35</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">aba_to_max_idxs</span><span class="p">)</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">map max to aba</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">max_to_aba_idxs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">v</span><span class="p">:</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">aba_to_max_idxs</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="n">display</span><span class="p">(</span><span class="n">max_to_aba_idxs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 65,
+ 1: 66,
+ 2: 12,
+ 3: 13,
+ 4: 14,
+ 5: 15,
+ 6: 16,
+ 7: 17,
+ 8: 23,
+ 9: 24,
+ 10: 25,
+ 11: 26,
+ 12: 43,
+ 13: 44,
+ 14: 47,
+ 15: 48,
+ 16: 49,
+ 17: 50,
+ 18: 51,
+ 19: 52,
+ 20: 53,
+ 21: 54,
+ 22: 55,
+ 23: 56,
+ 24: 57,
+ 25: 58,
+ 26: 59,
+ 27: 60,
+ 28: 79,
+ 29: 80,
+ 30: None,
+ 31: None,
+ 32: None,
+ 33: None,
+ 34: 4,
+ 35: 5}
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{65: 0,
+ 66: 1,
+ 12: 2,
+ 13: 3,
+ 14: 4,
+ 15: 5,
+ 16: 6,
+ 17: 7,
+ 23: 8,
+ 24: 9,
+ 25: 10,
+ 26: 11,
+ 43: 12,
+ 44: 13,
+ 47: 14,
+ 48: 15,
+ 49: 16,
+ 50: 17,
+ 51: 18,
+ 52: 19,
+ 53: 20,
+ 54: 21,
+ 55: 22,
+ 56: 23,
+ 57: 24,
+ 58: 25,
+ 59: 26,
+ 60: 27,
+ 79: 28,
+ 80: 29,
+ None: 33,
+ 4: 34,
+ 5: 35}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">max_roi</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">up_roi_idxs</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">max_roi</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">max_to_aba_idxs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="k">continue</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">max_to_aba_idxs</span><span class="p">[</span><span class="n">max_roi</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+3
+4
+5
+6
+7
+14
+15
+16
+17
+20
+21
+28
+29
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">group aba rois separately from max and save the grouping</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">args</span><span class="o">.</span><span class="n">up_roi_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="c1"># ACC</span>
+    <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span> <span class="o">+</span> <span class="c1"># MCC</span>
+    <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span> <span class="o">+</span> <span class="c1"># IFG-5</span>
+    <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span> <span class="o">+</span> <span class="c1"># insula</span>
+    <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">]</span> <span class="o">+</span> <span class="c1"># BST</span>
+    <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">]</span> <span class="c1"># Pulvinar</span>
+<span class="p">)</span>
+
+<span class="n">args</span><span class="o">.</span><span class="n">zero_roi_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="c1"># Hypothalamus</span>
+    <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span> <span class="o">+</span> <span class="c1"># ventral striatum</span>
+    <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">22</span><span class="p">,</span> <span class="mi">26</span><span class="p">))</span> <span class="o">+</span> <span class="c1"># amygdala</span>
+    <span class="p">[</span><span class="mi">28</span><span class="p">,</span> <span class="mi">29</span><span class="p">]</span> <span class="o">+</span> <span class="c1"># PAG</span>
+    <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">33</span><span class="p">]</span> <span class="c1"># VTA-SNc</span>
+<span class="p">)</span>
+
+<span class="n">args</span><span class="o">.</span><span class="n">down_roi_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span> <span class="o">+</span> <span class="c1"># PCC</span>
+    <span class="p">[</span><span class="mi">26</span><span class="p">,</span> <span class="mi">27</span><span class="p">]</span> <span class="o">+</span> <span class="c1"># ant. Hippocampus</span>
+    <span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="mi">35</span><span class="p">]</span> <span class="c1"># vmPFC</span>
+<span class="p">)</span>
+
+<span class="n">args</span><span class="o">.</span><span class="n">roi_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">args</span><span class="o">.</span><span class="n">up_roi_idxs</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">zero_roi_idxs</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">down_roi_idxs</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">roi_idxs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>36
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/data/max/exploratory_data_aba_roi_indices.pkl&quot;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">([</span><span class="n">args</span><span class="o">.</span><span class="n">up_roi_idxs</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">zero_roi_idxs</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">down_roi_idxs</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">roi_idxs</span><span class="p">],</span> <span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nb/aug22"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="02-rois-aba_desc-create_rois.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">August 10, 2022: generate trial level responses of MAX data for ABA rois</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Govinda Surampudi<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

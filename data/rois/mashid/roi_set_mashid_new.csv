@@ -1,0 +1,48 @@
+,Unnamed: 0.1,Unnamed: 0,network,mashid_roi_name,coordinates,roi_name,in_MAX
+0,0,0,Salience,Frontoinsular cortex L,"[-34, 18, 4]",L mid/post Insula,True
+1,1,1,Salience,Frontoinsular cortex R,"[34, 22, 4]",R mid/post Insula,True
+2,2,2,Salience,Dorsal anterior cingulate cortex,"[2, 10, 40]",R post. MCC,True
+3,3,3,Salience,Temporo-parietal junction L,"[-62, -26, 36]",L TPJ,False
+4,4,4,Salience,Temporo-parietal junction R,"[62, -26, 36]",R TPJ,False
+5,5,5,Salience,Inferotemporal cortex L,"[-54, -62, -4]",L ITC,False
+6,6,6,Salience,Inferotemporal cortex R,"[54, -54, -8]",R ITC,False
+7,7,7,Salience,Precentral L,"[-26, -6, 64]",L Precentral,False
+8,8,8,Salience,Precentral R,"[26, -2, 64]",R Precentral,False
+9,9,9,Salience,Dorsolateral prefrontal cortex L,"[-38, 42, 24]",L dlPFC,True
+10,10,10,Salience,Dorsolateral prefrontal cortex R,"[34, 46, 28]",R dlPFC,True
+11,11,11,Salience,Inferior frontal gyrus L,"[-54, 6, 20]",L IFG-1,True
+12,12,12,Salience,Inferior frontal gyrus R,"[54, 10, 12]",R IFG-6,True
+13,13,13,Executive,Orbital frontoinsula L,"[-36, 24, -10]",L orbit. front. Insula,False
+14,14,14,Executive,Dorsolateral prefrontal cortex R,"[46, 46, 14]",R MFG-1,False
+15,15,15,Executive,Dorsolateral prefrontal cortex L,"[-34, 46, 6]",L MFG-1,False
+16,16,16,Executive,Ventrolateral prefrontal cortex R,"[34, 56, -6]",R MOG,False
+17,17,17,Executive,Ventrolateral prefrontal cortex L,"[-32, 54, -4]",L MOG,False
+18,18,18,Executive,Frontal operculum R,"[56, 14, 14]",R IFG-6,True
+19,19,19,Executive,Dorsolateral prefrontal cortex R,"[30, 12, 60]",R MFG-2,False
+20,20,20,Executive,Dorsolateral prefrontal cortex L,"[-32, 18, 50]",L MFG-2,False
+21,21,21,Executive,Dorsomedial prefrontal cortex,"[0, 36, 46]",dmPFC,False
+22,22,22,Executive,Lateral parietal R ,"[38, -56, 44]",R lat. PC,False
+23,23,23,Executive,Lateral parietal L ,"[-48, -48, 48]",L lat. PC,False
+24,24,24,Executive,Inferior temporal R,"[58, -54, -16]",R ITG,False
+25,25,25,Task negative,(PCC),"[-3, -38, 38]",L post. MCC,True
+26,26,26,Task negative,Retro-splenial,"[2, -52, 9]",Retro-splenial,False
+27,27,27,Task negative,Lateral parietal cortex (LP) L,"[-50, -64, 38]",L Angular Gyrus,False
+28,28,28,Task negative,Lateral parietal cortex (LP) R,"[50, -64, 38]",R Angular Gyrus,False
+29,29,29,Task negative,Medial prefrontal cortex (MPF) L,"[-4, 42, -9]",M vmPFC1,True
+30,30,30,Task negative,Medial prefrontal cortex (MPF) R,"[0, 59, 16]",L SMG,False
+31,31,31,Task negative,Superior frontal L,"[-16, 44, 51]",L SFG,False
+32,32,32,Task negative,Superior frontal R,"[17, 43, 51]",R SFG,False
+33,33,33,Task negative,Inferior temporal L,"[-62, -33, -20]",L ITG,False
+34,34,34,Task negative,Inferior temporal R,"[66, -18, -20]",R MTG,False
+35,35,35,Task negative,Parahippocampal gyrus L,"[-22, -26, -20]",L para Hippocampus,False
+36,36,36,Task negative,Parahippocampal gyrus R,"[25, -26, -18]",R para Hippocampus,False
+37,37,37,Subcortical,Amygdala Central-Medial L,[],L CeMe Amygdala,True
+38,38,38,Subcortical,Amygdala Central-Medial R,[],R CeMe Aymgdala,True
+39,39,39,Subcortical,Amygdala Lateral L,[],L BLBM Amygdala,True
+40,40,40,Subcortical,Amygdala Lateral R,[],R BLBM Amygdala,True
+41,41,41,Subcortical,Periaqueductal gray (PAG) L,[],L PAG,True
+42,42,42,Subcortical,Periaqueductal gray (PAG) R,[],R PAG,True
+43,43,43,Subcortical, Habenula L,[],L Habenula,False
+44,44,44,Subcortical, Habenula R,[],R Habenula,False
+45,45,45,Subcortical, (BST) L,[],L BST,True
+46,46,46,Subcortical, (BST) R,[],R BST,True

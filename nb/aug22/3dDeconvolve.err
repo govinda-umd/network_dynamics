@@ -1,0 +1,26 @@
+*+ WARNING: -------------------------------------------------
+*+ WARNING: Problems with the X matrix columns, listed below:
+*+ WARNING: !! * Column 54 [FNS#42] is all zeros
+*+ WARNING: !! * Column 82 [FNS#70] is all zeros
+*+ WARNING: !! * Column 83 [FNS#71] is all zeros
+*+ WARNING: !! * Column 84 [FNS#72] is all zeros
+*+ WARNING: !! * Column 158 [FNS#146] is all zeros
+*+ WARNING: !! * Column 159 [FNS#147] is all zeros
+*+ WARNING: !! * Column 160 [FNS#148] is all zeros
+*+ WARNING: !! * Column 161 [FNS#149] is all zeros
+*+ WARNING: !! * Column 166 [FNS#154] is all zeros
+*+ WARNING: !! * Column 167 [FNS#155] is all zeros
+*+ WARNING: !! * Column 180 [FNS#168] is all zeros
+*+ WARNING: !! * Column 181 [FNS#169] is all zeros
+*+ WARNING: !! * Column 194 [FNS#182] is all zeros
+*+ WARNING: !! * Column 195 [FNS#183] is all zeros
+*+ WARNING: !! * Column 222 [FNS#210] is all zeros
+*+ WARNING: -------------------------------------------------
+*+ WARNING: !! in Signal+Baseline matrix:
+ * Largest singular value=2.34783
+ * 15 singular values are less than cutoff=2.34783e-07
+ * Implies strong collinearity in the matrix columns! 
+*+ WARNING: !! in Signal-only matrix:
+ * Largest singular value=1.19635
+ * 15 singular values are less than cutoff=1.19635e-07
+ * Implies strong collinearity in the matrix columns! 

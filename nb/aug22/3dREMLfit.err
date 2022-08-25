@@ -1,0 +1,25 @@
+*+ WARNING: only 8 voxels: disables OpenMP multi-CPU usage in voxel loop
+** ERROR: matrix column #54 is all zero!?
+** ERROR: matrix column #82 is all zero!?
+** ERROR: matrix column #83 is all zero!?
+** ERROR: matrix column #84 is all zero!?
+** ERROR: matrix column #158 is all zero!?
+** ERROR: matrix column #159 is all zero!?
+** ERROR: matrix column #160 is all zero!?
+** ERROR: matrix column #161 is all zero!?
+** ERROR: matrix column #166 is all zero!?
+** ERROR: matrix column #167 is all zero!?
+** ERROR: matrix column #180 is all zero!?
+** ERROR: matrix column #181 is all zero!?
+** ERROR: matrix column #194 is all zero!?
+** ERROR: matrix column #195 is all zero!?
+** ERROR: matrix column #222 is all zero!?
+*+ WARNING: You said to GOFORIT, so here we GO!
+*+ WARNING: !! in  matrix:
+ * Largest singular value=2.34783
+ * 15 singular values are less than cutoff=2.34783e-07
+ * Implies strong collinearity in the matrix columns! 
+*+ WARNING: -GOFORIT ==> Charging ahead into battle!
+*+ WARNING: -----
+*+ WARNING: QR decomposition of [R]^(-1/2) [X] had 15 collinearity problems
+*+ WARNING: -----

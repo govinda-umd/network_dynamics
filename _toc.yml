@@ -49,4 +49,18 @@ parts:
       - file: nb/aug22/aug22_updates
         sections:
 
-          - file: nb/jul22/02-create_rois
+          - file: nb/aug22/02-rois-mashid_desc-create_rois
+
+          - file: nb/aug22/03-data-max_trial_level_rois-mashid_order-nw-model-isfc_desc-early_vs_late
+
+          - file: nb/aug22/03-data-max_trial_level_rois-mashid_order-uzd-model-isfc_desc-early_vs_late
+
+          - file: nb/aug22/02-rois-aba_desc-create_rois
+
+          - file: nb/aug22/02-rois-aba_desc-max_to_aba_idxs_and_roi_ordering
+
+          - file: nb/aug22/03-data-max_trial_level_rois-aba_model-isfc_desc-early_vs_late
+
+          - file: nb/aug22/04-rois-max_desc-schaefer_network_organization
+
+          - file: nb/aug22/04-data-max_trial_level_rois-max_nw-schaefer_model-isfc_desc-early_vs_late

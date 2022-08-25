@@ -74,7 +74,7 @@ random.Random(args.SEED).shuffle(args.subjects)
 exploratory dataset
 '''
 args.explor_subjects = args.subjects[ : round(0.25 * len(args.subjects))]
-X = dataset_utils.get_max_trial_level_responses(
+X, raw_cols, used_cols = dataset_utils.get_max_trial_level_responses(
     args, 
     main_data_dir,
     args.explor_subjects
@@ -140,7 +140,7 @@ def plot_roi_time_series(args, X, savefig=False, fig_file=None):
         else:
             ax = axs[idx]
 
-        ax.set_title(f"{roi} {roi_name}")
+        ax.set_title(f"{roi+1} {roi_name}")
         for label in args.LABELS:
             ts_mean = X_conds[f"{label}_m"][:, idx]
             ts_std = X_conds[f"{label}_s"][:, idx]
@@ -157,6 +157,7 @@ def plot_roi_time_series(args, X, savefig=False, fig_file=None):
         ax.set_ylabel(f"roi resp.")
         ax.grid(True)
         ax.legend()
+        ax.set_ylim(-0.25, 0.25)
 
     if savefig:
         fig.savefig(

@@ -68,7 +68,7 @@ def get_columns_design_matrix(design_mat_path):
     
     # display(design_mat[used_cols])
 
-    return raw_cols, used_cols
+    return raw_cols, used_cols, design_mat
 
 
 def get_cond_ts(args, response_data, label='FNS#'):
@@ -101,7 +101,7 @@ def get_max_trial_level_responses(args, main_data_dir, subjs):
         design_mat_path = f"{data_dir}/{subj}_Main_block_Deconv.x1D"
         response_file_path = f"{data_dir}/{subj}_Main_block_Deconv_bucket.1D"
 
-        raw_cols, used_cols = get_columns_design_matrix(design_mat_path)
+        raw_cols, used_cols, design_mat = get_columns_design_matrix(design_mat_path)
         response_data = pd.DataFrame(columns=raw_cols)
         response_data[used_cols] = np.loadtxt(response_file_path)[:, 1::2]
 
@@ -110,7 +110,7 @@ def get_max_trial_level_responses(args, main_data_dir, subjs):
                 get_cond_ts(args, response_data, name).astype(np.float32)
             )
     
-    return X
+    return X, raw_cols, used_cols, 
 
 # ----------------------------------
 

@@ -1,0 +1,1568 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>July 28, August 1,3,8,15-16, 2022: create new set of rois from center coordinates &#8212; Govinda&#39;s Project [Daily Progress]</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="August 10, 2022: generate trial level responses of MAX data for ABA rois" href="02-rois-aba_desc-create_rois.html" />
+    <link rel="prev" title="Updates" href="aug22_updates.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Govinda's Project [Daily Progress]</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  June 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../jun22/jun22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../jun22/jun22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/00-data-max_desc-create-exploratory-data.html">
+     June 24, 2022: create exploratory dataset from the MAX dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/01-data-max_desc-isfc_threat_vs_safe.html">
+     June 24,27, 2022: Inter-subject Functional Correlation matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/00-data-max_desc-roi_ordering.html">
+     June 28, 2022: ROI ordering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/01-desc-BrainIAK_tutorial.html">
+     June30, 2022: BrainIAK tutorial
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  July 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../jul22/jul22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../jul22/jul22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/00-data-max_model-isc_desc-threat_vs_safe.html">
+     July 1, 2022: Compute Intersubject Correlation (ISC) values for threat and safe conditions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/00-data-max_model-isc_desc-early_vs_late.html">
+     July 4, 2022: Compute Intersubject Correlation (ISC) values for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       early
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       late
+      </span>
+     </code>
+     periods in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       threat
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe
+      </span>
+     </code>
+     conditions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/00-data-max_model-isfc_desc-early_vs_late.html">
+     July 4-6,11-12,15, 2022: Compute Intersubject Functional Correlation (ISFC) values for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       early
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       late
+      </span>
+     </code>
+     periods in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       threat
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe
+      </span>
+     </code>
+     conditions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/00-data-max_desc-roi_ordering_and_colormap.html">
+     July 15, 2022: Selecting a subset of ROIs and colormaps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/00-max_dataset_trial_level_responses.html">
+     July 18,19, 2022: Trial level responses in the MAX paradigm: exploratory dataset: &amp; plotting time series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/01-data-max_desc-debugging_nans.html">
+     July 20, 22: Debug why
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe_early
+      </span>
+     </code>
+     ISFC is all NaNs.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.html">
+     July 19,21, 2022: Compute Intersubject Functional Correlation (ISFC) values for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       early
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       late
+      </span>
+     </code>
+     periods in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       threat
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe
+      </span>
+     </code>
+     conditions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  August 2022
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="aug22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="aug22_updates.html">
+   Updates
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     July 28, August 1,3,8,15-16, 2022: create new set of rois from center coordinates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-rois-aba_desc-create_rois.html">
+     August 10, 2022: generate trial level responses of MAX data for ABA rois
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-rois-aba_desc-max_to_aba_idxs_and_roi_ordering.html">
+     August 11, 2022: map ABA rois to MAX rois, and group ABA rois into three groups – up, down, zero.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/nb/aug22/02-rois-mashid_desc-create_rois.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/govinda-umd/explainable-ai"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/govinda-umd/explainable-ai/issues/new?title=Issue%20on%20page%20%2Fnb/aug22/02-rois-mashid_desc-create_rois.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/govinda-umd/explainable-ai/master?urlpath=tree/docs/nb/aug22/02-rois-mashid_desc-create_rois.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-of-rois">
+   set of rois
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#roi-names-file">
+     roi names file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-rois-mask">
+     creating rois mask
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trial-level-analysis-responses">
+   trial level analysis responses
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>July 28, August 1,3,8,15-16, 2022: create new set of rois from center coordinates</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-of-rois">
+   set of rois
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#roi-names-file">
+     roi names file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-rois-mask">
+     creating rois mask
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trial-level-analysis-responses">
+   trial level analysis responses
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="july-28-august-1-3-8-15-16-2022-create-new-set-of-rois-from-center-coordinates">
+<h1>July 28, August 1,3,8,15-16, 2022: create new set of rois from center coordinates<a class="headerlink" href="#july-28-august-1-3-8-15-16-2022-create-new-set-of-rois-from-center-coordinates" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>August 15, 2022: rename Mashid rois according to MAX rois</p></li>
+<li><p>August 16, 2022: add subcortical rois in the roi mask and generate trial level responses</p></li>
+</ul>
+<p>The previous code did not get saved, so doing again on August 3, 2022.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span> 
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">pjoin</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="nn">pickle</span><span class="o">,</span> <span class="nn">random</span>
+
+<span class="kn">from</span> <span class="nn">nltools</span> <span class="kn">import</span> <span class="n">mask</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">image</span><span class="p">,</span> <span class="n">masking</span>
+
+<span class="c1"># plotting</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParamsDefault</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;sans-serif&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParamsDefault</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Arial&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;errorbar.capsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+<span class="kn">import</span> <span class="nn">cmasher</span> <span class="k">as</span> <span class="nn">cmr</span> <span class="c1">#CITE ITS PAPER IN YOUR MANUSCRIPT</span>
+
+<span class="c1"># main dirs</span>
+<span class="n">proj_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;network_dynamics&#39;</span><span class="p">)</span>
+<span class="n">results_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/results&quot;</span>
+<span class="n">month_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/nb/aug22&quot;</span>
+
+<span class="c1"># folders</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">proj_dir</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">helpers.dataset_utils</span> <span class="k">as</span> <span class="nn">dataset_utils</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/govindas/venvs/expln-ai3.9/lib/python3.9/site-packages/nilearn/input_data/__init__.py:27: FutureWarning: The import path &#39;nilearn.input_data&#39; is deprecated in version 0.9. Importing from &#39;nilearn.input_data&#39; will be possible at least until release 0.13.0. Please import from &#39;nilearn.maskers&#39; instead.
+  warnings.warn(message, FutureWarning)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="set-of-rois">
+<h2>set of rois<a class="headerlink" href="#set-of-rois" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="roi-names-file">
+<h3>roi names file<a class="headerlink" href="#roi-names-file" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">set_name</span> <span class="o">=</span> <span class="s1">&#39;mashid&#39;</span>
+<span class="n">mask_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/data/rois/</span><span class="si">{</span><span class="n">set_name</span><span class="si">}</span><span class="s2">/individual_nifti_files&quot;</span>
+<span class="n">roi_set_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/data/rois/</span><span class="si">{</span><span class="n">set_name</span><span class="si">}</span><span class="s2">/roi_set_</span><span class="si">{</span><span class="n">set_name</span><span class="si">}</span><span class="s2">.csv&quot;</span>
+
+<span class="n">roi_set_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">roi_set_file</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">str_to_list</span><span class="p">(</span><span class="n">s</span><span class="p">):</span> 
+    <span class="n">a</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;][&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+<span class="n">roi_set_df</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">roi_set_df</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">str_to_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Salience</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span>  <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L mid/post Insula&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R mid/post Insula&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R post. MCC&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L TPJ&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R TPJ&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L ITC&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R ITC&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L Precentral&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R Precentral&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L dlPFC&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R dlPFC&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L IFG-1&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R IFG-6&#39;</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Executive</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L orbit. front. Insula&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R MFG-1&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L MFG-1&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R MOG&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L MOG&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R IFG-6&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R MFG-2&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L MFG-2&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">21</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;dmPFC&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R lat. PC&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">23</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L lat. PC&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R ITG&#39;</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Task-negative</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L post. MCC&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">26</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Retro-splenial&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">27</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L Angular Gyrus&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">28</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R Angular Gyrus&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">29</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;M vmPFC1&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L SMG&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L SFG&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R SFG&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">33</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L ITG&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R MTG&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">35</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L para Hippocampus&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">36</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R para Hippocampus&#39;</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Subcortical</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">37</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L CeMe Amygdala&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">38</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R CeMe Aymgdala&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">39</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L BLBM Amygdala&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R BLBM Amygdala&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">41</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L PAG&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R PAG&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">43</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L Habenula&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">44</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R Habenula&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L BST&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">46</span><span class="p">,</span> <span class="s1">&#39;roi_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;R BST&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Salience</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span>  <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Executive</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">21</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">23</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Task-negative</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">26</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">27</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">28</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">29</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">33</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">35</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">36</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Subcortical</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">37</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">38</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">39</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">41</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">43</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">44</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">roi_set_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">46</span><span class="p">,</span> <span class="s1">&#39;in_MAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">roi_set_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">roi_set_file</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">roi_set_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>network</th>
+      <th>mashid_roi_name</th>
+      <th>coordinates</th>
+      <th>roi_name</th>
+      <th>in_MAX</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Salience</td>
+      <td>Frontoinsular cortex L</td>
+      <td>[-34, 18, 4]</td>
+      <td>L mid/post Insula</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Salience</td>
+      <td>Frontoinsular cortex R</td>
+      <td>[34, 22, 4]</td>
+      <td>R mid/post Insula</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Salience</td>
+      <td>Dorsal anterior cingulate cortex</td>
+      <td>[2, 10, 40]</td>
+      <td>R post. MCC</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Salience</td>
+      <td>Temporo-parietal junction L</td>
+      <td>[-62, -26, 36]</td>
+      <td>L TPJ</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Salience</td>
+      <td>Temporo-parietal junction R</td>
+      <td>[62, -26, 36]</td>
+      <td>R TPJ</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Salience</td>
+      <td>Inferotemporal cortex L</td>
+      <td>[-54, -62, -4]</td>
+      <td>L ITC</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Salience</td>
+      <td>Inferotemporal cortex R</td>
+      <td>[54, -54, -8]</td>
+      <td>R ITC</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Salience</td>
+      <td>Precentral L</td>
+      <td>[-26, -6, 64]</td>
+      <td>L Precentral</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Salience</td>
+      <td>Precentral R</td>
+      <td>[26, -2, 64]</td>
+      <td>R Precentral</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Salience</td>
+      <td>Dorsolateral prefrontal cortex L</td>
+      <td>[-38, 42, 24]</td>
+      <td>L dlPFC</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Salience</td>
+      <td>Dorsolateral prefrontal cortex R</td>
+      <td>[34, 46, 28]</td>
+      <td>R dlPFC</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Salience</td>
+      <td>Inferior frontal gyrus L</td>
+      <td>[-54, 6, 20]</td>
+      <td>L IFG-1</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Salience</td>
+      <td>Inferior frontal gyrus R</td>
+      <td>[54, 10, 12]</td>
+      <td>R IFG-6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Executive</td>
+      <td>Orbital frontoinsula L</td>
+      <td>[-36, 24, -10]</td>
+      <td>L orbit. front. Insula</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Executive</td>
+      <td>Dorsolateral prefrontal cortex R</td>
+      <td>[46, 46, 14]</td>
+      <td>R MFG-1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Executive</td>
+      <td>Dorsolateral prefrontal cortex L</td>
+      <td>[-34, 46, 6]</td>
+      <td>L MFG-1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Executive</td>
+      <td>Ventrolateral prefrontal cortex R</td>
+      <td>[34, 56, -6]</td>
+      <td>R MOG</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Executive</td>
+      <td>Ventrolateral prefrontal cortex L</td>
+      <td>[-32, 54, -4]</td>
+      <td>L MOG</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Executive</td>
+      <td>Frontal operculum R</td>
+      <td>[56, 14, 14]</td>
+      <td>R IFG-6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Executive</td>
+      <td>Dorsolateral prefrontal cortex R</td>
+      <td>[30, 12, 60]</td>
+      <td>R MFG-2</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Executive</td>
+      <td>Dorsolateral prefrontal cortex L</td>
+      <td>[-32, 18, 50]</td>
+      <td>L MFG-2</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Executive</td>
+      <td>Dorsomedial prefrontal cortex</td>
+      <td>[0, 36, 46]</td>
+      <td>dmPFC</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Executive</td>
+      <td>Lateral parietal R</td>
+      <td>[38, -56, 44]</td>
+      <td>R lat. PC</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Executive</td>
+      <td>Lateral parietal L</td>
+      <td>[-48, -48, 48]</td>
+      <td>L lat. PC</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Executive</td>
+      <td>Inferior temporal R</td>
+      <td>[58, -54, -16]</td>
+      <td>R ITG</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Task negative</td>
+      <td>(PCC)</td>
+      <td>[-3, -38, 38]</td>
+      <td>L post. MCC</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Task negative</td>
+      <td>Retro-splenial</td>
+      <td>[2, -52, 9]</td>
+      <td>Retro-splenial</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Task negative</td>
+      <td>Lateral parietal cortex (LP) L</td>
+      <td>[-50, -64, 38]</td>
+      <td>L Angular Gyrus</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Task negative</td>
+      <td>Lateral parietal cortex (LP) R</td>
+      <td>[50, -64, 38]</td>
+      <td>R Angular Gyrus</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Task negative</td>
+      <td>Medial prefrontal cortex (MPF) L</td>
+      <td>[-4, 42, -9]</td>
+      <td>M vmPFC1</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Task negative</td>
+      <td>Medial prefrontal cortex (MPF) R</td>
+      <td>[0, 59, 16]</td>
+      <td>L SMG</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Task negative</td>
+      <td>Superior frontal L</td>
+      <td>[-16, 44, 51]</td>
+      <td>L SFG</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Task negative</td>
+      <td>Superior frontal R</td>
+      <td>[17, 43, 51]</td>
+      <td>R SFG</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Task negative</td>
+      <td>Inferior temporal L</td>
+      <td>[-62, -33, -20]</td>
+      <td>L ITG</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Task negative</td>
+      <td>Inferior temporal R</td>
+      <td>[66, -18, -20]</td>
+      <td>R MTG</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Task negative</td>
+      <td>Parahippocampal gyrus L</td>
+      <td>[-22, -26, -20]</td>
+      <td>L para Hippocampus</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>Task negative</td>
+      <td>Parahippocampal gyrus R</td>
+      <td>[25, -26, -18]</td>
+      <td>R para Hippocampus</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Subcortical</td>
+      <td>Amygdala Central-Medial L</td>
+      <td>[]</td>
+      <td>L CeMe Amygdala</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>Subcortical</td>
+      <td>Amygdala Central-Medial R</td>
+      <td>[]</td>
+      <td>R CeMe Aymgdala</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Subcortical</td>
+      <td>Amygdala Lateral L</td>
+      <td>[]</td>
+      <td>L BLBM Amygdala</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>Subcortical</td>
+      <td>Amygdala Lateral R</td>
+      <td>[]</td>
+      <td>R BLBM Amygdala</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>Subcortical</td>
+      <td>Periaqueductal gray (PAG) L</td>
+      <td>[]</td>
+      <td>L PAG</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>Subcortical</td>
+      <td>Periaqueductal gray (PAG) R</td>
+      <td>[]</td>
+      <td>R PAG</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Subcortical</td>
+      <td>Habenula L</td>
+      <td>[]</td>
+      <td>L Habenula</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>Subcortical</td>
+      <td>Habenula R</td>
+      <td>[]</td>
+      <td>R Habenula</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>Subcortical</td>
+      <td>(BST) L</td>
+      <td>[]</td>
+      <td>L BST</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>Subcortical</td>
+      <td>(BST) R</td>
+      <td>[]</td>
+      <td>R BST</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="creating-rois-mask">
+<h3>creating rois mask<a class="headerlink" href="#creating-rois-mask" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">cortical rois</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># mm</span>
+<span class="n">final_mask_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mask_dir</span><span class="si">}</span><span class="s2">/../final_mask_cortical.nii.gz&quot;</span>
+<span class="n">cortical_mask_file</span> <span class="o">=</span> <span class="n">final_mask_file</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">final_mask_file</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">roi_set_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">()):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">])</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span> <span class="k">continue</span>
+
+        <span class="n">prefix</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mask_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;roi_name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">.nii.gz&quot;</span>
+        <span class="k">if</span> <span class="n">idx</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">final_mask</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">create_sphere</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">],</span> <span class="n">radius</span><span class="o">=</span><span class="n">radius</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">roi_mask</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">create_sphere</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">],</span> <span class="n">radius</span><span class="o">=</span><span class="n">radius</span><span class="p">)</span>
+
+            <span class="c1"># step1: find intersection</span>
+            <span class="n">intersect_mask</span> <span class="o">=</span> <span class="n">masking</span><span class="o">.</span><span class="n">intersect_masks</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">image</span><span class="o">.</span><span class="n">binarize_img</span><span class="p">(</span><span class="n">final_mask</span><span class="p">),</span> <span class="n">roi_mask</span><span class="p">],</span>
+                <span class="n">threshold</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                <span class="n">connected</span><span class="o">=</span><span class="kc">False</span>
+            <span class="p">)</span>
+
+            <span class="c1"># step2: remove intersection from the roi_mask</span>
+            <span class="n">roi_mask</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">math_img</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s1">&#39;img1 - img2&#39;</span><span class="p">,</span>
+                <span class="n">img1</span><span class="o">=</span><span class="n">roi_mask</span><span class="p">,</span>
+                <span class="n">img2</span><span class="o">=</span><span class="n">intersect_mask</span>
+            <span class="p">)</span>
+
+            <span class="c1"># step3: then include the roi into final_mask</span>
+            <span class="n">final_mask</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">math_img</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s1">&#39;img1 + </span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">*img2&#39;</span><span class="p">,</span>
+                <span class="n">img1</span><span class="o">=</span><span class="n">final_mask</span><span class="p">,</span>
+                <span class="n">img2</span><span class="o">=</span><span class="n">roi_mask</span>
+            <span class="p">)</span>
+    <span class="n">final_mask</span><span class="o">.</span><span class="n">to_filename</span><span class="p">(</span><span class="n">final_mask_file</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">final_mask</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">load_img</span><span class="p">(</span><span class="n">final_mask_file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">subcortical:</span>
+<span class="sd">taken from MAX rois</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">max_rois_img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">load_img</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;/home/govindas/parcellations/MAX_85_ROI_masks/MAX_ROIs_final_gm_85.nii.gz&quot;</span>
+<span class="p">)</span>
+<span class="n">max_rois</span> <span class="o">=</span> <span class="n">max_rois_img</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span>
+
+<span class="c1"># these are numbers in the mask, not indices, </span>
+<span class="c1"># so directly use them.</span>
+<span class="n">subcort_roi_max_idxs</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="mi">57</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="c1"># L, R CeMe Amygdala</span>
+    <span class="mi">59</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="c1"># L, R BLBM Amygdala</span>
+    <span class="mi">81</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="c1"># L, R PAG</span>
+    <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="c1"># L, R Habenula</span>
+    <span class="mi">55</span><span class="p">,</span> <span class="mi">54</span> <span class="c1"># L, R BST</span>
+<span class="p">]</span>
+
+<span class="c1"># roi indices</span>
+<span class="n">subcort_roi_mashid_idxs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">37</span><span class="p">,</span> <span class="mi">47</span><span class="p">))</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">roi masks</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">final_mask_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mask_dir</span><span class="si">}</span><span class="s2">/../final_mask_subcortical.nii.gz&quot;</span>
+<span class="n">subcortical_mask_file</span> <span class="o">=</span> <span class="n">final_mask_file</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">final_mask_file</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">mashid_idx</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">subcort_roi_mashid_idxs</span><span class="p">)):</span>
+        <span class="n">max_idx</span> <span class="o">=</span> <span class="n">subcort_roi_max_idxs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">max_idx</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="k">continue</span>
+        <span class="n">roi_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">max_rois</span> <span class="o">==</span> <span class="n">max_idx</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">mashid_idx</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> 
+            <span class="n">final_mask</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">new_img_like</span><span class="p">(</span>
+                <span class="n">ref_niimg</span><span class="o">=</span><span class="n">final_mask</span><span class="p">,</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">roi_mask</span><span class="p">,</span>
+                <span class="n">copy_header</span><span class="o">=</span><span class="kc">False</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">roi_mask</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">new_img_like</span><span class="p">(</span>
+                <span class="n">ref_niimg</span><span class="o">=</span><span class="n">final_mask</span><span class="p">,</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">roi_mask</span><span class="p">,</span>
+                <span class="n">copy_header</span><span class="o">=</span><span class="kc">False</span>
+            <span class="p">)</span>
+            
+            <span class="n">intersect_mask</span> <span class="o">=</span> <span class="n">masking</span><span class="o">.</span><span class="n">intersect_masks</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">image</span><span class="o">.</span><span class="n">binarize_img</span><span class="p">(</span><span class="n">final_mask</span><span class="p">),</span> <span class="n">image</span><span class="o">.</span><span class="n">binarize_img</span><span class="p">(</span><span class="n">roi_mask</span><span class="p">)],</span>
+                <span class="n">threshold</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                <span class="n">connected</span><span class="o">=</span><span class="kc">False</span>
+            <span class="p">)</span>
+
+            <span class="n">roi_mask</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">math_img</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s1">&#39;img1 - </span><span class="si">{</span><span class="n">mashid_idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">*img2&#39;</span><span class="p">,</span>
+                <span class="n">img1</span><span class="o">=</span><span class="n">roi_mask</span><span class="p">,</span>
+                <span class="n">img2</span><span class="o">=</span><span class="n">intersect_mask</span>
+            <span class="p">)</span>
+
+            <span class="n">final_mask</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">math_img</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s1">&#39;img1 + img2&#39;</span><span class="p">,</span>
+                <span class="n">img1</span><span class="o">=</span><span class="n">final_mask</span><span class="p">,</span>
+                <span class="n">img2</span><span class="o">=</span><span class="n">roi_mask</span>
+            <span class="p">)</span>
+    <span class="n">final_mask</span><span class="o">.</span><span class="n">to_filename</span><span class="p">(</span><span class="n">final_mask_file</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">final_mask</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">load_img</span><span class="p">(</span><span class="n">final_mask_file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">combine cortical and subcortical masks</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">final_mask</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">math_img</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s1">&#39;img1 + img2&#39;</span><span class="p">,</span>
+    <span class="n">img1</span><span class="o">=</span><span class="n">cortical_mask_file</span><span class="p">,</span>
+    <span class="n">img2</span><span class="o">=</span><span class="n">subcortical_mask_file</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">final_mask</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()))</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">final_mask</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.,  1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10., 11., 12.,
+       13., 14., 15., 16., 17., 18., 19., 20., 21., 22., 23., 24., 25.,
+       26., 27., 28., 29., 30., 31., 32., 33., 34., 35., 36., 37., 38.,
+       39., 40., 41., 42., 43., 46., 47.])
+</pre></div>
+</div>
+<img alt="../../_images/02-rois-mashid_desc-create_rois_14_1.png" src="../../_images/02-rois-mashid_desc-create_rois_14_1.png" />
+</div>
+</div>
+<p>individual rois may intersect if we simply add them to create a <code class="docutils literal notranslate"><span class="pre">final_mask</span></code>.
+we avoid this by subtracting the intersection from the newly added roi and then adding the remaining roi in the <code class="docutils literal notranslate"><span class="pre">final_mask</span></code>.</p>
+<p>the plot verifies that <code class="docutils literal notranslate"><span class="pre">final_mask</span></code> contains numbers only upto 37; number of rois, and individual rois do not intersect in the <code class="docutils literal notranslate"><span class="pre">final_mask</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">good voxels</span>
+
+<span class="sd">basic step to be taken from the script:</span>
+<span class="sd">/home/govindas/vscode-BSWIFT-mnt/MAX/scripts/Murty_Final/ROI_analysis/trial_level/FNSandFNT/MAX_fMRI_Analysis_neutral_deconv_reducedRuns.sh</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">main_mask_path</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;/home/govindas/vscode-BSWIFT-mnt/MAX&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;/dataset/preproc/masksAndCensors&quot;</span>
+<span class="p">)</span>
+
+<span class="k">for</span> <span class="n">subj</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">main_mask_path</span><span class="p">)):</span>
+    <span class="n">mask_path</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">main_mask_path</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">subj</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+
+    <span class="n">mask_goodVoxels_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mask_path</span><span class="si">}</span><span class="s2">/mask_</span><span class="si">{</span><span class="n">set_name</span><span class="si">}</span><span class="s2">_goodVoxels.nii.gz&quot;</span>
+    <span class="c1"># if os.path.exists(mask_goodVoxels_file): continue</span>
+    <span class="n">mask_goodVoxels</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">math_img</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s1">&#39;img1 * img2 * img3&#39;</span><span class="p">,</span>
+        <span class="n">img1</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mask_path</span><span class="si">}</span><span class="s2">/goodVoxelsMask.nii.gz&quot;</span><span class="p">,</span>
+        <span class="n">img2</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mask_path</span><span class="si">}</span><span class="s2">/commonVoxelsMask.nii.gz&quot;</span><span class="p">,</span>
+        <span class="n">img3</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">final_mask_file</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>    
+    <span class="n">mask_goodVoxels</span><span class="o">.</span><span class="n">to_filename</span><span class="p">(</span><span class="n">mask_goodVoxels_file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "3cc5482dbb104a02a3bf182a57ba7311", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</div>
+</div>
+<div class="section" id="trial-level-analysis-responses">
+<h2>trial level analysis responses<a class="headerlink" href="#trial-level-analysis-responses" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">run in terminal:</span>
+<span class="sd">bash runDeconvolve.sh</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\nrun in terminal:\nbash runDeconvolve.sh\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">main_data_dir</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;/home/govindas/network_dynamics/data/max&quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;/neutral_runs_trial_level_FNSandFNT/</span><span class="si">{</span><span class="n">set_name</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">ARGS</span><span class="p">():</span> <span class="k">pass</span>
+<span class="n">args</span> <span class="o">=</span> <span class="n">ARGS</span><span class="p">()</span>
+
+<span class="n">args</span><span class="o">.</span><span class="n">TRIAL_LEN</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="n">args</span><span class="o">.</span><span class="n">LABELS</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="c1">#safe, threat</span>
+<span class="n">args</span><span class="o">.</span><span class="n">LABEL_NAMES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;FNS#&#39;</span><span class="p">,</span> <span class="s1">&#39;FNT#&#39;</span><span class="p">]</span>
+
+<span class="n">args</span><span class="o">.</span><span class="n">SEED</span> <span class="o">=</span> <span class="mi">74</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">SEED</span><span class="p">)</span>
+
+<span class="n">args</span><span class="o">.</span><span class="n">subjects</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">main_data_dir</span><span class="p">)</span>
+<span class="n">random</span><span class="o">.</span><span class="n">Random</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">SEED</span><span class="p">)</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">subjects</span><span class="p">)</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">exploratory dataset</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">args</span><span class="o">.</span><span class="n">explor_subjects</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">subjects</span><span class="p">[</span> <span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="mf">0.25</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">subjects</span><span class="p">))]</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">dataset_utils</span><span class="o">.</span><span class="n">get_max_trial_level_responses</span><span class="p">(</span>
+    <span class="n">args</span><span class="p">,</span> 
+    <span class="n">main_data_dir</span><span class="p">,</span>
+    <span class="n">args</span><span class="o">.</span><span class="n">explor_subjects</span>
+<span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/data/max/desc-exploratory_data_trial_level_responses_rois-</span><span class="si">{</span><span class="n">set_name</span><span class="si">}</span><span class="s2">.pkl&quot;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 27/27 [00:04&lt;00:00,  5.63it/s]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">plot the activations</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">num_rois</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">args</span><span class="o">.</span><span class="n">roi_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num_rois</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">plot_roi_time_series</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">savefig</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fig_file</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">X_conds</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">X_</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">LABELS</span><span class="p">:</span>
+        <span class="n">X_</span><span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">label</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">X_conds</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">_m&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">X_</span><span class="p">[</span><span class="n">label</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">X_conds</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">_s&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.96</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">X_</span><span class="p">[</span><span class="n">label</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">X_</span><span class="p">[</span><span class="n">label</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="n">roi_name_file</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/data/rois/</span><span class="si">{</span><span class="n">set_name</span><span class="si">}</span><span class="s2">/roi_set_</span><span class="si">{</span><span class="n">set_name</span><span class="si">}</span><span class="s2">.csv&quot;</span>
+    <span class="p">)</span>
+    <span class="n">roi_names</span> <span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+        <span class="n">roi_name_file</span>
+    <span class="p">)[</span><span class="s1">&#39;roi_name&#39;</span><span class="p">]</span>
+
+    <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">X_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;safe&#39;</span><span class="p">,</span> <span class="s1">&#39;threat&#39;</span><span class="p">]</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s1">&#39;royalblue&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="s1">&#39;firebrick&#39;</span><span class="p">}</span>
+    <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">roi_idxs</span><span class="p">)</span><span class="o">/</span><span class="mi">5</span><span class="p">)),</span> <span class="mi">5</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+        <span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span> 
+        <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">,</span> 
+        <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">ncols</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">nrows</span><span class="p">),</span> 
+        <span class="n">sharex</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+        <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+        <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span>
+    <span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span>
+        <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+        <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+        <span class="n">wspace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.5</span>
+    <span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">roi</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">roi_idxs</span><span class="p">):</span>
+        <span class="n">roi_name</span> <span class="o">=</span> <span class="n">roi_names</span><span class="p">[</span><span class="n">roi</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">nrows</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="n">idx</span><span class="o">//</span><span class="n">ncols</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mod</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span><span class="n">ncols</span><span class="p">)]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">roi</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">roi_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">LABELS</span><span class="p">:</span>
+            <span class="n">ts_mean</span> <span class="o">=</span> <span class="n">X_conds</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">_m&quot;</span><span class="p">][:,</span> <span class="n">idx</span><span class="p">]</span>
+            <span class="n">ts_std</span> <span class="o">=</span> <span class="n">X_conds</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">_s&quot;</span><span class="p">][:,</span> <span class="n">idx</span><span class="p">]</span>
+
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts_mean</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">label</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">names</span><span class="p">[</span><span class="n">label</span><span class="p">])</span>
+
+            <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span>
+                <span class="n">time</span><span class="p">,</span> 
+                <span class="p">(</span><span class="n">ts_mean</span> <span class="o">-</span> <span class="n">ts_std</span><span class="p">),</span> 
+                <span class="p">(</span><span class="n">ts_mean</span> <span class="o">+</span> <span class="n">ts_std</span><span class="p">),</span>
+                <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">label</span><span class="p">],</span>
+            <span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;roi resp.&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">savefig</span><span class="p">:</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span>
+            <span class="n">fig_file</span><span class="p">,</span>
+            <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span>
+            <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span>
+            <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span>
+            <span class="n">transparent</span><span class="o">=</span><span class="kc">False</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_roi_time_series</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/02-rois-mashid_desc-create_rois_21_0.png" src="../../_images/02-rois-mashid_desc-create_rois_21_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="o">.</span><span class="n">up_roi_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">14</span><span class="p">))</span> <span class="o">+</span>
+    <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">args</span><span class="o">.</span><span class="n">zero_roi_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">22</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">33</span><span class="p">,</span> <span class="mi">37</span><span class="p">))</span>
+<span class="p">)</span>
+
+<span class="n">args</span><span class="o">.</span><span class="n">down_roi_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="o">+</span>
+    <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">33</span><span class="p">))</span>
+<span class="p">)</span>
+
+<span class="n">args</span><span class="o">.</span><span class="n">roi_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">args</span><span class="o">.</span><span class="n">up_roi_idxs</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">zero_roi_idxs</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">down_roi_idxs</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">roi_idxs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/data/max/exploratory_data_</span><span class="si">{</span><span class="n">set_name</span><span class="si">}</span><span class="s2">_roi_indices.pkl&quot;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">([</span><span class="n">args</span><span class="o">.</span><span class="n">up_roi_idxs</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">zero_roi_idxs</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">down_roi_idxs</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">roi_idxs</span><span class="p">],</span> <span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nb/aug22"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="aug22_updates.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Updates</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="02-rois-aba_desc-create_rois.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">August 10, 2022: generate trial level responses of MAX data for ABA rois</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Govinda Surampudi<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -13,7 +13,7 @@ Summary of progress in June 2022
         2. *idiosyncratic* signal: stimulus-driven signal particular to that participant, and independent of the same signal in other participants,
         3. *spontaneous* signal: spontaneous activity unrelated to the stimulus, thus independent of all other signals.
     
-    ISC matrix is computed as follows:
+    - ISC matrix is computed as follows:
         1. Leave out a participant's responses and average responses of the remaining participants.
         2. Compute Pearson correlation coefficient between the participant's responses and the averaged responses.This is the ISC matrix of that participant.
         3. Repeat the procedure for all the participants. 

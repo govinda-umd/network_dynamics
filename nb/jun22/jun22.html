@@ -299,11 +299,40 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../aug22/02-rois-mashid_desc-create_rois.html">
-     July 28, August 1,3,8, 2022: create new set of rois from center coordinates
+     July 28, August 1,3,8,15-16, 2022: create new set of rois from center coordinates
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../aug22/03-data-max_trial_level_rois-mashid_model-isfc_desc-early_vs_late.html">
+    <a class="reference internal" href="../aug22/03-data-max_trial_level_rois-mashid_order-nw-model-isfc_desc-early_vs_late.html">
+     Aug 9, 2022: Compute Intersubject Functional Correlation (ISFC) values for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       early
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       late
+      </span>
+     </code>
+     periods in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       threat
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe
+      </span>
+     </code>
+     conditions for Mashid’s set of rois
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/03-data-max_trial_level_rois-mashid_order-uzd-model-isfc_desc-early_vs_late.html">
      Aug 9, 2022: Compute Intersubject Functional Correlation (ISFC) values for
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -337,8 +366,47 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../aug22/02-rois-aba_desc-max_to_aba_idxs.html">
-     August 10, 2022: generate trial level responses of MAX data for ABA rois
+    <a class="reference internal" href="../aug22/02-rois-aba_desc-max_to_aba_idxs_and_roi_ordering.html">
+     August 11, 2022: map ABA rois to MAX rois, and group ABA rois into three groups – up, down, zero.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/03-data-max_trial_level_rois-aba_model-isfc_desc-early_vs_late.html">
+     Aug 11, 2022: Compute Intersubject Functional Correlation (ISFC) values for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       early
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       late
+      </span>
+     </code>
+     periods in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       threat
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe
+      </span>
+     </code>
+     conditions for ABA’s set of rois
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/04-rois-max_desc-schaefer_network_organization.html">
+     August 17, 2022: organize MAX ROIs into the 7 networks defined in Schaefer parcellation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/04-data-max_trial_level_rois-max_nw-schaefer_model-isfc_desc-early_vs_late.html">
+     August 24, 2022: ISC matrices: MAX trial level responses: MAX ROIs: Schaefer networks
     </a>
    </li>
   </ul>
@@ -447,10 +515,45 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
 <p>Summary of progress in June 2022</p>
 <ul class="simple">
-<li><p>Item 1</p></li>
-<li><p>Item 2</p></li>
-<li><p>Item 3</p></li>
-<li><p>…</p></li>
+<li><p><strong>Intersubject Correlation (ISC) analysis</strong> In terms of analysing data as dynamic networks, Luiz suggested to use intersubject correlation (ISC) analysis.</p>
+<ul>
+<li><p>One of the widespread types of fMRI analysis is the investigation of functional connectivity (FC), temporal covariance of brain activity across ROIs, and how it changes with stimuli or internal goals. Covariance of brain activity between a pair of ROIs in the FC matrix may be caused by various factors other than the provided stimulus; like physiological factors (respiration, heart beat, etc.), indirect influence through another ROI, motion confounds, etc.</p></li>
+<li><p>It becomes essential to isolating stimulus-driven covariances shared across participants. A new variant of FC, ISC, achieves this objective. ISC is a model agnostic way of capturing shared responses to stimuli across a group of participants. It does so by modeling a participant’s brain activity in terms of others’ brain activities, thereby capturing common activity across the group. This analysis provides <em>complementary</em> insights to traditional GLM analysis having a pre-defined response model.</p></li>
+<li><p><strong>Definition</strong> I formally introduce ISC now. Brain activity of a ROI of a subject can be interpreted as a mixture of three components:</p>
+<ol class="simple">
+<li><p><em>common</em> signal: stimulus-driven signal consistent across participants,</p></li>
+<li><p><em>idiosyncratic</em> signal: stimulus-driven signal particular to that participant, and independent of the same signal in other participants,</p></li>
+<li><p><em>spontaneous</em> signal: spontaneous activity unrelated to the stimulus, thus independent of all other signals.
+ISC matrix is computed as follows:</p></li>
+<li><p>Leave out a participant’s responses and average responses of the remaining participants.</p></li>
+<li><p>Compute Pearson correlation coefficient between the participant’s responses and the averaged responses.This is the ISC matrix of that participant.</p></li>
+<li><p>Repeat the procedure for all the participants.</p></li>
+<li><p>Define group ISC matrix as average of all the obtained ISC matrices.</p></li>
+</ol>
+</li>
+<li><p><strong>Group level inference</strong> Once we obtain ISC matrix for a group of participants for a stimulus, we need to <strong>statistically validate</strong> the correlation values. There are two main ways of computing null distribution:</p>
+<ol class="simple">
+<li><p>On the response time series:</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">timeshift</span></code>: as responses are time locked to the stimulus, shifting them in time by random amounts will distupt the locking and diminish ISC values. This preserves autocorrelation structure.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">phaseshift</span></code>:  take Fourier transform of the responses, randomize phase of each Fourier component, and invert to obtain randomized responses. This preserves power spectrum of the responses, but disrupts temporal alignment.</p></li>
+</ol>
+</li>
+<li><p>On the obtained participant-wise ISC matrices: (non parametric approaches)</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bootstrap</span></code> for one-sample test: at each iteration of bootstrap, randomly sample with replacement N participants and compute group-wise ISC matrix. Generate a distribution of such values, and compare the actual ISC with this distribution.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">permutation</span></code> for two-sample test: randomly permute group assignments at each iteration.</p></li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><strong>Progress</strong></p>
+<ol class="simple">
+<li><p>I found a toolbox, called <a class="reference external" href="https://github.com/snastase/isc-tutorial">BrainIAK</a> (abbreviaiton for Brain Imaging Analysis Kit) and accompanying <a class="reference external" href="https://academic.oup.com/scan/article/14/6/667/5489905">review paper</a> that provides functions for computing ISC, and statistics over them. I went through the entire toolbox, familiarized myself with the important functions.</p></li>
+</ol>
+</li>
 </ul>
 </div>
 

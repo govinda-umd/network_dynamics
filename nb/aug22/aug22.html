@@ -299,11 +299,40 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02-rois-mashid_desc-create_rois.html">
-     July 28, August 1,3,8, 2022: create new set of rois from center coordinates
+     July 28, August 1,3,8,15-16, 2022: create new set of rois from center coordinates
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03-data-max_trial_level_rois-mashid_model-isfc_desc-early_vs_late.html">
+    <a class="reference internal" href="03-data-max_trial_level_rois-mashid_order-nw-model-isfc_desc-early_vs_late.html">
+     Aug 9, 2022: Compute Intersubject Functional Correlation (ISFC) values for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       early
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       late
+      </span>
+     </code>
+     periods in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       threat
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe
+      </span>
+     </code>
+     conditions for Mashid’s set of rois
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-data-max_trial_level_rois-mashid_order-uzd-model-isfc_desc-early_vs_late.html">
      Aug 9, 2022: Compute Intersubject Functional Correlation (ISFC) values for
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -337,8 +366,47 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="02-rois-aba_desc-max_to_aba_idxs.html">
-     August 10, 2022: generate trial level responses of MAX data for ABA rois
+    <a class="reference internal" href="02-rois-aba_desc-max_to_aba_idxs_and_roi_ordering.html">
+     August 11, 2022: map ABA rois to MAX rois, and group ABA rois into three groups – up, down, zero.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-data-max_trial_level_rois-aba_model-isfc_desc-early_vs_late.html">
+     Aug 11, 2022: Compute Intersubject Functional Correlation (ISFC) values for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       early
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       late
+      </span>
+     </code>
+     periods in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       threat
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe
+      </span>
+     </code>
+     conditions for ABA’s set of rois
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-rois-max_desc-schaefer_network_organization.html">
+     August 17, 2022: organize MAX ROIs into the 7 networks defined in Schaefer parcellation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-data-max_trial_level_rois-max_nw-schaefer_model-isfc_desc-early_vs_late.html">
+     August 24, 2022: ISC matrices: MAX trial level responses: MAX ROIs: Schaefer networks
     </a>
    </li>
   </ul>
@@ -446,12 +514,17 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="summary">
 <h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
 <p>Summary of progress in August 2022</p>
-<ul class="simple">
-<li><p>Item 1</p></li>
-<li><p>Item 2</p></li>
-<li><p>Item 3</p></li>
-<li><p>…</p></li>
+<ul>
+<li><p><strong>Progress</strong> Network analysis is constrained by its resolution in terms of number of nodes and edges. To analyse (and compare) ISC matrices at different resolutions, I am collecting data in two more sets of ROIs.</p>
+<ol class="simple">
+<li><p><a class="reference internal" href="02-rois-mashid_desc-create_rois.html"><span class="doc std std-doc">ROIs from Mashid’s and Brenton’s paper</span></a> Brenton McMenamin and Mashid Najafi had defined 36+ ROIs as 5mm radius spheres around center coordinates and categorized them into three networks: Saliency, Executive, and Task-negative along with 10+ Subcortical ROIs. I generated trial level responses of the MAX paradigm for these ROIs, computed ISC matrices, and plotted with (1.) <a class="reference internal" href="03-data-max_trial_level_rois-mashid_order-nw-model-isfc_desc-early_vs_late.html"><span class="doc std std-doc">the networks</span></a>, and (2.) <a class="reference internal" href="03-data-max_trial_level_rois-mashid_order-uzd-model-isfc_desc-early_vs_late.html"><span class="doc std std-doc">selected up-zero-down ROIs</span></a>, based on their activations.</p></li>
+<li><p><a class="reference internal" href="02-rois-aba_desc-create_rois.html"><span class="doc std std-doc">ROIs used in ABA paradigm</span></a> These are a subset of MAX ROIs with two additional subcortical ROIs, Pulvinar and VTA-SNc. I generated trial level responses and computed <a class="reference internal" href="03-data-max_trial_level_rois-aba_model-isfc_desc-early_vs_late.html"><span class="doc std std-doc">ISC matrices</span></a>.</p></li>
+<li><p><a class="reference internal" href="04-rois-max_desc-schaefer_network_organization.html"><span class="doc std std-doc">MAX ROIs to resting state networks</span></a> Selecting ROIs based on their activations will lead to circularity in analysing threat conditions (because I was looking at responses in threat blocks). To avoid this scenario I organized the MAX 85 ROIs into 7 resting state networks + a Subcortical network. Thomas Yeo’s lab had parcellated cortex into 1000 parcels and grouped them into 7 resting state networks. These are used as standard parcellations. So for each MAX ROI I found all the intersecting parcels and assigned the ROI to the network to which most of those intersecting parcels belong to.</p></li>
+</ol>
+<p>I obtained the trial level responses and computed ISC matrices. Next task is to analyse them further in terms of these networks.</p>
+</li>
 </ul>
+<p>I was down with Covid-19 last 10 days of this month.</p>
 </div>
 
     <script type="text/x-thebe-config">

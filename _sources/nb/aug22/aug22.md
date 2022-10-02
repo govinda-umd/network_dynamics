@@ -12,4 +12,6 @@ Summary of progress in August 2022
 
     I obtained the trial level responses and computed ISC matrices. Next task is to analyse them further in terms of these networks. 
 
-I was down with Covid-19 last 10 days of this month.
+    4. [ABA dataset](./05-rois-max_data-aba_desc-create_rois_trial_level_responses.ipynb) Similar to the MAX paradigm, I collected trial level responses for the ABA paradigm. The responses are of the 85 MAX ROIs for play periods of each trial. Each trial block is a 13 TR window aligned to the end of the play period. Each block/trial has time range $[-11.25, 6.25]$ seconds with end of that play period as $0.0$ seconds.
+
+I was down with Covid-19 in between for 10 days of this month.

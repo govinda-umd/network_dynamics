@@ -1,0 +1,981 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>September 1, 6-9: Emoprox2 dataset: MAX ROIs: create ROI-masks and trial level responses &#8212; Govinda&#39;s Project [Daily Progress]</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="September 14, 2022: Emoprox2 dataset: Mashid ROIs: create trial level responses" href="00-data-emo2_rois-mashid_desc-create_trial_level_responses.html" />
+    <link rel="prev" title="Updates" href="sep22_updates.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Govinda's Project [Daily Progress]</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  June 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../jun22/jun22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../jun22/jun22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/00-data-max_desc-create-exploratory-data.html">
+     June 24, 2022: create exploratory dataset from the MAX dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/01-data-max_desc-isfc_threat_vs_safe.html">
+     June 24,27, 2022: Inter-subject Functional Correlation matrices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/00-data-max_desc-roi_ordering.html">
+     June 28, 2022: ROI ordering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/01-desc-BrainIAK_tutorial.html">
+     June30, 2022: BrainIAK tutorial
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  July 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../jul22/jul22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../jul22/jul22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/00-data-max_model-isc_desc-threat_vs_safe.html">
+     July 1, 2022: Compute Intersubject Correlation (ISC) values for threat and safe conditions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/00-data-max_model-isc_desc-early_vs_late.html">
+     July 4, 2022: Compute Intersubject Correlation (ISC) values for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       early
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       late
+      </span>
+     </code>
+     periods in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       threat
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe
+      </span>
+     </code>
+     conditions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/00-data-max_model-isfc_desc-early_vs_late.html">
+     July 4-6,11-12,15, 2022: Compute Intersubject Functional Correlation (ISFC) values for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       early
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       late
+      </span>
+     </code>
+     periods in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       threat
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe
+      </span>
+     </code>
+     conditions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/00-data-max_desc-roi_ordering_and_colormap.html">
+     July 15, 2022: Selecting a subset of ROIs and colormaps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/00-max_dataset_trial_level_responses.html">
+     July 18,19, 2022: Trial level responses in the MAX paradigm: exploratory dataset: &amp; plotting time series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/01-data-max_desc-debugging_nans.html">
+     July 20, 22: Debug why
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe_early
+      </span>
+     </code>
+     ISFC is all NaNs.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/01-data-max_trial_level_model-isfc_desc-early_vs_late.html">
+     July 19,21, 2022: Compute Intersubject Functional Correlation (ISFC) values for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       early
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       late
+      </span>
+     </code>
+     periods in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       threat
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe
+      </span>
+     </code>
+     conditions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  August 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../aug22/aug22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../aug22/aug22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/02-rois-mashid_desc-create_rois.html">
+     July 28, August 1,3,8,15-16, 2022: create new set of rois from center coordinates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/03-data-max_trial_level_rois-mashid_order-nw-model-isfc_desc-early_vs_late.html">
+     Aug 9, 2022: Compute Intersubject Functional Correlation (ISFC) values for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       early
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       late
+      </span>
+     </code>
+     periods in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       threat
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe
+      </span>
+     </code>
+     conditions for Mashid’s set of rois
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/03-data-max_trial_level_rois-mashid_order-uzd-model-isfc_desc-early_vs_late.html">
+     Aug 9, 2022: Compute Intersubject Functional Correlation (ISFC) values for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       early
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       late
+      </span>
+     </code>
+     periods in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       threat
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe
+      </span>
+     </code>
+     conditions for Mashid’s set of rois
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/02-rois-aba_desc-create_rois.html">
+     August 10, 2022: generate trial level responses of MAX data for ABA rois
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/02-rois-aba_desc-max_to_aba_idxs_and_roi_ordering.html">
+     August 11, 2022: map ABA rois to MAX rois, and group ABA rois into three groups – up, down, zero.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/03-data-max_trial_level_rois-aba_model-isfc_desc-early_vs_late.html">
+     Aug 11, 2022: Compute Intersubject Functional Correlation (ISFC) values for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       early
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       late
+      </span>
+     </code>
+     periods in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       threat
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       safe
+      </span>
+     </code>
+     conditions for ABA’s set of rois
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/04-rois-max_desc-schaefer_network_organization.html">
+     August 17, 2022: organize MAX ROIs into the 7 networks defined in Schaefer parcellation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/04-data-max_trial_level_rois-max_nw-schaefer_model-isfc_desc-early_vs_late.html">
+     August 24, 2022: ISC matrices: MAX trial level responses: MAX ROIs: Schaefer networks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/05-data-aba_rois-max_desc-create_rois_trial_level_responses.html">
+     August 29: ABA dataset: MAX ROIs: create ROI-masks and trial level responses
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  September 2022
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="sep22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="sep22_updates.html">
+   Updates
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     September 1, 6-9: Emoprox2 dataset: MAX ROIs: create ROI-masks and trial level responses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="00-data-emo2_rois-mashid_desc-create_trial_level_responses.html">
+     September 14, 2022: Emoprox2 dataset: Mashid ROIs: create trial level responses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-data-aba_trial_level_responses_rois-max_model-isfc_desc-play_conditions.html">
+     September 9, 2022: ISC matrices: ABA trial level responses: Play conditions: MAX ROIs: Schaefer networks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-data-aba_trial_level_responses_rois-mashid_model-isfc_desc-play_conditions.html">
+     September 14, 2022: ISC matrices: ABA trial level responses: Play conditions: Mashid ROIs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-data-emo2_trial_level_responses_rois-mashid_model-isfc_desc-nearmiss_appr_vs_retr.html">
+     September 14, 2022: ISC matrices: Emoprox2 trial level responses: Mashid ROIs: nearmiss Appr vs Retr
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-data-max_trial_level_rois-mashid_model-isfc_desc-early_vs_late.html">
+     September 14, 2022: ISC matrices: MAX trial level responses: Early vs Late: Mashid ROIs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-data-aba_trial_level_rois-mashid_model-fc.html">
+     September 15, 2022: FC matrices: ABA trial level responses: Mashid ROIs:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-data-emo2_trial_level_rois-mashid_model-fc.html">
+     September 15, 2022: FC matrices: Emoprox2 trial level responses: Mashid ROIs:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-data-max_trial_level_rois-mashid_model-fc.html">
+     September 15, 2022: FC matrices: MAX trial level responses: Mashid ROIs:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-implement_brenton2014_compare%20_with_max.html">
+     September 17, 2022: Implement/replicate results in Brenton et al. 2014
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-implement_najafi2017_compare_with_emo2.html">
+     September 18, 2022: Implement/replicate results in Najafi et al. 2017
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-check_afni_glm.html">
+     September 19, 2022: Check how csplines behave when stimulus is synchronized with the TR duration,
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-verify_collecting_trial_level_responses_and_basic_network_analysis.html">
+     September 19-27, 2022: Verify collecting trial level responses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-verify_mashid_parcellation.html">
+     September 22, 2022: Verify if Mashid’s parcellation looks correct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-reimplement_mashid_paper.html">
+     September 29, 2022: Reimplement Najafi et al. 2017
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/nb/sep22/00-data-emo2_rois-max_desc-create_trial_level_responses.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/govinda-umd/explainable-ai"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/govinda-umd/explainable-ai/issues/new?title=Issue%20on%20page%20%2Fnb/sep22/00-data-emo2_rois-max_desc-create_trial_level_responses.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/govinda-umd/explainable-ai/master?urlpath=tree/docs/nb/sep22/00-data-emo2_rois-max_desc-create_trial_level_responses.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>September 1, 6-9: Emoprox2 dataset: MAX ROIs: create ROI-masks and trial level responses</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="september-1-6-9-emoprox2-dataset-max-rois-create-roi-masks-and-trial-level-responses">
+<h1>September 1, 6-9: Emoprox2 dataset: MAX ROIs: create ROI-masks and trial level responses<a class="headerlink" href="#september-1-6-9-emoprox2-dataset-max-rois-create-roi-masks-and-trial-level-responses" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span> 
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">pjoin</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="nn">pickle</span><span class="o">,</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="kn">from</span> <span class="nn">nltools</span> <span class="kn">import</span> <span class="n">mask</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">image</span><span class="p">,</span> <span class="n">masking</span>
+
+<span class="c1"># plotting</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParamsDefault</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;sans-serif&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParamsDefault</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Arial&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;errorbar.capsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+<span class="kn">import</span> <span class="nn">cmasher</span> <span class="k">as</span> <span class="nn">cmr</span> <span class="c1">#CITE ITS PAPER IN YOUR MANUSCRIPT</span>
+
+<span class="c1"># main dirs</span>
+<span class="n">proj_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;network_dynamics&#39;</span><span class="p">)</span>
+<span class="n">results_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/results&quot;</span>
+<span class="n">month_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/nb/sep22&quot;</span>
+
+<span class="c1"># folders</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">proj_dir</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">helpers.dataset_utils</span> <span class="k">as</span> <span class="nn">dataset_utils</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/govindas/venvs/expln-ai3.9/lib/python3.9/site-packages/nilearn/input_data/__init__.py:27: FutureWarning: The import path &#39;nilearn.input_data&#39; is deprecated in version 0.9. Importing from &#39;nilearn.input_data&#39; will be possible at least until release 0.13.0. Please import from &#39;nilearn.maskers&#39; instead.
+  warnings.warn(message, FutureWarning)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">trial level responses</span>
+<span class="sd">detranding and cleaning motion</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="c1"># run this on bswift and copy all the subject wise folders to ada</span>
+<span class="c1"># sbatch /home/govindas/network_dynamics/data/emoprox2/scripts/01-3dDeconvolve_3dREMLfit.sh</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">proximity stimulus</span>
+<span class="sd">Joyneel calculated proximity values at each TR afresh, so taking from his dataframe</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;/home/joyneelm/FORAGING/local/notebooks/dynamical_systems_emoprox/emoprox_motion_parameters.pkl&quot;</span><span class="p">,</span> 
+    <span class="s1">&#39;rb&#39;</span>
+<span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">motion_df</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">motion_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pid</th>
+      <th>rid</th>
+      <th>timeseries</th>
+      <th>proximity</th>
+      <th>direction</th>
+      <th>speed</th>
+      <th>continuous_states</th>
+      <th>discrete_states</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>001</td>
+      <td>0</td>
+      <td>[[-0.08312777714490793, -0.9843746554254497, 0...</td>
+      <td>[0.3016038203344943, 0.358338183215815, 0.4166...</td>
+      <td>[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, -1.0, -1.0...</td>
+      <td>[0.0, 0.001533361158954638, 0.0015333611589546...</td>
+      <td>[[-0.7020833319593689, -0.18291312230527457, 1...</td>
+      <td>[7, 7, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, ...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>001</td>
+      <td>1</td>
+      <td>[[0.5425140981177836, -0.879907230649685, 0.18...</td>
+      <td>[0.45156998293255135, 0.40446652419199125, 0.3...</td>
+      <td>[-1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0...</td>
+      <td>[0.0, 0.0012730664524476243, 0.001273066452447...</td>
+      <td>[[0.07061164551667026, 1.2396794139298464, -0....</td>
+      <td>[7, 7, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 6, 6, ...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>001</td>
+      <td>2</td>
+      <td>[[1.059156933419393, 0.6198138745769199, 0.879...</td>
+      <td>[0.49544710094463773, 0.4414182695332566, 0.38...</td>
+      <td>[-1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0,...</td>
+      <td>[0.0, 0.0014602386867941242, 0.002738264303754...</td>
+      <td>[[-0.7816242821088368, 1.804785642947887, -0.3...</td>
+      <td>[7, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 5, ...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>001</td>
+      <td>3</td>
+      <td>[[0.13562674131522262, -0.16214955653579818, 0...</td>
+      <td>[0.34734037008548524, 0.3981108619589484, 0.45...</td>
+      <td>[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, -1.0, -1.0...</td>
+      <td>[0.0, 0.001372175456039515, 0.0013721754560396...</td>
+      <td>[[-1.1839740949248894, -0.28692882635832284, 1...</td>
+      <td>[7, 7, 6, 6, 6, 6, 6, 6, 6, 3, 2, 2, 2, 6, 7, ...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>001</td>
+      <td>4</td>
+      <td>[[0.17779630837305302, -0.6310155905999884, 1....</td>
+      <td>[0.49953186000240013, 0.4425583650437417, 0.38...</td>
+      <td>[-1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0,...</td>
+      <td>[0.0, 0.0015398241880717478, 0.002842105474835...</td>
+      <td>[[0.14725308336753923, 0.7553325361724021, -0....</td>
+      <td>[7, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, ...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>711</th>
+      <td>125</td>
+      <td>1</td>
+      <td>[[0.09050368355505174, -0.04549253755032044, 0...</td>
+      <td>[0.45156998293255135, 0.40446652419199125, 0.3...</td>
+      <td>[-1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0...</td>
+      <td>[0.0, 0.0012730664524476243, 0.001273066452447...</td>
+      <td>[[0.5889450195142745, -0.4395345974608756, -0....</td>
+      <td>[7, 7, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, ...</td>
+    </tr>
+    <tr>
+      <th>712</th>
+      <td>125</td>
+      <td>2</td>
+      <td>[[0.1868332209186578, 0.809608741033865, 0.359...</td>
+      <td>[0.49544710094463773, 0.4414182695332566, 0.38...</td>
+      <td>[-1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0,...</td>
+      <td>[0.0, 0.0014602386867941242, 0.002738264303754...</td>
+      <td>[[-0.6084148492157283, 0.9691923055191999, 0.7...</td>
+      <td>[7, 7, 3, 3, 3, 4, 7, 7, 7, 6, 6, 6, 6, 5, 5, ...</td>
+    </tr>
+    <tr>
+      <th>713</th>
+      <td>125</td>
+      <td>3</td>
+      <td>[[-0.41030877310596003, 0.4596794647633776, 0....</td>
+      <td>[0.34734037008548524, 0.3981108619589484, 0.45...</td>
+      <td>[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, -1.0, -1.0...</td>
+      <td>[0.0, 0.001372175456039515, 0.0013721754560396...</td>
+      <td>[[-0.16214038989837437, -0.5040720709742246, 1...</td>
+      <td>[7, 3, 3, 3, 3, 4, 4, 4, 7, 7, 7, 2, 2, 2, 2, ...</td>
+    </tr>
+    <tr>
+      <th>714</th>
+      <td>125</td>
+      <td>4</td>
+      <td>[[0.0068114147222914185, 0.41750824672533293, ...</td>
+      <td>[0.49953186000240013, 0.4425583650437417, 0.38...</td>
+      <td>[-1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0,...</td>
+      <td>[0.0, 0.0015398241880717478, 0.002842105474835...</td>
+      <td>[[-0.1155816806011225, -0.888793983571116, 0.3...</td>
+      <td>[7, 7, 7, 7, 7, 7, 7, 7, 3, 3, 3, 7, 7, 6, 6, ...</td>
+    </tr>
+    <tr>
+      <th>715</th>
+      <td>125</td>
+      <td>5</td>
+      <td>[[1.2737756825705895, 0.9021616577032415, 1.74...</td>
+      <td>[0.3765577438552399, 0.4247570460372859, 0.474...</td>
+      <td>[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, -1.0, -1.0...</td>
+      <td>[0.0, 0.0013026838427577792, 0.001302683842758...</td>
+      <td>[[-1.5090926198584285, 1.5322167529853927, -0....</td>
+      <td>[7, 7, 7, 4, 4, 4, 4, 3, 3, 2, 2, 2, 6, 7, 7, ...</td>
+    </tr>
+  </tbody>
+</table>
+<p>716 rows × 8 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ARGS</span><span class="p">():</span> <span class="k">pass</span>
+<span class="n">args</span> <span class="o">=</span> <span class="n">ARGS</span><span class="p">()</span>
+
+<span class="n">args</span><span class="o">.</span><span class="n">APPR</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">args</span><span class="o">.</span><span class="n">RETR</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+<span class="n">args</span><span class="o">.</span><span class="n">LABEL_NAMES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;RETR&#39;</span><span class="p">,</span> <span class="s1">&#39;APPR&#39;</span><span class="p">]</span>
+<span class="n">args</span><span class="o">.</span><span class="n">LABELS</span> <span class="o">=</span> <span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">RETR</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">APPR</span><span class="p">]</span>
+
+<span class="c1"># arbitrary threshold on proximity</span>
+<span class="n">args</span><span class="o">.</span><span class="n">near_miss_thresh</span> <span class="o">=</span> <span class="mf">0.7</span>
+<span class="n">args</span><span class="o">.</span><span class="n">near_miss_width</span> <span class="o">=</span> <span class="mi">8</span>
+
+<span class="n">set_name</span> <span class="o">=</span> <span class="s1">&#39;max&#39;</span>
+
+<span class="n">args</span><span class="o">.</span><span class="n">main_data_path</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/data/emoprox2/data/rois_</span><span class="si">{</span><span class="n">set_name</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="c1"># os.system(f&quot;mkdir -p {main_output_path}&quot;)</span>
+
+<span class="n">args</span><span class="o">.</span><span class="n">SEED</span> <span class="o">=</span> <span class="mi">74</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">SEED</span><span class="p">)</span>
+
+<span class="n">args</span><span class="o">.</span><span class="n">subjects</span> <span class="o">=</span> <span class="n">motion_df</span><span class="o">.</span><span class="n">pid</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">random</span><span class="o">.</span><span class="n">Random</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">SEED</span><span class="p">)</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">subjects</span><span class="p">)</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">exploratory dataset</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">args</span><span class="o">.</span><span class="n">explor_subjects</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">subjects</span><span class="p">[</span> <span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="mf">0.25</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">subjects</span><span class="p">))]</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">dataset_utils</span><span class="o">.</span><span class="n">get_emo2_trial_level_responses</span><span class="p">(</span>
+    <span class="n">args</span><span class="p">,</span> 
+    <span class="n">motion_df</span><span class="p">,</span>
+    <span class="n">args</span><span class="o">.</span><span class="n">explor_subjects</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="c1"># for idx in X.keys():</span>
+<span class="c1">#     print(len(X[idx]))</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/data/emoprox2/data/exploratory_data/rois-</span><span class="si">{</span><span class="n">set_name</span><span class="si">}</span><span class="s2">_exploratory_data.pkl&quot;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 30/30 [00:01&lt;00:00, 19.65it/s]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fig = plt.subplots(figsize=(30, 7))</span>
+<span class="c1"># plt.plot(proximity)</span>
+<span class="c1"># plt.plot(peaks, proximity[peaks], &#39;x&#39;)</span>
+<span class="c1"># plt.vlines(np.round(props[&#39;left_ips&#39;]), ymin=0, ymax=1, color=&#39;r&#39;)</span>
+<span class="c1"># plt.vlines(np.round(props[&#39;right_ips&#39;]), ymin=0, ymax=1, color=&#39;g&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nb/sep22"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="sep22_updates.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Updates</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="00-data-emo2_rois-mashid_desc-create_trial_level_responses.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">September 14, 2022: Emoprox2 dataset: Mashid ROIs: create trial level responses</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Govinda Surampudi<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

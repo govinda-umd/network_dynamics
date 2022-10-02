@@ -409,6 +409,110 @@ const thebe_selector_output = ".output, .cell_output"
      August 24, 2022: ISC matrices: MAX trial level responses: MAX ROIs: Schaefer networks
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-data-aba_rois-max_desc-create_rois_trial_level_responses.html">
+     August 29: ABA dataset: MAX ROIs: create ROI-masks and trial level responses
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  September 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sep22/sep22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../sep22/sep22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sep22/00-data-emo2_rois-max_desc-create_trial_level_responses.html">
+     September 1, 6-9: Emoprox2 dataset: MAX ROIs: create ROI-masks and trial level responses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sep22/00-data-emo2_rois-mashid_desc-create_trial_level_responses.html">
+     September 14, 2022: Emoprox2 dataset: Mashid ROIs: create trial level responses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sep22/01-data-aba_trial_level_responses_rois-max_model-isfc_desc-play_conditions.html">
+     September 9, 2022: ISC matrices: ABA trial level responses: Play conditions: MAX ROIs: Schaefer networks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sep22/02-data-aba_trial_level_responses_rois-mashid_model-isfc_desc-play_conditions.html">
+     September 14, 2022: ISC matrices: ABA trial level responses: Play conditions: Mashid ROIs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sep22/02-data-emo2_trial_level_responses_rois-mashid_model-isfc_desc-nearmiss_appr_vs_retr.html">
+     September 14, 2022: ISC matrices: Emoprox2 trial level responses: Mashid ROIs: nearmiss Appr vs Retr
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sep22/02-data-max_trial_level_rois-mashid_model-isfc_desc-early_vs_late.html">
+     September 14, 2022: ISC matrices: MAX trial level responses: Early vs Late: Mashid ROIs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sep22/03-data-aba_trial_level_rois-mashid_model-fc.html">
+     September 15, 2022: FC matrices: ABA trial level responses: Mashid ROIs:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sep22/03-data-emo2_trial_level_rois-mashid_model-fc.html">
+     September 15, 2022: FC matrices: Emoprox2 trial level responses: Mashid ROIs:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sep22/03-data-max_trial_level_rois-mashid_model-fc.html">
+     September 15, 2022: FC matrices: MAX trial level responses: Mashid ROIs:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sep22/04-implement_brenton2014_compare%20_with_max.html">
+     September 17, 2022: Implement/replicate results in Brenton et al. 2014
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sep22/04-implement_najafi2017_compare_with_emo2.html">
+     September 18, 2022: Implement/replicate results in Najafi et al. 2017
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sep22/05-check_afni_glm.html">
+     September 19, 2022: Check how csplines behave when stimulus is synchronized with the TR duration,
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sep22/05-verify_collecting_trial_level_responses_and_basic_network_analysis.html">
+     September 19-27, 2022: Verify collecting trial level responses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sep22/05-verify_mashid_parcellation.html">
+     September 22, 2022: Verify if Mashid’s parcellation looks correct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sep22/06-reimplement_mashid_paper.html">
+     September 29, 2022: Reimplement Najafi et al. 2017
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -685,8 +789,10 @@ const thebe_selector_output = ".output, .cell_output"
     <tr style="text-align: right;">
       <th></th>
       <th>network</th>
-      <th>roi_name</th>
+      <th>mashid_roi_name</th>
       <th>coordinates</th>
+      <th>roi_name</th>
+      <th>in_MAX</th>
     </tr>
   </thead>
   <tbody>
@@ -695,222 +801,296 @@ const thebe_selector_output = ".output, .cell_output"
       <td>Salience</td>
       <td>Frontoinsular cortex L</td>
       <td>[-34, 18, 4]</td>
+      <td>L mid/post Insula</td>
+      <td>True</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Salience</td>
       <td>Frontoinsular cortex R</td>
       <td>[34, 22, 4]</td>
+      <td>R mid/post Insula</td>
+      <td>True</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Salience</td>
       <td>Dorsal anterior cingulate cortex</td>
       <td>[2, 10, 40]</td>
+      <td>R post. MCC</td>
+      <td>True</td>
     </tr>
     <tr>
       <th>3</th>
       <td>Salience</td>
       <td>Temporo-parietal junction L</td>
       <td>[-62, -26, 36]</td>
+      <td>L TPJ</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Salience</td>
       <td>Temporo-parietal junction R</td>
       <td>[62, -26, 36]</td>
+      <td>R TPJ</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>5</th>
       <td>Salience</td>
       <td>Inferotemporal cortex L</td>
       <td>[-54, -62, -4]</td>
+      <td>L ITC</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>6</th>
       <td>Salience</td>
       <td>Inferotemporal cortex R</td>
       <td>[54, -54, -8]</td>
+      <td>R ITC</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>7</th>
       <td>Salience</td>
       <td>Precentral L</td>
       <td>[-26, -6, 64]</td>
+      <td>L Precentral</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>8</th>
       <td>Salience</td>
       <td>Precentral R</td>
       <td>[26, -2, 64]</td>
+      <td>R Precentral</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>9</th>
       <td>Salience</td>
       <td>Dorsolateral prefrontal cortex L</td>
       <td>[-38, 42, 24]</td>
+      <td>L dlPFC</td>
+      <td>True</td>
     </tr>
     <tr>
       <th>10</th>
       <td>Salience</td>
       <td>Dorsolateral prefrontal cortex R</td>
       <td>[34, 46, 28]</td>
+      <td>R dlPFC</td>
+      <td>True</td>
     </tr>
     <tr>
       <th>11</th>
       <td>Salience</td>
       <td>Inferior frontal gyrus L</td>
       <td>[-54, 6, 20]</td>
+      <td>L IFG-1</td>
+      <td>True</td>
     </tr>
     <tr>
       <th>12</th>
       <td>Salience</td>
       <td>Inferior frontal gyrus R</td>
       <td>[54, 10, 12]</td>
+      <td>R IFG-6</td>
+      <td>True</td>
     </tr>
     <tr>
       <th>13</th>
       <td>Executive</td>
       <td>Orbital frontoinsula L</td>
       <td>[-36, 24, -10]</td>
+      <td>L orbit. front. Insula</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>14</th>
       <td>Executive</td>
       <td>Dorsolateral prefrontal cortex R</td>
       <td>[46, 46, 14]</td>
+      <td>R MFG-1</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>15</th>
       <td>Executive</td>
       <td>Dorsolateral prefrontal cortex L</td>
       <td>[-34, 46, 6]</td>
+      <td>L MFG-1</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>16</th>
       <td>Executive</td>
       <td>Ventrolateral prefrontal cortex R</td>
       <td>[34, 56, -6]</td>
+      <td>R MOG</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>17</th>
       <td>Executive</td>
       <td>Ventrolateral prefrontal cortex L</td>
       <td>[-32, 54, -4]</td>
+      <td>L MOG</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>18</th>
       <td>Executive</td>
       <td>Frontal operculum R</td>
       <td>[56, 14, 14]</td>
+      <td>R IFG-6</td>
+      <td>True</td>
     </tr>
     <tr>
       <th>19</th>
       <td>Executive</td>
-      <td>Dorsolateral prefrontal cortex or frontal eye ...</td>
+      <td>Dorsolateral prefrontal cortex R</td>
       <td>[30, 12, 60]</td>
+      <td>R MFG-2</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>20</th>
       <td>Executive</td>
-      <td>Dorsolateral prefrontal cortex or frontal eye ...</td>
+      <td>Dorsolateral prefrontal cortex L</td>
       <td>[-32, 18, 50]</td>
+      <td>L MFG-2</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>21</th>
       <td>Executive</td>
       <td>Dorsomedial prefrontal cortex</td>
       <td>[0, 36, 46]</td>
+      <td>dmPFC</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>22</th>
       <td>Executive</td>
       <td>Lateral parietal R</td>
       <td>[38, -56, 44]</td>
+      <td>R lat. PC</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>23</th>
       <td>Executive</td>
       <td>Lateral parietal L</td>
       <td>[-48, -48, 48]</td>
+      <td>L lat. PC</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>24</th>
       <td>Executive</td>
       <td>Inferior temporal R</td>
       <td>[58, -54, -16]</td>
+      <td>R ITG</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>25</th>
       <td>Task negative</td>
-      <td>Posterior cingulateprecuneus (PCC)</td>
+      <td>(PCC)</td>
       <td>[-3, -38, 38]</td>
+      <td>L post. MCC</td>
+      <td>True</td>
     </tr>
     <tr>
       <th>26</th>
       <td>Task negative</td>
       <td>Retro-splenial</td>
       <td>[2, -52, 9]</td>
+      <td>Retro-splenial</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>27</th>
       <td>Task negative</td>
       <td>Lateral parietal cortex (LP) L</td>
       <td>[-50, -64, 38]</td>
+      <td>L Angular Gyrus</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>28</th>
       <td>Task negative</td>
       <td>Lateral parietal cortex (LP) R</td>
       <td>[50, -64, 38]</td>
+      <td>R Angular Gyrus</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>29</th>
       <td>Task negative</td>
       <td>Medial prefrontal cortex (MPF) L</td>
       <td>[-4, 42, -9]</td>
+      <td>M vmPFC1</td>
+      <td>True</td>
     </tr>
     <tr>
       <th>30</th>
       <td>Task negative</td>
       <td>Medial prefrontal cortex (MPF) R</td>
       <td>[0, 59, 16]</td>
+      <td>L SMG</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>31</th>
       <td>Task negative</td>
       <td>Superior frontal L</td>
       <td>[-16, 44, 51]</td>
+      <td>L SFG</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>32</th>
       <td>Task negative</td>
       <td>Superior frontal R</td>
       <td>[17, 43, 51]</td>
+      <td>R SFG</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>33</th>
       <td>Task negative</td>
       <td>Inferior temporal L</td>
       <td>[-62, -33, -20]</td>
+      <td>L ITG</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>34</th>
       <td>Task negative</td>
       <td>Inferior temporal R</td>
       <td>[66, -18, -20]</td>
+      <td>R MTG</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>35</th>
       <td>Task negative</td>
       <td>Parahippocampal gyrus L</td>
       <td>[-22, -26, -20]</td>
+      <td>L para Hippocampus</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>36</th>
       <td>Task negative</td>
       <td>Parahippocampal gyrus R</td>
       <td>[25, -26, -18]</td>
+      <td>R para Hippocampus</td>
+      <td>False</td>
     </tr>
   </tbody>
 </table>
@@ -1209,7 +1389,7 @@ condition threat_late and correlation isc : 21.62162162162162 %significant roi(-
         <span class="p">)</span>
     <span class="p">)</span>
 
-    <span class="n">observed_isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">*=</span> <span class="n">significant_rois</span><span class="p">[</span><span class="n">block</span><span class="p">]</span>
+    <span class="c1"># observed_isfcs[block] *= significant_rois[block]</span>
 
 <span class="n">plot_isfcs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">observed_isfcs</span><span class="p">,</span> <span class="n">significant_rois</span><span class="p">)</span>
 </pre></div>
@@ -1329,9 +1509,9 @@ condition threat_late and correlation isc : 21.62162162162162 %significant roi(-
     <span class="c1"># coming soon...</span>
 
     <span class="c1"># keep isfc values only for significant roi pairs</span>
-    <span class="n">diff_isfcs</span><span class="p">[(</span><span class="n">block1</span><span class="p">,</span> <span class="n">block2</span><span class="p">)]</span> <span class="o">*=</span> <span class="n">diff_pvals</span><span class="p">[(</span><span class="n">block1</span><span class="p">,</span> <span class="n">block2</span><span class="p">)]</span>
-    <span class="n">diff_isfcs</span><span class="p">[(</span><span class="n">block1</span><span class="p">,</span> <span class="n">block2</span><span class="p">)]</span> <span class="o">*=</span> <span class="n">significant_rois</span><span class="p">[</span><span class="n">block1</span><span class="p">]</span>
-    <span class="n">diff_isfcs</span><span class="p">[(</span><span class="n">block1</span><span class="p">,</span> <span class="n">block2</span><span class="p">)]</span> <span class="o">*=</span> <span class="n">significant_rois</span><span class="p">[</span><span class="n">block2</span><span class="p">]</span>
+    <span class="c1"># diff_isfcs[(block1, block2)] *= diff_pvals[(block1, block2)]</span>
+    <span class="c1"># diff_isfcs[(block1, block2)] *= significant_rois[block1]</span>
+    <span class="c1"># diff_isfcs[(block1, block2)] *= significant_rois[block2]</span>
 
 
 <span class="n">cond_idx</span> <span class="o">=</span> <span class="p">{}</span>
@@ -1341,7 +1521,7 @@ condition threat_late and correlation isc : 21.62162162162162 %significant roi(-
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6it [00:09,  1.56s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6it [00:10,  1.79s/it]
 </pre></div>
 </div>
 </div>

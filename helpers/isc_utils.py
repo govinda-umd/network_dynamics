@@ -76,12 +76,69 @@ def get_block_time_series(args, X, ):
     
     return ts
 
+def get_max_block_time_series(args, X, ):
+    return get_block_time_series(args, X,)
+
+def get_aba_block_time_series(args, X):
+    '''
+    find minimum number of trials across subjects
+    '''
+    min_trials = []
+    for idx, _ in enumerate(args.LABEL_NAMES):
+        min_trials += [x.shape[0] for x in X[idx]]
+    min_trials = min(min_trials)
+    print(f"minimum number of trials = {min_trials}")
+
+    '''
+    time series for the late period
+    '''
+    args.TR = 1.25
+    args.LATE_PERIOD_TRS = (np.arange(-3.75, 1.25+args.TR, args.TR) // args.TR + 8.0).astype(int)
+    # because play block/trial starts at -8TR and ends at 4TR, and play period ends at 0TR.
+    ts = {}
+    for label, name in enumerate(args.LABEL_NAMES):
+        ts[f"{name}"] = []
+        for x in X[label]:
+            x = x[:, args.LATE_PERIOD_TRS, :]
+            trl, t, r = x.shape
+            x = np.reshape(x[:min_trials, ...], (min_trials*t, r))
+            ts[f"{name}"] += [zscore(x, axis=0, nan_policy='omit')]
+    
+    for block in ts.keys():
+        ts[block] = np.dstack(ts[block])
+    
+    return ts
+
+def get_emo2_segment_time_series(args, X):
+    '''
+    find minimum number of trials across subjects
+    '''
+    min_trials = []
+    for idx, _ in enumerate(args.LABELS):
+        min_trials += [x.shape[0] for x in X[idx]]
+    min_trials = min(min_trials)
+    print(f"minimum number of trials = {min_trials}")
+
+    '''
+    time series for APPR and RETR segments
+    '''
+    ts = {}
+    for idx_label, (label, name) in enumerate(zip(args.LABELS, args.LABEL_NAMES)):
+        ts[f"{name}"] = []
+        for x in X[idx_label]:
+            ts[f"{name}"] += [zscore(x[:min_trials, :], axis=0, nan_policy='omit')]
+        
+    for block in ts.keys():
+        ts[block] = np.dstack(ts[block])
+
+    return ts
+
 # ISC/ISFC MATRICES
 # -----------------
-def get_isfcs(args, ts):
+def get_isfcs(args, ts, print_stats=False):
     corrs = {}; bootstraps = {}; rois = {}
 
-    for block in ts.keys():
+    for block in tqdm(ts.keys()):
         # if block == 'safe_early': continue
         isfcs, iscs = isfc(
             ts[block], 
@@ -114,17 +171,18 @@ def get_isfcs(args, ts):
             # correlations only for surviving rois
             # corrs[block][corr_name] *= rois[block][corr_name]
 
-            print(
-                (
-                    f"condition {block} and correlation {corr_name[:-1]} : " 
-                    f"{100. * np.sum(rois[block][corr_name]) / len(rois[block][corr_name])} %"
-                    f"significant roi(-pairs)"
+            if print_stats == True:
+                print(
+                    (
+                        f"condition {block} and correlation {corr_name[:-1]} : " 
+                        f"{100. * np.sum(rois[block][corr_name]) / len(rois[block][corr_name])} %"
+                        f"significant roi(-pairs)"
+                    )
                 )
-            )
 
     return corrs, bootstraps, rois
 
-def get_squareform_matrices(args, bootstraps, rois):
+def get_squareform_matrices(args, bootstraps, rois, threshold_mats=True):
     observed_isfcs = {}; observed_p_vals = {}; 
     significant_rois = {}; conf_intervals = {}
     for block in bootstraps.keys():
@@ -152,7 +210,8 @@ def get_squareform_matrices(args, bootstraps, rois):
             )
         )
 
-        observed_isfcs[block] *= significant_rois[block]
+        if threshold_mats == True:
+            observed_isfcs[block] *= significant_rois[block]
     
     return observed_isfcs, observed_p_vals, significant_rois, conf_intervals
 
@@ -185,7 +244,7 @@ def plot_isfcs(args, isfcs, rois):
     plt.subplots_adjust(
         left=None, bottom=None, 
         right=None, top=None, 
-        wspace=None, hspace=0.5
+        wspace=0.65, hspace=0.65
     )
 
     for label, name in zip(args.LABELS, args.NAMES):
@@ -218,9 +277,155 @@ def plot_isfcs(args, isfcs, rois):
 
     return None
 
+def plot_aba_isfcs(args, isfcs, rois):
+    vmin, vmax = get_min_max(isfcs)
+
+    nrows, ncols = [len(args.LABEL_NAMES)//2]*2
+    fig, axs = plt.subplots(
+        nrows=nrows, 
+        ncols=ncols, 
+        figsize=(5*ncols, 4*nrows), 
+        sharex=False, 
+        sharey=False, 
+        dpi=120
+    )
+
+    plt.subplots_adjust(
+        left=None, bottom=None, 
+        right=None, top=None, 
+        wspace=0.65, hspace=0.65
+    )
+
+    for idx_valence, valence in enumerate(args.VALENCE):
+        for idx_level, level in enumerate(args.LEVELS):
+            ax = axs[idx_valence, idx_level]
+
+            block = f"PLAY_{level}{valence[0]}"
+
+            im = ax.imshow(
+                isfcs[block], #* roi[block],
+                cmap=cmr.iceburn, vmin=vmin, vmax=vmax
+            )
+            ax.figure.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
+
+            if idx_valence == 0: ax.set_title(f"{level}")
+            if idx_level == 0: ax.set_ylabel(f"{valence}", size='large')
+
+            ax.set_yticks(args.major_ticks, args.major_tick_labels, rotation=0, va='center')
+            ax.set_xticks(args.major_ticks, args.major_tick_labels, rotation=90, ha='center')
+
+            ax.set_yticks(args.minor_ticks-0.5, minor=True)
+            ax.set_xticks(args.minor_ticks-0.5, minor=True)
+            ax.tick_params(
+                which='major', direction='out', length=5.5, 
+                # grid_color='white', grid_linewidth='1.5',
+                labelsize=10,
+            )
+            ax.grid(which='minor', color='w', linestyle='-', linewidth=1.5)
+
+    return None
+
+def plot_emo2_isfcs(args, isfcs, rois):
+    vmin, vmax = get_min_max(isfcs)
+
+    nrows, ncols = 1, len(args.LABEL_NAMES)
+    fig, axs = plt.subplots(
+        nrows=nrows, 
+        ncols=ncols, 
+        figsize=(5*ncols, 4*nrows), 
+        sharex=False, 
+        sharey=False, 
+        dpi=120
+    )
+
+    plt.subplots_adjust(
+        left=None, bottom=None, 
+        right=None, top=None, 
+        wspace=0.65, hspace=None
+    )
+
+    for idx, (label, name) in enumerate(zip(args.LABELS, args.LABEL_NAMES)):
+        ax = axs[idx]
+        block = name
+
+        im = ax.imshow(
+            isfcs[block], #* roi[block],
+            cmap=cmr.iceburn, vmin=vmin, vmax=vmax
+        )
+        ax.figure.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
+
+        ax.set_title(block)
+
+        ax.set_yticks(args.major_ticks, args.major_tick_labels, rotation=0, va='center')
+        ax.set_xticks(args.major_ticks, args.major_tick_labels, rotation=90, ha='center')
+
+        ax.set_yticks(args.minor_ticks-0.5, minor=True)
+        ax.set_xticks(args.minor_ticks-0.5, minor=True)
+        ax.tick_params(
+            which='major', direction='out', length=5.5, 
+            # grid_color='white', grid_linewidth='1.5',
+            labelsize=10,
+        )
+        ax.grid(which='minor', color='w', linestyle='-', linewidth=1.5)
+
+    return None
+
+def plot_mashid_isfcs(args, isfcs, rois):
+    vmin, vmax = get_min_max(isfcs)
+
+    nrows, ncols = 7, len(args.LABEL_NAMES)
+    fig, axs = plt.subplots(
+        nrows=nrows, 
+        ncols=ncols, 
+        figsize=(5*ncols, 4*nrows), 
+        sharex=False, 
+        sharey=False, 
+        dpi=120
+    )
+
+    plt.subplots_adjust(
+        left=None, bottom=None, 
+        right=None, top=None, 
+        wspace=0.4, hspace=0.6
+    )
+
+    for block in isfcs.keys():
+        tr = np.int(block.split('_')[1][-1])
+        name = block.split('_')[0]
+        
+        if name == 'RETR':
+            ax = axs[tr, 0]
+        elif name == 'APPR':
+            ax = axs[tr, 1]
+
+        im = ax.imshow(
+            isfcs[block], #* roi[block],
+            cmap=cmr.iceburn, vmin=vmin, vmax=vmax
+        )
+        ax.figure.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
+
+        ax.set_title(name)
+
+        ax.set_ylabel(f"TR{tr}")
+
+        ax.set_yticks(args.major_ticks, args.major_tick_labels, rotation=0, va='center')
+        ax.set_xticks(args.major_ticks, args.major_tick_labels, rotation=90, ha='center')
+
+        ax.set_yticks(args.minor_ticks-0.5, minor=True)
+        ax.set_xticks(args.minor_ticks-0.5, minor=True)
+        ax.tick_params(
+            which='major', direction='out', length=5.5, 
+            # grid_color='white', grid_linewidth='1.5',
+            labelsize=10,
+        )
+        ax.grid(which='minor', color='w', linestyle='-', linewidth=1.5)
+
+    return None
+
+
 # COMPARISONS BETWEEN ISC MATRICES
 # --------------------------
-def get_comparison_stats(args, corrs,):
+def get_comparison_stats(args, corrs, paradigm='max'):
     def statistic(obs1, obs2, axis):
         return (
             + compute_summary_statistic(obs1, summary_statistic='median', axis=axis) 
@@ -228,7 +433,12 @@ def get_comparison_stats(args, corrs,):
         ) 
 
     stats_results = {}
-    for (block1, block2) in tqdm(combinations(corrs.keys(), 2)):
+    if paradigm == 'max':
+        blocks = list(corrs.keys())[::-1]
+    else:
+        blocks = list(corrs.keys())
+
+    for (block1, block2) in tqdm(combinations(blocks, 2)):
         obs1 = np.concatenate([corrs[block1]['isfcs'], corrs[block1]['iscs']], axis=-1)
         obs2 = np.concatenate([corrs[block2]['isfcs'], corrs[block2]['iscs']], axis=-1)
         
@@ -246,7 +456,7 @@ def get_comparison_stats(args, corrs,):
     
     return stats_results
 
-def get_diff_isfcs(args, stats_results, significant_rois):
+def get_diff_isfcs(args, stats_results, significant_rois, threshold_mats=True):
     diff_isfcs = {}; diff_pvals = {}
     for (block1, block2) in stats_results.keys():
 
@@ -264,13 +474,14 @@ def get_diff_isfcs(args, stats_results, significant_rois):
         # coming soon...
 
         # keep isfc values only for significant roi pairs
-        diff_isfcs[(block1, block2)] *= diff_pvals[(block1, block2)]
-        diff_isfcs[(block1, block2)] *= significant_rois[block1]
-        diff_isfcs[(block1, block2)] *= significant_rois[block2]
+        if threshold_mats == True:
+            diff_isfcs[(block1, block2)] *= diff_pvals[(block1, block2)]
+            diff_isfcs[(block1, block2)] *= significant_rois[block1]
+            diff_isfcs[(block1, block2)] *= significant_rois[block2]
 
     return diff_isfcs, diff_pvals
 
-def plot_isfc_comparisons(args, corrs, diff_isfcs,):
+def plot_isfc_comparisons(args, corrs, diff_isfcs, paradigm='max'):
     vmin, vmax = get_min_max(diff_isfcs)
 
     nrows, ncols = [len(corrs.keys())]*2
@@ -286,26 +497,31 @@ def plot_isfc_comparisons(args, corrs, diff_isfcs,):
     plt.subplots_adjust(
         left=None, bottom=None, 
         right=None, top=None, 
-        wspace=0.45, hspace=None
+        wspace=0.8, hspace=0.0
     )
 
-    for idx_blk1, block1 in enumerate(corrs.keys()):
-        for idx_blk2, block2 in enumerate(corrs.keys()):
+    if paradigm == 'max':
+        blocks = list(corrs.keys())[::-1]
+    else:
+        blocks = list(corrs.keys())
 
-            if idx_blk1 <= idx_blk2: 
+    for idx_blk1, block1 in enumerate(blocks):
+        for idx_blk2, block2 in enumerate(blocks):
+
+            if idx_blk1 >= idx_blk2: 
                 axs[idx_blk1, idx_blk2].remove()
                 continue
 
             ax = axs[idx_blk1, idx_blk2]
 
             im = ax.imshow(
-                diff_isfcs[(block2, block1)], 
+                diff_isfcs[(block1, block2)], 
                 cmap=cmr.iceburn, vmin=vmin, vmax=vmax
             )
             ax.figure.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
 
-            if idx_blk1 == idx_blk2+1: ax.set_title(f"{block2}")
-            if idx_blk2 == 0: ax.set_ylabel(f"{block1}", size='large')
+            if idx_blk1 == 0: ax.set_title(f"{block2}")
+            if idx_blk2 == idx_blk1+1: ax.set_ylabel(f"{block1}", size='large')
 
             ax.set_yticks(args.major_ticks, args.major_tick_labels, rotation=0, va='center')
             ax.set_xticks(args.major_ticks, args.major_tick_labels, rotation=90, ha='center')
@@ -318,3 +534,56 @@ def plot_isfc_comparisons(args, corrs, diff_isfcs,):
                 labelsize=10,
             )
             ax.grid(which='minor', color='w', linestyle='-', linewidth=1.5)
+    
+    # fig.tight_layout()
+
+def plot_max_isfc_comparisons(args, corrs, diff_isfcs):
+    plot_isfc_comparisons(args, corrs, diff_isfcs, 'max')
+
+def plot_aba_isfc_comparisons(args, corrs, diff_isfcs):
+    plot_isfc_comparisons(args, corrs, diff_isfcs, 'aba')
+
+def plot_emo2_isfc_comparisons(args, corrs, diff_isfcs):
+    vmin, vmax = get_min_max(diff_isfcs)
+
+    nrows, ncols = 1, 1
+    fig, axs = plt.subplots(
+        nrows=nrows, 
+        ncols=ncols, 
+        figsize=(4*ncols, 4*nrows), 
+        sharex=False, 
+        sharey=False, 
+        dpi=120
+    )
+
+    plt.subplots_adjust(
+        left=None, bottom=None, 
+        right=None, top=None, 
+        wspace=0.8, hspace=0.0
+    )
+
+    ax = axs
+
+    for (blk1, blk2) in diff_isfcs.keys():
+        im = ax.imshow(
+            diff_isfcs[(blk1, blk2)],
+            cmap=cmr.iceburn, vmin=vmin, vmax=vmax
+        )
+        ax.figure.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
+
+        ax.set_title(f"{blk2}")
+        ax.set_ylabel(f"{blk1}")
+
+        ax.set_yticks(args.major_ticks, args.major_tick_labels, rotation=0, va='center')
+        ax.set_xticks(args.major_ticks, args.major_tick_labels, rotation=90, ha='center')
+
+        ax.set_yticks(args.minor_ticks-0.5, minor=True)
+        ax.set_xticks(args.minor_ticks-0.5, minor=True)
+        ax.tick_params(
+            which='major', direction='out', length=7, 
+            # grid_color='white', grid_linewidth='1.5',
+            labelsize=10,
+        )
+        ax.grid(which='minor', color='w', linestyle='-', linewidth=1.5)
+
+    return None

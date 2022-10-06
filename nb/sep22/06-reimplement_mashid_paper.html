@@ -686,12 +686,15 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">args</span><span class="o">.</span><span class="n">LABELS</span> <span class="o">=</span> <span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">APPR</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">RETR</span><span class="p">]</span>
 <span class="n">args</span><span class="o">.</span><span class="n">LABEL_NAMES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;APPR&#39;</span><span class="p">,</span> <span class="s1">&#39;RETR&#39;</span><span class="p">]</span>
 <span class="n">args</span><span class="o">.</span><span class="n">NAMES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;APPR&#39;</span><span class="p">,</span> <span class="s1">&#39;RETR&#39;</span><span class="p">]</span>
-<span class="n">args</span><span class="o">.</span><span class="n">TRIAL_LEN</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="kc">None</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">LABEL_NAMES</span><span class="p">}</span>
-<span class="n">args</span><span class="o">.</span><span class="n">MIN_TRS</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="kc">None</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">LABEL_NAMES</span><span class="p">}</span>
+<span class="n">args</span><span class="o">.</span><span class="n">TRIAL_LEN</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">args</span><span class="o">.</span><span class="n">MIN_TRS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;APPR&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;RETR&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
 <span class="n">args</span><span class="o">.</span><span class="n">MIN_TRIALS</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="mi">7</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">LABEL_NAMES</span><span class="p">}</span>
 <span class="n">args</span><span class="o">.</span><span class="n">near_miss_thresh</span> <span class="o">=</span> <span class="mf">0.7</span>
 <span class="n">args</span><span class="o">.</span><span class="n">near_miss_width</span> <span class="o">=</span> <span class="mi">8</span>
-<span class="n">args</span><span class="o">.</span><span class="n">hemo_lag</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">args</span><span class="o">.</span><span class="n">window_shift</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">APPR</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="o">-</span> <span class="n">args</span><span class="o">.</span><span class="n">window_shift</span>
+<span class="n">RETR</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span> <span class="o">-</span> <span class="n">args</span><span class="o">.</span><span class="n">window_shift</span>
+<span class="n">args</span><span class="o">.</span><span class="n">SEGMENT_TRS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;APPR&#39;</span><span class="p">:</span> <span class="n">APPR</span><span class="p">,</span> <span class="s1">&#39;RETR&#39;</span><span class="p">:</span> <span class="n">RETR</span><span class="p">}</span>
 <span class="n">args</span><span class="o">.</span><span class="n">TR</span> <span class="o">=</span> <span class="mf">1.25</span>
 </pre></div>
 </div>
@@ -712,6 +715,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">args</span><span class="o">.</span><span class="n">main_data_dir</span> <span class="o">=</span> <span class="p">(</span>
     <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">proj_dir</span><span class="si">}</span><span class="s2">/data/emoprox2/data/rois_</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">roi_set_name</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="p">)</span>
+
 <span class="c1"># exploratory data</span>
 <span class="n">args</span><span class="o">.</span><span class="n">subjects</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">motion_df</span><span class="o">.</span><span class="n">pid</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
 <span class="n">random</span><span class="o">.</span><span class="n">Random</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">SEED</span><span class="p">)</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">subjects</span><span class="p">)</span>
@@ -723,8 +727,8 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="c1"># condition responses</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">dataset_utils</span><span class="o">.</span><span class="n">get_emo2_trial_level_responses</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">motion_df</span><span class="p">)</span>
-<span class="c1"># args.plot_colors = {&#39;APPR&#39;: &#39;firebrick&#39;, &#39;RETR&#39;: &#39;cornflowerblue&#39;}</span>
-<span class="c1"># dataset_utils.plot_emo2_responses(args, X)</span>
+<span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;APPR&#39;</span><span class="p">:</span> <span class="s1">&#39;firebrick&#39;</span><span class="p">,</span> <span class="s1">&#39;RETR&#39;</span><span class="p">:</span> <span class="s1">&#39;cornflowerblue&#39;</span><span class="p">}</span>
+<span class="n">dataset_utils</span><span class="o">.</span><span class="n">plot_emo2_responses_v2</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -736,12 +740,14 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "6fcede7920cf4da2833ca1e75ab02126", "version_major": 2, "version_minor": 0}
-</script></div>
+{"model_id": "e7264515353f45469e95107dada592f3", "version_major": 2, "version_minor": 0}
+</script><img alt="../../_images/06-reimplement_mashid_paper_3_2.png" src="../../_images/06-reimplement_mashid_paper_3_2.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_block_time_series</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># time series per subject; trial wise reponse for a given TR</span>
+<span class="k">def</span> <span class="nf">get_block_time_series</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
     <span class="n">ts</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">X</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
         <span class="k">for</span> <span class="n">idx_time</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">MIN_TRS</span><span class="p">[</span><span class="n">name</span><span class="p">]):</span>
@@ -760,14 +766,30 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="n">ts</span><span class="p">[</span><span class="s1">&#39;APPR_TR0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(7, 45, 30)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ISC</span>
 <span class="k">def</span> <span class="nf">get_iscs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">ts</span><span class="p">):</span>
     <span class="n">ensure_symmetry</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">A</span><span class="p">:</span> <span class="p">(</span><span class="n">A</span> <span class="o">+</span> <span class="n">A</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="c1"># projection onto the space of symmetric matrices</span>
-    <span class="n">isfcs</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="n">isfcs</span> <span class="o">=</span> <span class="p">{};</span> <span class="n">pos_isfcs</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">ts</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
         <span class="n">ts_block</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rollaxis</span><span class="p">(</span><span class="n">ts</span><span class="p">[</span><span class="n">block</span><span class="p">],</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-        <span class="n">isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="n">compute_correlation</span><span class="p">(</span>
+        <span class="n">isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">pos_isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">idx_subj</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ts_block</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="n">isfc_subj</span> <span class="o">=</span> <span class="n">compute_correlation</span><span class="p">(</span>
                 <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">ts_block</span><span class="p">[</span><span class="n">idx_subj</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">),</span>
                 <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span>
                     <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span>
@@ -777,20 +799,33 @@ const thebe_selector_output = ".output, .cell_output"
                 <span class="p">),</span>
                 <span class="n">return_nans</span><span class="o">=</span><span class="kc">True</span>
             <span class="p">)</span>
-            <span class="k">for</span> <span class="n">idx_subj</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ts_block</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-        <span class="p">]</span>
+            <span class="n">isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">isfc_subj</span><span class="p">)</span>
+
+            <span class="n">isfc_subj</span> <span class="o">=</span> <span class="p">(</span><span class="n">isfc_subj</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">isfc_subj</span>
+            <span class="n">pos_isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">isfc_subj</span><span class="p">)</span>
+
         <span class="n">isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
         <span class="n">isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
         <span class="n">isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="n">ensure_symmetry</span><span class="p">(</span><span class="n">isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">])</span>
-    <span class="k">return</span> <span class="n">isfcs</span>
 
-<span class="n">iscs</span> <span class="o">=</span> <span class="n">get_iscs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">ts</span><span class="p">)</span>
+        <span class="n">pos_isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">pos_isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">pos_isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">pos_isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">pos_isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="n">ensure_symmetry</span><span class="p">(</span><span class="n">pos_isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">isfcs</span><span class="p">,</span> <span class="n">pos_isfcs</span>
+
+<span class="n">iscs</span><span class="p">,</span> <span class="n">pos_iscs</span> <span class="o">=</span> <span class="n">get_iscs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">ts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iscs</span><span class="p">[</span><span class="s1">&#39;APPR_TR0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_15778/2269369279.py:21: RuntimeWarning: Mean of empty slice
-  isfcs[block] = np.nanmean(isfcs[block], axis=-1)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(45, 45)
 </pre></div>
 </div>
 </div>
@@ -810,10 +845,24 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="n">vmax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanquantile</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span>
     <span class="k">return</span> <span class="o">-</span><span class="nb">max</span><span class="p">(</span><span class="o">-</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="o">-</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="p">)</span>
 
+<span class="k">def</span> <span class="nf">set_plot_ticks</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">ax</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">major_ticks</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">major_tick_labels</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">major_ticks</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">major_tick_labels</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">minor_ticks</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">minor_ticks</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span>
+        <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;out&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mf">5.5</span><span class="p">,</span> 
+        <span class="c1"># grid_color=&#39;white&#39;, grid_linewidth=&#39;1.5&#39;,</span>
+        <span class="n">labelsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+
+
 <span class="k">def</span> <span class="nf">plot_iscs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">iscs</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmr</span><span class="o">.</span><span class="n">iceburn</span><span class="p">):</span>
     <span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="n">get_min_max</span><span class="p">(</span><span class="n">iscs</span><span class="p">)</span>
 
-    <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">MIN_TRS</span><span class="o">.</span><span class="n">values</span><span class="p">())),</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">NAMES</span><span class="p">)</span>
+    <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">MIN_TRS</span><span class="o">.</span><span class="n">values</span><span class="p">())),</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">NAMES</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
         <span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span> 
         <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">,</span> 
@@ -848,24 +897,225 @@ const thebe_selector_output = ".output, .cell_output"
         <span class="k">if</span> <span class="n">tr</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">col</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TR</span><span class="si">{</span><span class="n">tr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">)</span>
         
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">major_ticks</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">major_tick_labels</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">major_ticks</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">major_tick_labels</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+        <span class="n">set_plot_ticks</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">ax</span><span class="p">)</span>
 
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">minor_ticks</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">minor_ticks</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">minor</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span>
-            <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;out&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mf">5.5</span><span class="p">,</span> 
-            <span class="c1"># grid_color=&#39;white&#39;, grid_linewidth=&#39;1.5&#39;,</span>
-            <span class="n">labelsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="k">for</span> <span class="n">tr</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">MIN_TRS</span><span class="p">[</span><span class="s1">&#39;RETR&#39;</span><span class="p">]):</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="n">tr</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+        <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span>
+            <span class="n">iscs</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;APPR_TR</span><span class="si">{</span><span class="n">tr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">iscs</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;RETR_TR</span><span class="si">{</span><span class="n">tr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">],</span>
+            <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+            <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span>
         <span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
 
-<span class="n">plot_iscs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">iscs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">tr</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;APPR - RETR&quot;</span><span class="p">)</span>
+
+        <span class="n">set_plot_ticks</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">ax</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cvals</span>  <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cyan&quot;</span><span class="p">,</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;yellow&quot;</span><span class="p">]</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">norm</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">cvals</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">cvals</span><span class="p">))</span>
+<span class="n">tuples</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">norm</span><span class="p">,</span><span class="n">cvals</span><span class="p">),</span> <span class="n">colors</span><span class="p">))</span>
+<span class="n">mycmap</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">LinearSegmentedColormap</span><span class="o">.</span><span class="n">from_list</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">tuples</span><span class="p">)</span>
+<span class="n">plot_iscs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">pos_iscs</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">mycmap</span><span class="p">)</span>
+<span class="c1"># plot_iscs(args, iscs)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/06-reimplement_mashid_paper_6_0.png" src="../../_images/06-reimplement_mashid_paper_6_0.png" />
+<img alt="../../_images/06-reimplement_mashid_paper_9_0.png" src="../../_images/06-reimplement_mashid_paper_9_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># within- and between-network weight</span>
+<span class="n">args</span><span class="o">.</span><span class="n">nw_roi_idxs</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">ticks</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="n">nw</span><span class="p">,</span> <span class="n">nrois</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">major_tick_labels</span><span class="p">,</span> <span class="n">vals</span><span class="p">)):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">idx</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">vals</span><span class="p">[</span><span class="n">idx</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">args</span><span class="o">.</span><span class="n">nw_roi_idxs</span><span class="p">[</span><span class="n">nw</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">roi_idxs</span><span class="p">[</span><span class="n">s</span><span class="p">:</span><span class="n">vals</span><span class="p">[</span><span class="n">idx</span><span class="p">]]</span>
+
+<span class="k">def</span> <span class="nf">get_nw_weights</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">iscs</span><span class="p">):</span>
+    <span class="n">nw_weights</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">NAMES</span><span class="p">:</span>
+        <span class="n">nw_weights</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">idx1</span><span class="p">,</span> <span class="n">nw1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">major_tick_labels</span><span class="p">):</span>
+            <span class="n">nw_weights</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="n">nw1</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">idx2</span><span class="p">,</span> <span class="n">nw2</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">major_tick_labels</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">idx1</span> <span class="o">&gt;</span> <span class="n">idx2</span><span class="p">:</span> <span class="k">continue</span>
+                <span class="n">nw_weights</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="n">nw1</span><span class="p">][</span><span class="n">nw2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+                <span class="k">for</span> <span class="n">tr</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">MIN_TRS</span><span class="p">[</span><span class="n">name</span><span class="p">]):</span>
+                    <span class="n">block</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">_TR</span><span class="si">{</span><span class="n">tr</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="n">vals</span> <span class="o">=</span> <span class="n">iscs</span><span class="p">[</span><span class="n">block</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">ix_</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">nw_roi_idxs</span><span class="p">[</span><span class="n">nw1</span><span class="p">],</span> <span class="n">args</span><span class="o">.</span><span class="n">nw_roi_idxs</span><span class="p">[</span><span class="n">nw2</span><span class="p">])]</span>
+                    <span class="n">nw_weights</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="n">nw1</span><span class="p">][</span><span class="n">nw2</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span> <span class="o">/</span> <span class="n">vals</span><span class="o">.</span><span class="n">size</span><span class="p">)</span> <span class="c1"># * (vals &gt; 0)</span>
+
+    <span class="k">return</span> <span class="n">nw_weights</span>
+
+<span class="n">nw_weights</span> <span class="o">=</span> <span class="n">get_nw_weights</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">pos_iscs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_nw_weights</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">nw_weights</span><span class="p">,</span> <span class="p">):</span>
+
+    <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">major_tick_labels</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])]</span> <span class="o">*</span> <span class="mi">2</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+        <span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span> 
+        <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">,</span> 
+        <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">ncols</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">nrows</span><span class="p">),</span> 
+        <span class="n">sharex</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+        <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+        <span class="n">dpi</span><span class="o">=</span><span class="mi">120</span>
+    <span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span>
+        <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+        <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+        <span class="n">wspace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.4</span>
+    <span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">idx1</span><span class="p">,</span> <span class="n">nw1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">major_tick_labels</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="k">for</span> <span class="n">idx2</span><span class="p">,</span> <span class="n">nw2</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">major_tick_labels</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+
+            <span class="k">if</span> <span class="n">idx1</span> <span class="o">&gt;</span> <span class="n">idx2</span><span class="p">:</span> 
+                <span class="n">axs</span><span class="p">[</span><span class="n">idx1</span><span class="p">,</span> <span class="n">idx2</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+                <span class="k">continue</span>
+
+            <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="n">idx1</span><span class="p">,</span> <span class="n">idx2</span><span class="p">]</span>
+
+            <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">NAMES</span><span class="p">):</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="n">nw_weights</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="n">nw1</span><span class="p">][</span><span class="n">nw2</span><span class="p">]</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)),</span>
+                    <span class="n">y</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span><span class="p">[</span><span class="n">name</span><span class="p">],</span>
+                    <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                    <span class="n">label</span><span class="o">=</span><span class="n">name</span>
+                <span class="p">)</span>
+
+                <span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">se</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">linregress</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)),</span> <span class="n">y</span><span class="p">)</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+                    <span class="n">m</span> <span class="o">*</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="o">+</span> <span class="n">c</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">linreg_colors</span><span class="p">[</span><span class="n">name</span><span class="p">],</span>
+                    <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                    <span class="c1"># label=f&quot;lr_{name[0]}&quot;</span>
+                <span class="p">)</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">idx</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">p</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">idx1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nw2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">idx2</span> <span class="o">==</span> <span class="n">idx1</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nw1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;APPR&#39;</span><span class="p">:</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;RETR&#39;</span><span class="p">:</span> <span class="s1">&#39;cyan&#39;</span><span class="p">}</span>
+<span class="n">args</span><span class="o">.</span><span class="n">linreg_colors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;APPR&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;RETR&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">}</span>
+<span class="n">plot_nw_weights</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">nw_weights</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/06-reimplement_mashid_paper_11_0.png" src="../../_images/06-reimplement_mashid_paper_11_0.png" />
+</div>
+</div>
+<p><strong>discussion</strong>
+group ISC matrices look as expected!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check the durations of appr and retr segments</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
+<span class="k">def</span> <span class="nf">get_emo2_near_miss_windows</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">subj</span><span class="p">,</span> <span class="n">motion_df</span><span class="p">,</span> <span class="n">trial_lens</span><span class="p">):</span>
+    <span class="n">subj_motion_df</span> <span class="o">=</span> <span class="n">motion_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">motion_df</span><span class="o">.</span><span class="n">pid</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="n">subj</span><span class="p">])]</span>
+    <span class="n">proximity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span>
+        <span class="n">subj_motion_df</span><span class="p">[</span><span class="s1">&#39;proximity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">direction</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span>
+        <span class="n">subj_motion_df</span><span class="p">[</span><span class="s1">&#39;direction&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">main_data_dir</span><span class="si">}</span><span class="s2">/CON</span><span class="si">{</span><span class="n">subj</span><span class="si">}</span><span class="s2">/CON</span><span class="si">{</span><span class="n">subj</span><span class="si">}</span><span class="s2">_resids_REML.1D&quot;</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">T</span>
+    
+    <span class="k">assert</span> <span class="p">(</span><span class="n">proximity</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">ts</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">assert</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">ts</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># censor proximity values </span>
+    <span class="n">censor_TRs</span> <span class="o">=</span> <span class="n">ts</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span>
+    <span class="n">proximity</span><span class="p">[</span><span class="n">censor_TRs</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="c1"># near misses</span>
+    <span class="n">near_miss_peaks</span><span class="p">,</span> <span class="n">props</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">find_peaks</span><span class="p">(</span>
+        <span class="n">proximity</span><span class="p">,</span> 
+        <span class="n">height</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">near_miss_thresh</span><span class="p">,</span> 
+        <span class="n">width</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">near_miss_width</span>
+    <span class="p">)</span>
+
+    <span class="n">near_miss_windows</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">props</span><span class="p">[</span><span class="s1">&#39;left_ips&#39;</span><span class="p">],</span> <span class="n">props</span><span class="p">[</span><span class="s1">&#39;right_ips&#39;</span><span class="p">]],</span> 
+            <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span>
+            <span class="p">)</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+    <span class="n">near_misses</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">proximity</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">near_miss_windows</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="n">near_misses</span><span class="p">[</span><span class="n">near_miss_windows</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="p">:</span> <span class="n">near_miss_windows</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="c1"># +1 because we need the last TR also</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">LABELS</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">NAMES</span><span class="p">):</span>
+        <span class="n">trials</span> <span class="o">=</span> <span class="n">dataset_utils</span><span class="o">.</span><span class="n">contiguous_regions</span><span class="p">((</span><span class="n">direction</span> <span class="o">==</span> <span class="n">label</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">near_misses</span><span class="p">))</span>
+        <span class="n">trial_lens</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">list</span><span class="p">(</span><span class="n">trials</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">trials</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">trial_lens</span>
+
+<span class="n">trial_lens</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:[]</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">NAMES</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">subj</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">subjects</span><span class="p">):</span>
+    <span class="n">trial_lens</span> <span class="o">=</span> <span class="n">get_emo2_near_miss_windows</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">subj</span><span class="p">,</span> <span class="n">motion_df</span><span class="p">,</span> <span class="n">trial_lens</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "795aa87033e141de9af16bb9b808ec7f", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+    <span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span> 
+    <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">,</span> 
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">ncols</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">nrows</span><span class="p">),</span> 
+    <span class="n">sharex</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+    <span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+    <span class="n">dpi</span><span class="o">=</span><span class="mi">120</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span>
+    <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+    <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+    <span class="n">wspace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.5</span>
+<span class="p">)</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">trial_lens</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">trial_lens</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/06-reimplement_mashid_paper_14_0.png" src="../../_images/06-reimplement_mashid_paper_14_0.png" />
 </div>
 </div>
 </div>

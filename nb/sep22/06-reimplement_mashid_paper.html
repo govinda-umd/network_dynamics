@@ -50,6 +50,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Summary" href="../oct22/oct22.html" />
     <link rel="prev" title="September 22, 2022: Verify if Mashid’s parcellation looks correct" href="05-verify_mashid_parcellation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -515,6 +516,35 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  October 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../oct22/oct22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../oct22/oct22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct22/00-data-emo2_rois-mashid_desc-near_miss_analysis.html">
+     October 7, 2022: Near miss analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -636,7 +666,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>I have the trial level responses for Emoprox2 paradigm. Mashid analysed Emoprox1 paradigm, and her ISC matrices were visually distinct for Approach and Retreat segments. Here I am replicating her results and seeing how similar are my matrices with her’s.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">pjoin</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -689,8 +719,8 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">args</span><span class="o">.</span><span class="n">TRIAL_LEN</span> <span class="o">=</span> <span class="mi">12</span>
 <span class="n">args</span><span class="o">.</span><span class="n">MIN_TRS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;APPR&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;RETR&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
 <span class="n">args</span><span class="o">.</span><span class="n">MIN_TRIALS</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="mi">7</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">LABEL_NAMES</span><span class="p">}</span>
-<span class="n">args</span><span class="o">.</span><span class="n">near_miss_thresh</span> <span class="o">=</span> <span class="mf">0.7</span>
-<span class="n">args</span><span class="o">.</span><span class="n">near_miss_width</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">args</span><span class="o">.</span><span class="n">near_miss_thresh</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.77</span><span class="p">,</span> <span class="mf">0.88</span><span class="p">]</span>
+<span class="n">args</span><span class="o">.</span><span class="n">near_miss_width</span> <span class="o">=</span> <span class="mf">7.5</span>
 <span class="n">args</span><span class="o">.</span><span class="n">window_shift</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">APPR</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="o">-</span> <span class="n">args</span><span class="o">.</span><span class="n">window_shift</span>
 <span class="n">RETR</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span> <span class="o">-</span> <span class="n">args</span><span class="o">.</span><span class="n">window_shift</span>
@@ -704,8 +734,14 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="o">.</span><span class="n">proj_dir</span> <span class="o">=</span> <span class="n">proj_dir</span>
 
+<span class="c1"># with open(</span>
+<span class="c1">#     f&quot;/home/joyneelm/FORAGING/local/notebooks/dynamical_systems_emoprox/emoprox_motion_parameters.pkl&quot;, </span>
+<span class="c1">#     &#39;rb&#39;</span>
+<span class="c1"># ) as f:</span>
+<span class="c1">#     motion_df = pickle.load(f)</span>
+<span class="c1"># copied Joyneel&#39;s pkl file </span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
-    <span class="sa">f</span><span class="s2">&quot;/home/joyneelm/FORAGING/local/notebooks/dynamical_systems_emoprox/emoprox_motion_parameters.pkl&quot;</span><span class="p">,</span> 
+    <span class="sa">f</span><span class="s2">&quot;/home/govindas/network_dynamics/data/emoprox2/data/emoprox_motion_parameters.pkl&quot;</span><span class="p">,</span> 
     <span class="s1">&#39;rb&#39;</span>
 <span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">motion_df</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
@@ -740,7 +776,7 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "e7264515353f45469e95107dada592f3", "version_major": 2, "version_minor": 0}
+{"model_id": "3569cd3207a0472f81c8b54411f86444", "version_major": 2, "version_minor": 0}
 </script><img alt="../../_images/06-reimplement_mashid_paper_3_2.png" src="../../_images/06-reimplement_mashid_paper_3_2.png" />
 </div>
 </div>
@@ -772,7 +808,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(7, 45, 30)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(7, 45, 28)
 </pre></div>
 </div>
 </div>
@@ -926,7 +962,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">tuples</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">norm</span><span class="p">,</span><span class="n">cvals</span><span class="p">),</span> <span class="n">colors</span><span class="p">))</span>
 <span class="n">mycmap</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">LinearSegmentedColormap</span><span class="o">.</span><span class="n">from_list</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">tuples</span><span class="p">)</span>
 <span class="n">plot_iscs</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">pos_iscs</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">mycmap</span><span class="p">)</span>
-<span class="c1"># plot_iscs(args, iscs)</span>
+<span class="c1"># plot_iscs(args, pos_iscs)</span>
 </pre></div>
 </div>
 </div>
@@ -1030,94 +1066,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p><strong>discussion</strong>
 group ISC matrices look as expected!</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check the durations of appr and retr segments</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
-<span class="k">def</span> <span class="nf">get_emo2_near_miss_windows</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">subj</span><span class="p">,</span> <span class="n">motion_df</span><span class="p">,</span> <span class="n">trial_lens</span><span class="p">):</span>
-    <span class="n">subj_motion_df</span> <span class="o">=</span> <span class="n">motion_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">motion_df</span><span class="o">.</span><span class="n">pid</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="n">subj</span><span class="p">])]</span>
-    <span class="n">proximity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span>
-        <span class="n">subj_motion_df</span><span class="p">[</span><span class="s1">&#39;proximity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">T</span>
-    <span class="n">direction</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span>
-        <span class="n">subj_motion_df</span><span class="p">[</span><span class="s1">&#39;direction&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">T</span>
-    <span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span>
-        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">main_data_dir</span><span class="si">}</span><span class="s2">/CON</span><span class="si">{</span><span class="n">subj</span><span class="si">}</span><span class="s2">/CON</span><span class="si">{</span><span class="n">subj</span><span class="si">}</span><span class="s2">_resids_REML.1D&quot;</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">T</span>
-    
-    <span class="k">assert</span> <span class="p">(</span><span class="n">proximity</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">ts</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="k">assert</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">ts</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-
-    <span class="c1"># censor proximity values </span>
-    <span class="n">censor_TRs</span> <span class="o">=</span> <span class="n">ts</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span>
-    <span class="n">proximity</span><span class="p">[</span><span class="n">censor_TRs</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
-
-    <span class="c1"># near misses</span>
-    <span class="n">near_miss_peaks</span><span class="p">,</span> <span class="n">props</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">find_peaks</span><span class="p">(</span>
-        <span class="n">proximity</span><span class="p">,</span> 
-        <span class="n">height</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">near_miss_thresh</span><span class="p">,</span> 
-        <span class="n">width</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">near_miss_width</span>
-    <span class="p">)</span>
-
-    <span class="n">near_miss_windows</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span>
-        <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span>
-            <span class="p">[</span><span class="n">props</span><span class="p">[</span><span class="s1">&#39;left_ips&#39;</span><span class="p">],</span> <span class="n">props</span><span class="p">[</span><span class="s1">&#39;right_ips&#39;</span><span class="p">]],</span> 
-            <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span>
-            <span class="p">)</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-
-    <span class="n">near_misses</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">proximity</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">near_miss_windows</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
-        <span class="n">near_misses</span><span class="p">[</span><span class="n">near_miss_windows</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="p">:</span> <span class="n">near_miss_windows</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
-        <span class="c1"># +1 because we need the last TR also</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">LABELS</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">NAMES</span><span class="p">):</span>
-        <span class="n">trials</span> <span class="o">=</span> <span class="n">dataset_utils</span><span class="o">.</span><span class="n">contiguous_regions</span><span class="p">((</span><span class="n">direction</span> <span class="o">==</span> <span class="n">label</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">near_misses</span><span class="p">))</span>
-        <span class="n">trial_lens</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">list</span><span class="p">(</span><span class="n">trials</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">trials</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
-
-    <span class="k">return</span> <span class="n">trial_lens</span>
-
-<span class="n">trial_lens</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:[]</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">NAMES</span><span class="p">}</span>
-<span class="k">for</span> <span class="n">subj</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">subjects</span><span class="p">):</span>
-    <span class="n">trial_lens</span> <span class="o">=</span> <span class="n">get_emo2_near_miss_windows</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">subj</span><span class="p">,</span> <span class="n">motion_df</span><span class="p">,</span> <span class="n">trial_lens</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "795aa87033e141de9af16bb9b808ec7f", "version_major": 2, "version_minor": 0}
-</script></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
-    <span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span> 
-    <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">,</span> 
-    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">ncols</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">nrows</span><span class="p">),</span> 
-    <span class="n">sharex</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
-    <span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
-    <span class="n">dpi</span><span class="o">=</span><span class="mi">120</span>
-<span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span>
-    <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
-    <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
-    <span class="n">wspace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.5</span>
-<span class="p">)</span>
-
-<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">trial_lens</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">trial_lens</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/06-reimplement_mashid_paper_14_0.png" src="../../_images/06-reimplement_mashid_paper_14_0.png" />
-</div>
-</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -1151,6 +1099,13 @@ group ISC matrices look as expected!</p>
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">September 22, 2022: Verify if Mashid’s parcellation looks correct</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="../oct22/oct22.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Summary</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             

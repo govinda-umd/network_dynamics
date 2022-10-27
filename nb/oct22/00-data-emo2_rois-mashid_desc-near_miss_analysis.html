@@ -50,6 +50,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="October 25-26, 2022: MAX dataset network analysis" href="00-data-max_rois-mashid_desc-network_analysis.html" />
     <link rel="prev" title="October 7, 2022: Near miss segment lengths" href="00-data-emo2_rois-mashid_desc-near_miss_segment_lengths.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -546,6 +547,11 @@ const thebe_selector_output = ".output, .cell_output"
      October 10-18, 2022: Near miss analysis
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="00-data-max_rois-mashid_desc-network_analysis.html">
+     October 25-26, 2022: MAX dataset network analysis
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -679,6 +685,28 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fc">
+   FC
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     network-weight plots
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     basic network measures
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -726,6 +754,28 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fc">
+   FC
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     network-weight plots
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     basic network measures
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                         </nav>
@@ -756,6 +806,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="kn">from</span> <span class="nn">brainiak.isc</span> <span class="kn">import</span> <span class="n">compute_correlation</span><span class="p">,</span> <span class="n">squareform_isfc</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
 <span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">scipy.spatial.distance</span> <span class="kn">import</span> <span class="n">squareform</span>
 
 <span class="c1"># main dirs</span>
 <span class="n">proj_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;network_dynamics&#39;</span><span class="p">)</span>
@@ -777,6 +828,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">proj_dir</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">helpers.dataset_utils_v1</span> <span class="k">as</span> <span class="nn">dataset_utils</span>
 <span class="kn">import</span> <span class="nn">helpers.isc_utils</span> <span class="k">as</span> <span class="nn">isc_utils</span>
+<span class="kn">import</span> <span class="nn">helpers.fc_utils</span> <span class="k">as</span> <span class="nn">fc_utils</span>
 </pre></div>
 </div>
 </div>
@@ -886,6 +938,18 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(7, 45, 27)
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="isc">
 <h2>ISC<a class="headerlink" href="#isc" title="Permalink to this headline">¶</a></h2>
@@ -912,7 +976,7 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="n">args</span><span class="p">,</span> 
     <span class="n">bootstraps</span><span class="p">,</span> 
     <span class="n">rois</span><span class="p">,</span>
-    <span class="n">threshold_mats</span><span class="o">=</span><span class="kc">True</span>
+    <span class="n">threshold_mats</span><span class="o">=</span><span class="kc">False</span>
 <span class="p">)</span>
 <span class="n">isc_utils</span><span class="o">.</span><span class="n">plot_emo2_near_miss_isfcs</span><span class="p">(</span>
     <span class="n">args</span><span class="p">,</span> 
@@ -923,10 +987,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 15/15 [00:25&lt;00:00,  1.70s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 15/15 [00:25&lt;00:00,  1.72s/it]
 </pre></div>
 </div>
-<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_10_1.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_10_1.png" />
+<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_11_1.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_11_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1006,7 +1070,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_16_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_16_0.png" />
+<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_17_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_17_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1023,7 +1087,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_17_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_17_0.png" />
+<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_18_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_18_0.png" />
 </div>
 </div>
 </div>
@@ -1037,10 +1101,20 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="n">nw_measures</span> <span class="o">=</span> <span class="p">{}</span>
 
     <span class="c1"># efficiency</span>
-    <span class="n">nw_measures</span><span class="p">[</span><span class="s1">&#39;efficiency&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="n">nw_measures</span><span class="p">[</span><span class="s1">&#39;global_efficiency&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
         <span class="n">bct</span><span class="o">.</span><span class="n">distance</span><span class="o">.</span><span class="n">efficiency_wei</span><span class="p">(</span><span class="n">all_sq_isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">][:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">local</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">all_sq_isfcs</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
     <span class="p">])</span>
+
+    <span class="n">nw_eff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">SEGMENT_TRS</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">nw_roi_idxs</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span>
+    <span class="k">for</span> <span class="n">idx_block</span><span class="p">,</span> <span class="n">block</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_sq_isfcs</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+
+        <span class="n">e</span> <span class="o">=</span> <span class="n">bct</span><span class="o">.</span><span class="n">distance</span><span class="o">.</span><span class="n">efficiency_wei</span><span class="p">(</span><span class="n">all_sq_isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">][:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">local</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">idx_nw</span><span class="p">,</span> <span class="n">nw</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">nw_roi_idxs</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+            <span class="n">nw_eff</span><span class="p">[</span><span class="n">idx_block</span><span class="p">,</span> <span class="n">idx_nw</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">nw_roi_idxs</span><span class="p">[</span><span class="n">nw</span><span class="p">]])</span>
+
+    <span class="n">nw_measures</span><span class="p">[</span><span class="s1">&#39;local_efficiency&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nw_eff</span>
 
     <span class="c1"># betweenness centrality</span>
     <span class="n">nw_btwness</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">SEGMENT_TRS</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">nw_roi_idxs</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span>
@@ -1054,6 +1128,15 @@ const thebe_selector_output = ".output, .cell_output"
 
     <span class="n">nw_measures</span><span class="p">[</span><span class="s1">&#39;betweenness&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nw_btwness</span>
 
+    <span class="c1"># modularity</span>
+    <span class="n">nw_measures</span><span class="p">[</span><span class="s1">&#39;modularity&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+        <span class="n">bct</span><span class="o">.</span><span class="n">modularity</span><span class="o">.</span><span class="n">modularity_und</span><span class="p">(</span>
+            <span class="n">all_sq_isfcs</span><span class="p">[</span><span class="n">block</span><span class="p">][:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">],</span>
+            <span class="n">kci</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">roi_nw_to_idx</span>
+        <span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">all_sq_isfcs</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+    <span class="p">])</span>
+
     <span class="k">return</span> <span class="n">nw_measures</span>
 
 <span class="k">def</span> <span class="nf">plot_global_efficiency</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">nw_measures</span><span class="p">):</span>
@@ -1066,16 +1149,47 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
         <span class="n">args</span><span class="o">.</span><span class="n">SEGMENT_TRS</span><span class="p">,</span>
-        <span class="n">nw_measures</span><span class="p">[</span><span class="s1">&#39;efficiency&#39;</span><span class="p">],</span>
+        <span class="n">nw_measures</span><span class="p">[</span><span class="s1">&#39;global_efficiency&#39;</span><span class="p">],</span>
         <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span>
         <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-        <span class="n">color</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span><span class="p">[</span><span class="s1">&#39;efficiency&#39;</span><span class="p">]</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span><span class="p">[</span><span class="s1">&#39;global_efficiency&#39;</span><span class="p">]</span>
     <span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;NM&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TRs&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;efficiency&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;global_efficiency&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">SEGMENT_TRS</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">SEGMENT_TRS</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">plot_local_efficiency</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">nw_measures</span><span class="p">):</span>
+    <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+        <span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span> 
+        <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">,</span>
+        <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="n">ncols</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">nrows</span><span class="p">),</span>
+        <span class="n">dpi</span><span class="o">=</span><span class="mi">120</span>
+    <span class="p">)</span>
+
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span>
+
+    <span class="k">for</span> <span class="n">idx_nw</span><span class="p">,</span> <span class="n">nw</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">nw_roi_idxs</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+            <span class="n">args</span><span class="o">.</span><span class="n">SEGMENT_TRS</span><span class="p">,</span>
+            <span class="n">nw_measures</span><span class="p">[</span><span class="s1">&#39;local_efficiency&#39;</span><span class="p">][:,</span> <span class="n">idx_nw</span><span class="p">],</span>
+            <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span><span class="p">[</span><span class="n">idx_nw</span><span class="p">],</span>
+            <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span>
+            <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="n">nw</span>
+        <span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;NM&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TRs&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;local_efficiency&quot;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">SEGMENT_TRS</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">SEGMENT_TRS</span><span class="p">)</span>
@@ -1112,6 +1226,31 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">SEGMENT_TRS</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 
+<span class="k">def</span> <span class="nf">plot_modularity</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">nw_measures</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+        <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+        <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+        <span class="n">dpi</span><span class="o">=</span><span class="mi">120</span>
+    <span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">SEGMENT_TRS</span><span class="p">,</span>
+        <span class="n">nw_measures</span><span class="p">[</span><span class="s1">&#39;modularity&#39;</span><span class="p">],</span>
+        <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+        <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span>
+        <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span><span class="p">[</span><span class="s1">&#39;modularity&#39;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;NM&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TRs&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;modularity&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">SEGMENT_TRS</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">SEGMENT_TRS</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
 <span class="n">nw_measures_pos</span> <span class="o">=</span> <span class="n">compute_network_measures</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">all_sq_isfcs_pos</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
 <span class="n">nw_measures_neg</span> <span class="o">=</span> <span class="n">compute_network_measures</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">all_sq_isfcs_neg</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
 </pre></div>
@@ -1120,26 +1259,56 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;efficiency&#39;</span><span class="p">:</span><span class="s1">&#39;firebrick&#39;</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;global_efficiency&#39;</span><span class="p">:</span><span class="s1">&#39;firebrick&#39;</span><span class="p">}</span>
 <span class="n">args</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;positive wts.&quot;</span>
 <span class="n">plot_global_efficiency</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">nw_measures_pos</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_20_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_20_0.png" />
+<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_21_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_21_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;efficiency&#39;</span><span class="p">:</span><span class="s1">&#39;firebrick&#39;</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;global_efficiency&#39;</span><span class="p">:</span><span class="s1">&#39;firebrick&#39;</span><span class="p">}</span>
 <span class="n">args</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;negative wts.&quot;</span>
 <span class="n">plot_global_efficiency</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">nw_measures_neg</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_21_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_21_0.png" />
+<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_22_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_22_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">0</span><span class="p">:</span><span class="s1">&#39;firebrick&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="s1">&#39;olivedrab&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="s1">&#39;darkviolet&#39;</span><span class="p">,</span> 
+    <span class="mi">3</span><span class="p">:</span><span class="s1">&#39;steelblue&#39;</span>
+<span class="p">}</span>
+<span class="n">args</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;positive wts.&quot;</span>
+<span class="n">plot_local_efficiency</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">nw_measures_pos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_23_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_23_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">0</span><span class="p">:</span><span class="s1">&#39;firebrick&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="s1">&#39;olivedrab&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="s1">&#39;darkviolet&#39;</span><span class="p">,</span> 
+    <span class="mi">3</span><span class="p">:</span><span class="s1">&#39;steelblue&#39;</span>
+<span class="p">}</span>
+<span class="n">args</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;negative wts.&quot;</span>
+<span class="n">plot_local_efficiency</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">nw_measures_neg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_24_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_24_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1154,7 +1323,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_22_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_22_0.png" />
+<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_25_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_25_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1169,12 +1338,275 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_23_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_23_0.png" />
+<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_26_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_26_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;modularity&#39;</span><span class="p">:</span> <span class="s1">&#39;cornflowerblue&#39;</span>
+<span class="p">}</span>
+<span class="n">args</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;positive wts.&quot;</span>
+<span class="n">plot_modularity</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">nw_measures_pos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_27_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_27_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;modularity&#39;</span><span class="p">:</span> <span class="s1">&#39;cornflowerblue&#39;</span>
+<span class="p">}</span>
+<span class="n">args</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;negative wts.&quot;</span>
+<span class="n">plot_modularity</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">nw_measures_neg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_28_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_28_0.png" />
 </div>
 </div>
 <ol class="simple">
 <li><p>confidence intervals around each plot</p></li>
 </ol>
+</div>
+</div>
+<div class="section" id="fc">
+<h2>FC<a class="headerlink" href="#fc" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts_fc</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">ts_fc</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">ts_fc</span><span class="p">[</span><span class="n">block</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">moveaxis</span><span class="p">(</span><span class="n">ts_fc</span><span class="p">[</span><span class="n">block</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">args</span><span class="o">.</span><span class="n">n_bootstraps</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="p">(</span>
+    <span class="n">corrs</span><span class="p">,</span> 
+    <span class="n">bootstraps</span><span class="p">,</span> 
+    <span class="n">rois</span>
+<span class="p">)</span> <span class="o">=</span> <span class="n">fc_utils</span><span class="o">.</span><span class="n">get_fcs</span><span class="p">(</span>
+    <span class="n">args</span><span class="p">,</span> 
+    <span class="n">ts_fc</span><span class="p">,</span> 
+    <span class="n">print_stats</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="p">(</span>
+    <span class="n">observed_fcs</span><span class="p">,</span> <span class="n">observed_p_vals</span><span class="p">,</span> 
+    <span class="n">significant_rois</span><span class="p">,</span> <span class="n">conf_intervals</span>
+<span class="p">)</span> <span class="o">=</span> <span class="n">fc_utils</span><span class="o">.</span><span class="n">get_squareform_matrices</span><span class="p">(</span>
+    <span class="n">args</span><span class="p">,</span> 
+    <span class="n">bootstraps</span><span class="p">,</span> 
+    <span class="n">rois</span><span class="p">,</span>
+    <span class="n">threshold_mats</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="n">isc_utils</span><span class="o">.</span><span class="n">plot_emo2_near_miss_isfcs</span><span class="p">(</span>
+    <span class="n">args</span><span class="p">,</span> 
+    <span class="n">observed_fcs</span><span class="p">,</span> 
+    <span class="n">significant_rois</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_31_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_31_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bootstrap FCs</span>
+<span class="p">(</span>
+    <span class="n">bootstrap_fcs</span><span class="p">,</span> 
+    <span class="n">all_fcs</span>
+<span class="p">)</span>  <span class="o">=</span> <span class="n">fc_utils</span><span class="o">.</span><span class="n">get_bootstrap_distribution_fcs</span><span class="p">(</span>
+    <span class="n">args</span><span class="p">,</span> 
+    <span class="n">observed_fcs</span><span class="p">,</span> 
+    <span class="n">bootstraps</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># separate positive and negative weights</span>
+<span class="p">(</span>
+    <span class="n">all_fcs_pos</span><span class="p">,</span> <span class="n">all_fcs_neg</span><span class="p">,</span>
+    <span class="n">all_sq_fcs_pos</span><span class="p">,</span> <span class="n">all_sq_fcs_neg</span>
+<span class="p">)</span> <span class="o">=</span> <span class="n">fc_utils</span><span class="o">.</span><span class="n">separate_pos_neg_weights</span><span class="p">(</span>
+    <span class="n">args</span><span class="p">,</span> 
+    <span class="n">all_fcs</span><span class="p">,</span> 
+    <span class="n">significant_rois</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Analysis<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>network-weight plots<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># within- and between-network positive weights</span>
+<span class="n">nw_weights_pos</span> <span class="o">=</span> <span class="n">isc_utils</span><span class="o">.</span><span class="n">get_nw_weights</span><span class="p">(</span>
+    <span class="n">args</span><span class="p">,</span> 
+    <span class="n">all_sq_fcs_pos</span>
+<span class="p">)</span>
+
+<span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;NEAR_MISS&#39;</span><span class="p">:</span> <span class="s1">&#39;firebrick&#39;</span><span class="p">}</span>
+<span class="n">isc_utils</span><span class="o">.</span><span class="n">plot_emo2_near_miss_nw_weights</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">nw_weights_pos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_36_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_36_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># within- and between-network negative weights</span>
+<span class="n">nw_weights_neg</span> <span class="o">=</span> <span class="n">isc_utils</span><span class="o">.</span><span class="n">get_nw_weights</span><span class="p">(</span>
+    <span class="n">args</span><span class="p">,</span> 
+    <span class="n">all_sq_fcs_neg</span>
+<span class="p">)</span>
+
+<span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;NEAR_MISS&#39;</span><span class="p">:</span> <span class="s1">&#39;firebrick&#39;</span><span class="p">}</span>
+<span class="n">isc_utils</span><span class="o">.</span><span class="n">plot_emo2_near_miss_nw_weights</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">nw_weights_neg</span><span class="p">,)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_37_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_37_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>basic network measures<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nw_measures_pos</span> <span class="o">=</span> <span class="n">compute_network_measures</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">all_sq_fcs_pos</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+<span class="n">nw_measures_neg</span> <span class="o">=</span> <span class="n">compute_network_measures</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">all_sq_fcs_neg</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;global_efficiency&#39;</span><span class="p">:</span><span class="s1">&#39;firebrick&#39;</span><span class="p">}</span>
+<span class="n">args</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;positive wts.&quot;</span>
+<span class="n">plot_global_efficiency</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">nw_measures_pos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_40_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_40_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;global_efficiency&#39;</span><span class="p">:</span><span class="s1">&#39;firebrick&#39;</span><span class="p">}</span>
+<span class="n">args</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;negative wts.&quot;</span>
+<span class="n">plot_global_efficiency</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">nw_measures_neg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_41_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_41_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">0</span><span class="p">:</span><span class="s1">&#39;firebrick&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="s1">&#39;olivedrab&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="s1">&#39;darkviolet&#39;</span><span class="p">,</span> 
+    <span class="mi">3</span><span class="p">:</span><span class="s1">&#39;steelblue&#39;</span>
+<span class="p">}</span>
+<span class="n">args</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;positive wts.&quot;</span>
+<span class="n">plot_local_efficiency</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">nw_measures_pos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_42_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_42_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">0</span><span class="p">:</span><span class="s1">&#39;firebrick&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="s1">&#39;olivedrab&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="s1">&#39;darkviolet&#39;</span><span class="p">,</span> 
+    <span class="mi">3</span><span class="p">:</span><span class="s1">&#39;steelblue&#39;</span>
+<span class="p">}</span>
+<span class="n">args</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;negative wts.&quot;</span>
+<span class="n">plot_local_efficiency</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">nw_measures_neg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_43_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_43_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">0</span><span class="p">:</span><span class="s1">&#39;firebrick&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="s1">&#39;olivedrab&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="s1">&#39;darkviolet&#39;</span><span class="p">,</span> 
+    <span class="mi">3</span><span class="p">:</span><span class="s1">&#39;steelblue&#39;</span>
+<span class="p">}</span>
+<span class="n">args</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;positive wts.&quot;</span>
+<span class="n">plot_betweenness</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">nw_measures_pos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_44_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_44_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">0</span><span class="p">:</span><span class="s1">&#39;firebrick&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="s1">&#39;olivedrab&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="s1">&#39;darkviolet&#39;</span><span class="p">,</span> 
+    <span class="mi">3</span><span class="p">:</span><span class="s1">&#39;steelblue&#39;</span>
+<span class="p">}</span>
+<span class="n">args</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;negative wts.&quot;</span>
+<span class="n">plot_betweenness</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">nw_measures_neg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_45_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_45_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;modularity&#39;</span><span class="p">:</span> <span class="s1">&#39;cornflowerblue&#39;</span>
+<span class="p">}</span>
+<span class="n">args</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;positive wts.&quot;</span>
+<span class="n">plot_modularity</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">nw_measures_pos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_46_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_46_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;modularity&#39;</span><span class="p">:</span> <span class="s1">&#39;cornflowerblue&#39;</span>
+<span class="p">}</span>
+<span class="n">args</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;negative wts.&quot;</span>
+<span class="n">plot_modularity</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">nw_measures_neg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_47_0.png" src="../../_images/00-data-emo2_rois-mashid_desc-near_miss_analysis_47_0.png" />
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1210,6 +1642,13 @@ const thebe_selector_output = ".output, .cell_output"
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">October 7, 2022: Near miss segment lengths</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="00-data-max_rois-mashid_desc-network_analysis.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">October 25-26, 2022: MAX dataset network analysis</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             

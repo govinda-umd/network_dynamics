@@ -50,6 +50,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="October 28, 2022: MAX dataset differences in network measures" href="01-data-max_rois-mashid_desc-diff_nw_measures.html" />
     <link rel="prev" title="October 10-18, 2022: Near miss analysis" href="00-data-emo2_rois-mashid_desc-near_miss_analysis.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -551,6 +552,28 @@ const thebe_selector_output = ".output, .cell_output"
      October 25-26, 2022: MAX dataset network analysis
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-data-max_rois-mashid_desc-diff_nw_measures.html">
+     October 28, 2022: MAX dataset differences in network measures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-data-emo2_rois-mashid_desc-far_vs_near_segments.html">
+     October 29-31, 2022: ISCs during
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Near
+      </span>
+     </code>
+     vs ISCs during
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Far
+      </span>
+     </code>
+     segments
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -897,7 +920,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "827a8626b88246aeaac81c90424d2d70", "version_major": 2, "version_minor": 0}
+{"model_id": "f8dff1e7af5d4ac4a2dab4b006a42c36", "version_major": 2, "version_minor": 0}
 </script><img alt="../../_images/00-data-max_rois-mashid_desc-network_analysis_5_1.png" src="../../_images/00-data-max_rois-mashid_desc-network_analysis_5_1.png" />
 </div>
 </div>
@@ -915,7 +938,8 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>ISC<a class="headerlink" href="#isc" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ISC matrices at each TR</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ISC matrices for both periods (early/late) and </span>
+<span class="c1"># both emotional conditions (threat/safe)</span>
 <span class="n">args</span><span class="o">.</span><span class="n">CORR_NAMES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;isfcs&#39;</span><span class="p">,</span> <span class="s1">&#39;iscs&#39;</span><span class="p">]</span>
 <span class="n">args</span><span class="o">.</span><span class="n">pairwise</span><span class="o">=</span><span class="kc">False</span>
 <span class="n">args</span><span class="o">.</span><span class="n">vectorize_isfcs</span> <span class="o">=</span> <span class="kc">True</span>
@@ -947,7 +971,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 4/4 [00:08&lt;00:00,  2.15s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 4/4 [00:06&lt;00:00,  1.57s/it]
 </pre></div>
 </div>
 <img alt="../../_images/00-data-max_rois-mashid_desc-network_analysis_8_1.png" src="../../_images/00-data-max_rois-mashid_desc-network_analysis_8_1.png" />
@@ -981,7 +1005,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6it [00:23,  4.00s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6it [00:14,  2.37s/it]
 </pre></div>
 </div>
 <img alt="../../_images/00-data-max_rois-mashid_desc-network_analysis_9_1.png" src="../../_images/00-data-max_rois-mashid_desc-network_analysis_9_1.png" />
@@ -1368,6 +1392,8 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="n">args</span><span class="p">,</span> 
     <span class="n">observed_fcs</span><span class="p">,</span> 
     <span class="n">significant_rois</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="n">mpl</span><span class="o">.</span><span class="n">colormaps</span><span class="p">[</span><span class="s1">&#39;viridis&#39;</span><span class="p">],</span>
+    <span class="n">corr_type</span><span class="o">=</span><span class="s1">&#39;fc&#39;</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1600,6 +1626,13 @@ const thebe_selector_output = ".output, .cell_output"
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">October 10-18, 2022: Near miss analysis</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="01-data-max_rois-mashid_desc-diff_nw_measures.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">October 28, 2022: MAX dataset differences in network measures</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             

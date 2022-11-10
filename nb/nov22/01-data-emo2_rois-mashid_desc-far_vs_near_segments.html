@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>October 29-31, 2022: ISCs during Near vs ISCs during Far segments &#8212; Govinda&#39;s Project [Daily Progress]</title>
+    <title>November 1-2, 2022: ISCs during Near vs ISCs during Far segments &#8212; Govinda&#39;s Project [Daily Progress]</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -50,6 +50,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="November 3-10, 2022: ABA dataset: ABA ROIs: Finding ROI communities" href="00-data-aba_rois-aba_desc-finding_communities.html" />
     <link rel="prev" title="Updates" href="nov22_updates.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -599,7 +600,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     October 29-31, 2022: ISCs during
+     November 1-2, 2022: ISCs during
      <code class="docutils literal notranslate">
       <span class="pre">
        Near
@@ -612,6 +613,11 @@ const thebe_selector_output = ".output, .cell_output"
       </span>
      </code>
      segments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="00-data-aba_rois-aba_desc-finding_communities.html">
+     November 3-10, 2022: ABA dataset: ABA ROIs: Finding ROI communities
     </a>
    </li>
   </ul>
@@ -745,7 +751,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>October 29-31, 2022: ISCs during Near vs ISCs during Far segments</h1>
+                <h1>November 1-2, 2022: ISCs during Near vs ISCs during Far segments</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -779,8 +785,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="october-29-31-2022-iscs-during-near-vs-iscs-during-far-segments">
-<h1>October 29-31, 2022: ISCs during <code class="docutils literal notranslate"><span class="pre">Near</span></code> vs ISCs during <code class="docutils literal notranslate"><span class="pre">Far</span></code> segments<a class="headerlink" href="#october-29-31-2022-iscs-during-near-vs-iscs-during-far-segments" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="november-1-2-2022-iscs-during-near-vs-iscs-during-far-segments">
+<h1>November 1-2, 2022: ISCs during <code class="docutils literal notranslate"><span class="pre">Near</span></code> vs ISCs during <code class="docutils literal notranslate"><span class="pre">Far</span></code> segments<a class="headerlink" href="#november-1-2-2022-iscs-during-near-vs-iscs-during-far-segments" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">bct</span>
@@ -836,15 +842,17 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">args</span><span class="o">.</span><span class="n">SEED</span> <span class="o">=</span> <span class="mi">74</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">SEED</span><span class="p">)</span>
 
+<span class="n">args</span><span class="o">.</span><span class="n">APPR</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">args</span><span class="o">.</span><span class="n">RETR</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 <span class="n">args</span><span class="o">.</span><span class="n">NAMES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;NEAR&#39;</span><span class="p">,</span> <span class="s1">&#39;FAR&#39;</span><span class="p">]</span>
 <span class="n">args</span><span class="o">.</span><span class="n">TRIAL_LEN</span> <span class="o">=</span> <span class="mi">15</span>
 <span class="n">args</span><span class="o">.</span><span class="n">near_thresh</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.77</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]</span>
 <span class="n">args</span><span class="o">.</span><span class="n">near_width</span> <span class="o">=</span> <span class="mf">7.0</span>
-<span class="n">args</span><span class="o">.</span><span class="n">far_thresh</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">]</span>
+<span class="n">args</span><span class="o">.</span><span class="n">far_thresh</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">]</span> <span class="c1">#[0.6, 0.99] #[0.8, 0.9] #[0.9, 0.99]</span>
 <span class="n">args</span><span class="o">.</span><span class="n">far_width</span> <span class="o">=</span> <span class="mf">6.8</span>
 <span class="n">args</span><span class="o">.</span><span class="n">min_window_length</span> <span class="o">=</span> <span class="mi">6</span>
 <span class="n">args</span><span class="o">.</span><span class="n">SEGMENT_TRS</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">min_window_length</span><span class="p">)</span>
-<span class="n">args</span><span class="o">.</span><span class="n">min_trials</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;NEAR&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;FAR&#39;</span><span class="p">:</span><span class="mi">12</span><span class="p">}</span> <span class="c1">#{&#39;NEAR&#39;:14, &#39;FAR&#39;:45}</span>
+<span class="n">args</span><span class="o">.</span><span class="n">min_trials</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;NEAR&#39;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;FAR&#39;</span><span class="p">:</span><span class="mi">20</span><span class="p">}</span> <span class="c1">#{&#39;NEAR&#39;:16, &#39;FAR&#39;:35} #{&#39;NEAR&#39;:16, &#39;FAR&#39;:23}</span>
 <span class="n">args</span><span class="o">.</span><span class="n">TR</span> <span class="o">=</span> <span class="mf">1.25</span>
 </pre></div>
 </div>
@@ -891,7 +899,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>testing definition of NEAR and FAR segments<a class="headerlink" href="#testing-definition-of-near-and-far-segments" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subj</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">explor_subjects</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subj</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">explor_subjects</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span>
 
 <span class="n">subj_motion_df</span> <span class="o">=</span> <span class="n">motion_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">motion_df</span><span class="o">.</span><span class="n">pid</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="n">subj</span><span class="p">])]</span>
 <span class="n">proximity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span>
@@ -917,17 +925,168 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">near_peaks</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">find_peaks</span><span class="p">(</span>
     <span class="n">proximity</span><span class="p">,</span> 
     <span class="n">height</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">near_thresh</span><span class="p">,</span> 
-    <span class="n">width</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">near_width</span>
+    <span class="c1"># width=args.near_width</span>
 <span class="p">)</span>
 
 <span class="c1"># far peaks</span>
 <span class="n">far_peaks</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">find_peaks</span><span class="p">(</span>
     <span class="mi">1</span> <span class="o">-</span> <span class="n">proximity</span><span class="p">,</span>
     <span class="n">height</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">far_thresh</span><span class="p">,</span> 
-    <span class="n">width</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">far_width</span>
+    <span class="c1"># width=args.far_width</span>
 <span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">discard_narrow_peaks</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">peaks</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="n">peak_type</span><span class="o">=</span><span class="s1">&#39;NEAR&#39;</span><span class="p">):</span>
+    <span class="n">first_append_val</span> <span class="o">=</span> <span class="o">-</span><span class="n">direction</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">mult</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">peak_type</span><span class="o">==</span><span class="s1">&#39;NEAR&#39;</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+
+    <span class="c1"># mark all APPR followed by RETR segments for NAER peaks,</span>
+    <span class="c1"># and mark all RETR followed by APPR segments for FAR peaks</span>
+    <span class="c1"># appending -1 so as to give a boundary point </span>
+    <span class="c1"># at the beginning of the stimulus; i.e. 1st run&#39;s, 1st TR</span>
+    <span class="n">diff_dir</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">mult</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">first_append_val</span><span class="p">,</span> <span class="n">direction</span><span class="p">))</span>
+    <span class="n">window_boundary_trs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">diff_dir</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">diff_dir</span> <span class="o">==</span> <span class="o">-</span><span class="n">args</span><span class="o">.</span><span class="n">APPR</span><span class="p">)</span>
+    <span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># between which boundary trs do near peaks lie?</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">peak</span> <span class="ow">in</span> <span class="n">peaks</span><span class="p">:</span>
+        <span class="n">win_bdry</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">window_boundary_trs</span><span class="p">[</span><span class="n">window_boundary_trs</span> <span class="o">&lt;=</span> <span class="n">peak</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+            <span class="n">window_boundary_trs</span><span class="p">[</span><span class="n">window_boundary_trs</span> <span class="o">&gt;=</span> <span class="n">peak</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+        <span class="p">)</span>
+        <span class="c1"># print(win_bdry[0], peak, win_bdry[-1])</span>
+        <span class="c1"># ignore a shorter near miss segment</span>
+        <span class="k">if</span> <span class="n">win_bdry</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">win_bdry</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="o">*</span><span class="n">args</span><span class="o">.</span><span class="n">min_window_length</span><span class="p">:</span> <span class="k">continue</span>
+
+        <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">peak</span><span class="p">)</span>
+    <span class="n">peaks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">peaks</span>
+
+<span class="n">near_peaks</span> <span class="o">=</span> <span class="n">discard_narrow_peaks</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">near_peaks</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="n">peak_type</span><span class="o">=</span><span class="s1">&#39;NEAR&#39;</span><span class="p">)</span>
+<span class="n">far_peaks</span> <span class="o">=</span> <span class="n">discard_narrow_peaks</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">far_peaks</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="n">peak_type</span><span class="o">=</span><span class="s1">&#39;FAR&#39;</span><span class="p">)</span>
+<span class="n">near_peaks</span><span class="p">,</span> <span class="n">far_peaks</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  51,   77,  175,  226,  492,  897,  934, 1092, 1327, 1366, 1446,
+        1619, 1632, 1753]),
+ array([   7,   20,   33,   96,  109,  246,  577,  746,  798,  811,  851,
+         916, 1005, 1086, 1140, 1257, 1283, 1308, 1373, 1385, 1452, 1491,
+        1529, 1734, 1746]))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">discard_intersecting_peaks</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">near_peaks</span><span class="p">,</span> <span class="n">far_peaks</span><span class="p">):</span>
+    <span class="c1"># distances between any two peaks, </span>
+    <span class="c1"># discard close enough peaks</span>
+    <span class="n">peaks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">near_peaks</span><span class="p">,</span> <span class="n">far_peaks</span><span class="p">])</span>
+    <span class="n">sorted_peaks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">peaks</span><span class="p">)</span>
+    <span class="n">sorted_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">peaks</span><span class="p">)</span>
+    <span class="n">revert_sort_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">sorted_idxs</span><span class="p">)</span>
+
+    <span class="n">diff_peaks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sorted_peaks</span><span class="p">))</span>
+    <span class="n">keep_peaks_idxs</span> <span class="o">=</span> <span class="p">(</span><span class="n">diff_peaks</span> <span class="o">&gt;=</span> <span class="n">args</span><span class="o">.</span><span class="n">min_window_length</span><span class="p">)[</span><span class="n">revert_sort_idxs</span><span class="p">]</span>
+
+    <span class="n">near_peaks</span> <span class="o">=</span> <span class="n">peaks</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">near_peaks</span><span class="p">)][</span><span class="n">keep_peaks_idxs</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">near_peaks</span><span class="p">)]]</span>
+    <span class="n">far_peaks</span> <span class="o">=</span> <span class="n">peaks</span><span class="p">[</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">far_peaks</span><span class="p">):][</span><span class="n">keep_peaks_idxs</span><span class="p">[</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">far_peaks</span><span class="p">):]]</span>
+
+    <span class="k">return</span> <span class="n">near_peaks</span><span class="p">,</span> <span class="n">far_peaks</span>
+
+<span class="n">near_peaks</span><span class="p">,</span> <span class="n">far_peaks</span> <span class="o">=</span> <span class="n">discard_intersecting_peaks</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">near_peaks</span><span class="p">,</span> <span class="n">far_peaks</span><span class="p">)</span>
+<span class="n">near_peaks</span><span class="p">,</span> <span class="n">far_peaks</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  51,   77,  175,  226,  492,  897,  934, 1092, 1327, 1366, 1446,
+        1619, 1632, 1753]),
+ array([   7,   20,   33,   96,  109,  246,  577,  746,  798,  811,  851,
+         916, 1005, 1086, 1140, 1257, 1283, 1308, 1373, 1385, 1452, 1491,
+        1529, 1734, 1746]))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">proximity</span><span class="p">)</span> <span class="o">//</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">1</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+    <span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span>
+    <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="o">*</span><span class="n">ncols</span><span class="p">,</span> <span class="mi">7</span><span class="o">*</span><span class="n">nrows</span><span class="p">),</span>
+    <span class="n">dpi</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span>
+    <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+    <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+    <span class="n">wspace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.5</span>
+<span class="p">)</span>
+
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nrows</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">idx</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;subj </span><span class="si">{</span><span class="n">subj</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;run </span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">)</span>
+
+    <span class="c1"># proximity</span>
+    <span class="n">pr_run_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">360</span><span class="p">)</span> <span class="o">+</span> <span class="n">idx</span><span class="o">*</span><span class="mi">360</span>
+    <span class="n">pr</span> <span class="o">=</span> <span class="n">proximity</span><span class="p">[</span><span class="n">pr_run_idxs</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">pr</span><span class="p">,</span>
+        <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;cornflowerblue&#39;</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;prox&#39;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># near band</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">near_thresh</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">pr</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;violet&#39;</span><span class="p">)</span>
+
+    <span class="c1"># near peaks</span>
+    <span class="n">in_run_idxs</span> <span class="o">=</span> <span class="p">(</span><span class="n">near_peaks</span> <span class="o">&gt;=</span> <span class="n">idx</span><span class="o">*</span><span class="mi">360</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">near_peaks</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">360</span><span class="p">)</span>
+    <span class="n">nm</span> <span class="o">=</span> <span class="n">near_peaks</span><span class="p">[</span><span class="n">in_run_idxs</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+        <span class="n">nm</span> <span class="o">%</span> <span class="mi">360</span><span class="p">,</span> 
+        <span class="n">proximity</span><span class="p">[</span><span class="n">nm</span><span class="p">],</span>
+        <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;near&#39;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># far band</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">far_thresh</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">y</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">pr</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;peru&#39;</span><span class="p">)</span>
+
+    <span class="c1"># far peaks</span>
+    <span class="n">in_run_idxs</span> <span class="o">=</span> <span class="p">(</span><span class="n">far_peaks</span> <span class="o">&gt;=</span> <span class="n">idx</span><span class="o">*</span><span class="mi">360</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">far_peaks</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">360</span><span class="p">)</span>
+    <span class="n">fm</span> <span class="o">=</span> <span class="n">far_peaks</span><span class="p">[</span><span class="n">in_run_idxs</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+        <span class="n">fm</span> <span class="o">%</span> <span class="mi">360</span><span class="p">,</span>
+        <span class="n">proximity</span><span class="p">[</span><span class="n">fm</span><span class="p">],</span>
+        <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkorange&#39;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;far&#39;</span>
+    <span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_8_0.png" src="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_8_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -967,116 +1126,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;peaks&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_6_1.png" src="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_6_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">proximity</span><span class="p">)</span> <span class="o">//</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">1</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
-    <span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span>
-    <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">,</span>
-    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="o">*</span><span class="n">ncols</span><span class="p">,</span> <span class="mi">7</span><span class="o">*</span><span class="n">nrows</span><span class="p">),</span>
-    <span class="n">dpi</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span>
-    <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
-    <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
-    <span class="n">wspace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.5</span>
-<span class="p">)</span>
-
-<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nrows</span><span class="p">):</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
-
-    <span class="k">if</span> <span class="n">idx</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;subj </span><span class="si">{</span><span class="n">subj</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;run </span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">)</span>
-
-    <span class="c1"># proximity</span>
-    <span class="n">pr_run_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">360</span><span class="p">)</span> <span class="o">+</span> <span class="n">idx</span><span class="o">*</span><span class="mi">360</span>
-    <span class="n">pr</span> <span class="o">=</span> <span class="n">proximity</span><span class="p">[</span><span class="n">pr_run_idxs</span><span class="p">]</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-        <span class="n">pr</span><span class="p">,</span>
-        <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;cornflowerblue&#39;</span><span class="p">,</span>
-        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;prox&#39;</span>
-    <span class="p">)</span>
-
-    <span class="c1"># near  band</span>
-    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">near_thresh</span><span class="p">:</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">pr</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
-
-    <span class="c1"># near peaks</span>
-    <span class="n">in_run_idxs</span> <span class="o">=</span> <span class="p">(</span><span class="n">near_peaks</span> <span class="o">&gt;=</span> <span class="n">idx</span><span class="o">*</span><span class="mi">360</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">near_peaks</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">360</span><span class="p">)</span>
-    <span class="n">nm</span> <span class="o">=</span> <span class="n">near_peaks</span><span class="p">[</span><span class="n">in_run_idxs</span><span class="p">]</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
-        <span class="n">nm</span> <span class="o">%</span> <span class="mi">360</span><span class="p">,</span> 
-        <span class="n">proximity</span><span class="p">[</span><span class="n">nm</span><span class="p">],</span>
-        <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
-        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span>
-        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;near&#39;</span>
-    <span class="p">)</span>
-
-    <span class="c1"># # 1 - proximity</span>
-    <span class="c1"># ax.plot(</span>
-    <span class="c1">#     1 - pr,</span>
-    <span class="c1">#     linewidth=3,</span>
-    <span class="c1">#     color=&#39;firebrick&#39;,</span>
-    <span class="c1">#     alpha=0.5,</span>
-    <span class="c1">#     label=&#39;1 - prox&#39;,</span>
-    <span class="c1"># )</span>
-
-    <span class="c1"># far peaks</span>
-    <span class="n">in_run_idxs</span> <span class="o">=</span> <span class="p">(</span><span class="n">far_peaks</span> <span class="o">&gt;=</span> <span class="n">idx</span><span class="o">*</span><span class="mi">360</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">far_peaks</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">360</span><span class="p">)</span>
-    <span class="n">fm</span> <span class="o">=</span> <span class="n">far_peaks</span><span class="p">[</span><span class="n">in_run_idxs</span><span class="p">]</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
-        <span class="n">fm</span> <span class="o">%</span> <span class="mi">360</span><span class="p">,</span>
-        <span class="n">proximity</span><span class="p">[</span><span class="n">fm</span><span class="p">],</span>
-        <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
-        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkorange&#39;</span><span class="p">,</span>
-        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;far&#39;</span>
-    <span class="p">)</span>
-
-    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_7_0.png" src="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_7_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># distances between any two peaks, </span>
-<span class="c1"># discard close enough peaks</span>
-<span class="n">peaks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">near_peaks</span><span class="p">,</span> <span class="n">far_peaks</span><span class="p">])</span>
-<span class="n">sorted_peaks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">peaks</span><span class="p">)</span>
-<span class="n">sorted_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">peaks</span><span class="p">)</span>
-
-<span class="n">revert_sort_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">sorted_idxs</span><span class="p">)</span>
-
-<span class="n">diff_peaks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sorted_peaks</span><span class="p">))</span>
-<span class="n">keep_peaks_idxs</span> <span class="o">=</span> <span class="p">(</span><span class="n">diff_peaks</span> <span class="o">&gt;=</span> <span class="n">args</span><span class="o">.</span><span class="n">min_window_length</span><span class="p">)[</span><span class="n">revert_sort_idxs</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">keep_peaks_idxs</span><span class="p">)</span>
-
-<span class="n">near_peaks</span> <span class="o">=</span> <span class="n">peaks</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">near_peaks</span><span class="p">)][</span><span class="n">keep_peaks_idxs</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">near_peaks</span><span class="p">)]]</span>
-<span class="n">far_peaks</span> <span class="o">=</span> <span class="n">peaks</span><span class="p">[</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">far_peaks</span><span class="p">):][</span><span class="n">keep_peaks_idxs</span><span class="p">[</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">far_peaks</span><span class="p">):]]</span>
-<span class="n">near_peaks</span><span class="p">,</span> <span class="n">far_peaks</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ True  True  True  True  True  True  True  True  True  True  True  True
-  True  True  True  True  True  True  True  True  True  True  True]
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 175,  437,  535,  839, 1257, 1294, 1687, 1727, 1806, 1980]),
- array([  27,  182,  430,  469,  606,  632,  978, 1158, 1276, 1353, 1459,
-        1669, 2095]))
-</pre></div>
-</div>
+<img alt="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_9_1.png" src="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_9_1.png" />
 </div>
 </div>
 </div>
@@ -1095,61 +1145,66 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
-    <span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span> 
-    <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">,</span> 
-    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">ncols</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">nrows</span><span class="p">),</span> 
-    <span class="n">sharex</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
-    <span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
-    <span class="n">dpi</span><span class="o">=</span><span class="mi">120</span>
-<span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span>
-    <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
-    <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
-    <span class="n">wspace</span><span class="o">=</span><span class="mf">0.35</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="kc">None</span>
-<span class="p">)</span>
-
-<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lens</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
-
-    <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span>
-        <span class="n">x</span><span class="o">=</span><span class="n">lens</span><span class="p">[</span><span class="n">name</span><span class="p">],</span>
-        <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">stat</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span>
-        <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
-        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
-        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;cornflowerblue&#39;</span><span class="p">,</span>
-        <span class="n">line_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;linewidth&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">},</span>
-    <span class="p">)</span>
-
-
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;#trials&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;#subjs&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">args</span><span class="o">.</span><span class="n">plot_colors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;NEAR&#39;</span><span class="p">:</span><span class="s1">&#39;firebrick&#39;</span><span class="p">,</span> <span class="s1">&#39;FAR&#39;</span><span class="p">:</span><span class="s1">&#39;cornflowerblue&#39;</span><span class="p">}</span>
+<span class="n">dataset_utils</span><span class="o">.</span><span class="n">plot_emo2_near_vs_far_responses</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_11_0.png" src="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_11_0.png" />
+<img alt="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_12_0.png" src="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_12_0.png" />
+<img alt="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_12_1.png" src="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_12_1.png" />
+<img alt="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_12_2.png" src="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_12_2.png" />
+<img alt="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_12_3.png" src="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_12_3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># nrows, ncols = 1, 2</span>
+<span class="c1"># fig, axs = plt.subplots(</span>
+<span class="c1">#     nrows=nrows, </span>
+<span class="c1">#     ncols=ncols, </span>
+<span class="c1">#     figsize=(5*ncols, 4*nrows), </span>
+<span class="c1">#     sharex=False, </span>
+<span class="c1">#     sharey=False, </span>
+<span class="c1">#     dpi=120</span>
+<span class="c1"># )</span>
+
+<span class="c1"># plt.subplots_adjust(</span>
+<span class="c1">#     left=None, bottom=None, </span>
+<span class="c1">#     right=None, top=None, </span>
+<span class="c1">#     wspace=0.35, hspace=None</span>
+<span class="c1"># )</span>
+
+<span class="c1"># for idx, name in enumerate(lens.keys()):</span>
+<span class="c1">#     ax = axs[idx]</span>
+
+<span class="c1">#     sns.histplot(</span>
+<span class="c1">#         x=lens[name],</span>
+<span class="c1">#         kde=True,</span>
+<span class="c1">#         stat=&#39;count&#39;,</span>
+<span class="c1">#         bins=20,</span>
+<span class="c1">#         ax=ax,</span>
+<span class="c1">#         color=&#39;cornflowerblue&#39;,</span>
+<span class="c1">#         line_kws={&#39;linewidth&#39;:3},</span>
+<span class="c1">#     )</span>
+
+
+<span class="c1">#     ax.set_title(name)</span>
+<span class="c1">#     ax.set_xlabel(f&quot;#trials&quot;)</span>
+<span class="c1">#     ax.set_ylabel(f&quot;#subjs&quot;)</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">dataset_utils</span><span class="o">.</span><span class="n">get_emo2_near_vs_far_timeseries</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">subj_axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span><span class="p">[</span><span class="s1">&#39;NEAR&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">ts</span><span class="p">[</span><span class="s1">&#39;FAR&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">ts</span><span class="p">[</span><span class="s1">&#39;NEAR&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">ts</span><span class="p">[</span><span class="s1">&#39;FAR&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((60, 45, 26), (72, 45, 26))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((96, 45, 30), (120, 45, 30))
 </pre></div>
 </div>
 </div>
@@ -1191,10 +1246,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 2/2 [00:03&lt;00:00,  1.69s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 2/2 [00:03&lt;00:00,  1.86s/it]
 </pre></div>
 </div>
-<img alt="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_15_1.png" src="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_15_1.png" />
+<img alt="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_16_1.png" src="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_16_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1224,10 +1279,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1it [00:02,  2.67s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1it [00:03,  3.08s/it]
 </pre></div>
 </div>
-<img alt="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_16_1.png" src="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_16_1.png" />
+<img alt="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_17_1.png" src="../../_images/01-data-emo2_rois-mashid_desc-far_vs_near_segments_17_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1294,6 +1349,13 @@ const thebe_selector_output = ".output, .cell_output"
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Updates</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="00-data-aba_rois-aba_desc-finding_communities.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">November 3-10, 2022: ABA dataset: ABA ROIs: Finding ROI communities</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
